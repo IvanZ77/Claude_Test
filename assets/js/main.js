@@ -678,6 +678,18 @@ async function bootstrap() {
     }
     updateCalculations();
 
+    // Final safety: ensure household selector is rendered
+    console.log('[Bootstrap] Final initialization: calling renderHouseholdModelSelector one more time');
+    const finalState = getState();
+    console.log('[Bootstrap] Final state - householdModels:', finalState.householdModels ? finalState.householdModels.length + ' models' : 'undefined');
+    console.log('[Bootstrap] Final state - householdModel:', finalState.householdModel);
+    if (typeof renderHouseholdModelSelector === 'function') {
+      console.log('[Bootstrap] Calling renderHouseholdModelSelector...');
+      renderHouseholdModelSelector();
+    } else {
+      console.error('[Bootstrap] renderHouseholdModelSelector is not a function!');
+    }
+
   } catch (error) {
     console.error('Failed to bootstrap application:', error);
     document.body.classList.add('js-error');
