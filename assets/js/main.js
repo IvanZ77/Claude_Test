@@ -3,6 +3,8 @@ import { loadAllData } from './data-loader.js';
 import { sliderToAssets, formatUSD, formatNumber } from './calc/assets.js';
 import { computeMonthlyIncome } from './calc/income.js';
 import { matchTier } from './calc/tier.js';
+import { renderCompareTiers } from './render/compare-tiers.js';
+import { initBudgetChart, updateBudgetChart, updateChartBorderColor } from './render/chart-budget.js';
 
 async function bootstrap() {
   try {
@@ -37,6 +39,8 @@ async function bootstrap() {
     const descEl = document.getElementById('tdesc');
     const itemsEl = document.getElementById('titems');
     const legendEl = document.getElementById('leg');
+    const chartCanvasEl = document.getElementById('bc');
+    const compareGridEl = document.getElementById('compareGrid');
     const tsBars = document.querySelectorAll('.tier-strip-bars .ts');
     const tsLabels = document.querySelectorAll('.tier-strip-labels > div');
     const copyBtn = document.getElementById('copyBtn');
@@ -96,7 +100,6 @@ async function bootstrap() {
 
       itemsEl.innerHTML = Object.entries(tier.items)
         .map(([catId, catData]) => {
-          const cat = state.categories.find(c => c.id === catId);
           return `
             <div class="tier-item">
               <div class="tier-item-row">
@@ -107,6 +110,8 @@ async function bootstrap() {
           `;
         })
         .join('');
+
+      updateBudgetChart(tier.pct);
     }
 
     // Render legend
@@ -179,6 +184,19 @@ async function bootstrap() {
         setState({ sliderValue: vNum });
         sliderEl.value = vNum;
       }
+    }
+
+    // Initialize chart
+    initBudgetChart(chartCanvasEl, data.categories, shanghaiTiers[1].pct);
+
+    // Render comparison grid
+    renderCompareTiers(compareGridEl, shanghaiTiers);
+
+    // Dark mode listener
+    if (window.matchMedia) {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        updateChartBorderColor();
+      });
     }
 
     // Initial render
