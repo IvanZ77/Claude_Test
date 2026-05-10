@@ -18,24 +18,41 @@
 
 ---
 
+## 迁移进度
+
+### ✅ **第 1 步：加 `.nojekyll`** — 完成
+- 创建 `.nojekyll` 文件，确保 GitHub Pages 不套用 Jekyll 规则
+
+### ✅ **第 2 步：数据外置** — 完成
+- ✓ 创建 `data/cities.json` - 城市索引（上海、北京、东京占位）
+- ✓ 创建 `data/categories.json` - 7 类预算标签 + 颜色
+- ✓ 创建 `data/fire-tiers.json` - Lean/Regular/Fat/Coast FIRE 分级
+- ✓ 创建 `data/defaults.json` - 默认参数 + range
+- ✓ 创建 `data/cities/shanghai.json` - 从 T[] 迁移的 6 档生活方式完整数据
+- ✓ 所有 JSON 文件通过语法检查
+
+**下一步：第 3 步 - CSS 拆分**
+
+---
+
 ## 最终目录结构
 
 ```
 /
 ├── index.html                          # 骨架：head + 语义 sections + <script type="module">
 ├── README.md                           # 更新为新架构 + "如何添加一个城市"
-├── .nojekyll                           # GitHub Pages 不要套用 Jekyll 规则
+├── .nojekyll                           # ✓ GitHub Pages 不要套用 Jekyll 规则
 ├── .github/workflows/pages.yml         # 现有 deploy workflow
 │
-├── data/
-│   ├── cities.json                     # 城市索引（id, name, file, currency, fxToCNY, available）
-│   ├── categories.json                 # 7 类预算（共享的标签 + 颜色）
-│   ├── fire-tiers.json                 # Lean/Regular/Fat FIRE 阈值
-│   ├── defaults.json                   # 默认可调参数 + range 配置
+├── data/                               # ✓ 数据层完全独立
+│   ├── cities.json                     # ✓ 城市索引（id, name, file, currency, fxToCNY, available）
+│   ├── categories.json                 # ✓ 7 类预算（共享的标签 + 颜色）
+│   ├── fire-tiers.json                 # ✓ Lean/Regular/Fat FIRE 阈值
+│   ├── defaults.json                   # ✓ 默认可调参数 + range 配置
 │   └── cities/
-│       ├── shanghai.json               # 现有 T[] 数据迁移到这里
-│       ├── beijing.json                # 占位（available: false）
-│       └── tokyo.json                  # 占位（available: false）
+│       ├── shanghai.json               # ✓ 现有 T[] 数据迁移
+│       ├── beijing.json                # (占位，available: false)
+│       └── tokyo.json                  # (占位，available: false)
 │
 ├── assets/
 │   ├── css/
@@ -70,109 +87,6 @@
 │           └── compare-toggle.js       # 对比模式开关
 ```
 
-`Chart.js` 通过 CDN `<script>` 引入，模块代码引用 `window.Chart`。
-
----
-
-## 数据 Schema（JSON）
-
-### `data/cities.json`
-```json
-{
-  "version": 1,
-  "default": "shanghai",
-  "cities": [
-    { "id": "shanghai", "name": "上海", "country": "中国", "file": "cities/shanghai.json",
-      "currency": "CNY", "fxToCNY": 1.0, "available": true },
-    { "id": "beijing", "name": "北京", "country": "中国", "file": "cities/beijing.json",
-      "currency": "CNY", "fxToCNY": 1.0, "available": false },
-    { "id": "tokyo", "name": "东京", "country": "日本", "file": "cities/tokyo.json",
-      "currency": "JPY", "fxToCNY": 0.048, "available": false }
-  ]
-}
-```
-
-### `data/cities/shanghai.json`
-```json
-{
-  "id": "shanghai", "name": "上海", "currency": "CNY", "schemaVersion": 1,
-  "tiers": [
-    {
-      "id": "t1", "name": "拮据生活",
-      "incomeRange": { "min": 0, "max": 8000, "unit": "CNY/month" },
-      "badge": { "bg": "#5b6470", "fg": "#ffffff" },
-      "description": "...",
-      "items": {
-        "housing":   { "label": "合租城中村", "examples": ["浦东周浦", "宝山顾村"] },
-        "education": { "label": "无", "examples": [] },
-        "food":      { "label": "食堂 + 自炊", "examples": [] },
-        "transport": { "label": "地铁 + 共享单车", "examples": [] },
-        "medical":   { "label": "医保为主", "examples": [] },
-        "travel":    { "label": "节假日短途", "examples": [] },
-        "shopping":  { "label": "拼多多 / 优衣库", "examples": [] }
-      },
-      "pct": [45, 0, 25, 8, 5, 7, 10]
-    }
-    // ... 共 6 档
-  ]
-}
-```
-
-规则：`pct` 数组顺序与 `categories.json` 一致；`items` key 必须等于 categories 的 `id`。
-
-### `data/categories.json`
-```json
-{
-  "version": 1,
-  "categories": [
-    { "id": "housing",   "label": "住房",     "color": "#7c5cff" },
-    { "id": "education", "label": "教育",     "color": "#ff8a3d" },
-    { "id": "food",      "label": "饮食",     "color": "#42c2a8" },
-    { "id": "transport", "label": "交通",     "color": "#3aa0ff" },
-    { "id": "medical",   "label": "医疗",     "color": "#ef5d8f" },
-    { "id": "travel",    "label": "旅行",     "color": "#f6c85f" },
-    { "id": "shopping",  "label": "购物消费", "color": "#9aa3b2" }
-  ]
-}
-```
-
-### `data/fire-tiers.json`
-```json
-{
-  "version": 1,
-  "rule": { "withdrawalRate": 0.04, "multiplier": 25 },
-  "tiers": [
-    { "id": "lean",    "name": "Lean FIRE",    "annualExpenseMaxCNY": 150000, "color": "#42c2a8",
-      "description": "极简生活下的提早退休：月支出 ≤ 12,500 元。" },
-    { "id": "regular", "name": "Regular FIRE", "annualExpenseMaxCNY": 360000, "color": "#3aa0ff",
-      "description": "标准中产生活：月支出 12,500–30,000 元。" },
-    { "id": "fat",     "name": "Fat FIRE",     "annualExpenseMaxCNY": null,   "color": "#7c5cff",
-      "description": "宽裕生活：月支出 > 30,000 元。" },
-    { "id": "coast",   "name": "Coast FIRE",   "computed": true,              "color": "#f6c85f",
-      "description": "已积累的本金，仅靠复利即可在退休前达成 FIRE。" }
-  ]
-}
-```
-
-### `data/defaults.json`
-```json
-{
-  "version": 1,
-  "params": {
-    "withdrawalRate": 0.04, "taxRate": 0.20, "fxUsdCny": 6.8,
-    "annualReturnRate": 0.07, "inflationRate": 0.025,
-    "currentAge": 30, "fireTargetAge": 50
-  },
-  "ranges": {
-    "withdrawalRate":   { "min": 0.025, "max": 0.06, "step": 0.001 },
-    "taxRate":          { "min": 0.0,   "max": 0.45, "step": 0.01 },
-    "fxUsdCny":         { "min": 5.0,   "max": 8.5,  "step": 0.01 },
-    "annualReturnRate": { "min": 0.0,   "max": 0.15, "step": 0.001 },
-    "inflationRate":    { "min": 0.0,   "max": 0.10, "step": 0.001 }
-  }
-}
-```
-
 ---
 
 ## 状态管理
@@ -202,20 +116,20 @@ export function subscribe(fn) { listeners.add(fn); return () => listeners.delete
 
 ---
 
-## 迁移顺序（每步保持网站可用）
+## 完整迁移顺序
 
-1. 加 `.nojekyll`
-2. **数据外置但 JS 不动**：建所有 JSON，把 inline `<script>` 顶部加 `fetch()` 加载并赋给同名变量
-3. **CSS 拆分**：建 `assets/css/*`，`<style>` 块换成 `<link>`
-4. **JS 模块化（增量）**：先 `main.js` + `state.js` + `calc/assets.js`，再逐个迁移
-5. 删除 legacy inline `<script>`
-6. **加 state store + pub-sub**，渲染器改成订阅者
-7. **加 URL sync**（保 `?v=N` 别名）
-8. **加参数面板**（默认值与现状完全一致）
-9. **加 FIRE 模块**（DOM + calc + render + chart）
-10. **加城市对比**（按钮 + picker + grid）
-11. **打磨 + 暗色模式 + URL 覆盖新参数**
-12. **更新 README**
+1. ✅ 加 `.nojekyll`
+2. ✅ **数据外置**：建所有 JSON，把 inline `<script>` 顶部加 `fetch()` 加载并赋给同名变量
+3. ⏳ **CSS 拆分**：建 `assets/css/*`，`<style>` 块换成 `<link>`
+4. ⏳ **JS 模块化（增量）**：先 `main.js` + `state.js` + `calc/assets.js`，再逐个迁移
+5. ⏳ 删除 legacy inline `<script>`
+6. ⏳ **加 state store + pub-sub**，渲染器改成订阅者
+7. ⏳ **加 URL sync**（保 `?v=N` 别名）
+8. ⏳ **加参数面板**（默认值与现状完全一致）
+9. ⏳ **加 FIRE 模块**（DOM + calc + render + chart）
+10. ⏳ **加城市对比**（按钮 + picker + grid）
+11. ⏳ **打磨 + 暗色模式 + URL 覆盖新参数**
+12. ⏳ **更新 README**
 
 每步结束本地浏览器烟测。
 
@@ -227,10 +141,6 @@ export function subscribe(fn) { listeners.add(fn); return () => listeners.delete
 - `/home/user/Claude_Test/assets/js/main.js` — 新建
 - `/home/user/Claude_Test/assets/js/state.js` — 新建
 - `/home/user/Claude_Test/assets/js/calc/fire.js` — 新建
-- `/home/user/Claude_Test/data/cities/shanghai.json` — 迁移
-- `/home/user/Claude_Test/data/cities.json` — 新建
-- `/home/user/Claude_Test/data/defaults.json` — 新建
-
----
-
-**开始实现？** 请确认第一步：建立 `data/` 目录结构和 JSON 文件。
+- `/home/user/Claude_Test/data/cities/shanghai.json` — ✓ 迁移完成
+- `/home/user/Claude_Test/data/cities.json` — ✓ 新建完成
+- `/home/user/Claude_Test/data/defaults.json` — ✓ 新建完成
