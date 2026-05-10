@@ -1,10 +1,9 @@
 import { getState, setState, subscribe } from './state.js';
 import { loadAllData } from './data-loader.js';
-import { sliderToAssets, formatUSD, formatNumber } from './calc/assets.js';
+import { sliderToAssets, formatUSD, formatNumber, roundToReadable } from './calc/assets.js';
 import { computeMonthlyIncome } from './calc/income.js';
 import { matchTier } from './calc/tier.js';
 import { fireNumber as computeFireNumber, yearsToFire, projectAssets, coastFireAmount, classifyFireTier } from './calc/fire.js';
-import { renderCompareTiers } from './render/compare-tiers.js';
 import { initBudgetChart, updateBudgetChart, updateChartBorderColor } from './render/chart-budget.js';
 import { renderParamPanel, updateParamBadge } from './render/param-panel.js';
 import { renderFirePanel, updateFireOutputs } from './render/fire-panel.js';
@@ -14,12 +13,12 @@ import { decodeState, syncToUrl } from './url.js';
 
 async function bootstrap() {
   try {
-    // Mark JS as loaded
+    // Load all data first
+    const data = await loadAllData();
+
+    // Mark JS as loaded after data is ready
     document.body.classList.remove('js-pending');
     document.body.classList.add('js');
-
-    // Load all data
-    const data = await loadAllData();
     const defaultParams = data.defaults.params;
     const shanghaiTiers = data.cityData.shanghai.tiers;
 
@@ -71,7 +70,6 @@ async function bootstrap() {
     const itemsEl = document.getElementById('titems');
     const legendEl = document.getElementById('leg');
     const chartCanvasEl = document.getElementById('bc');
-    const compareGridEl = document.getElementById('compareGrid');
     const paramPanelEl = document.getElementById('paramPanel');
     const fireSectionEl = document.getElementById('fireSection');
     const compareModeToggleBtn = document.getElementById('compareModeToggle');
@@ -134,14 +132,26 @@ async function bootstrap() {
       badgeEl.style.background = tier.badge.bg;
       badgeEl.style.color = tier.badge.fg;
       badgeEl.textContent = tier.name;
+
+      // Update income range display
+      const incomeRangeEl = document.getElementById('incomeRange');
+      const minStr = '¥' + formatNumber(tier.incomeRange.min);
+      const maxStr = tier.incomeRange.max ? '¥' + formatNumber(tier.incomeRange.max) : '¥' + formatNumber(tier.incomeRange.min) + '+';
+      incomeRangeEl.textContent = minStr + '–' + maxStr + '/月';
+
       descEl.textContent = tier.description;
 
       itemsEl.innerHTML = Object.entries(tier.items)
         .map(([catId, catData]) => {
+          const catIndex = state.categories.findIndex(c => c.id === catId);
+          const percentage = catIndex >= 0 ? tier.pct[catIndex] : 0;
+          const monthlySpending = Math.round(state.monthlyCNY * percentage / 100);
+          const displaySpending = roundToReadable(monthlySpending);
           return `
             <div class="tier-item">
               <div class="tier-item-row">
                 <span class="tier-item-cat">${catData.label}</span>
+                <span class="tier-item-spending">¥${formatNumber(displaySpending)}/月</span>
               </div>
               <div class="tier-item-ex">${catData.examples.join(' &nbsp;·&nbsp; ')}</div>
             </div>
@@ -203,12 +213,14 @@ async function bootstrap() {
     };
 
     // Slider event
-    sliderEl.addEventListener('input', (e) => {
-      const newValue = parseInt(e.target.value);
-      setState({ sliderValue: newValue });
-      updateCalculations();
-      scheduleUrlSync();
-    });
+    if (sliderEl) {
+      sliderEl.addEventListener('input', (e) => {
+        const newValue = parseInt(e.target.value);
+        setState({ sliderValue: newValue });
+        updateCalculations();
+        scheduleUrlSync();
+      });
+    }
 
     // Parameter change handler
     const handleParamChange = (newParams) => {
@@ -223,19 +235,21 @@ async function bootstrap() {
       const state = getState();
       const newCities = [...state.selectedCities, cityId];
       setState({ selectedCities: newCities });
-      renderCityComparison(
-        compareCitiesContainerEl,
-        data.availableCities,
-        newCities,
-        handleCitySelect,
-        handleCityDeselect
-      );
-      renderCompareCitiesGrid(
-        compareCitiesContainerEl,
-        newCities.map(id => data.cityData[id]),
-        state.monthlyCNY,
-        formatNumber
-      );
+      if (compareCitiesContainerEl) {
+        renderCityComparison(
+          compareCitiesContainerEl,
+          data.availableCities,
+          newCities,
+          handleCitySelect,
+          handleCityDeselect
+        );
+        renderCompareCitiesGrid(
+          compareCitiesContainerEl,
+          newCities.map(id => data.cityData[id]),
+          state.monthlyCNY,
+          formatNumber
+        );
+      }
     };
 
     const handleCityDeselect = (cityId) => {
@@ -266,10 +280,35 @@ async function bootstrap() {
 
       if (newCompareMode) {
         singleCityCalcEl.style.display = 'none';
+        citySelectorEl.style.display = 'none';
         compareCitiesSectionEl.style.display = 'block';
         compareModeToggleBtn.style.background = 'var(--color-accent)';
         compareModeToggleBtn.style.color = 'var(--color-bg)';
         compareModeToggleBtn.style.borderColor = 'var(--color-accent)';
+
+        // Add slider to compare section
+        const compareSection = compareCitiesSectionEl;
+        const sliderHtml = `
+          <div style="margin-bottom: var(--space-5);">
+            <p class="section-label">可投资资产总额（美元）</p>
+            <div class="slider-row" id="compareSlider">
+              <input type="range" id="compareSliderInput" min="0" max="100" value="${state.sliderValue}" step="1" aria-label="可投资资产" style="flex: 1;">
+              <span id="compareAssetDisp" class="asset-display" style="margin-left: var(--space-3);">$1.00M</span>
+            </div>
+          </div>
+        `;
+        compareSection.insertAdjacentHTML('afterbegin', sliderHtml);
+
+        const compareSliderInput = compareSection.querySelector('#compareSliderInput');
+        const compareAssetDisp = compareSection.querySelector('#compareAssetDisp');
+
+        compareSliderInput.addEventListener('input', (e) => {
+          const newValue = parseInt(e.target.value);
+          setState({ sliderValue: newValue });
+          updateCalculations();
+          compareAssetDisp.textContent = formatUSD(sliderToAssets(newValue));
+          scheduleUrlSync();
+        });
 
         renderCityComparison(
           compareCitiesContainerEl,
@@ -286,10 +325,15 @@ async function bootstrap() {
         );
       } else {
         singleCityCalcEl.style.display = 'block';
+        citySelectorEl.style.display = 'flex';
         compareCitiesSectionEl.style.display = 'none';
         compareModeToggleBtn.style.background = 'var(--color-bg-secondary)';
         compareModeToggleBtn.style.color = 'var(--color-text-primary)';
         compareModeToggleBtn.style.borderColor = 'var(--color-border-tertiary)';
+
+        // Remove slider from compare section
+        const compareSlider = compareCitiesSectionEl.querySelector('#compareSlider');
+        if (compareSlider) compareSlider.remove();
       }
     };
 
@@ -343,10 +387,13 @@ async function bootstrap() {
     };
 
     // Comparison mode toggle
-    compareModeToggleBtn.addEventListener('click', toggleCompareMode);
+    if (compareModeToggleBtn) {
+      compareModeToggleBtn.addEventListener('click', toggleCompareMode);
+    }
 
     // Copy button
-    copyBtn.addEventListener('click', async () => {
+    if (copyBtn) {
+      copyBtn.addEventListener('click', async () => {
       try {
         await navigator.clipboard.writeText(location.href);
         copyTxt.textContent = '已复制';
@@ -372,19 +419,47 @@ async function bootstrap() {
           copyBtn.classList.remove('is-copied');
         }, 1500);
       }
-    });
+      });
+    }
 
     // Update slider to match state
-    sliderEl.value = getState().sliderValue;
+    if (sliderEl) {
+      sliderEl.value = getState().sliderValue;
+    }
 
     // Render city selector
     const renderCitySelector = () => {
       const state = getState();
-      citySelectorEl.innerHTML = data.availableCities
-        .map(city => {
+      const groupedCities = {};
+
+      data.availableCities.forEach(city => {
+        if (!groupedCities[city.country]) {
+          groupedCities[city.country] = [];
+        }
+        groupedCities[city.country].push(city);
+      });
+
+      const countryOrder = ['中国', '中国香港', '日本', '泰国', '美国', '越南', '英国', '法国'];
+      const sortedCountries = Object.keys(groupedCities).sort((a, b) => {
+        const aIndex = countryOrder.indexOf(a);
+        const bIndex = countryOrder.indexOf(b);
+        return (aIndex === -1 ? 999 : aIndex) - (bIndex === -1 ? 999 : bIndex);
+      });
+
+      let html = '<div style="display: flex; gap: 6px; flex-wrap: wrap; align-items: center;">';
+
+      sortedCountries.forEach((country, countryIdx) => {
+        const cities = groupedCities[country];
+
+        if (countryIdx > 0) {
+          html += '<div style="width: 1px; height: 24px; background: var(--color-border-tertiary); margin: 0 2px;"></div>';
+        }
+
+        cities.forEach(city => {
           const isActive = state.cityId === city.id;
-          return `
-            <button class="city-btn${isActive ? ' is-active' : ''}" data-city="${city.id}"
+          html += `
+            <button class="city-btn" data-city="${city.id}"
+                    title="${country}"
                     style="padding: 6px 14px; border-radius: var(--border-radius-md);
                            background: ${isActive ? 'var(--color-accent)' : 'var(--color-bg-secondary)'};
                            color: ${isActive ? 'var(--color-bg)' : 'var(--color-text-primary)'};
@@ -394,8 +469,11 @@ async function bootstrap() {
               ${city.name}
             </button>
           `;
-        })
-        .join('');
+        });
+      });
+
+      html += '</div>';
+      citySelectorEl.innerHTML = html;
 
       citySelectorEl.querySelectorAll('.city-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -418,7 +496,7 @@ async function bootstrap() {
     // Initialize city selector
     renderCitySelector();
 
-    // Initialize parameter panel
+    // Render parameter panel
     renderParamPanel(paramPanelEl, data.defaults, getState().params, handleParamChange);
 
     // Initialize FIRE section
@@ -430,10 +508,9 @@ async function bootstrap() {
     }
 
     // Initialize chart
-    initBudgetChart(chartCanvasEl, data.categories, shanghaiTiers[1].pct);
-
-    // Render comparison grid
-    renderCompareTiers(compareGridEl, shanghaiTiers);
+    if (chartCanvasEl) {
+      initBudgetChart(chartCanvasEl, data.categories, shanghaiTiers[1].pct);
+    }
 
     // Dark mode listener
     if (window.matchMedia) {
@@ -443,7 +520,9 @@ async function bootstrap() {
     }
 
     // Initial render
-    renderLegend();
+    if (legendEl) {
+      renderLegend();
+    }
     updateCalculations();
 
   } catch (error) {

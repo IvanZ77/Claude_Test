@@ -1,0 +1,110 @@
+{
+  "id": "danang",
+  "name": "岘港",
+  "currency": "CNY",
+  "schemaVersion": 1,
+  "tiers": [
+    {
+      "id": "t1",
+      "name": "拮据生活",
+      "incomeRange": { "min": 0, "max": 4000, "unit": "CNY/month" },
+      "badge": { "bg": "#E6F1FB", "fg": "#0C447C" },
+      "description": "月支出 < ¥4000。老城区或城中村，公立学校，以越南菜为主，摩托车，生活基础。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["中心老城区出租房", "龙桥区小民居", "山茂街道房屋"] },
+        "education": { "label": "子女教育", "examples": ["公立小学", "免费越南班"] },
+        "food": { "label": "餐饮美食", "examples": ["路边越南粉", "街边摊", "自己做饭"] },
+        "transport": { "label": "交通出行", "examples": ["摩托车", "公交", "人力车"] },
+        "medical": { "label": "医疗健康", "examples": ["社区诊所", "基础医保"] },
+        "travel": { "label": "旅行娱乐", "examples": ["海滩散步", "免费景点"] },
+        "shopping": { "label": "日用购物", "examples": ["菜市场", "小店", "地摊"] }
+      },
+      "pct": [45, 5, 32, 6, 3, 2, 7]
+    },
+    {
+      "id": "t2",
+      "name": "基本小康",
+      "incomeRange": { "min": 4000, "max": 8000, "unit": "CNY/month" },
+      "badge": { "bg": "#EAF3DE", "fg": "#27500A" },
+      "description": "月支出 ¥4000–¥8000。市区公寓，孩子读公立或国际学校初级，偶尔外食，能周末休闲。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["海滩边租赁公寓", "中心商业区小房", "韩邦区民居"] },
+        "education": { "label": "子女教育", "examples": ["岘港国际学校初班", "越南公立学校", "英文班"] },
+        "food": { "label": "餐饮美食", "examples": ["越南米线", "海鲜排挡", "便利店", "街边摊"] },
+        "transport": { "label": "交通出行", "examples": ["摩托车", "出租车", "公交"] },
+        "medical": { "label": "医疗健康", "examples": ["医疗诊所", "保险"] },
+        "travel": { "label": "旅行娱乐", "examples": ["美溪海滩", "龙桥一日游"] },
+        "shopping": { "label": "日用购物", "examples": ["购物中心", "超市", "网购"] }
+      },
+      "pct": [40, 10, 28, 7, 4, 6, 5]
+    },
+    {
+      "id": "t3",
+      "name": "舒适生活",
+      "incomeRange": { "min": 8000, "max": 16000, "unit": "CNY/month" },
+      "badge": { "bg": "#FAEEDA", "fg": "#633806" },
+      "description": "月支出 ¥8000–¥1.6万。海滨高档公寓，孩子读国际学校，有车，能定期度假。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["美溪海滨别墅", "索菲特酒店式公寓", "高档社区房"] },
+        "education": { "label": "子女教育", "examples": ["岘港国际学校全段", "新加坡学部", "暑期英语营"] },
+        "food": { "label": "餐饮美食", "examples": ["海鲜餐厅", "意大利餐", "日本料理", "咖啡馆"] },
+        "transport": { "label": "交通出行", "examples": ["丰田Vios", "停车费¥200/月"] },
+        "medical": { "label": "医疗健康", "examples": ["私立医院", "国际诊所"] },
+        "travel": { "label": "旅行娱乐", "examples": ["岘港周边度假", "越南北部旅游"] },
+        "shopping": { "label": "日用购物", "examples": ["品牌店", "超市进口货", "本地市集"] }
+      },
+      "pct": [30, 14, 24, 10, 6, 10, 6]
+    },
+    {
+      "id": "t4",
+      "name": "品质生活",
+      "incomeRange": { "min": 16000, "max": 32000, "unit": "CNY/month" },
+      "badge": { "bg": "#FBEAF0", "fg": "#4B1528" },
+      "description": "月支出 ¥1.6万–¥3.2万。海景豪宅，孩子读精英国际学校，进口车，东南亚旅游。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["美溪滨海别墅", "私人海景地产", "高档社区别墅"] },
+        "education": { "label": "子女教育", "examples": ["英国学部完整课程", "IB预备班", "海外交换计划"] },
+        "food": { "label": "餐饮美食", "examples": ["米其林试吃", "五星酒店餐厅", "私房菜"] },
+        "transport": { "label": "交通出行", "examples": ["BMW i3/奔驰GLA", "停车+油费¥800/月"] },
+        "medical": { "label": "医疗健康", "examples": ["曼谷医疗旅游", "国际保险"] },
+        "travel": { "label": "旅行娱乐", "examples": ["泰国度假", "柬埔寨旅游"] },
+        "shopping": { "label": "日用购物", "examples": ["奢侈品折扣", "进口品牌"] }
+      },
+      "pct": [28, 16, 18, 12, 6, 12, 8]
+    },
+    {
+      "id": "t5",
+      "name": "豪华生活",
+      "incomeRange": { "min": 32000, "max": 64000, "unit": "CNY/month" },
+      "badge": { "bg": "#EEEDFE", "fg": "#26215C" },
+      "description": "月支出 ¥3.2万–¥6.4万。顶级海景豪宅，孩子顶尖国际学校，豪车，全球旅游。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["私人岛屿别墅", "四季酒店高层公寓", "独家海滨庄园"] },
+        "education": { "label": "子女教育", "examples": ["伦敦教育预备", "美国名校升学指导", "夏令营世界名校"] },
+        "food": { "label": "餐饮美食", "examples": ["米其林二星", "私人会所", "主厨特餐"] },
+        "transport": { "label": "交通出行", "examples": ["宝马X5/奔驰GLE", "司机团队"] },
+        "medical": { "label": "医疗健康", "examples": ["新加坡医疗包", "国际高端保险"] },
+        "travel": { "label": "旅行娱乐", "examples": ["欧洲三个月", "四季酒店连住"] },
+        "shopping": { "label": "日用购物", "examples": ["奢侈品定制", "艺术品投资"] }
+      },
+      "pct": [28, 18, 14, 12, 6, 14, 8]
+    },
+    {
+      "id": "t6",
+      "name": "顶奢生活",
+      "incomeRange": { "min": 64000, "max": null, "unit": "CNY/month" },
+      "badge": { "bg": "#FAECE7", "fg": "#4A1B0C" },
+      "description": "月支出 > ¥6.4万。私人岛屿庄园，顶级教育，全职司机团队，私人包机。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["私人岛屿度假村", "顶级海滨地产", "国际名流区"] },
+        "education": { "label": "子女教育", "examples": ["牛津剑桥预科营", "瑞士寄宿学校", "私人教师"] },
+        "food": { "label": "餐饮美食", "examples": ["米其林三星备选", "私人厨师常驻"] },
+        "transport": { "label": "交通出行", "examples": ["兰博基尼/法拉利", "专属司机与保镖"] },
+        "medical": { "label": "医疗健康", "examples": ["美国Johns Hopkins保约", "24小时私人医生"] },
+        "travel": { "label": "旅行娱乐", "examples": ["私人游艇环球航行", "北极探险邮轮"] },
+        "shopping": { "label": "日用购物", "examples": ["苏富比艺术拍卖", "珠宝定制行"] }
+      },
+      "pct": [32, 14, 12, 12, 4, 16, 10]
+    }
+  ]
+}

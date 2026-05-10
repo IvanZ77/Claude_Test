@@ -18,26 +18,29 @@ export async function loadJSON(path) {
 
 export async function loadAllData() {
   try {
-    // Load core data files
-    const citiesIdx = await loadJSON('./data/cities.json');
-    const categories = await loadJSON('./data/categories.json');
-    const fireTiers = await loadJSON('./data/fire-tiers.json');
-    const defaults = await loadJSON('./data/defaults.json');
-    const shanghaiData = await loadJSON('./data/cities/shanghai.json');
+    // Load core data files in parallel
+    const [citiesIdx, categories, fireTiers, defaults] = await Promise.all([
+      loadJSON('./data/cities.json'),
+      loadJSON('./data/categories.json'),
+      loadJSON('./data/fire-tiers.json'),
+      loadJSON('./data/defaults.json')
+    ]);
 
-    // Load city-specific data (don't fail if some are missing)
-    const cityData = { shanghai: shanghaiData };
+    // Load all city data in parallel (don't fail if some are missing)
+    const cityDataPromises = citiesIdx.cities.map(city =>
+      loadJSON(`./data/cities/${city.id}.json`)
+        .then(data => ({ id: city.id, data }))
+        .catch(error => {
+          console.warn(`Could not load data for ${city.id}:`, error);
+          return { id: city.id, data: null };
+        })
+    );
 
-    for (const city of citiesIdx.cities) {
-      if (city.id === 'shanghai') continue; // Already loaded
-      try {
-        const cityDataFile = await loadJSON(`./data/cities/${city.id}.json`);
-        cityData[city.id] = cityDataFile;
-      } catch (error) {
-        console.warn(`Could not load data for ${city.id}:`, error);
-        // Continue without this city
-      }
-    }
+    const cityDataResults = await Promise.all(cityDataPromises);
+    const cityData = {};
+    cityDataResults.forEach(({ id, data }) => {
+      if (data) cityData[id] = data;
+    });
 
     // Load only available cities
     const availableCities = citiesIdx.cities.filter(c => c.available && cityData[c.id]);

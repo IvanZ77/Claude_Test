@@ -129,8 +129,10 @@ export function renderFirePanel(containerEl, fireOutputs, onFireParamChange) {
   };
 
   Object.values(inputs).forEach(input => {
-    input.addEventListener('change', handleChange);
-    input.addEventListener('input', handleChange);
+    if (input) {
+      input.addEventListener('change', handleChange);
+      input.addEventListener('input', handleChange);
+    }
   });
 }
 

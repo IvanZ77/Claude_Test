@@ -1,0 +1,110 @@
+{
+  "id": "guangzhou",
+  "name": "广州",
+  "currency": "CNY",
+  "schemaVersion": 1,
+  "tiers": [
+    {
+      "id": "t1",
+      "name": "拮据生活",
+      "incomeRange": { "min": 0, "max": 6000, "unit": "CNY/month" },
+      "badge": { "bg": "#E6F1FB", "fg": "#0C447C" },
+      "description": "月支出 < ¥6000。城中村或郊区民居，公立学校，以自炊为主，地铁/公交，生活拮据。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["增城城中村", "番禺石碁民宅", "花都郊区房", "南沙工业区宿舍"] },
+        "education": { "label": "子女教育", "examples": ["公立小学", "免费班"] },
+        "food": { "label": "餐饮美食", "examples": ["粤菜排挡", "早茶外卖", "菜市场自炊", "便利店"] },
+        "transport": { "label": "交通出行", "examples": ["地铁公交卡", "骑电动车", "走路"] },
+        "medical": { "label": "医疗健康", "examples": ["社区卫生室", "医保"] },
+        "travel": { "label": "旅行娱乐", "examples": ["白云山散步", "珠江公园"] },
+        "shopping": { "label": "日用购物", "examples": ["菜场", "711超市", "拼多多"] }
+      },
+      "pct": [40, 6, 28, 8, 4, 3, 11]
+    },
+    {
+      "id": "t2",
+      "name": "基本小康",
+      "incomeRange": { "min": 6000, "max": 12000, "unit": "CNY/month" },
+      "badge": { "bg": "#EAF3DE", "fg": "#27500A" },
+      "description": "月支出 ¥6000–¥1.2万。中档小区，孩子读公立或普通民办学校，偶尔外食，有休闲活动。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["番禺祈福新邨", "天河中山大道公寓", "白云新城小区"] },
+        "education": { "label": "子女教育", "examples": ["广州民办小学", "少儿培训班", "书法美术"] },
+        "food": { "label": "餐饮美食", "examples": ["茶楼早茶", "肠粉店", "火锅摊", "便利店"] },
+        "transport": { "label": "交通出行", "examples": ["地铁卡", "二手电动车", "偶尔出租车"] },
+        "medical": { "label": "医疗健康", "examples": ["社区卫生院", "医保"] },
+        "travel": { "label": "旅行娱乐", "examples": ["广州周末游", "肇庆度假"] },
+        "shopping": { "label": "日用购物", "examples": ["百货超市", "UNIQLO", "网购"] }
+      },
+      "pct": [36, 10, 24, 8, 5, 8, 9]
+    },
+    {
+      "id": "t3",
+      "name": "舒适生活",
+      "incomeRange": { "min": 12000, "max": 24000, "unit": "CNY/month" },
+      "badge": { "bg": "#FAEEDA", "fg": "#633806" },
+      "description": "月支出 ¥1.2万–¥2.4万。新房小区，孩子读民办学校或国际班，有车，能定期度假。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["珠江新城高档公寓", "天河中产小区", "越秀山水名邸"] },
+        "education": { "label": "子女教育", "examples": ["广州国际学校初段", "协和国际部", "英文培训"] },
+        "food": { "label": "餐饮美食", "examples": ["海鲜酒楼", "日本料理", "意大利餐厅", "咖啡馆"] },
+        "transport": { "label": "交通出行", "examples": ["丰田RAV4/本田CRV", "停车费¥500/月"] },
+        "medical": { "label": "医疗健康", "examples": ["私立诊所", "医疗保险"] },
+        "travel": { "label": "旅行娱乐", "examples": ["深圳/香港周末游", "海南度假"] },
+        "shopping": { "label": "日用购物", "examples": ["友谊商店", "正佳广场", "进口超市"] }
+      },
+      "pct": [31, 15, 22, 10, 6, 10, 6]
+    },
+    {
+      "id": "t4",
+      "name": "品质生活",
+      "incomeRange": { "min": 24000, "max": 48000, "unit": "CNY/month" },
+      "badge": { "bg": "#FBEAF0", "fg": "#4B1528" },
+      "description": "月支出 ¥2.4万–¥4.8万。高档小区甚至别墅，孩子读国际学校，宝马/奔驰，欧洲旅游。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["珠江新城顶级公寓", "天河高档豪宅", "越秀滨江别墅"] },
+        "education": { "label": "子女教育", "examples": ["广州国际学校高段", "IB课程部", "海外交换"] },
+        "food": { "label": "餐饮美食", "examples": ["米其林入门", "高档粤菜", "私房菜"] },
+        "transport": { "label": "交通出行", "examples": ["宝马3系/奔驰C级", "停车+油费¥1800/月"] },
+        "medical": { "label": "医疗健康", "examples": ["国际医疗中心", "商业保险高端"] },
+        "travel": { "label": "旅行娱乐", "examples": ["香港购物游", "欧洲自驾"] },
+        "shopping": { "label": "日用购物", "examples": ["恒隆广场", "IFC商场"] }
+      },
+      "pct": [29, 17, 16, 12, 6, 12, 8]
+    },
+    {
+      "id": "t5",
+      "name": "豪华生活",
+      "incomeRange": { "min": 48000, "max": 96000, "unit": "CNY/month" },
+      "badge": { "bg": "#EEEDFE", "fg": "#26215C" },
+      "description": "月支出 ¥4.8万–¥9.6万。顶级小区别墅，孩子精英国际学校，保时捷，全球旅游。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["珠江新城最高层豪宅", "天河高档私人别墅", "越秀滨江地标公寓"] },
+        "education": { "label": "子女教育", "examples": ["国际学校全年学费", "海外名校夏令营", "留学规划"] },
+        "food": { "label": "餐饮美食", "examples": ["米其林二星", "私人会所", "五星酒店"] },
+        "transport": { "label": "交通出行", "examples": ["保时捷Macan", "路虎揽胜", "司机¥1.2万/月"] },
+        "medical": { "label": "医疗健康", "examples": ["香港医疗旅游", "国际保险高端"] },
+        "travel": { "label": "旅行娱乐", "examples": ["欧美长居", "四季酒店连住"] },
+        "shopping": { "label": "日用购物", "examples": ["奢侈品定制", "艺术品投资"] }
+      },
+      "pct": [28, 18, 14, 12, 6, 14, 8]
+    },
+    {
+      "id": "t6",
+      "name": "顶奢生活",
+      "incomeRange": { "min": 96000, "max": null, "unit": "CNY/month" },
+      "badge": { "bg": "#FAECE7", "fg": "#4A1B0C" },
+      "description": "月支出 > ¥9.6万。私人庄园或地标顶层，顶级教育，全职司机团队，头等舱全球。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["珠江新城最顶层豪宅", "天河核心区私人府邸", "广州滩豪宅地标"] },
+        "education": { "label": "子女教育", "examples": ["伦敦教育预备", "瑞士寄宿学校", "私人教师团队"] },
+        "food": { "label": "餐饮美食", "examples": ["米其林三星备选", "私人厨师常驻"] },
+        "transport": { "label": "交通出行", "examples": ["劳斯莱斯幻影", "专属司机保镖团队"] },
+        "medical": { "label": "医疗健康", "examples": ["美国Mayo年度体检", "私人医疗顾问"] },
+        "travel": { "label": "旅行娱乐", "examples": ["私人游艇全球航行", "北极探险邮轮"] },
+        "shopping": { "label": "日用购物", "examples": ["苏富比艺术拍卖", "顶级珠宝定制"] }
+      },
+      "pct": [32, 16, 10, 12, 4, 16, 10]
+    }
+  ]
+}

@@ -33,7 +33,12 @@ export function projectAssets(pv, pmt, r, years, inflationRate = 0) {
     // Nominal value
     let nominal = pv * Math.pow(1 + r, year);
     if (pmt > 0) {
-      nominal += pmt * (Math.pow(1 + r, year) - 1) / r;
+      if (r > 0.0001) {
+        nominal += pmt * (Math.pow(1 + r, year) - 1) / r;
+      } else {
+        // When rate is near zero, use linear growth
+        nominal += pmt * year;
+      }
     }
 
     // Real value (adjusted for inflation)

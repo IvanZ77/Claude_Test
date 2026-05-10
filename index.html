@@ -15,7 +15,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="多城市生活成本计算器">
-<meta property="og:description" content="你在美国攒下的钱，在不同城市能过什么样的日子？拖动滑块查看资产对应的月度可支配收入与生活方式画像。">
+<meta property="og:description" content="你的资产，在不同城市能过什么样的日子？拖动滑块查看资产对应的月度可支配收入与生活方式画像。">
 <meta property="og:locale" content="zh_CN">
 
 <meta name="twitter:card" content="summary">
@@ -40,7 +40,7 @@
   </header>
 
   <section class="hero">
-    <h1>你在美国攒下的钱，<br>在不同城市能过什么样的生活？</h1>
+    <h1>你的资产，<br>在不同城市能过什么样的生活？</h1>
     <p class="lead">面向海外华人的资产-生活映射工具。基于 4% 安全提取率，将你的可投资资产换算为月度可支配收入，对应六档真实的生活方式。支持多城市对比、FIRE 计划、参数调整，并可分享自定义配置。</p>
   </section>
 
@@ -49,7 +49,7 @@
   </noscript>
 
   <section id="controls" style="margin: var(--space-6) 0; display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap;">
-    <div id="citySelector" style="display: flex; gap: var(--space-3);"></div>
+    <div id="citySelector" style="display: flex; flex-wrap: wrap; gap: 6px; align-items: center;"></div>
     <button id="compareModeToggle" type="button" style="padding: 8px 16px; border-radius: var(--border-radius-md); background: var(--color-bg-secondary); color: var(--color-text-primary); border: 0.5px solid var(--color-border-tertiary); font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.15s ease;">
       城市对比
     </button>
@@ -103,7 +103,10 @@
 
     <div class="tier-panel">
       <div class="tier-info">
-        <div id="badge" class="badge">基本小康</div>
+        <div style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-3);">
+          <div id="badge" class="badge">基本小康</div>
+          <span id="incomeRange" style="font-size: 12px; color: var(--color-text-secondary);">¥0–12,000/月</span>
+        </div>
         <p id="tdesc" class="tier-desc"></p>
         <div id="titems" class="tier-items"></div>
       </div>
@@ -113,6 +116,7 @@
           <canvas id="bc" role="img" aria-label="月度预算分配环形图"></canvas>
         </div>
         <div id="leg" class="legend"></div>
+        <div id="paramPanel" style="margin-top: var(--space-4);"></div>
       </div>
     </div>
 
@@ -123,19 +127,7 @@
       </button>
       <span>把当前结果分享给朋友</span>
     </div>
-
-    <details id="paramPanel" style="margin-top: var(--space-6); padding: var(--space-5); background: var(--color-bg-tertiary); border-radius: var(--border-radius-xl); box-shadow: var(--shadow-sm);"></details>
   </main>
-
-  <details class="compare">
-    <summary class="compare-summary">
-      <span>对比所有 6 档生活</span>
-      <span class="sr-only">展开全部档位</span>
-    </summary>
-    <div class="compare-body">
-      <div id="compareGrid" class="compare-grid"></div>
-    </div>
-  </details>
 
   <section id="compareCitiesSection" class="calc" style="display: none;">
     <h2 style="font-size: 18px; font-weight: 600; margin: 0 0 var(--space-5); color: var(--color-text-primary);">城市对比</h2>
@@ -155,7 +147,7 @@
        · <strong>家庭模型</strong>：两位成人 + 一个学龄儿童。<br>
        · <strong>租金 / 学费 / 餐饮等</strong>：2025–26 年市场参考价，实际因房型、年级、谈判、入学批次差异较大。</p>
     <h2>数据来源</h2>
-    <p>各城市数据来自一手市场观察：房产平台（链家、贝壳找房）挂牌价、国际学校学费公示、餐饮榜单及本地评价。目前覆盖上海、北京。结果仅作生活方式参考，<strong>不构成投资或移居建议</strong>。</p>
+    <p>各城市数据来自一手市场观察：房产平台（链家、贝壳找房）挂牌价、国际学校学费公示、餐饮榜单及本地评价。结果仅作生活方式参考，<strong>不构成投资或移居建议</strong>。</p>
     <div class="meta">
       <span>© 2026 多城市生活成本计算器</span>
       <span>数据快照：2025–26</span>
@@ -163,7 +155,7 @@
   </footer>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
-<script type="module" src="./assets/js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js" async></script>
+<script type="module" src="./assets/js/main.js?v=1.4.2" defer></script>
 </body>
 </html>
