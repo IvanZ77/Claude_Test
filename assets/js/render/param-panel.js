@@ -39,7 +39,8 @@ export function renderParamPanel(containerEl, defaults, params, onParamChange) {
   const resetBtn = containerEl.querySelector('#paramReset');
   const paramInputs = containerEl.querySelectorAll('[data-param]');
 
-  resetBtn.addEventListener('click', () => {
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
     const newParams = { ...defaults.params };
     paramInputs.forEach(input => {
       const paramKey = input.dataset.param;
@@ -55,7 +56,8 @@ export function renderParamPanel(containerEl, defaults, params, onParamChange) {
     });
     onParamChange(newParams);
     updateParamBadge(containerEl, defaults, newParams);
-  });
+    });
+  }
 
   // Track which inputs are range vs number for syncing
   const paramGroups = {};
@@ -112,6 +114,9 @@ export function renderParamPanel(containerEl, defaults, params, onParamChange) {
 }
 
 function renderParamRow(paramKey, label, value, range, defaultValue, onParamChange) {
+  // Skip if range is undefined
+  if (!range) return '';
+
   // Determine display format
   const isPercentage = ['withdrawalRate', 'taxRate', 'annualReturnRate', 'inflationRate'].includes(paramKey);
   const displayValue = isPercentage ? (value * 100).toFixed(1) : value.toFixed(paramKey === 'fxUsdCny' ? 2 : 3);
@@ -149,6 +154,7 @@ function renderParamRow(paramKey, label, value, range, defaultValue, onParamChan
 
 export function updateParamBadge(containerEl, defaults, params) {
   const badge = containerEl.querySelector('#paramBadge');
+  if (!badge) return;
   const isCustomized = Object.entries(defaults.params).some(
     ([key, defaultValue]) => Math.abs(params[key] - defaultValue) > 0.0001
   );

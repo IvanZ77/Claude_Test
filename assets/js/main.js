@@ -213,12 +213,14 @@ async function bootstrap() {
     };
 
     // Slider event
-    sliderEl.addEventListener('input', (e) => {
-      const newValue = parseInt(e.target.value);
-      setState({ sliderValue: newValue });
-      updateCalculations();
-      scheduleUrlSync();
-    });
+    if (sliderEl) {
+      sliderEl.addEventListener('input', (e) => {
+        const newValue = parseInt(e.target.value);
+        setState({ sliderValue: newValue });
+        updateCalculations();
+        scheduleUrlSync();
+      });
+    }
 
     // Parameter change handler
     const handleParamChange = (newParams) => {
@@ -233,19 +235,21 @@ async function bootstrap() {
       const state = getState();
       const newCities = [...state.selectedCities, cityId];
       setState({ selectedCities: newCities });
-      renderCityComparison(
-        compareCitiesContainerEl,
-        data.availableCities,
-        newCities,
-        handleCitySelect,
-        handleCityDeselect
-      );
-      renderCompareCitiesGrid(
-        compareCitiesContainerEl,
-        newCities.map(id => data.cityData[id]),
-        state.monthlyCNY,
-        formatNumber
-      );
+      if (compareCitiesContainerEl) {
+        renderCityComparison(
+          compareCitiesContainerEl,
+          data.availableCities,
+          newCities,
+          handleCitySelect,
+          handleCityDeselect
+        );
+        renderCompareCitiesGrid(
+          compareCitiesContainerEl,
+          newCities.map(id => data.cityData[id]),
+          state.monthlyCNY,
+          formatNumber
+        );
+      }
     };
 
     const handleCityDeselect = (cityId) => {
@@ -383,10 +387,13 @@ async function bootstrap() {
     };
 
     // Comparison mode toggle
-    compareModeToggleBtn.addEventListener('click', toggleCompareMode);
+    if (compareModeToggleBtn) {
+      compareModeToggleBtn.addEventListener('click', toggleCompareMode);
+    }
 
     // Copy button
-    copyBtn.addEventListener('click', async () => {
+    if (copyBtn) {
+      copyBtn.addEventListener('click', async () => {
       try {
         await navigator.clipboard.writeText(location.href);
         copyTxt.textContent = '已复制';
@@ -412,10 +419,13 @@ async function bootstrap() {
           copyBtn.classList.remove('is-copied');
         }, 1500);
       }
-    });
+      });
+    }
 
     // Update slider to match state
-    sliderEl.value = getState().sliderValue;
+    if (sliderEl) {
+      sliderEl.value = getState().sliderValue;
+    }
 
     // Render city selector
     const renderCitySelector = () => {
@@ -498,7 +508,9 @@ async function bootstrap() {
     }
 
     // Initialize chart
-    initBudgetChart(chartCanvasEl, data.categories, shanghaiTiers[1].pct);
+    if (chartCanvasEl) {
+      initBudgetChart(chartCanvasEl, data.categories, shanghaiTiers[1].pct);
+    }
 
     // Dark mode listener
     if (window.matchMedia) {
@@ -508,7 +520,9 @@ async function bootstrap() {
     }
 
     // Initial render
-    renderLegend();
+    if (legendEl) {
+      renderLegend();
+    }
     updateCalculations();
 
   } catch (error) {
