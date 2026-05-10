@@ -32,7 +32,7 @@ export function initBudgetChart(containerEl, categories, initialTierPct) {
       cutout: '64%',
       animation: { duration: 400 },
       plugins: {
-        legend: { display: true, position: 'bottom' },
+        legend: { display: false },
         tooltip: {
           callbacks: {
             label: c => ` ${c.label}: ${c.parsed}%`
