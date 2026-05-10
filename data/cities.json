@@ -21,10 +21,37 @@
       "available": true
     },
     {
+      "id": "shenzhen",
+      "name": "深圳",
+      "country": "中国",
+      "file": "cities/shenzhen.json",
+      "currency": "CNY",
+      "fxToCNY": 1.0,
+      "available": true
+    },
+    {
+      "id": "hongkong",
+      "name": "香港",
+      "country": "中国香港",
+      "file": "cities/hongkong.json",
+      "currency": "CNY",
+      "fxToCNY": 1.0,
+      "available": true
+    },
+    {
       "id": "tokyo",
       "name": "东京",
       "country": "日本",
       "file": "cities/tokyo.json",
+      "currency": "CNY",
+      "fxToCNY": 1.0,
+      "available": true
+    },
+    {
+      "id": "bangkok",
+      "name": "曼谷",
+      "country": "泰国",
+      "file": "cities/bangkok.json",
       "currency": "CNY",
       "fxToCNY": 1.0,
       "available": true

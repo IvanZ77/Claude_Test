@@ -1,0 +1,110 @@
+{
+  "id": "bangkok",
+  "name": "曼谷",
+  "currency": "CNY",
+  "schemaVersion": 1,
+  "tiers": [
+    {
+      "id": "t1",
+      "name": "拮据生活",
+      "incomeRange": { "min": 0, "max": 10000, "unit": "CNY/month" },
+      "badge": { "bg": "#E6F1FB", "fg": "#0C447C" },
+      "description": "月支出 < ¥1万。住曼谷郊区或旧城区，孩子上泰国公立学校或国际学校低端，主要自己做饭，出行靠公交BTS，生活拮据。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["Pratunam 老旧公寓", "Ekkamai 郊区民居", "Victory Monument 周边", "Saphan Khwai 工薪社区"] },
+        "education": { "label": "子女教育", "examples": ["泰国公立学校（便宜）", "Thonburi Satri School 公立", "小型国际幼儿园 ¥2-3万/年"] },
+        "food": { "label": "餐饮美食", "examples": ["街边大排档", "米线摊", "便利店便当", "Chatuchak 市场"] },
+        "transport": { "label": "交通出行", "examples": ["BTS Skytrain 月票", "摩托taxi", "自行车"] },
+        "medical": { "label": "医疗健康", "examples": ["国立医院", "社区诊所", "泰国医保"] },
+        "travel": { "label": "旅行娱乐", "examples": ["郊县一日游", "Khao Yai 国家公园", "邦帕茵夏宫"], "examples": ["免费寺庙游览"] },
+        "shopping": { "label": "日用购物", "examples": ["7-Eleven", "Big C 超市", "周末市集", "Chatuchak 批发市场"] }
+      },
+      "pct": [40, 8, 25, 7, 5, 5, 10]
+    },
+    {
+      "id": "t2",
+      "name": "基本小康",
+      "incomeRange": { "min": 10000, "max": 20000, "unit": "CNY/month" },
+      "badge": { "bg": "#EAF3DE", "fg": "#27500A" },
+      "description": "月支出 ¥1–2万。住 Phrom Phong/Thonglor 一般社区，孩子读中等国际学校，能偶尔外食，能去芭提雅/华欣周末游。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["Phrom Phong 中产公寓", "Thonglor 两卧室", "Ari 艺术社区", "Ramkhamhaeng 大学城"] },
+        "education": { "label": "子女教育", "examples": ["Samitivej International School ¥15-18万/年", "BangkokPatana School ¥12-15万/年", "Thai-Japan幼儿园 ¥3-5万/年"] },
+        "food": { "label": "餐饮美食", "examples": ["Isaan 烤肉店", "火锅连锁", "南北面馆", "Emporium 美食广场"] },
+        "transport": { "label": "交通出行", "examples": ["二手日本车（10年车龄）", "BTS月票+偶尔Grab", "停车位租赁"] },
+        "medical": { "label": "医疗健康", "examples": ["Bumrungrad 国际医院普通门诊", "Samitivej 医院", "Allianz Thailand 保险"] },
+        "travel": { "label": "旅行娱乐", "examples": ["华欣/芭提雅周末", "清迈3日游", "象岛度假", "柬埔寨吴哥"] },
+        "shopping": { "label": "日用购物", "examples": ["Emporium/EmQuartier 购物中心", "CentralWorld", "Siam Square"] }
+      },
+      "pct": [35, 12, 18, 8, 5, 12, 10]
+    },
+    {
+      "id": "t3",
+      "name": "舒适生活",
+      "incomeRange": { "min": 20000, "max": 45000, "unit": "CNY/month" },
+      "badge": { "bg": "#FAEEDA", "fg": "#633806" },
+      "description": "月支出 ¥2–4.5万。住 Sukhumvit 高档社区或 Phetchaburi 河滨公寓，孩子读知名国际学校，有车，能去东南亚度假。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["Sukhumvit Soi 55 高档公寓", "Silom 河景公寓", "Ploenchit Thonglor 精品社区", "Wireless Road 外交官区"] },
+        "education": { "label": "子女教育", "examples": ["Bangkok Prep ¥20-25万/年", "Ruamrudee International ¥18-22万/年", "Harrow International ¥22-28万/年"] },
+        "food": { "label": "餐饮美食", "examples": ["南部海鲜餐厅", "Nahm（米其林）", "大象酒楼", "赛亚姆牛排馆"] },
+        "transport": { "label": "交通出行", "examples": ["丰田 Camry/本田 Accord", "油费+停车 ¥1,500/月", "Grab Premium"] },
+        "medical": { "label": "医疗健康", "examples": ["Bumrungrad VIP 会员", "Samitivej Medical Center", "AIA Thailand 高级保险"] },
+        "travel": { "label": "旅行娱乐", "examples": ["普吉岛五星酒店", "老挝琅勃拉邦", "越南胡志明市", "新加坡城市游"] },
+        "shopping": { "label": "日用购物", "examples": ["Emporium Luxury", "Gaysorn Village", "Central Embassy"] }
+      },
+      "pct": [32, 16, 16, 9, 6, 12, 9]
+    },
+    {
+      "id": "t4",
+      "name": "品质生活",
+      "incomeRange": { "min": 45000, "max": 100000, "unit": "CNY/month" },
+      "badge": { "bg": "#FBEAF0", "fg": "#4B1528" },
+      "description": "月支出 ¥4.5–10万。Sukhumvit/Sathorn 高级公寓或别墅，孩子读顶级国际学校，奔驰宝马，每年欧洲度假，曼谷中上层生活。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["Promsri Tower 顶层", "Sathorn House 高档别墅", "Petchburi Condominium 豪华社区", "Sai Yuon 联排别墅"] },
+        "education": { "label": "子女教育", "examples": ["Harrow International School ¥28-35万/年", "Shrewsbury International ¥30-38万/年", "Anglo Singapore International ¥25-32万/年"] },
+        "food": { "label": "餐饮美食", "examples": ["Blue by Alain Ducasse（米其林）", "Gaggan Anand（米其林）", "私人烹饪课程", "Sukhothai宫廷菜"] },
+        "transport": { "label": "交通出行", "examples": ["BMW 5系/奔驰 E级", "保时捷 Macan", "停车+油费 ¥3,000/月"] },
+        "medical": { "label": "医疗健康", "examples": ["Bumrungrad Executive Program", "私人医生咨询", "Cigna 国际保险中档"] },
+        "travel": { "label": "旅行娱乐", "examples": ["法国普罗旺斯", "意大利托斯卡纳", "瑞士雪山", "英国伦敦"] },
+        "shopping": { "label": "日用购物", "examples": ["Gaysorn Luxury", "CentralWorld VIP", "设计师门店"] }
+      },
+      "pct": [30, 20, 13, 10, 6, 12, 9]
+    },
+    {
+      "id": "t5",
+      "name": "豪华生活",
+      "incomeRange": { "min": 100000, "max": 230000, "unit": "CNY/month" },
+      "badge": { "bg": "#EEEDFE", "fg": "#26215C" },
+      "description": "月支出 ¥10–23万。Sukhumvit 超高级公寓或别墅专业建筑，孩子读顶尖国际学校，保时捷/路虎揽胜，全球商务舱旅行，曼谷精英生活。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["Aman Bangkok（度假屋）", "Four Seasons Private Residences", "Sathorn高级独栋别墅（300㎡+）", "Riverside 河景豪宅"] },
+        "education": { "label": "子女教育", "examples": ["Harrow/Shrewsbury 国际学校顶级班", "私人辅导 + 海外交换计划", "夏令营：伊顿预科"], "examples": ["美国顶级私立学校"] },
+        "food": { "label": "餐饮美食", "examples": ["私人厨师上门", "Gaggan Anand 定期预订", "Michelin Chef 私人晚宴"], "examples": ["Michelin Guide VIP 服务"] },
+        "transport": { "label": "交通出行", "examples": ["保时捷 911 Turbo", "路虎揽胜 SVR", "全职司机（¥8,000/月）"] },
+        "medical": { "label": "医疗健康", "examples": ["Bumrungrad Presidential Suite", "Mayo Clinic 远程会诊", "VIP健康检查套餐"] },
+        "travel": { "label": "旅行娱乐", "examples": ["南非safari", "阿尔卑斯滑雪", "巴黎/伦敦四季酒店"], "examples": ["中东皇家待遇"] },
+        "shopping": { "label": "日用购物", "examples": ["品牌高级定制", "私人购物顾问", "艺术品投资"] }
+      },
+      "pct": [33, 15, 11, 11, 5, 13, 12]
+    },
+    {
+      "id": "t6",
+      "name": "顶奢生活",
+      "incomeRange": { "min": 230000, "max": null, "unit": "CNY/month" },
+      "badge": { "bg": "#FAECE7", "fg": "#4A1B0C" },
+      "description": "月支出 > ¥23万。曼谷最高级公寓或大皇宫旁古宅，孩子读海外顶级寄宿学校，私人飞机/游艇，环球一流酒店，曼谷极少数人才能触碰的生活。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["Mandarin Oriental Bangkok 河景套房长期", "Four Seasons Residences 顶层", "Chao Phraya 河畔独栋古宅改造", "Sathorn 300㎡+ 豪宅"] },
+        "education": { "label": "子女教育", "examples": ["伦敦 Eton College 寄宿", "瑞士 Le Rosey", "美国 Groton/Phillips Andover"], "examples": ["哈佛/剑桥预备"] },
+        "food": { "label": "餐饮美食", "examples": ["米其林三星 Gaggan Anand 专座", "私人宫廷菜大厨", "世界名厨私人晚宴"], "examples": ["全球美食探险"] },
+        "transport": { "label": "交通出行", "examples": ["法拉利/兰博基尼", "私人飞机 charter", "游艇停泊 Pattaya"] },
+        "medical": { "label": "医疗健康", "examples": ["Mayo Clinic VIP 董事级", "私人医生 24/7", "国际医疗撤离保险"] },
+        "travel": { "label": "旅行娱乐", "examples": ["马尔代夫 Soneva Jani", "南极探险船", "北极皇家游轮"], "examples": ["超级游艇全球巡游"] },
+        "shopping": { "label": "日用购物", "examples": ["高级珠宝定制", "艺术品竞拍投资", "私人购物大使"] }
+      },
+      "pct": [38, 12, 10, 12, 4, 14, 10]
+    }
+  ]
+}
