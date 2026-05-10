@@ -512,71 +512,73 @@ async function bootstrap() {
     renderCitySelector();
 
     // Render household model selector
-    const householdSelectorEl = document.getElementById('householdSelector');
-    console.log('householdSelectorEl found:', !!householdSelectorEl);
+    try {
+      const householdSelectorEl = document.getElementById('householdSelector');
 
-    const renderHouseholdModelSelector = () => {
-      const state = getState();
-      console.log('renderHouseholdModelSelector called');
-      console.log('householdSelectorEl exists:', !!householdSelectorEl);
-      console.log('state.householdModels:', state.householdModels);
+      const renderHouseholdModelSelector = () => {
+        const state = getState();
+        const el = document.getElementById('householdSelector');
 
-      if (!householdSelectorEl) {
-        console.error('householdSelector element not found in DOM');
-        return;
+        if (!el) {
+          console.warn('[Household] Element #householdSelector not found');
+          return;
+        }
+
+        if (!state.householdModels || state.householdModels.length === 0) {
+          console.warn('[Household] No household models in state', state.householdModels);
+          el.innerHTML = '<span style="color: #f00;">家庭模型加载失败</span>';
+          return;
+        }
+
+        try {
+          let html = '<span style="font-size: 12px; color: var(--color-text-secondary); white-space: nowrap; margin-right: 6px;">家庭结构：</span>';
+
+          state.householdModels.forEach(model => {
+            const isActive = state.householdModel === model.id;
+            html += `
+              <button class="household-btn" data-model="${model.id}"
+                      title="${model.description}"
+                      style="padding: 6px 14px; border-radius: var(--border-radius-md);
+                             background: ${isActive ? 'var(--color-accent)' : 'var(--color-bg-secondary)'};
+                             color: ${isActive ? 'var(--color-bg)' : 'var(--color-text-primary)'};
+                             border: 0.5px solid ${isActive ? 'var(--color-accent)' : 'var(--color-border-tertiary)'};
+                             font-size: 12px; font-weight: 500; cursor: pointer;
+                             transition: all 0.15s ease;">
+                ${model.label}
+              </button>
+            `;
+          });
+
+          el.innerHTML = html;
+          console.log('[Household] Rendered household selector with', state.householdModels.length, 'models');
+
+          // Add event listeners
+          el.querySelectorAll('.household-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+              e.preventDefault();
+              const modelId = e.target.dataset.model;
+              if (modelId) {
+                setState({ householdModel: modelId });
+                renderHouseholdModelSelector();
+                updateCalculations();
+                scheduleUrlSync();
+              }
+            });
+          });
+        } catch (renderError) {
+          console.error('[Household] Error rendering:', renderError);
+          el.innerHTML = '<span style="color: #f00;">渲染失败: ' + renderError.message + '</span>';
+        }
+      };
+
+      if (householdSelectorEl) {
+        renderHouseholdModelSelector();
+        console.log('[Household] Initial render completed');
+      } else {
+        console.warn('[Household] householdSelector element not found at initialization');
       }
-
-      if (!state.householdModels || state.householdModels.length === 0) {
-        console.error('householdModels not available in state:', state.householdModels);
-        return;
-      }
-
-      let html = '<div style="display: flex; gap: 6px; flex-wrap: wrap; align-items: center;">';
-      html += '<span style="font-size: 12px; color: var(--color-text-secondary); white-space: nowrap;">家庭结构：</span>';
-
-      state.householdModels.forEach(model => {
-        const isActive = state.householdModel === model.id;
-        html += `
-          <button class="household-btn" data-model="${model.id}"
-                  title="${model.description}"
-                  style="padding: 6px 14px; border-radius: var(--border-radius-md);
-                         background: ${isActive ? 'var(--color-accent)' : 'var(--color-bg-secondary)'};
-                         color: ${isActive ? 'var(--color-bg)' : 'var(--color-text-primary)'};
-                         border: 0.5px solid ${isActive ? 'var(--color-accent)' : 'var(--color-border-tertiary)'};
-                         font-size: 12px; font-weight: 500; cursor: pointer;
-                         transition: all 0.15s ease;">
-            ${model.label}
-          </button>
-        `;
-      });
-
-      html += '</div>';
-      householdSelectorEl.innerHTML = html;
-
-      householdSelectorEl.querySelectorAll('.household-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          const modelId = e.target.dataset.model;
-          setState({ householdModel: modelId });
-          renderHouseholdModelSelector();
-          updateCalculations();
-          scheduleUrlSync();
-        });
-      });
-    };
-
-    if (householdSelectorEl) {
-      console.log('About to call renderHouseholdModelSelector');
-      renderHouseholdModelSelector();
-      console.log('renderHouseholdModelSelector completed');
-      console.log('householdSelector innerHTML:', householdSelectorEl.innerHTML.substring(0, 100));
-    } else {
-      console.error('householdSelectorEl is null!');
-      // Try to add test content anyway
-      const testEl = document.getElementById('householdSelector');
-      if (testEl) {
-        console.log('Found householdSelector on second attempt');
-        testEl.innerHTML = '<span style="color: red;">家庭结构选择器测试</span>';
-      }
+    } catch (error) {
+      console.error('[Household] Initialization error:', error);
     }
 
     // Render parameter panel
