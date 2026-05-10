@@ -13,6 +13,13 @@ import { decodeState, syncToUrl } from './url.js';
 
 async function bootstrap() {
   try {
+    // Diagnostic: show bootstrap is running
+    const householdDiag = document.getElementById('householdSelector');
+    if (householdDiag) {
+      householdDiag.innerHTML = '<span style="font-size:11px;color:#0066cc;">【JS运行中】</span>';
+    }
+    console.log('[Bootstrap] Starting...');
+
     // Load all data first
     const data = await loadAllData();
 
@@ -35,9 +42,14 @@ async function bootstrap() {
     const fireDefaults = data.defaults.params;
 
     // Debug: Check if householdModels loaded
-    console.log('Data loaded successfully');
-    console.log('householdModels:', data.householdModels);
-    console.log('householdModels length:', data.householdModels ? data.householdModels.length : 'undefined');
+    console.log('[Data] Data loaded successfully');
+    console.log('[Data] householdModels:', data.householdModels);
+    console.log('[Data] householdModels length:', data.householdModels ? data.householdModels.length : 'undefined');
+
+    // Update diagnostic
+    if (householdDiag) {
+      householdDiag.innerHTML = '<span style="font-size:11px;color:#00aa00;">【数据已加载】</span>';
+    }
 
     setState({
       cityId: selectedCity.id,
@@ -190,20 +202,25 @@ async function bootstrap() {
 
     // Define household model selector renderer BEFORE subscribe
     let renderHouseholdModelSelector = () => {
+      console.log('[renderHouseholdModelSelector] Called');
       try {
         const state = getState();
         const el = document.getElementById('householdSelector');
 
         if (!el) {
-          console.warn('[Household] Element #householdSelector not found');
+          console.error('[Household] ✗ Element #householdSelector not found');
           return;
         }
 
+        console.log('[Household] ✓ Element found, state.householdModels:', state.householdModels);
+
         if (!state.householdModels || state.householdModels.length === 0) {
-          console.warn('[Household] No household models in state', state.householdModels);
-          el.innerHTML = '<span style="color: #f00;">家庭模型加载失败</span>';
+          console.error('[Household] ✗ No household models in state');
+          el.innerHTML = '<span style="color: #f00;">❌ 家庭模型加载失败</span>';
           return;
         }
+
+        console.log('[Household] ✓ Found', state.householdModels.length, 'household models');
 
         try {
           let html = '<span style="font-size: 12px; color: var(--color-text-secondary); white-space: nowrap; margin-right: 6px;">家庭结构：</span>';
