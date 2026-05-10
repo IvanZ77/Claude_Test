@@ -13,12 +13,12 @@ import { decodeState, syncToUrl } from './url.js';
 
 async function bootstrap() {
   try {
-    // Mark JS as loaded
+    // Load all data first
+    const data = await loadAllData();
+
+    // Mark JS as loaded after data is ready
     document.body.classList.remove('js-pending');
     document.body.classList.add('js');
-
-    // Load all data
-    const data = await loadAllData();
     const defaultParams = data.defaults.params;
     const shanghaiTiers = data.cityData.shanghai.tiers;
 
