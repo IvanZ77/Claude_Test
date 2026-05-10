@@ -97,7 +97,8 @@ export function renderParamPanel(containerEl, defaults, params, onParamChange) {
         const displayValue = isPercentage ? (numValue * 100).toFixed(1) : numValue.toFixed(paramKey === 'fxUsdCny' ? 2 : 3);
         number.value = displayValue;
       }
-      const newParams = { ...params, [paramKey]: numValue };
+      // Ensure all existing params are preserved and new value is added
+      const newParams = { ...defaults.params, ...params, [paramKey]: numValue };
       onParamChange(newParams);
       updateParamBadge(containerEl, defaults, newParams);
     };
