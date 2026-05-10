@@ -595,8 +595,14 @@ async function bootstrap() {
     renderCitySelector();
 
     // Initialize household model selector (function defined earlier before subscribe)
+    console.log('[Init] About to initialize household selector');
     const householdSelectorEl = document.getElementById('householdSelector');
+    console.log('[Init] householdSelectorEl:', householdSelectorEl);
     if (householdSelectorEl) {
+      console.log('[Init] Calling renderHouseholdModelSelector()');
+      const currentState = getState();
+      console.log('[Init] Current state.householdModels:', currentState.householdModels);
+      console.log('[Init] Current state.householdModel:', currentState.householdModel);
       renderHouseholdModelSelector();
       console.log('[Household] Initial render completed');
     } else {
