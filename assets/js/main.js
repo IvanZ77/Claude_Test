@@ -147,7 +147,19 @@ async function bootstrap() {
     // Render tier panel
     function renderTierPanel() {
       const state = getState();
+
+      // Safety checks
+      if (!state.cityTiers || !Array.isArray(state.cityTiers) || state.cityTiers.length === 0) {
+        console.warn('[renderTierPanel] No city tiers loaded yet');
+        return;
+      }
+
       const tier = state.cityTiers[state.activeTierIndex];
+      if (!tier) {
+        console.warn('[renderTierPanel] No tier at index', state.activeTierIndex);
+        return;
+      }
+
       const variant = tier.variants ? tier.variants[state.householdModel] : null;
 
       if (!variant) {
@@ -268,36 +280,62 @@ async function bootstrap() {
     // Subscribe to state changes
     let lastHouseholdModel = null;
     subscribe((state) => {
-      renderMetrics();
-      renderTierStrip();
-      renderTierPanel();
+      try {
+        renderMetrics();
+      } catch (e) {
+        console.error('[Subscribe] Error in renderMetrics:', e);
+      }
+
+      try {
+        renderTierStrip();
+      } catch (e) {
+        console.error('[Subscribe] Error in renderTierStrip:', e);
+      }
+
+      try {
+        renderTierPanel();
+      } catch (e) {
+        console.error('[Subscribe] Error in renderTierPanel:', e);
+      }
 
       // Re-render household selector if it exists and is available
-      if (renderHouseholdModelSelector && state.householdModels) {
-        renderHouseholdModelSelector();
+      try {
+        if (renderHouseholdModelSelector && state.householdModels) {
+          renderHouseholdModelSelector();
+        }
+      } catch (e) {
+        console.error('[Subscribe] Error in renderHouseholdModelSelector:', e);
       }
 
       // Update comparison grid when monthly CNY changes
-      if (state.compareMode && state.monthlyCNY) {
-        renderCompareCitiesGrid(
-          compareCitiesContainerEl,
-          state.selectedCities.map(id => data.cityData[id]),
-          state.monthlyCNY,
-          formatNumber
-        );
+      try {
+        if (state.compareMode && state.monthlyCNY) {
+          renderCompareCitiesGrid(
+            compareCitiesContainerEl,
+            state.selectedCities.map(id => data.cityData[id]),
+            state.monthlyCNY,
+            formatNumber
+          );
+        }
+      } catch (e) {
+        console.error('[Subscribe] Error in renderCompareCitiesGrid:', e);
       }
 
       // Update FIRE outputs when monthly CNY changes
-      if (state.fire && state.monthlyCNY) {
-        const annualExpenseCNY = state.monthlyCNY * 12;
-        const fn = computeFireNumber(annualExpenseCNY, state.params.withdrawalRate);
-        const updatedFire = { ...state.fire, fireNumber: fn };
-        updateFireOutputs(fireSectionEl, {
-          fireNumber: fn,
-          yearsToFire: state.fire.yearsToFire,
-          coastFireAmount: state.fire.coastFireAmount,
-          tier: state.fire.tier
-        }, formatNumber);
+      try {
+        if (state.fire && state.monthlyCNY) {
+          const annualExpenseCNY = state.monthlyCNY * 12;
+          const fn = computeFireNumber(annualExpenseCNY, state.params.withdrawalRate);
+          const updatedFire = { ...state.fire, fireNumber: fn };
+          updateFireOutputs(fireSectionEl, {
+            fireNumber: fn,
+            yearsToFire: state.fire.yearsToFire,
+            coastFireAmount: state.fire.coastFireAmount,
+            tier: state.fire.tier
+          }, formatNumber);
+        }
+      } catch (e) {
+        console.error('[Subscribe] Error in updateFireOutputs:', e);
       }
     });
 
