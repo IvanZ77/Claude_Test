@@ -419,19 +419,45 @@ async function bootstrap() {
     // Render city selector
     const renderCitySelector = () => {
       const state = getState();
-      citySelectorEl.innerHTML = data.availableCities
-        .map(city => {
-          const isActive = state.cityId === city.id;
+      const groupedCities = {};
+
+      data.availableCities.forEach(city => {
+        if (!groupedCities[city.country]) {
+          groupedCities[city.country] = [];
+        }
+        groupedCities[city.country].push(city);
+      });
+
+      const countryOrder = ['中国', '中国香港', '日本', '泰国', '美国', '越南', '英国', '法国'];
+      const sortedCountries = Object.keys(groupedCities).sort((a, b) => {
+        const aIndex = countryOrder.indexOf(a);
+        const bIndex = countryOrder.indexOf(b);
+        return (aIndex === -1 ? 999 : aIndex) - (bIndex === -1 ? 999 : bIndex);
+      });
+
+      citySelectorEl.innerHTML = sortedCountries
+        .map(country => {
+          const cities = groupedCities[country];
           return `
-            <button class="city-btn${isActive ? ' is-active' : ''}" data-city="${city.id}"
-                    style="padding: 6px 14px; border-radius: var(--border-radius-md);
-                           background: ${isActive ? 'var(--color-accent)' : 'var(--color-bg-secondary)'};
-                           color: ${isActive ? 'var(--color-bg)' : 'var(--color-text-primary)'};
-                           border: 0.5px solid ${isActive ? 'var(--color-accent)' : 'var(--color-border-tertiary)'};
-                           font-size: 13px; font-weight: 500; cursor: pointer;
-                           transition: all 0.15s ease;">
-              ${city.name}
-            </button>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <div style="font-size: 11px; color: var(--color-text-tertiary); letter-spacing: 0.05em; text-transform: uppercase; margin: 0 0 4px 4px;">${country}</div>
+              <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                ${cities.map(city => {
+                  const isActive = state.cityId === city.id;
+                  return `
+                    <button class="city-btn" data-city="${city.id}"
+                            style="padding: 6px 14px; border-radius: var(--border-radius-md);
+                                   background: ${isActive ? 'var(--color-accent)' : 'var(--color-bg-secondary)'};
+                                   color: ${isActive ? 'var(--color-bg)' : 'var(--color-text-primary)'};
+                                   border: 0.5px solid ${isActive ? 'var(--color-accent)' : 'var(--color-border-tertiary)'};
+                                   font-size: 13px; font-weight: 500; cursor: pointer;
+                                   transition: all 0.15s ease;">
+                      ${city.name}
+                    </button>
+                  `;
+                }).join('')}
+              </div>
+            </div>
           `;
         })
         .join('');
