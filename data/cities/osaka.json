@@ -74,7 +74,7 @@
         "1a": {
           "incomeRange": {
             "min": 0,
-            "max": 6750,
+            "max": 7500,
             "unit": "CNY/month"
           },
           "pct": [
@@ -90,7 +90,7 @@
         "2a": {
           "incomeRange": {
             "min": 0,
-            "max": 11250,
+            "max": 12000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -122,7 +122,7 @@
         "2a2c": {
           "incomeRange": {
             "min": 0,
-            "max": 17250,
+            "max": 18000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -205,8 +205,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 15000,
-            "max": 14400,
+            "min": 7500,
+            "max": 16000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -221,8 +221,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 15000,
-            "max": 24000,
+            "min": 12000,
+            "max": 25600,
             "unit": "CNY/month"
           },
           "pct": [
@@ -253,8 +253,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 15000,
-            "max": 36800,
+            "min": 18000,
+            "max": 38400,
             "unit": "CNY/month"
           },
           "pct": [
@@ -337,8 +337,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 32000,
-            "max": 32400,
+            "min": 16000,
+            "max": 36000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -353,8 +353,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 32000,
-            "max": 54000,
+            "min": 25600,
+            "max": 57600,
             "unit": "CNY/month"
           },
           "pct": [
@@ -385,8 +385,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 32000,
-            "max": 82800,
+            "min": 38400,
+            "max": 86400,
             "unit": "CNY/month"
           },
           "pct": [
@@ -471,8 +471,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 72000,
-            "max": 69750,
+            "min": 36000,
+            "max": 77500,
             "unit": "CNY/month"
           },
           "pct": [
@@ -487,8 +487,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 72000,
-            "max": 116250,
+            "min": 57600,
+            "max": 124000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -519,8 +519,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 72000,
-            "max": 178250,
+            "min": 86400,
+            "max": 186000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -606,8 +606,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 155000,
-            "max": 162000,
+            "min": 77500,
+            "max": 180000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -622,8 +622,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 155000,
-            "max": 270000,
+            "min": 124000,
+            "max": 288000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -654,8 +654,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 155000,
-            "max": 414000,
+            "min": 186000,
+            "max": 432000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -736,8 +736,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 360000,
-            "max": 450000,
+            "min": 180000,
+            "max": 500000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -752,8 +752,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 360000,
-            "max": 749999,
+            "min": 288000,
+            "max": 799999,
             "unit": "CNY/month"
           },
           "pct": [
@@ -784,8 +784,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 360000,
-            "max": 1149999,
+            "min": 432000,
+            "max": 1199999,
             "unit": "CNY/month"
           },
           "pct": [
