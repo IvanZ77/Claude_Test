@@ -25,9 +25,18 @@
       "name": "东京",
       "country": "日本",
       "file": "cities/tokyo.json",
-      "currency": "JPY",
-      "fxToCNY": 0.048,
-      "available": false
+      "currency": "CNY",
+      "fxToCNY": 1.0,
+      "available": true
+    },
+    {
+      "id": "seattle",
+      "name": "西雅图",
+      "country": "美国",
+      "file": "cities/seattle.json",
+      "currency": "CNY",
+      "fxToCNY": 1.0,
+      "available": true
     }
   ]
 }

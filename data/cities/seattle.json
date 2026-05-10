@@ -1,0 +1,110 @@
+{
+  "id": "seattle",
+  "name": "西雅图",
+  "currency": "CNY",
+  "schemaVersion": 1,
+  "tiers": [
+    {
+      "id": "t1",
+      "name": "拮据生活",
+      "incomeRange": { "min": 0, "max": 18000, "unit": "CNY/month" },
+      "badge": { "bg": "#E6F1FB", "fg": "#0C447C" },
+      "description": "月支出 < $2,500（约¥1.8万）。住郊区老房或共享，孩子上公立学校，自己做饭为主，出行靠公交巴士，生活拮据。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["Renton 郊区两卧公寓", "SeaTac 机场附近老房", "Kent 社区住房", "South Seattle 公寓共享"] },
+        "education": { "label": "子女教育", "examples": ["Seattle Public Schools 公立学校（免费）", "Highline 学区", "社区大学早期开始课程"] },
+        "food": { "label": "餐饮美食", "examples": ["Fred Meyer 超市", "Costco 会员店", "Taco Bell", "麦当劳"] },
+        "transport": { "label": "交通出行", "examples": ["King County 公交卡", "Social Security 补贴", "二手老爷车"], "examples": ["自行车"] },
+        "medical": { "label": "医疗健康", "examples": ["Virginia Mason 诊所", "Medicaid（低收入医保）", "Community Health Plan"] },
+        "travel": { "label": "旅行娱乐", "examples": ["Green Lake 免费公园", "Discovery Park 远足", "亲戚家周末"] },
+        "shopping": { "label": "日用购物", "examples": ["Walmart 沃尔玛", "Target", "Goodwill 旧货店"] }
+      },
+      "pct": [45, 6, 20, 8, 6, 5, 10]
+    },
+    {
+      "id": "t2",
+      "name": "基本小康",
+      "incomeRange": { "min": 18000, "max": 35000, "unit": "CNY/month" },
+      "badge": { "bg": "#EAF3DE", "fg": "#27500A" },
+      "description": "月支出 $2,500–$5,000（¥1.8万–3.5万）。住城市边缘或郊区新房，孩子读公立学校，能偶尔外食，能去本州旅游。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["Shoreline 郊区3卧房屋租赁", "Lynnwood 新建区公寓", "Bellevue 中产社区", "Tacoma 城市边缘"] },
+        "education": { "label": "子女教育", "examples": ["Lake Washington 学区（顶级公立）", "Seattle Prep 私立 $22,000/年", "Lakeside School 菁英 $30,000/年"] },
+        "food": { "label": "餐饮美食", "examples": ["Whole Foods", "Safeway 超市", "Chipotle", "当地中餐厅", "Pizza Hut"] },
+        "transport": { "label": "交通出行", "examples": ["2008年 本田思域二手车", "燃油+保险+停车 $400/月", "Sound Transit Light Rail"] },
+        "medical": { "label": "医疗健康", "examples": ["Premera Blue Cross 中档保险", "Evergreen Health 社区医院"] },
+        "travel": { "label": "旅行娱乐", "examples": ["Portland 周末游", "Mount Rainier 爬山", "San Juan Islands 轮渡", "Oregon Coast 自驾"] },
+        "shopping": { "label": "日用购物", "examples": ["Nordstrom 折扣店", "The Outlet 奥特莱斯", "Amazon Fresh"] }
+      },
+      "pct": [42, 10, 18, 8, 6, 8, 8]
+    },
+    {
+      "id": "t3",
+      "name": "舒适生活",
+      "incomeRange": { "min": 35000, "max": 75000, "unit": "CNY/month" },
+      "badge": { "bg": "#FAEEDA", "fg": "#633806" },
+      "description": "月支出 $5,000–$10,800（¥3.5万–7.5万）。住西雅图市区好区或Bellevue，孩子可读一流私立或国际学校，有车，能去美国西部度假。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["Queen Anne 山丘社区", "Ballard 市区不错房屋", "Madison Valley 宁静社区", "Bellevue Premium 社区"] },
+        "education": { "label": "子女教育", "examples": ["Lakeside School 中学部 $36,000/年", "University of Puget Sound Lab School", "International School of Seattle $32,000/年", "Seattle Academy"] },
+        "food": { "label": "餐饮美食", "examples": ["Delancey（披萨）", "Canlis（米其林）", "Shiro's Sushi", "Sitka & Spruce", "Matt's in the Market"] },
+        "transport": { "label": "交通出行", "examples": ["2015年 丰田RAV4/本田CRV", "燃油+停车+保险 $700/月", "Uber 偶尔"] },
+        "medical": { "label": "医疗健康", "examples": ["Aetna PPO 中上保险", "Swedish Medical Center 会员", "UW Medicine"] },
+        "travel": { "label": "旅行娱乐", "examples": ["San Francisco 周末", "Maui 冬天度假", "Yosemite 露营", "Banff 加拿大滑雪"] },
+        "shopping": { "label": "日用购物", "examples": ["Nordstrom 市中心店", "Urban Outfitters", "REI 户外俱乐部"] }
+      },
+      "pct": [38, 15, 15, 10, 6, 10, 6]
+    },
+    {
+      "id": "t4",
+      "name": "品质生活",
+      "incomeRange": { "min": 75000, "max": 160000, "unit": "CNY/month" },
+      "badge": { "bg": "#FBEAF0", "fg": "#4B1528" },
+      "description": "月支出 $10,800–$23,000（¥7.5万–16万）。Bellevue 豪宅或西雅图高档社区，孩子读顶级私立学校，宝马/奔驰，每年海外度假。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["Bellevue High-End Estate", "Medina 湖景别墅", "Madison Park 滨水豪宅", "West Seattle 海景高档社区"] },
+        "education": { "label": "子女教育", "examples": ["Lakeside School 全阶段 $36–40,000/年", "Seattle Academy of Arts & Sciences $35,000/年", "University of Puget Sound Lab School 全段"] },
+        "food": { "label": "餐饮美食", "examples": ["The Herbfarm（米其林）", "Canlis VIP 包间", "Altura Fine Dining", "III Forks Prime Steakhouse"] },
+        "transport": { "label": "交通出行", "examples": ["宝马 X5/奔驰 GLE", "保时捷 Cayenne", "停车+油费+保险 $1,500/月"] },
+        "medical": { "label": "医疗健康", "examples": ["Premera Blue Shield VIP", "Swedish Medical VIP 会员", "Henry Ford Health 计划"] },
+        "travel": { "label": "旅行娱乐", "examples": ["Hawaii 豪华酒店", "坎昆 All-Inclusive", "New Zealand 自驾", "欧洲 14 天自由行"] },
+        "shopping": { "label": "日用购物", "examples": ["Nordstrom 高级专柜", "Bellevue Square 设计师店", "Seattle Art Museum 会员"] }
+      },
+      "pct": [32, 18, 13, 10, 6, 12, 9]
+    },
+    {
+      "id": "t5",
+      "name": "豪华生活",
+      "incomeRange": { "min": 160000, "max": 360000, "unit": "CNY/month" },
+      "badge": { "bg": "#EEEDFE", "fg": "#26215C" },
+      "description": "月支出 $23,000–$52,000（¥16万–36万）。Mercer Island 或 Bellevue 顶级湖景别墅，孩子读顶尖私立，保时捷/路虎揽胜，全球商务舱旅行。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["Mercer Island 水边豪宅", "Bellevue Estates Golf Club 社区", "Madison Park 超一级房产", "Windermere/Wallingford 历史豪宅"] },
+        "education": { "label": "子女教育", "examples": ["Lakeside School 全额奖学金选手辅导", "Charles Wright Academy（Tacoma）$35,000/年", "美国顶级寄宿学校准备：Andover/Choate"] },
+        "food": { "label": "餐饮美食", "examples": ["Eleven Madison Park NYC 年卡", "Local Michelin Chefs 预订", "Private Dining Club 会员", "French Laundry 定期预订"] },
+        "transport": { "label": "交通出行", "examples": ["保时捷 911 Turbo", "路虎 Range Rover", "Tesla Model X", "专业驾驶员顾问"] },
+        "medical": { "label": "医疗健康", "examples": ["Aetna Executive Health Screening", "Mayo Clinic Platinum Member", "International Medical SOS"] },
+        "travel": { "label": "旅行娱乐", "examples": ["夏威夷 Four Seasons/Ritz", "日本京都/东京上层酒店", "瑞士Zermatt 滑雪", "南法蔚蓝海岸"] },
+        "shopping": { "label": "日用购物", "examples": ["Saks Fifth Avenue Platinum", "Private Shopping by Nordstrom", "Design Within Reach VIP"] }
+      },
+      "pct": [35, 16, 12, 11, 5, 13, 8]
+    },
+    {
+      "id": "t6",
+      "name": "顶奢生活",
+      "incomeRange": { "min": 360000, "max": null, "unit": "CNY/month" },
+      "badge": { "bg": "#FAECE7", "fg": "#4A1B0C" },
+      "description": "月支出 > $52,000（¥36万+）。Mercer Island 或 Bellevue 顶级滨水庄园，孩子就读海外顶级寄宿学校，私人飞机/游艇，环球旅行。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["Mercer Island 港湾顶级地产（2千万+）", "Bellevue Medina 类似马斯克豪宅", "Lake Union 浮岛别墅", "Sammamish 百亩私产庄园"] },
+        "education": { "label": "子女教育", "examples": ["伦敦 Eton College 寄宿", "瑞士 Le Rosey 国际寄宿学校", "美国 Groton/St. Paul's", "哈佛/斯坦福大学基金会推荐"] },
+        "food": { "label": "餐饮美食", "examples": ["私人厨师常驻", "米其林三星 Noma/Alinea 包场", "世界名厨私人晚宴", "Michelin Guide VIP Concierge"] },
+        "transport": { "label": "交通出行", "examples": ["Porsche 911 Turbo S", "法拉利/兰博基尼", "私人飞机 Gulfstream G650", "游艇停泊费 $2,000+/月"] },
+        "medical": { "label": "医疗健康", "examples": ["Mayo Clinic 董事级 VIP", "波士顿麻省总医院 远程咨询", "私人医生 24/7 待命", "国际医疗撤离保险"] },
+        "travel": { "label": "旅行娱乐", "examples": ["Maldives Soneva Jani 私人岛屿", "南极远征探险船", "中东皇家套房", "北极 Luxury Yacht 冒险"] },
+        "shopping": { "label": "日用购物", "examples": ["Christie's/Sotheby's 拍卖会竞标", "Cartier/Harry Winston VIP 高级定制", "艺术品收藏顾问"] }
+      },
+      "pct": [40, 12, 10, 12, 4, 14, 8]
+    }
+  ]
+}
