@@ -5,6 +5,8 @@ import { computeMonthlyIncome } from './calc/income.js';
 import { matchTier } from './calc/tier.js';
 import { renderCompareTiers } from './render/compare-tiers.js';
 import { initBudgetChart, updateBudgetChart, updateChartBorderColor } from './render/chart-budget.js';
+import { renderParamPanel, updateParamBadge } from './render/param-panel.js';
+import { decodeState, syncToUrl } from './url.js';
 
 async function bootstrap() {
   try {
@@ -17,14 +19,17 @@ async function bootstrap() {
     const defaultParams = data.defaults.params;
     const shanghaiTiers = data.cityData.shanghai.tiers;
 
+    // Decode state from URL
+    const urlState = decodeState(location.search, data.defaults);
+
     // Initialize state
     setState({
       cityId: 'shanghai',
       cityData: data.cityData.shanghai,
       cityTiers: shanghaiTiers,
       categories: data.categories,
-      sliderValue: 35,
-      params: { ...defaultParams },
+      sliderValue: urlState.sliderValue,
+      params: { ...urlState.params },
       monthlyCNY: 0,
       activeTierIndex: 0
     });
@@ -41,6 +46,7 @@ async function bootstrap() {
     const legendEl = document.getElementById('leg');
     const chartCanvasEl = document.getElementById('bc');
     const compareGridEl = document.getElementById('compareGrid');
+    const paramPanelEl = document.getElementById('paramPanel');
     const tsBars = document.querySelectorAll('.tier-strip-bars .ts');
     const tsLabels = document.querySelectorAll('.tier-strip-labels > div');
     const copyBtn = document.getElementById('copyBtn');
@@ -132,19 +138,30 @@ async function bootstrap() {
       renderTierPanel();
     });
 
+    // Debounced URL sync
+    let urlSyncTimeout;
+    const scheduleUrlSync = () => {
+      clearTimeout(urlSyncTimeout);
+      urlSyncTimeout = setTimeout(() => {
+        syncToUrl(getState(), data.defaults);
+      }, 150);
+    };
+
     // Slider event
     sliderEl.addEventListener('input', (e) => {
       const newValue = parseInt(e.target.value);
       setState({ sliderValue: newValue });
       updateCalculations();
-
-      // Update URL
-      try {
-        const u = new URL(location.href);
-        u.searchParams.set('v', newValue);
-        history.replaceState(null, '', u);
-      } catch (_) {}
+      scheduleUrlSync();
     });
+
+    // Parameter change handler
+    const handleParamChange = (newParams) => {
+      setState({ params: newParams });
+      updateCalculations();
+      scheduleUrlSync();
+      updateParamBadge(paramPanelEl, data.defaults, newParams);
+    };
 
     // Copy button
     copyBtn.addEventListener('click', async () => {
@@ -175,16 +192,11 @@ async function bootstrap() {
       }
     });
 
-    // Read initial state from URL
-    const params = new URLSearchParams(location.search);
-    const vRaw = params.get('v');
-    if (vRaw !== null) {
-      const vNum = parseInt(vRaw, 10);
-      if (!isNaN(vNum) && vNum >= 0 && vNum <= 100) {
-        setState({ sliderValue: vNum });
-        sliderEl.value = vNum;
-      }
-    }
+    // Update slider to match state
+    sliderEl.value = getState().sliderValue;
+
+    // Initialize parameter panel
+    renderParamPanel(paramPanelEl, data.defaults, getState().params, handleParamChange);
 
     // Initialize chart
     initBudgetChart(chartCanvasEl, data.categories, shanghaiTiers[1].pct);
