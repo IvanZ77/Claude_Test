@@ -172,6 +172,24 @@
       "currency": "CNY",
       "fxToCNY": 1.0,
       "available": true
+    },
+    {
+      "id": "wuhan",
+      "name": "武汉",
+      "country": "中国",
+      "file": "cities/wuhan.json",
+      "currency": "CNY",
+      "fxToCNY": 1.0,
+      "available": true
+    },
+    {
+      "id": "guangzhou",
+      "name": "广州",
+      "country": "中国",
+      "file": "cities/guangzhou.json",
+      "currency": "CNY",
+      "fxToCNY": 1.0,
+      "available": true
     }
   ]
 }
