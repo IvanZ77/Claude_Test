@@ -258,7 +258,7 @@
 .chart-wrap {
   position: relative;
   width: 100%;
-  max-width: 280px;
+  max-width: 360px;
   margin: 0 auto;
   aspect-ratio: 1 / 1;
 }

@@ -10,33 +10,74 @@ const chartLabelsPlugin = {
     const radius = Math.min(width, height) / 2;
     const cutoutPercentage = 0.64;
     const outerRadius = radius;
-    const innerRadius = radius * cutoutPercentage;
-    const midRadius = (outerRadius + innerRadius) / 2;
+    const lineStartRadius = outerRadius + 8;
+    const lineEndDistance = outerRadius + 35;
 
-    ctx.save();
-    ctx.font = 'bold 12px var(--font-sans, -apple-system, sans-serif)';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillStyle = getComputedStyle(document.documentElement)
+    const textColor = getComputedStyle(document.documentElement)
       .getPropertyValue('--color-text-primary')
       .trim() || '#000';
+
+    ctx.save();
 
     const dataset = data.datasets[0];
     const total = dataset.data.reduce((a, b) => a + b, 0);
     let currentAngle = -Math.PI / 2;
 
+    const labels = [];
+
+    // First pass: collect all label data
     data.labels.forEach((label, i) => {
       const value = dataset.data[i];
       const sliceAngle = (value / total) * 2 * Math.PI;
       const labelAngle = currentAngle + sliceAngle / 2;
 
-      const labelX = centerX + Math.cos(labelAngle) * midRadius;
-      const labelY = centerY + Math.sin(labelAngle) * midRadius;
-
       const percentage = Math.round((value / total) * 100);
-      ctx.fillText(`${label} ${percentage}%`, labelX, labelY);
+
+      // Calculate line start point (at pie edge)
+      const lineStartX = centerX + Math.cos(labelAngle) * lineStartRadius;
+      const lineStartY = centerY + Math.sin(labelAngle) * lineStartRadius;
+
+      // Calculate line end point and label position
+      const lineEndX = centerX + Math.cos(labelAngle) * lineEndDistance;
+      const lineEndY = centerY + Math.sin(labelAngle) * lineEndDistance;
+
+      labels.push({
+        label,
+        percentage,
+        angle: labelAngle,
+        lineStartX,
+        lineStartY,
+        lineEndX,
+        lineEndY
+      });
 
       currentAngle += sliceAngle;
+    });
+
+    // Second pass: draw lines and labels
+    labels.forEach(item => {
+      // Draw line
+      ctx.strokeStyle = getComputedStyle(document.documentElement)
+        .getPropertyValue('--color-border-tertiary')
+        .trim() || '#ccc';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(item.lineStartX, item.lineStartY);
+      ctx.lineTo(item.lineEndX, item.lineEndY);
+      ctx.stroke();
+
+      // Draw label text
+      const labelText = `${item.label} ${item.percentage}%`;
+      const isRightSide = Math.cos(item.angle) > 0;
+
+      ctx.font = '12px var(--font-sans, -apple-system, sans-serif)';
+      ctx.fillStyle = textColor;
+      ctx.textBaseline = 'middle';
+      ctx.textAlign = isRightSide ? 'left' : 'right';
+
+      // Add small gap after line
+      const textX = isRightSide ? item.lineEndX + 4 : item.lineEndX - 4;
+      ctx.fillText(labelText, textX, item.lineEndY);
     });
 
     ctx.restore();
