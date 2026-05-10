@@ -143,10 +143,14 @@ async function bootstrap() {
 
       itemsEl.innerHTML = Object.entries(tier.items)
         .map(([catId, catData]) => {
+          const catIndex = state.categories.findIndex(c => c.id === catId);
+          const percentage = catIndex >= 0 ? tier.pct[catIndex] : 0;
+          const monthlySpending = Math.round(state.monthlyCNY * percentage / 100);
           return `
             <div class="tier-item">
               <div class="tier-item-row">
                 <span class="tier-item-cat">${catData.label}</span>
+                <span class="tier-item-spending">¥${formatNumber(monthlySpending)}/月</span>
               </div>
               <div class="tier-item-ex">${catData.examples.join(' &nbsp;·&nbsp; ')}</div>
             </div>
