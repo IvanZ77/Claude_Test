@@ -10,6 +10,12 @@ export function encodeState(state, defaults) {
   // Slider value (required)
   params.set('a', state.sliderValue);
 
+  // Household model (if not default)
+  const defaultHouseholdModel = defaults.params.defaultHouseholdModel || '2a1c';
+  if (state.householdModel && state.householdModel !== defaultHouseholdModel) {
+    params.set('hm', state.householdModel);
+  }
+
   // Custom parameters (only if different from default)
   const paramKeys = ['withdrawalRate', 'taxRate', 'fxUsdCny', 'annualReturnRate', 'inflationRate'];
   const paramShortcuts = {
@@ -37,6 +43,7 @@ export function decodeState(searchString, defaults) {
 
   const state = {
     sliderValue: 35, // default
+    householdModel: defaults.params.defaultHouseholdModel || '2a1c',
     params: { ...defaults.params }
   };
 
@@ -47,6 +54,12 @@ export function decodeState(searchString, defaults) {
     if (!isNaN(aNum) && aNum >= 0 && aNum <= 100) {
       state.sliderValue = aNum;
     }
+  }
+
+  // Household model
+  const hmVal = params.get('hm');
+  if (hmVal) {
+    state.householdModel = hmVal;
   }
 
   // Custom parameters

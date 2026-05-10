@@ -7,104 +7,793 @@
     {
       "id": "t1",
       "name": "拮据生活",
-      "incomeRange": { "min": 0, "max": 18000, "unit": "CNY/month" },
-      "badge": { "bg": "#E6F1FB", "fg": "#0C447C" },
+      "badge": {
+        "bg": "#E6F1FB",
+        "fg": "#0C447C"
+      },
       "description": "月支出 HK$1.5万（约¥1.8万）。住公屋或老式唐楼，孩子上官立小学（免费），日常自己做饭，出行靠地铁，生活拮据但平稳。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["天水围公屋单位", "元朗旧唐楼", "屯门旧楼共享", "葵涌公共房屋"] },
-        "education": { "label": "子女教育", "examples": ["官立小学（免费）", "香港教育学院附属学校", "基层学生津贴"] },
-        "food": { "label": "餐饮美食", "examples": ["茶餐厅大众套餐", "面档", "街边小食", "屋邨美食广场"] },
-        "transport": { "label": "交通出行", "examples": ["八达通地铁卡", "电车（2元）", "巴士一日券"] },
-        "medical": { "label": "医疗健康", "examples": ["公立医院（免费/少额）", "社区健康中心", "政府医保"] },
-        "travel": { "label": "旅行娱乐", "examples": ["维多利亚港免费", "郊野公园爬山", "大澳渔村一日游"] },
-        "shopping": { "label": "日用购物", "examples": ["屈臣氏折扣", "二手市集", "万宁超市"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "天水围公屋单位",
+            "元朗旧唐楼",
+            "屯门旧楼共享",
+            "葵涌公共房屋"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "官立小学（免费）",
+            "香港教育学院附属学校",
+            "基层学生津贴"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "茶餐厅大众套餐",
+            "面档",
+            "街边小食",
+            "屋邨美食广场"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "八达通地铁卡",
+            "电车（2元）",
+            "巴士一日券"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "公立医院（免费/少额）",
+            "社区健康中心",
+            "政府医保"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "维多利亚港免费",
+            "郊野公园爬山",
+            "大澳渔村一日游"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "屈臣氏折扣",
+            "二手市集",
+            "万宁超市"
+          ]
+        }
       },
-      "pct": [45, 8, 22, 8, 5, 5, 7]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 0,
+            "max": 8100,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            53,
+            0,
+            22,
+            8,
+            5,
+            5,
+            7
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 0,
+            "max": 13500,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            53,
+            0,
+            22,
+            8,
+            5,
+            5,
+            7
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 0,
+            "max": 18000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            45,
+            8,
+            22,
+            8,
+            5,
+            5,
+            7
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 0,
+            "max": 20700,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            37,
+            16,
+            22,
+            8,
+            5,
+            5,
+            7
+          ]
+        }
+      }
     },
     {
       "id": "t2",
       "name": "基本小康",
-      "incomeRange": { "min": 18000, "max": 36000, "unit": "CNY/month" },
-      "badge": { "bg": "#EAF3DE", "fg": "#27500A" },
+      "badge": {
+        "bg": "#EAF3DE",
+        "fg": "#27500A"
+      },
       "description": "月支出 HK$2.5–3万（¥2.8–3.6万）。住屯门/元朗新楼或九龙一般楼宇，孩子读国际学校或直资学校，能偶尔外食，能去台湾/泰国周末游。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["屯门兆康苑高层", "元朗朗屏邨新房", "葵涌葵俊苑中层", "沙田新城市广场"] },
-        "education": { "label": "子女教育", "examples": ["新加坡国际学校HK分校 ¥15-18万/年", "汉基国际学校 ¥17-20万/年", "弘立书院 ¥20-23万/年"] },
-        "food": { "label": "餐饮美食", "examples": ["知名茶楼点心", "日本连锁拉面", "越南河粉", "港式烧烤"] },
-        "transport": { "label": "交通出行", "examples": ["八达通月卡", "新界的士", "小巴"], "examples": ["偶尔Uber"] },
-        "medical": { "label": "医疗健康", "examples": ["医管局诊所", "私立综合医院普通门诊", "保诚保险基础"] },
-        "travel": { "label": "旅行娱乐", "examples": ["台湾3日游", "泰国曼谷", "日本大阪周末", "越南河内"] },
-        "shopping": { "label": "日用购物", "examples": ["屏东商场", "新世纪广场", "东荟城Outlets"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "屯门兆康苑高层",
+            "元朗朗屏邨新房",
+            "葵涌葵俊苑中层",
+            "沙田新城市广场"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "新加坡国际学校HK分校 ¥15-18万/年",
+            "汉基国际学校 ¥17-20万/年",
+            "弘立书院 ¥20-23万/年"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "知名茶楼点心",
+            "日本连锁拉面",
+            "越南河粉",
+            "港式烧烤"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "偶尔Uber"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "医管局诊所",
+            "私立综合医院普通门诊",
+            "保诚保险基础"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "台湾3日游",
+            "泰国曼谷",
+            "日本大阪周末",
+            "越南河内"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "屏东商场",
+            "新世纪广场",
+            "东荟城Outlets"
+          ]
+        }
       },
-      "pct": [40, 12, 18, 8, 5, 10, 7]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 18000,
+            "max": 16200,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            52,
+            0,
+            18,
+            8,
+            5,
+            10,
+            7
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 18000,
+            "max": 27000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            52,
+            0,
+            18,
+            8,
+            5,
+            10,
+            7
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 18000,
+            "max": 36000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            40,
+            12,
+            18,
+            8,
+            5,
+            10,
+            7
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 18000,
+            "max": 41400,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            28,
+            24,
+            18,
+            8,
+            5,
+            10,
+            7
+          ]
+        }
+      }
     },
     {
       "id": "t3",
       "name": "舒适生活",
-      "incomeRange": { "min": 36000, "max": 75000, "unit": "CNY/month" },
-      "badge": { "bg": "#FAEEDA", "fg": "#633806" },
+      "badge": {
+        "bg": "#FAEEDA",
+        "fg": "#633806"
+      },
       "description": "月支出 HK$5–6万（¥4.3–5.8万）。住九龙塘/沙田高档社区或港岛中环，孩子读顶级国际学校，有私家车或专属司机，能去欧洲度假。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["九龙塘富豪花园", "沙田君临天下高层", "港岛东半山豪宅", "湾仔骆克道公寓"] },
-        "education": { "label": "子女教育", "examples": ["德瑞国际学校 ¥25-30万/年", "英基学校 ¥22-28万/年", "圣保罗男女中学 ¥18-22万/年", "圣奥古斯丁学校"] },
-        "food": { "label": "餐饮美食", "examples": ["Michelin 一星餐厅", "法国 Joël Robuchon", "鼎泰丰", "米其林包房"] },
-        "transport": { "label": "交通出行", "examples": ["丰田Camry或Honda Accord", "油费+停车 HK$2,500/月", "日常的士通勤"] },
-        "medical": { "label": "医疗健康", "examples": ["浩荷医疗集团会员", "港安医院VIP", "AIA/Axa中档保险"] },
-        "travel": { "label": "旅行娱乐", "examples": ["巴黎/伦敦长周末", "瑞士山区滑雪", "意大利自驾游", "冰岛Aurora之旅"] },
-        "shopping": { "label": "日用购物", "examples": ["Pacific Place", "IFC购物中心", "Landmark高级店"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "九龙塘富豪花园",
+            "沙田君临天下高层",
+            "港岛东半山豪宅",
+            "湾仔骆克道公寓"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "德瑞国际学校 ¥25-30万/年",
+            "英基学校 ¥22-28万/年",
+            "圣保罗男女中学 ¥18-22万/年",
+            "圣奥古斯丁学校"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "Michelin 一星餐厅",
+            "法国 Joël Robuchon",
+            "鼎泰丰",
+            "米其林包房"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "丰田Camry或Honda Accord",
+            "油费+停车 HK$2,500/月",
+            "日常的士通勤"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "浩荷医疗集团会员",
+            "港安医院VIP",
+            "AIA/Axa中档保险"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "巴黎/伦敦长周末",
+            "瑞士山区滑雪",
+            "意大利自驾游",
+            "冰岛Aurora之旅"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "Pacific Place",
+            "IFC购物中心",
+            "Landmark高级店"
+          ]
+        }
       },
-      "pct": [35, 18, 13, 10, 6, 11, 7]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 36000,
+            "max": 33750,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            53,
+            0,
+            13,
+            10,
+            6,
+            11,
+            7
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 36000,
+            "max": 56250,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            53,
+            0,
+            13,
+            10,
+            6,
+            11,
+            7
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 36000,
+            "max": 75000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            35,
+            18,
+            13,
+            10,
+            6,
+            11,
+            7
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 36000,
+            "max": 86250,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            17,
+            36,
+            13,
+            10,
+            6,
+            11,
+            7
+          ]
+        }
+      }
     },
     {
       "id": "t4",
       "name": "品质生活",
-      "incomeRange": { "min": 75000, "max": 160000, "unit": "CNY/month" },
-      "badge": { "bg": "#FBEAF0", "fg": "#4B1528" },
+      "badge": {
+        "bg": "#FBEAF0",
+        "fg": "#4B1528"
+      },
       "description": "月支出 HK$8–13万（¥7.5–15万）。中环/金钟豪宅，孩子读顶尖国际学校，宝马奔驰或私人司机，每年欧美度假，香港中上层生活。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["中环翠海岭豪宅", "金钟花园顶层", "太平山顶豪宅", "港岛东半山Peak府邸"] },
-        "education": { "label": "子女教育", "examples": ["德瑞国际学校 ¥30-38万/年", "圣保罗男女中学 ¥28-35万/年", "英基学校 ASJ ¥32-40万/年", "哈罗国际"], "examples": ["美国学校香港 ¥35-42万/年"] },
-        "food": { "label": "餐饮美食", "examples": ["Michelin二星包场", "8½ Otto e Mezzo Bombana（三星）", "福临门鲍鱼", "米其林VIP会员"] },
-        "transport": { "label": "交通出行", "examples": ["宝马7系/奔驰S级", "保时捷Macan", "全职司机HK$18,000/月"] },
-        "medical": { "label": "医疗健康", "examples": ["港安医院VIP会员", "浩荷集团全额", "私人医生服务"], "examples": ["Cigna国际保险中档"] },
-        "travel": { "label": "旅行娱乐", "examples": ["法国普罗旺斯别墅", "瑞士私人滑雪教练", "英国温莎酒店", "意大利Amalfi海岸"] },
-        "shopping": { "label": "日用购物", "examples": ["Hermès/Chanel/Dior旗舰店", "K11 Musea艺术商场", "连卡佛"], "examples": ["顶级设计师店"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "中环翠海岭豪宅",
+            "金钟花园顶层",
+            "太平山顶豪宅",
+            "港岛东半山Peak府邸"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "美国学校香港 ¥35-42万/年"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "Michelin二星包场",
+            "8½ Otto e Mezzo Bombana（三星）",
+            "福临门鲍鱼",
+            "米其林VIP会员"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "宝马7系/奔驰S级",
+            "保时捷Macan",
+            "全职司机HK$18,000/月"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "Cigna国际保险中档"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "法国普罗旺斯别墅",
+            "瑞士私人滑雪教练",
+            "英国温莎酒店",
+            "意大利Amalfi海岸"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "顶级设计师店"
+          ]
+        }
       },
-      "pct": [32, 20, 12, 10, 6, 12, 8]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 75000,
+            "max": 72000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            52,
+            0,
+            12,
+            10,
+            6,
+            12,
+            8
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 75000,
+            "max": 120000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            52,
+            0,
+            12,
+            10,
+            6,
+            12,
+            8
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 75000,
+            "max": 160000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            32,
+            20,
+            12,
+            10,
+            6,
+            12,
+            8
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 75000,
+            "max": 184000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            12,
+            40,
+            12,
+            10,
+            6,
+            12,
+            8
+          ]
+        }
+      }
     },
     {
       "id": "t5",
       "name": "豪华生活",
-      "incomeRange": { "min": 160000, "max": 350000, "unit": "CNY/month" },
-      "badge": { "bg": "#EEEDFE", "fg": "#26215C" },
+      "badge": {
+        "bg": "#EEEDFE",
+        "fg": "#26215C"
+      },
       "description": "月支出 HK$15–28万（¥14–33万）。太平山顶或浅水湾高级豪宅，孩子读海外顶级学校准备，保时捷/路虎揽胜，全球商务舱旅行，香港顶层精英。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["太平山顶Peak Mansion", "浅水湾浅水湾别墅", "港岛东荷李活道豪宅", "新界清水湾高尔夫别墅"] },
-        "education": { "label": "子女教育", "examples": ["圣保罗男女 + 私人家教 ¥40-50万/年", "伊顿公学Eton预备班", "美国顶级寄宿学校申请咨询"], "examples": ["哈佛/耶鲁冬令营"] },
-        "food": { "label": "餐饮美食", "examples": ["私人厨师上门", "Michelin三星每周", "世界名厨邀请宴", "高级会所年费HK$100万+"] },
-        "transport": { "label": "交通出行", "examples": ["保时捷911 Turbo", "路虎Range Rover", "全职司机+专用停车位"] },
-        "medical": { "label": "医疗健康", "examples": ["浩荷Executive Health", "Mayo Clinic远程咨询", "私人医疗顾问24/7"] },
-        "travel": { "label": "旅行娱乐", "examples": ["马尔代夫Aman私岛", "瑞士Zermattland私人别墅", "法国酒庄之旅Michelin"], "examples": ["英伦皇家赛马会"] },
-        "shopping": { "label": "日用购物", "examples": ["高级珠宝定制", "艺术品收藏咨询", "私人购物顾问"], "examples": ["拍卖行贵客"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "太平山顶Peak Mansion",
+            "浅水湾浅水湾别墅",
+            "港岛东荷李活道豪宅",
+            "新界清水湾高尔夫别墅"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "哈佛/耶鲁冬令营"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "私人厨师上门",
+            "Michelin三星每周",
+            "世界名厨邀请宴",
+            "高级会所年费HK$100万+"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "保时捷911 Turbo",
+            "路虎Range Rover",
+            "全职司机+专用停车位"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "浩荷Executive Health",
+            "Mayo Clinic远程咨询",
+            "私人医疗顾问24/7"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "英伦皇家赛马会"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "拍卖行贵客"
+          ]
+        }
       },
-      "pct": [35, 16, 11, 11, 5, 13, 9]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 160000,
+            "max": 157500,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            51,
+            0,
+            11,
+            11,
+            5,
+            13,
+            9
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 160000,
+            "max": 262500,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            51,
+            0,
+            11,
+            11,
+            5,
+            13,
+            9
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 160000,
+            "max": 350000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            35,
+            16,
+            11,
+            11,
+            5,
+            13,
+            9
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 160000,
+            "max": 402500,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            19,
+            32,
+            11,
+            11,
+            5,
+            13,
+            9
+          ]
+        }
+      }
     },
     {
       "id": "t6",
       "name": "顶奢生活",
-      "incomeRange": { "min": 350000, "max": null, "unit": "CNY/month" },
-      "badge": { "bg": "#FAECE7", "fg": "#4A1B0C" },
+      "badge": {
+        "bg": "#FAECE7",
+        "fg": "#4A1B0C"
+      },
       "description": "月支出 > HK$28万（¥33万+）。太平山顶最高级豪宅或浅水湾/赤柱私人别墅，孩子就读伦敦Eton等海外顶级寄宿学校，私人飞机/游艇，香港最高层社交圈。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["太平山顶顶级古树宅（HK$100万+/月）", "浅水湾私人别墅（500㎡+）", "赤柱高尔夫别墅", "新界独栋豪庄（1000㎡）"] },
-        "education": { "label": "子女教育", "examples": ["伦敦Eton College寄宿 ¥100万+/年", "瑞士Le Rosey国际学校", "美国Groton/Phillips Andover全奖"], "examples": ["哈佛/剑桥大学董事家族"] },
-        "food": { "label": "餐饮美食", "examples": ["米其林三星私人包场", "世界顶级厨师常驻", "香格里拉/文华东方VIP套餐"], "examples": ["皇家私人晚宴"] },
-        "transport": { "label": "交通出行", "examples": ["法拉利/兰博基尼", "私人飞机 Gulfstream G650", "游艇停泊数百万"] },
-        "medical": { "label": "医疗健康", "examples": ["Mayo Clinic董事级", "私人医生24/7待命", "国际医疗撤离保险"], "examples": ["全球医疗网络"] },
-        "travel": { "label": "旅行娱乐", "examples": ["马尔代夫Soneva Jani私岛", "南极皇家探险船", "北极游艇全球巡游"], "examples": ["太空旅行预约"] },
-        "shopping": { "label": "日用购物", "examples": ["高级珠宝定制Cartier/VVS", "艺术品拍卖Sotheby's/Christie's", "私人购物大使全球采购"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "太平山顶顶级古树宅（HK$100万+/月）",
+            "浅水湾私人别墅（500㎡+）",
+            "赤柱高尔夫别墅",
+            "新界独栋豪庄（1000㎡）"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "哈佛/剑桥大学董事家族"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "皇家私人晚宴"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "法拉利/兰博基尼",
+            "私人飞机 Gulfstream G650",
+            "游艇停泊数百万"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "全球医疗网络"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "太空旅行预约"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "高级珠宝定制Cartier/VVS",
+            "艺术品拍卖Sotheby's/Christie's",
+            "私人购物大使全球采购"
+          ]
+        }
       },
-      "pct": [38, 12, 10, 12, 4, 14, 10]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 350000,
+            "max": 450000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            50,
+            0,
+            10,
+            12,
+            4,
+            14,
+            10
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 350000,
+            "max": 749999,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            50,
+            0,
+            10,
+            12,
+            4,
+            14,
+            10
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 350000,
+            "max": 999999,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            38,
+            12,
+            10,
+            12,
+            4,
+            14,
+            10
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 350000,
+            "max": 1149999,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            26,
+            24,
+            10,
+            12,
+            4,
+            14,
+            10
+          ]
+        }
+      }
     }
   ]
 }

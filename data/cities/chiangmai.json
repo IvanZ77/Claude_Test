@@ -7,104 +7,806 @@
     {
       "id": "t1",
       "name": "拮据生活",
-      "incomeRange": { "min": 0, "max": 4000, "unit": "CNY/month" },
-      "badge": { "bg": "#E6F1FB", "fg": "#0C447C" },
+      "badge": {
+        "bg": "#E6F1FB",
+        "fg": "#0C447C"
+      },
       "description": "月支出 < ¥4000。住清迈老城边缘或本地居民区公寓，本地食堂为主，骑摩托车，生活简朴。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["清迈老城外围公寓", "本地社区合租", "清曼寺附近老房", "三王遗迹一带民居"] },
-        "education": { "label": "子女教育", "examples": ["泰国公立学校", "本地国际学校（便宜）"] },
-        "food": { "label": "餐饮美食", "examples": ["清迈街边小馆", "夜市小吃", "本地食堂", "菜市场蔬菜"] },
-        "transport": { "label": "交通出行", "examples": ["摩托车/电动车", "tuk-tuk 三轮车", "公交小巴"] },
-        "medical": { "label": "医疗健康", "examples": ["泰国国民医保", "清迈医疗诊所"] },
-        "travel": { "label": "旅行娱乐", "examples": ["素贴寺爬山", "清迈古城散步", "周末农村骑行"] },
-        "shopping": { "label": "日用购物", "examples": ["瓦洛洛市场", "本地小店", "清迈夜市"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "清迈老城外围公寓",
+            "本地社区合租",
+            "清曼寺附近老房",
+            "三王遗迹一带民居"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "泰国公立学校",
+            "本地国际学校（便宜）"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "清迈街边小馆",
+            "夜市小吃",
+            "本地食堂",
+            "菜市场蔬菜"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "摩托车/电动车",
+            "tuk-tuk 三轮车",
+            "公交小巴"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "泰国国民医保",
+            "清迈医疗诊所"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "素贴寺爬山",
+            "清迈古城散步",
+            "周末农村骑行"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "瓦洛洛市场",
+            "本地小店",
+            "清迈夜市"
+          ]
+        }
       },
-      "pct": [30, 5, 40, 10, 5, 5, 5]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 0,
+            "max": 1800,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            35,
+            0,
+            40,
+            10,
+            5,
+            5,
+            5
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 0,
+            "max": 3000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            35,
+            0,
+            40,
+            10,
+            5,
+            5,
+            5
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 0,
+            "max": 4000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            30,
+            5,
+            40,
+            10,
+            5,
+            5,
+            5
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 0,
+            "max": 4600,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            25,
+            10,
+            40,
+            10,
+            5,
+            5,
+            5
+          ]
+        }
+      }
     },
     {
       "id": "t2",
       "name": "基本小康",
-      "incomeRange": { "min": 4000, "max": 10000, "unit": "CNY/month" },
-      "badge": { "bg": "#EAF3DE", "fg": "#27500A" },
+      "badge": {
+        "bg": "#EAF3DE",
+        "fg": "#27500A"
+      },
       "description": "月支出 ¥4000–1万。住清迈古城或尼曼路中档公寓，有交通工具，能偶尔外食高档馆子，是清迈外籍养老人士的基本生活。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["古城一卧公寓", "尼曼路Nimman公寓", "Hang Dong 社区", "清迈南部新居民区"] },
-        "education": { "label": "子女教育", "examples": ["清迈国际学校小班（便宜）", "双语预科班"] },
-        "food": { "label": "餐饮美食", "examples": ["清迈高档餐厅", "尼曼路咖啡厅", "老城传统餐厅", "日本餐馆"] },
-        "transport": { "label": "交通出行", "examples": ["摩托车/电动摩托", "小车拼车", "Grab 打车"] },
-        "medical": { "label": "医疗健康", "examples": ["兰姆医院（高端民营）", "清迈国际诊所"] },
-        "travel": { "label": "旅行娱乐", "examples": ["兰纳古迹游览", "清迈周末去曼谷", "象营体验", "清迈近郊探险"] },
-        "shopping": { "label": "日用购物", "examples": ["Night Bazaar 夜市", "Central Festival 商超", "尼曼路精品店"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "古城一卧公寓",
+            "尼曼路Nimman公寓",
+            "Hang Dong 社区",
+            "清迈南部新居民区"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "清迈国际学校小班（便宜）",
+            "双语预科班"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "清迈高档餐厅",
+            "尼曼路咖啡厅",
+            "老城传统餐厅",
+            "日本餐馆"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "摩托车/电动摩托",
+            "小车拼车",
+            "Grab 打车"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "兰姆医院（高端民营）",
+            "清迈国际诊所"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "兰纳古迹游览",
+            "清迈周末去曼谷",
+            "象营体验",
+            "清迈近郊探险"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "Night Bazaar 夜市",
+            "Central Festival 商超",
+            "尼曼路精品店"
+          ]
+        }
       },
-      "pct": [28, 8, 35, 12, 6, 8, 3]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 4000,
+            "max": 4500,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            36,
+            0,
+            35,
+            12,
+            6,
+            8,
+            3
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 4000,
+            "max": 7500,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            36,
+            0,
+            35,
+            12,
+            6,
+            8,
+            3
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 4000,
+            "max": 10000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            28,
+            8,
+            35,
+            12,
+            6,
+            8,
+            3
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 4000,
+            "max": 11500,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            20,
+            16,
+            35,
+            12,
+            6,
+            8,
+            3
+          ]
+        }
+      }
     },
     {
       "id": "t3",
       "name": "舒适生活",
-      "incomeRange": { "min": 10000, "max": 24000, "unit": "CNY/month" },
-      "badge": { "bg": "#FAEEDA", "fg": "#633806" },
+      "badge": {
+        "bg": "#FAEEDA",
+        "fg": "#633806"
+      },
       "description": "月支出 ¥1万–2.4万。住尼曼路或古城精装公寓，孩子读国际学校，有私家车，能去曼谷/普吉岛度假，是清迈中产的舒适生活。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["尼曼路精装一卧", "古城豪华公寓", "Hang Dong 别墅", "清迈南部社区"] },
-        "education": { "label": "子女教育", "examples": ["清迈国际学校（标准）¥10万/年", "Lanna International School ¥8万/年"] },
-        "food": { "label": "餐饮美食", "examples": ["Cherng Doi Roast Chicken 烤鸡", "The Riverside Bar & Restaurant", "NIMMAN Café & Restaurant", "高档泰餐厅"] },
-        "transport": { "label": "交通出行", "examples": ["丰田Fortuner/Honda CR-V", "油费¥1000/月"] },
-        "medical": { "label": "医疗健康", "examples": ["兰姆医院VIP会员", "泰国国际医疗保险"] },
-        "travel": { "label": "旅行娱乐", "examples": ["曼谷周末游", "普吉岛度假", "老挝琅勃拉邦游览", "泰国北部自驾"] },
-        "shopping": { "label": "日用购物", "examples": ["Central Festival 百货", "尼曼路高档精品店", "Rimping 超市"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "尼曼路精装一卧",
+            "古城豪华公寓",
+            "Hang Dong 别墅",
+            "清迈南部社区"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "清迈国际学校（标准）¥10万/年",
+            "Lanna International School ¥8万/年"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "Cherng Doi Roast Chicken 烤鸡",
+            "The Riverside Bar & Restaurant",
+            "NIMMAN Café & Restaurant",
+            "高档泰餐厅"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "丰田Fortuner/Honda CR-V",
+            "油费¥1000/月"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "兰姆医院VIP会员",
+            "泰国国际医疗保险"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "曼谷周末游",
+            "普吉岛度假",
+            "老挝琅勃拉邦游览",
+            "泰国北部自驾"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "Central Festival 百货",
+            "尼曼路高档精品店",
+            "Rimping 超市"
+          ]
+        }
       },
-      "pct": [26, 14, 30, 12, 8, 8, 2]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 10000,
+            "max": 10800,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            40,
+            0,
+            30,
+            12,
+            8,
+            8,
+            2
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 10000,
+            "max": 18000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            40,
+            0,
+            30,
+            12,
+            8,
+            8,
+            2
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 10000,
+            "max": 24000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            26,
+            14,
+            30,
+            12,
+            8,
+            8,
+            2
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 10000,
+            "max": 27600,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            12,
+            28,
+            30,
+            12,
+            8,
+            8,
+            2
+          ]
+        }
+      }
     },
     {
       "id": "t4",
       "name": "品质生活",
-      "incomeRange": { "min": 24000, "max": 55000, "unit": "CNY/month" },
-      "badge": { "bg": "#FBEAF0", "fg": "#4B1528" },
+      "badge": {
+        "bg": "#FBEAF0",
+        "fg": "#4B1528"
+      },
       "description": "月支出 ¥2.4万–5.5万。古城豪华别墅或尼曼路顶层公寓，孩子读顶尖国际学校，宝马奔驰，每月曼谷高档消费，清迈精英的生活。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["古城豪华别墅", "尼曼路顶层公寓", "清迈山区景观别墅", "Hang Dong 豪华社区"] },
-        "education": { "label": "子女教育", "examples": ["清迈国际学校（顶级）¥15万/年", "Chiang Mai International School VIP"] },
-        "food": { "label": "餐饮美食", "examples": ["米其林推荐餐厅", "法式餐厅包间", "名厨私家厨房", "高档日本料理"] },
-        "transport": { "label": "交通出行", "examples": ["宝马3系/奔驰C级", "保时捷Macan", "油费停车¥2000/月"] },
-        "medical": { "label": "医疗健康", "examples": ["兰姆医院豪华会员", "泰国顶级国际医保", "曼谷医学中心远程会诊"] },
-        "travel": { "label": "旅行娱乐", "examples": ["香港购物周末游", "新加坡商务旅行", "日本温泉度假", "欧洲艺术展览（经济舱）"] },
-        "shopping": { "label": "日用购物", "examples": ["尼曼路高定工坊", "曼谷Siam Paragon 购物", "进口奢侈品店"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "古城豪华别墅",
+            "尼曼路顶层公寓",
+            "清迈山区景观别墅",
+            "Hang Dong 豪华社区"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "清迈国际学校（顶级）¥15万/年",
+            "Chiang Mai International School VIP"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "米其林推荐餐厅",
+            "法式餐厅包间",
+            "名厨私家厨房",
+            "高档日本料理"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "宝马3系/奔驰C级",
+            "保时捷Macan",
+            "油费停车¥2000/月"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "兰姆医院豪华会员",
+            "泰国顶级国际医保",
+            "曼谷医学中心远程会诊"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "香港购物周末游",
+            "新加坡商务旅行",
+            "日本温泉度假",
+            "欧洲艺术展览（经济舱）"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "尼曼路高定工坊",
+            "曼谷Siam Paragon 购物",
+            "进口奢侈品店"
+          ]
+        }
       },
-      "pct": [24, 18, 24, 14, 8, 10, 2]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 24000,
+            "max": 24750,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            42,
+            0,
+            24,
+            14,
+            8,
+            10,
+            2
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 24000,
+            "max": 41250,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            42,
+            0,
+            24,
+            14,
+            8,
+            10,
+            2
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 24000,
+            "max": 55000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            24,
+            18,
+            24,
+            14,
+            8,
+            10,
+            2
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 24000,
+            "max": 63250,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            6,
+            36,
+            24,
+            14,
+            8,
+            10,
+            2
+          ]
+        }
+      }
     },
     {
       "id": "t5",
       "name": "豪华生活",
-      "incomeRange": { "min": 55000, "max": 130000, "unit": "CNY/month" },
-      "badge": { "bg": "#EEEDFE", "fg": "#26215C" },
+      "badge": {
+        "bg": "#EEEDFE",
+        "fg": "#26215C"
+      },
       "description": "月支出 ¥5.5万–13万。古城大宅+山区度假别墅组合，孩子国际寄宿学校，专属司机，频繁国际旅行，清迈顶层人士的生活。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["古城豪华宅邸", "素贴山山景别墅", "清迈南部大庄园", "双套豪宅组合"] },
-        "education": { "label": "子女教育", "examples": ["曼谷国际学校寄宿 ¥20万+/年", "新加坡国际学校", "香港国际学校"] },
-        "food": { "label": "餐饮美食", "examples": ["私人厨师团队", "米其林二星宴会", "曼谷顶级餐厅包间", "进口食材采购"] },
-        "transport": { "label": "交通出行", "examples": ["保时捷911", "路虎揽胜", "全职专属司机"] },
-        "medical": { "label": "医疗健康", "examples": ["曼谷Samitivej医院VIP", "泰国国际医疗最高档"] },
-        "travel": { "label": "旅行娱乐", "examples": ["欧洲艺术游（商务舱）", "中东皇室酒店", "南非Safari五星营地", "瑞士滑雪度假"] },
-        "shopping": { "label": "日用购物", "examples": ["米兰高定定制", "巴黎Hermès VIP", "艺术品收藏咨询"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "古城豪华宅邸",
+            "素贴山山景别墅",
+            "清迈南部大庄园",
+            "双套豪宅组合"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "曼谷国际学校寄宿 ¥20万+/年",
+            "新加坡国际学校",
+            "香港国际学校"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "私人厨师团队",
+            "米其林二星宴会",
+            "曼谷顶级餐厅包间",
+            "进口食材采购"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "保时捷911",
+            "路虎揽胜",
+            "全职专属司机"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "曼谷Samitivej医院VIP",
+            "泰国国际医疗最高档"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "欧洲艺术游（商务舱）",
+            "中东皇室酒店",
+            "南非Safari五星营地",
+            "瑞士滑雪度假"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "米兰高定定制",
+            "巴黎Hermès VIP",
+            "艺术品收藏咨询"
+          ]
+        }
       },
-      "pct": [28, 16, 18, 12, 6, 14, 6]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 55000,
+            "max": 58500,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            44,
+            0,
+            18,
+            12,
+            6,
+            14,
+            6
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 55000,
+            "max": 97500,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            44,
+            0,
+            18,
+            12,
+            6,
+            14,
+            6
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 55000,
+            "max": 130000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            28,
+            16,
+            18,
+            12,
+            6,
+            14,
+            6
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 55000,
+            "max": 149500,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            12,
+            32,
+            18,
+            12,
+            6,
+            14,
+            6
+          ]
+        }
+      }
     },
     {
       "id": "t6",
       "name": "顶奢生活",
-      "incomeRange": { "min": 130000, "max": null, "unit": "CNY/month" },
-      "badge": { "bg": "#FAECE7", "fg": "#4A1B0C" },
+      "badge": {
+        "bg": "#FAECE7",
+        "fg": "#4A1B0C"
+      },
       "description": "月支出 > ¥13万。古城宫殿级豪宅群，孩子瑞士/英国顶尖寄宿学校，私人飞机常驻，环球头等舱旅行，清迈最顶层的生活方式。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["古城五进豪宅", "素贴山独占别墅", "清迈周边多套产业", "双城（清迈-曼谷）豪宅"] },
-        "education": { "label": "子女教育", "examples": ["瑞士国际寄宿（Aiglon/Rosemount）", "英国伊顿/哈罗", "美国顶级预科"] },
-        "food": { "label": "餐饮美食", "examples": ["常驻米其林厨师", "国际名厨上门Omakase", "私人美食俱乐部董事", "食材全球空运"] },
-        "transport": { "label": "交通出行", "examples": ["法拉利/兰博基尼", "私人飞机曼谷-清迈通勤", "游艇在普吉岛停泊"] },
-        "medical": { "label": "医疗健康", "examples": ["美国梅奥诊所国际会员", "瑞士国际医疗保险顶级"], "examples": ["私人医生24小时待命"] },
-        "travel": { "label": "旅行娱乐", "examples": ["全球私人游艇包租", "南极探险船私人包舱", "马尔代夫私岛度假", "北极豪华探险"] },
-        "shopping": { "label": "日用购物", "examples": ["巴黎时装周参展", "佳士得董事级竞标", "私人艺术品收购团队"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "古城五进豪宅",
+            "素贴山独占别墅",
+            "清迈周边多套产业",
+            "双城（清迈-曼谷）豪宅"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "瑞士国际寄宿（Aiglon/Rosemount）",
+            "英国伊顿/哈罗",
+            "美国顶级预科"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "常驻米其林厨师",
+            "国际名厨上门Omakase",
+            "私人美食俱乐部董事",
+            "食材全球空运"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "法拉利/兰博基尼",
+            "私人飞机曼谷-清迈通勤",
+            "游艇在普吉岛停泊"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "私人医生24小时待命"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "全球私人游艇包租",
+            "南极探险船私人包舱",
+            "马尔代夫私岛度假",
+            "北极豪华探险"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "巴黎时装周参展",
+            "佳士得董事级竞标",
+            "私人艺术品收购团队"
+          ]
+        }
       },
-      "pct": [32, 12, 14, 14, 5, 16, 7]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 130000,
+            "max": 450000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            44,
+            0,
+            14,
+            14,
+            5,
+            16,
+            7
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 130000,
+            "max": 749999,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            44,
+            0,
+            14,
+            14,
+            5,
+            16,
+            7
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 130000,
+            "max": 999999,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            32,
+            12,
+            14,
+            14,
+            5,
+            16,
+            7
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 130000,
+            "max": 1149999,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            20,
+            24,
+            14,
+            14,
+            5,
+            16,
+            7
+          ]
+        }
+      }
     }
   ]
 }

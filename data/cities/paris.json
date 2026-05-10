@@ -7,104 +7,781 @@
     {
       "id": "t1",
       "name": "拮据生活",
-      "incomeRange": { "min": 0, "max": 11000, "unit": "CNY/month" },
-      "badge": { "bg": "#E6F1FB", "fg": "#0C447C" },
+      "badge": {
+        "bg": "#E6F1FB",
+        "fg": "#0C447C"
+      },
       "description": "月支出 < ¥1.1万。远郊或圣但尼外环公寓，公立学校，以自炊为主，地铁/巴士，生活基础。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["Saint-Denis地下室", "Montreuil小房间", "Créteil郊区studio"] },
-        "education": { "label": "子女教育", "examples": ["Ecole Publique免费", "市政免费班"] },
-        "food": { "label": "餐饮美食", "examples": ["Carrefour自炊", "Boulangerie面包", "中餐外卖"] },
-        "transport": { "label": "交通出行", "examples": ["地铁周卡", "自行车", "走路"] },
-        "medical": { "label": "医疗健康", "examples": ["Sécurité Sociale医保", "社区诊所"] },
-        "travel": { "label": "旅行娱乐", "examples": ["塞纳河散步", "免费教堂"] },
-        "shopping": { "label": "日用购物", "examples": ["Monoprix折扣", "跳蚤市场", "网购"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "Saint-Denis地下室",
+            "Montreuil小房间",
+            "Créteil郊区studio"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "Ecole Publique免费",
+            "市政免费班"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "Carrefour自炊",
+            "Boulangerie面包",
+            "中餐外卖"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "地铁周卡",
+            "自行车",
+            "走路"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "Sécurité Sociale医保",
+            "社区诊所"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "塞纳河散步",
+            "免费教堂"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "Monoprix折扣",
+            "跳蚤市场",
+            "网购"
+          ]
+        }
       },
-      "pct": [46, 7, 26, 9, 3, 2, 7]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 0,
+            "max": 4950,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            53,
+            0,
+            26,
+            9,
+            3,
+            2,
+            7
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 0,
+            "max": 8250,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            53,
+            0,
+            26,
+            9,
+            3,
+            2,
+            7
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 0,
+            "max": 11000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            46,
+            7,
+            26,
+            9,
+            3,
+            2,
+            7
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 0,
+            "max": 12650,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            39,
+            14,
+            26,
+            9,
+            3,
+            2,
+            7
+          ]
+        }
+      }
     },
     {
       "id": "t2",
       "name": "基本小康",
-      "incomeRange": { "min": 11000, "max": 22000, "unit": "CNY/month" },
-      "badge": { "bg": "#EAF3DE", "fg": "#27500A" },
+      "badge": {
+        "bg": "#EAF3DE",
+        "fg": "#27500A"
+      },
       "description": "月支出 ¥1.1万–¥2.2万。左岸或郊区现代公寓，孩子读公立或优秀小学，偶尔外食。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["Montparnasse小公寓", "Belleville现代楼", "Vincennes公寓"] },
-        "education": { "label": "子女教育", "examples": ["国立优秀小学", "私塾班", "音乐课"] },
-        "food": { "label": "餐饮美食", "examples": ["Franprix超市", "Bistro传统", "Pizza店", "Cafe"] },
-        "transport": { "label": "交通出行", "examples": ["地铁月票", "摩拜自行车"] },
-        "medical": { "label": "医疗健康", "examples": ["牙科诊所", "眼科检查"] },
-        "travel": { "label": "旅行娱乐", "examples": ["法国周末游", "比利时短途"] },
-        "shopping": { "label": "日用购物", "examples": ["Galeries Lafayette", "Zara服装", "C&A"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "Montparnasse小公寓",
+            "Belleville现代楼",
+            "Vincennes公寓"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "国立优秀小学",
+            "私塾班",
+            "音乐课"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "Franprix超市",
+            "Bistro传统",
+            "Pizza店",
+            "Cafe"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "地铁月票",
+            "摩拜自行车"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "牙科诊所",
+            "眼科检查"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "法国周末游",
+            "比利时短途"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "Galeries Lafayette",
+            "Zara服装",
+            "C&A"
+          ]
+        }
       },
-      "pct": [40, 11, 24, 9, 5, 6, 5]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 11000,
+            "max": 9900,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            51,
+            0,
+            24,
+            9,
+            5,
+            6,
+            5
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 11000,
+            "max": 16500,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            51,
+            0,
+            24,
+            9,
+            5,
+            6,
+            5
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 11000,
+            "max": 22000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            40,
+            11,
+            24,
+            9,
+            5,
+            6,
+            5
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 11000,
+            "max": 25300,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            29,
+            22,
+            24,
+            9,
+            5,
+            6,
+            5
+          ]
+        }
+      }
     },
     {
       "id": "t3",
       "name": "舒适生活",
-      "incomeRange": { "min": 22000, "max": 44000, "unit": "CNY/month" },
-      "badge": { "bg": "#FAEEDA", "fg": "#633806" },
+      "badge": {
+        "bg": "#FAEEDA",
+        "fg": "#633806"
+      },
       "description": "月支出 ¥2.2万–¥4.4万。玛黑区或左岸高档公寓，孩子读私立或国际学校，有车，能旅游。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["Le Marais精品公寓", "Saint-Germain联排", "Neuilly豪华公寓"] },
-        "education": { "label": "子女教育", "examples": ["伦敦国际学校巴黎部", "法国私立学校", "音乐学院预科"] },
-        "food": { "label": "餐饮美食", "examples": ["米其林入门", "法式咖啡馆", "日本料理", "酒吧美食"] },
-        "transport": { "label": "交通出行", "examples": ["标致308/雪铁龙C5", "停车费+油费¥1200/月"] },
-        "medical": { "label": "医疗健康", "examples": ["私人诊所", "医疗保险"] },
-        "travel": { "label": "旅行娱乐", "examples": ["普罗旺斯周末", "蔚蓝海岸"] },
-        "shopping": { "label": "日用购物", "examples": ["Printemps百货", "Bon Marche", "设计师时尚"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "Le Marais精品公寓",
+            "Saint-Germain联排",
+            "Neuilly豪华公寓"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "伦敦国际学校巴黎部",
+            "法国私立学校",
+            "音乐学院预科"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "米其林入门",
+            "法式咖啡馆",
+            "日本料理",
+            "酒吧美食"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "标致308/雪铁龙C5",
+            "停车费+油费¥1200/月"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "私人诊所",
+            "医疗保险"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "普罗旺斯周末",
+            "蔚蓝海岸"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "Printemps百货",
+            "Bon Marche",
+            "设计师时尚"
+          ]
+        }
       },
-      "pct": [36, 16, 20, 11, 6, 7, 4]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 22000,
+            "max": 19800,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            52,
+            0,
+            20,
+            11,
+            6,
+            7,
+            4
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 22000,
+            "max": 33000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            52,
+            0,
+            20,
+            11,
+            6,
+            7,
+            4
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 22000,
+            "max": 44000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            36,
+            16,
+            20,
+            11,
+            6,
+            7,
+            4
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 22000,
+            "max": 50600,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            20,
+            32,
+            20,
+            11,
+            6,
+            7,
+            4
+          ]
+        }
+      }
     },
     {
       "id": "t4",
       "name": "品质生活",
-      "incomeRange": { "min": 44000, "max": 88000, "unit": "CNY/month" },
-      "badge": { "bg": "#FBEAF0", "fg": "#4B1528" },
+      "badge": {
+        "bg": "#FBEAF0",
+        "fg": "#4B1528"
+      },
       "description": "月支出 ¥4.4万–¥8.8万。巴黎顶级区豪宅，孩子读顶级私立或国际学校，进口车，欧洲旅游。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["Passy豪宅", "Champs-Élysées附近", "Île Saint-Louis房产"] },
-        "education": { "label": "子女教育", "examples": ["Lycée Henri-IV预备", "IB课程国际部", "海外交换计划"] },
-        "food": { "label": "餐饮美食", "examples": ["米其林二星", "高档法式料理", "私人会所"] },
-        "transport": { "label": "交通出行", "examples": ["宝马X3/梅赛德斯GLA", "停车+油费¥2500/月"] },
-        "medical": { "label": "医疗健康", "examples": ["美国医疗包", "国际医疗保险"] },
-        "travel": { "label": "旅行娱乐", "examples": ["瑞士度假", "意大利自驾"] },
-        "shopping": { "label": "日用购物", "examples": ["Chanel旗舰店", "Louis Vuitton定制"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "Passy豪宅",
+            "Champs-Élysées附近",
+            "Île Saint-Louis房产"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "Lycée Henri-IV预备",
+            "IB课程国际部",
+            "海外交换计划"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "米其林二星",
+            "高档法式料理",
+            "私人会所"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "宝马X3/梅赛德斯GLA",
+            "停车+油费¥2500/月"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "美国医疗包",
+            "国际医疗保险"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "瑞士度假",
+            "意大利自驾"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "Chanel旗舰店",
+            "Louis Vuitton定制"
+          ]
+        }
       },
-      "pct": [34, 18, 16, 12, 6, 8, 6]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 44000,
+            "max": 39600,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            52,
+            0,
+            16,
+            12,
+            6,
+            8,
+            6
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 44000,
+            "max": 66000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            52,
+            0,
+            16,
+            12,
+            6,
+            8,
+            6
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 44000,
+            "max": 88000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            34,
+            18,
+            16,
+            12,
+            6,
+            8,
+            6
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 44000,
+            "max": 101200,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            16,
+            36,
+            16,
+            12,
+            6,
+            8,
+            6
+          ]
+        }
+      }
     },
     {
       "id": "t5",
       "name": "豪华生活",
-      "incomeRange": { "min": 88000, "max": 176000, "unit": "CNY/month" },
-      "badge": { "bg": "#EEEDFE", "fg": "#26215C" },
+      "badge": {
+        "bg": "#EEEDFE",
+        "fg": "#26215C"
+      },
       "description": "月支出 ¥8.8万–¥17.6万。巴黎最顶级社区豪宅，孩子顶尖国际/私校，豪车，全球旅游。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["Élysée Palace周边", "Saint-Louis私人府邸", "Bois de Boulogne别墅"] },
-        "education": { "label": "子女教育", "examples": ["国际学校精英课程", "瑞士寄宿预备", "牛津剑桥升学"] },
-        "food": { "label": "餐饮美食", "examples": ["米其林三星", "私人厨师备选", "高定宴会"] },
-        "transport": { "label": "交通出行", "examples": ["保时捷Macan/路虎揽胜", "专业驾手¥1.3万/月"] },
-        "medical": { "label": "医疗健康", "examples": ["瑞士医疗中心年检", "美国诊所咨询"] },
-        "travel": { "label": "旅行娱乐", "examples": ["地中海私人游艇", "阿尔卑斯滑雪"] },
-        "shopping": { "label": "日用购物", "examples": ["Hermès定制", "苏富比拍卖"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "Élysée Palace周边",
+            "Saint-Louis私人府邸",
+            "Bois de Boulogne别墅"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "国际学校精英课程",
+            "瑞士寄宿预备",
+            "牛津剑桥升学"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "米其林三星",
+            "私人厨师备选",
+            "高定宴会"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "保时捷Macan/路虎揽胜",
+            "专业驾手¥1.3万/月"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "瑞士医疗中心年检",
+            "美国诊所咨询"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "地中海私人游艇",
+            "阿尔卑斯滑雪"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "Hermès定制",
+            "苏富比拍卖"
+          ]
+        }
       },
-      "pct": [32, 18, 13, 12, 6, 12, 7]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 88000,
+            "max": 79200,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            50,
+            0,
+            13,
+            12,
+            6,
+            12,
+            7
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 88000,
+            "max": 132000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            50,
+            0,
+            13,
+            12,
+            6,
+            12,
+            7
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 88000,
+            "max": 176000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            32,
+            18,
+            13,
+            12,
+            6,
+            12,
+            7
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 88000,
+            "max": 202400,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            14,
+            36,
+            13,
+            12,
+            6,
+            12,
+            7
+          ]
+        }
+      }
     },
     {
       "id": "t6",
       "name": "顶奢生活",
-      "incomeRange": { "min": 176000, "max": null, "unit": "CNY/month" },
-      "badge": { "bg": "#FAECE7", "fg": "#4A1B0C" },
+      "badge": {
+        "bg": "#FAECE7",
+        "fg": "#4A1B0C"
+      },
       "description": "月支出 > ¥17.6万。巴黎皇族区府邸，顶级教育，全职保镖与司机，全球头等舱与私人飞机。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["Élysée宫殿府邸", "Île Saint-Louis古堡", "凡尔赛附近庄园"] },
-        "education": { "label": "子女教育", "examples": ["伊顿公学+牛津保障", "法国私立精英校", "私人教师团队"] },
-        "food": { "label": "餐饮美食", "examples": ["Michelin三星备选", "私人米其林厨师"] },
-        "transport": { "label": "交通出行", "examples": ["劳斯莱斯幻影", "专属司机保镖团队", "直升机接驳"] },
-        "medical": { "label": "医疗健康", "examples": ["美国Mayo年度包约", "私人医疗顾问"] },
-        "travel": { "label": "旅行娱乐", "examples": ["私人游艇全球航行", "南极探险邮轮"] },
-        "shopping": { "label": "日用购物", "examples": ["名品定制", "艺术品拍卖VIP"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "Élysée宫殿府邸",
+            "Île Saint-Louis古堡",
+            "凡尔赛附近庄园"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "伊顿公学+牛津保障",
+            "法国私立精英校",
+            "私人教师团队"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "Michelin三星备选",
+            "私人米其林厨师"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "劳斯莱斯幻影",
+            "专属司机保镖团队",
+            "直升机接驳"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "美国Mayo年度包约",
+            "私人医疗顾问"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "私人游艇全球航行",
+            "南极探险邮轮"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "名品定制",
+            "艺术品拍卖VIP"
+          ]
+        }
       },
-      "pct": [35, 16, 11, 12, 4, 14, 8]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 176000,
+            "max": 450000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            51,
+            0,
+            11,
+            12,
+            4,
+            14,
+            8
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 176000,
+            "max": 749999,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            51,
+            0,
+            11,
+            12,
+            4,
+            14,
+            8
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 176000,
+            "max": 999999,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            35,
+            16,
+            11,
+            12,
+            4,
+            14,
+            8
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 176000,
+            "max": 1149999,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            19,
+            32,
+            11,
+            12,
+            4,
+            14,
+            8
+          ]
+        }
+      }
     }
   ]
 }

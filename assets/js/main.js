@@ -38,6 +38,8 @@ async function bootstrap() {
       cityData: cityData,
       cityTiers: cityData.tiers,
       categories: data.categories,
+      householdModels: data.householdModels,
+      householdModel: urlState.householdModel,
       sliderValue: urlState.sliderValue,
       params: { ...urlState.params },
       monthlyCNY: 0,
@@ -92,7 +94,7 @@ async function bootstrap() {
         state.params.taxRate,
         state.params.fxUsdCny
       );
-      const tierIndex = matchTier(income.monthlyCNY, state.cityTiers);
+      const tierIndex = matchTier(income.monthlyCNY, state.cityTiers, state.householdModel);
 
       setState({
         assets,
@@ -128,6 +130,12 @@ async function bootstrap() {
     function renderTierPanel() {
       const state = getState();
       const tier = state.cityTiers[state.activeTierIndex];
+      const variant = tier.variants ? tier.variants[state.householdModel] : null;
+
+      if (!variant) {
+        console.error(`No variant found for household model ${state.householdModel} in tier ${tier.id}`);
+        return;
+      }
 
       badgeEl.style.background = tier.badge.bg;
       badgeEl.style.color = tier.badge.fg;
@@ -135,8 +143,8 @@ async function bootstrap() {
 
       // Update income range display
       const incomeRangeEl = document.getElementById('incomeRange');
-      const minStr = '¥' + formatNumber(tier.incomeRange.min);
-      const maxStr = tier.incomeRange.max ? '¥' + formatNumber(tier.incomeRange.max) : '¥' + formatNumber(tier.incomeRange.min) + '+';
+      const minStr = '¥' + formatNumber(variant.incomeRange.min);
+      const maxStr = variant.incomeRange.max ? '¥' + formatNumber(variant.incomeRange.max) : '¥' + formatNumber(variant.incomeRange.min) + '+';
       incomeRangeEl.textContent = minStr + '–' + maxStr + '/月';
 
       descEl.textContent = tier.description;
@@ -144,7 +152,8 @@ async function bootstrap() {
       itemsEl.innerHTML = Object.entries(tier.items)
         .map(([catId, catData]) => {
           const catIndex = state.categories.findIndex(c => c.id === catId);
-          const percentage = catIndex >= 0 ? tier.pct[catIndex] : 0;
+          const percentage = catIndex >= 0 ? variant.pct[catIndex] : 0;
+          if (percentage === 0) return ''; // Skip categories with 0% allocation
           const monthlySpending = Math.round(state.monthlyCNY * percentage / 100);
           const displaySpending = roundToReadable(monthlySpending);
           return `
@@ -159,7 +168,7 @@ async function bootstrap() {
         })
         .join('');
 
-      updateBudgetChart(tier.pct);
+      updateBudgetChart(variant.pct);
     }
 
     // Render legend
@@ -496,6 +505,49 @@ async function bootstrap() {
     // Initialize city selector
     renderCitySelector();
 
+    // Render household model selector
+    const householdSelectorEl = document.getElementById('householdSelector');
+    const renderHouseholdModelSelector = () => {
+      const state = getState();
+      if (!householdSelectorEl) return;
+
+      let html = '<div style="display: flex; gap: 6px; flex-wrap: wrap; align-items: center;">';
+      html += '<span style="font-size: 12px; color: var(--color-text-secondary); white-space: nowrap;">家庭结构：</span>';
+
+      state.householdModels.forEach(model => {
+        const isActive = state.householdModel === model.id;
+        html += `
+          <button class="household-btn" data-model="${model.id}"
+                  title="${model.description}"
+                  style="padding: 6px 14px; border-radius: var(--border-radius-md);
+                         background: ${isActive ? 'var(--color-accent)' : 'var(--color-bg-secondary)'};
+                         color: ${isActive ? 'var(--color-bg)' : 'var(--color-text-primary)'};
+                         border: 0.5px solid ${isActive ? 'var(--color-accent)' : 'var(--color-border-tertiary)'};
+                         font-size: 12px; font-weight: 500; cursor: pointer;
+                         transition: all 0.15s ease;">
+            ${model.label}
+          </button>
+        `;
+      });
+
+      html += '</div>';
+      householdSelectorEl.innerHTML = html;
+
+      householdSelectorEl.querySelectorAll('.household-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const modelId = e.target.dataset.model;
+          setState({ householdModel: modelId });
+          renderHouseholdModelSelector();
+          updateCalculations();
+          scheduleUrlSync();
+        });
+      });
+    };
+
+    if (householdSelectorEl) {
+      renderHouseholdModelSelector();
+    }
+
     // Render parameter panel
     renderParamPanel(paramPanelEl, data.defaults, getState().params, handleParamChange);
 
@@ -509,7 +561,9 @@ async function bootstrap() {
 
     // Initialize chart
     if (chartCanvasEl) {
-      initBudgetChart(chartCanvasEl, data.categories, shanghaiTiers[1].pct);
+      const state = getState();
+      const defaultVariant = shanghaiTiers[1].variants[state.householdModel] || shanghaiTiers[1].variants['2a1c'];
+      initBudgetChart(chartCanvasEl, data.categories, defaultVariant.pct);
     }
 
     // Dark mode listener

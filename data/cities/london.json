@@ -7,104 +7,782 @@
     {
       "id": "t1",
       "name": "拮据生活",
-      "incomeRange": { "min": 0, "max": 12000, "unit": "CNY/month" },
-      "badge": { "bg": "#E6F1FB", "fg": "#0C447C" },
+      "badge": {
+        "bg": "#E6F1FB",
+        "fg": "#0C447C"
+      },
       "description": "月支出 < ¥1.2万。外伦敦郊区出租屋，公立学校，以自炊为主，公交/地铁，生活紧张。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["Croydon郊区民居", "Clapham地下室房间", "7号线外围house share"] },
-        "education": { "label": "子女教育", "examples": ["State Primary School", "Council免费班"] },
-        "food": { "label": "餐饮美食", "examples": ["Tesco自炊", "Greggs三明治", "中餐外卖"] },
-        "transport": { "label": "交通出行", "examples": ["Travelcard全月卡", "自行车", "走路"] },
-        "medical": { "label": "医疗健康", "examples": ["NHS全科医生", "国民医保"] },
-        "travel": { "label": "旅行娱乐", "examples": ["泰晤士河散步", "免费博物馆"] },
-        "shopping": { "label": "日用购物", "examples": ["ALDI超市", "Poundland", "网购"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "Croydon郊区民居",
+            "Clapham地下室房间",
+            "7号线外围house share"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "State Primary School",
+            "Council免费班"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "Tesco自炊",
+            "Greggs三明治",
+            "中餐外卖"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "Travelcard全月卡",
+            "自行车",
+            "走路"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "NHS全科医生",
+            "国民医保"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "泰晤士河散步",
+            "免费博物馆"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "ALDI超市",
+            "Poundland",
+            "网购"
+          ]
+        }
       },
-      "pct": [48, 6, 24, 10, 3, 2, 7]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 0,
+            "max": 5400,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            54,
+            0,
+            24,
+            10,
+            3,
+            2,
+            7
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 0,
+            "max": 9000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            54,
+            0,
+            24,
+            10,
+            3,
+            2,
+            7
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 0,
+            "max": 12000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            48,
+            6,
+            24,
+            10,
+            3,
+            2,
+            7
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 0,
+            "max": 13800,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            42,
+            12,
+            24,
+            10,
+            3,
+            2,
+            7
+          ]
+        }
+      }
     },
     {
       "id": "t2",
       "name": "基本小康",
-      "incomeRange": { "min": 12000, "max": 24000, "unit": "CNY/month" },
-      "badge": { "bg": "#EAF3DE", "fg": "#27500A" },
+      "badge": {
+        "bg": "#EAF3DE",
+        "fg": "#27500A"
+      },
       "description": "月支出 ¥1.2万–¥2.4万。南伦敦或郊区小公寓，孩子读公立或优质小学，偶尔外食。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["Brixton小公寓", "Peckham现代楼", "Dulwich镇宅"] },
-        "education": { "label": "子女教育", "examples": ["Ofsted优秀小学", "补习班", "音乐课"] },
-        "food": { "label": "餐饮美食", "examples": ["Waitrose超市", "Curry house", "Pizza Express", "Cafe"] },
-        "transport": { "label": "交通出行", "examples": ["Travelcard+Uber", "二手自行车"] },
-        "medical": { "label": "医疗健康", "examples": ["NHS牙科", "眼科检查"] },
-        "travel": { "label": "旅行娱乐", "examples": ["英国周末游", "欧洲短途"] },
-        "shopping": { "label": "日用购物", "examples": ["M&S Food", "Next服装", "Debenhams"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "Brixton小公寓",
+            "Peckham现代楼",
+            "Dulwich镇宅"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "Ofsted优秀小学",
+            "补习班",
+            "音乐课"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "Waitrose超市",
+            "Curry house",
+            "Pizza Express",
+            "Cafe"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "Travelcard+Uber",
+            "二手自行车"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "NHS牙科",
+            "眼科检查"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "英国周末游",
+            "欧洲短途"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "M&S Food",
+            "Next服装",
+            "Debenhams"
+          ]
+        }
       },
-      "pct": [42, 10, 22, 10, 5, 7, 4]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 12000,
+            "max": 10800,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            52,
+            0,
+            22,
+            10,
+            5,
+            7,
+            4
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 12000,
+            "max": 18000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            52,
+            0,
+            22,
+            10,
+            5,
+            7,
+            4
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 12000,
+            "max": 24000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            42,
+            10,
+            22,
+            10,
+            5,
+            7,
+            4
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 12000,
+            "max": 27600,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            32,
+            20,
+            22,
+            10,
+            5,
+            7,
+            4
+          ]
+        }
+      }
     },
     {
       "id": "t3",
       "name": "舒适生活",
-      "incomeRange": { "min": 24000, "max": 48000, "unit": "CNY/month" },
-      "badge": { "bg": "#FAEEDA", "fg": "#633806" },
+      "badge": {
+        "bg": "#FAEEDA",
+        "fg": "#633806"
+      },
       "description": "月支出 ¥2.4万–¥4.8万。西伦敦高档公寓，孩子读私立或国际学校初中，有车，能国际短途。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["Chelsea高档公寓", "Notting Hill维多利亚时代豪宅", "Richmond riverside公寓"] },
-        "education": { "label": "子女教育", "examples": ["伦敦私立学校中年级", "国际学校部分班", "音乐院校预备"] },
-        "food": { "label": "餐饮美食", "examples": ["Michelin入门", "法式餐厅", "日本料理", "酒吧美食"] },
-        "transport": { "label": "交通出行", "examples": ["奥迪A4/宝马3系", "停车费+油费¥1500/月"] },
-        "medical": { "label": "医疗健康", "examples": ["私人诊所", "医疗保险"] },
-        "travel": { "label": "旅行娱乐", "examples": ["巴黎周末游", "瑞士滑雪"] },
-        "shopping": { "label": "日用购物", "examples": ["Selfridges", "Harrods试衣间", "Harrods Food Hall"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "Chelsea高档公寓",
+            "Notting Hill维多利亚时代豪宅",
+            "Richmond riverside公寓"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "伦敦私立学校中年级",
+            "国际学校部分班",
+            "音乐院校预备"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "Michelin入门",
+            "法式餐厅",
+            "日本料理",
+            "酒吧美食"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "奥迪A4/宝马3系",
+            "停车费+油费¥1500/月"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "私人诊所",
+            "医疗保险"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "巴黎周末游",
+            "瑞士滑雪"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "Selfridges",
+            "Harrods试衣间",
+            "Harrods Food Hall"
+          ]
+        }
       },
-      "pct": [38, 16, 18, 12, 6, 6, 4]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 24000,
+            "max": 21600,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            54,
+            0,
+            18,
+            12,
+            6,
+            6,
+            4
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 24000,
+            "max": 36000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            54,
+            0,
+            18,
+            12,
+            6,
+            6,
+            4
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 24000,
+            "max": 48000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            38,
+            16,
+            18,
+            12,
+            6,
+            6,
+            4
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 24000,
+            "max": 55200,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            22,
+            32,
+            18,
+            12,
+            6,
+            6,
+            4
+          ]
+        }
+      }
     },
     {
       "id": "t4",
       "name": "品质生活",
-      "incomeRange": { "min": 48000, "max": 96000, "unit": "CNY/month" },
-      "badge": { "bg": "#FBEAF0", "fg": "#4B1528" },
+      "badge": {
+        "bg": "#FBEAF0",
+        "fg": "#4B1528"
+      },
       "description": "月支出 ¥4.8万–¥9.6万。伦敦精英区豪宅，孩子读顶级私立学校，宝马/奔驰，欧洲旅游。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["Kensington豪宅", "Belgravia联排别墅", "Hampstead Georgian House"] },
-        "education": { "label": "子女教育", "examples": ["Eton College预备", "Harrow初中部", "伦敦国际学校高中部"] },
-        "food": { "label": "餐饮美食", "examples": ["Michelin二星", "高端和牛馆", "私人会所"] },
-        "transport": { "label": "交通出行", "examples": ["宝马X5/奔驰GLE", "停车+油费¥3000/月"] },
-        "medical": { "label": "医疗健康", "examples": ["Harley Street医生", "国际医疗VIP"] },
-        "travel": { "label": "旅行娱乐", "examples": ["法国波尔多自驾", "意大利度假"] },
-        "shopping": { "label": "日用购物", "examples": ["Sloane Street奢侈品", "Bond Street时尚"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "Kensington豪宅",
+            "Belgravia联排别墅",
+            "Hampstead Georgian House"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "Eton College预备",
+            "Harrow初中部",
+            "伦敦国际学校高中部"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "Michelin二星",
+            "高端和牛馆",
+            "私人会所"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "宝马X5/奔驰GLE",
+            "停车+油费¥3000/月"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "Harley Street医生",
+            "国际医疗VIP"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "法国波尔多自驾",
+            "意大利度假"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "Sloane Street奢侈品",
+            "Bond Street时尚"
+          ]
+        }
       },
-      "pct": [35, 18, 15, 12, 6, 10, 4]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 48000,
+            "max": 43200,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            53,
+            0,
+            15,
+            12,
+            6,
+            10,
+            4
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 48000,
+            "max": 72000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            53,
+            0,
+            15,
+            12,
+            6,
+            10,
+            4
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 48000,
+            "max": 96000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            35,
+            18,
+            15,
+            12,
+            6,
+            10,
+            4
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 48000,
+            "max": 110400,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            17,
+            36,
+            15,
+            12,
+            6,
+            10,
+            4
+          ]
+        }
+      }
     },
     {
       "id": "t5",
       "name": "豪华生活",
-      "incomeRange": { "min": 96000, "max": 192000, "unit": "CNY/month" },
-      "badge": { "bg": "#EEEDFE", "fg": "#26215C" },
+      "badge": {
+        "bg": "#EEEDFE",
+        "fg": "#26215C"
+      },
       "description": "月支出 ¥9.6万–¥19.2万。伦敦最高档社区豪宅，孩子顶级私校，保时捷，全球商务旅游。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["Mayfair Park Lane mansion", "Kensington Palace Gardens", "Belgravia私人广场"] },
-        "education": { "label": "子女教育", "examples": ["伊顿公学全年级", "哈罗精英项目", "牛津剑桥预科"] },
-        "food": { "label": "餐饮美食", "examples": ["Michelin三星", "私人厨师备选", "白金汉宫晚宴圈"] },
-        "transport": { "label": "交通出行", "examples": ["保时捷911/路虎Range Rover", "专业驾手¥1.5万/月"] },
-        "medical": { "label": "医疗健康", "examples": ["The Lister医院VIP", "美国Mayo临床年检"] },
-        "travel": { "label": "旅行娱乐", "examples": ["瑞士冬宫居住", "南法夏宫"] },
-        "shopping": { "label": "日用购物", "examples": ["Harrods私人购物", "苏富比前排座位"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "Mayfair Park Lane mansion",
+            "Kensington Palace Gardens",
+            "Belgravia私人广场"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "伊顿公学全年级",
+            "哈罗精英项目",
+            "牛津剑桥预科"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "Michelin三星",
+            "私人厨师备选",
+            "白金汉宫晚宴圈"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "保时捷911/路虎Range Rover",
+            "专业驾手¥1.5万/月"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "The Lister医院VIP",
+            "美国Mayo临床年检"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "瑞士冬宫居住",
+            "南法夏宫"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "Harrods私人购物",
+            "苏富比前排座位"
+          ]
+        }
       },
-      "pct": [32, 20, 12, 12, 6, 12, 6]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 96000,
+            "max": 86400,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            52,
+            0,
+            12,
+            12,
+            6,
+            12,
+            6
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 96000,
+            "max": 144000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            52,
+            0,
+            12,
+            12,
+            6,
+            12,
+            6
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 96000,
+            "max": 192000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            32,
+            20,
+            12,
+            12,
+            6,
+            12,
+            6
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 96000,
+            "max": 220800,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            12,
+            40,
+            12,
+            12,
+            6,
+            12,
+            6
+          ]
+        }
+      }
     },
     {
       "id": "t6",
       "name": "顶奢生活",
-      "incomeRange": { "min": 192000, "max": null, "unit": "CNY/month" },
-      "badge": { "bg": "#FAECE7", "fg": "#4A1B0C" },
+      "badge": {
+        "bg": "#FAECE7",
+        "fg": "#4A1B0C"
+      },
       "description": "月支出 > ¥19.2万。伦敦王宫区顶层豪宅，顶尖教育，全职保镖与司机团队，全球头等舱。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["Kensington Palace Gardens顶级地产", "Mayfair私人府邸", "伦敦摄政街顶层"] },
-        "education": { "label": "子女教育", "examples": ["伊顿+牛津保障", "瑞士寄宿学校", "私人哈佛准备"] },
-        "food": { "label": "餐饮美食", "examples": ["Alain Ducasse三星", "私人米其林厨师常驻"] },
-        "transport": { "label": "交通出行", "examples": ["劳斯莱斯幻影", "专属司机保镖团队", "直升机接驳"] },
-        "medical": { "label": "医疗健康", "examples": ["美国顶级诊所年度包约", "私人医疗顾问24/7"] },
-        "travel": { "label": "旅行娱乐", "examples": ["私人游艇地中海", "南极远征邮轮", "北极探险"] },
-        "shopping": { "label": "日用购物", "examples": ["苏富比艺术拍卖VIP", "梵克雅宝珠宝定制"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "Kensington Palace Gardens顶级地产",
+            "Mayfair私人府邸",
+            "伦敦摄政街顶层"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "伊顿+牛津保障",
+            "瑞士寄宿学校",
+            "私人哈佛准备"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "Alain Ducasse三星",
+            "私人米其林厨师常驻"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "劳斯莱斯幻影",
+            "专属司机保镖团队",
+            "直升机接驳"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "美国顶级诊所年度包约",
+            "私人医疗顾问24/7"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "私人游艇地中海",
+            "南极远征邮轮",
+            "北极探险"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "苏富比艺术拍卖VIP",
+            "梵克雅宝珠宝定制"
+          ]
+        }
       },
-      "pct": [36, 16, 10, 12, 4, 14, 8]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 192000,
+            "max": 450000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            52,
+            0,
+            10,
+            12,
+            4,
+            14,
+            8
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 192000,
+            "max": 749999,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            52,
+            0,
+            10,
+            12,
+            4,
+            14,
+            8
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 192000,
+            "max": 999999,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            36,
+            16,
+            10,
+            12,
+            4,
+            14,
+            8
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 192000,
+            "max": 1149999,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            20,
+            32,
+            10,
+            12,
+            4,
+            14,
+            8
+          ]
+        }
+      }
     }
   ]
 }
