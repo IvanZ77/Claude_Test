@@ -189,10 +189,16 @@ async function bootstrap() {
     }
 
     // Subscribe to state changes
+    let lastHouseholdModel = null;
     subscribe((state) => {
       renderMetrics();
       renderTierStrip();
       renderTierPanel();
+
+      // Re-render household selector if it exists and is available
+      if (renderHouseholdModelSelector && state.householdModels) {
+        renderHouseholdModelSelector();
+      }
 
       // Update comparison grid when monthly CNY changes
       if (state.compareMode && state.monthlyCNY) {
@@ -512,10 +518,11 @@ async function bootstrap() {
     renderCitySelector();
 
     // Render household model selector
+    let renderHouseholdModelSelector; // Declare in outer scope
     try {
       const householdSelectorEl = document.getElementById('householdSelector');
 
-      const renderHouseholdModelSelector = () => {
+      renderHouseholdModelSelector = () => {
         const state = getState();
         const el = document.getElementById('householdSelector');
 
@@ -559,7 +566,6 @@ async function bootstrap() {
               const modelId = e.target.dataset.model;
               if (modelId) {
                 setState({ householdModel: modelId });
-                renderHouseholdModelSelector();
                 updateCalculations();
                 scheduleUrlSync();
               }
