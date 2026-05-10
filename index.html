@@ -6,24 +6,24 @@
 <meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0F0F0E" media="(prefers-color-scheme: dark)">
 
-<title>上海生活计算器 — 你的资产能在上海过什么样的生活？</title>
-<meta name="description" content="面向海外华人的资产-生活映射工具：基于美国 4% 安全提取率，将你的可投资资产换算为上海月度可支配收入，对应六档生活方式（含真实小区、学校、餐厅参考）。">
-<meta name="keywords" content="上海生活成本,海外华人,FIRE,4%规则,投资资产,移居上海,国际学校,上海租房">
-<meta name="author" content="Shanghai Lifestyle Calculator">
+<title>多城市生活成本计算器 — 你的资产在不同城市能过什么样的生活？</title>
+<meta name="description" content="面向海外华人的资产-生活映射工具：基于美国 4% 安全提取率，将你的可投资资产换算为月度可支配收入，并对比多个城市的生活成本与生活方式（含真实小区、学校、餐厅参考）。支持上海、北京等城市。">
+<meta name="keywords" content="生活成本计算,海外华人,FIRE,4%规则,投资资产,多城市对比,国际学校,城市选择">
+<meta name="author" content="Multi-City Lifestyle Calculator">
 
-<link rel="canonical" href="https://shanghai-lifestyle.example.com/">
+<link rel="canonical" href="https://IvanZ77.github.io/shanghai_life_calculator/">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="上海生活计算器">
-<meta property="og:description" content="你在美国攒下的钱，在上海能过什么样的日子？拖动滑块查看资产对应的月度可支配收入与生活方式画像。">
+<meta property="og:title" content="多城市生活成本计算器">
+<meta property="og:description" content="你在美国攒下的钱，在不同城市能过什么样的日子？拖动滑块查看资产对应的月度可支配收入与生活方式画像。">
 <meta property="og:locale" content="zh_CN">
 
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="上海生活计算器">
-<meta name="twitter:description" content="你在美国攒下的钱，在上海能过什么样的日子？">
+<meta name="twitter:title" content="多城市生活成本计算器">
+<meta name="twitter:description" content="对比你在不同城市的生活成本与生活方式，基于 4% 安全提取率。">
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2318181B'/%3E%3Ctext x='32' y='44' font-family='-apple-system,PingFang SC,sans-serif' font-size='38' font-weight='600' text-anchor='middle' fill='%23FAFAF7'%3E沪%3C/text%3E%3C/svg%3E">
-<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2318181B'/%3E%3Ctext x='32' y='44' font-family='-apple-system,PingFang SC,sans-serif' font-size='38' font-weight='600' text-anchor='middle' fill='%23FAFAF7'%3E沪%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2318181B'/%3E%3Ctext x='32' y='44' font-family='-apple-system,PingFang SC,sans-serif' font-size='36' font-weight='600' text-anchor='middle' fill='%23FAFAF7'%3E💰%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2318181B'/%3E%3Ctext x='32' y='44' font-family='-apple-system,PingFang SC,sans-serif' font-size='36' font-weight='600' text-anchor='middle' fill='%23FAFAF7'%3E💰%3C/text%3E%3C/svg%3E">
 
 <link rel="stylesheet" href="./assets/css/main.css">
 </head>
@@ -33,15 +33,15 @@
 <div class="wrap">
   <header class="site-header">
     <a href="/" class="brand">
-      <span class="brand-mark">沪</span>
-      <span>上海生活计算器</span>
+      <span class="brand-mark">💰</span>
+      <span>多城市生活成本计算器</span>
     </a>
     <span class="data-tag">数据更新 2025–26</span>
   </header>
 
   <section class="hero">
-    <h1>你在美国攒下的钱，<br>能在上海过什么样的生活？</h1>
-    <p class="lead">面向海外华人的资产-生活映射工具。基于 4% 安全提取率，将你的可投资资产换算为上海月度可支配收入，对应六档真实的生活方式 —— 从郊区老小区到汤臣一品，含真实小区、学校、餐厅参考。</p>
+    <h1>你在美国攒下的钱，<br>在不同城市能过什么样的生活？</h1>
+    <p class="lead">面向海外华人的资产-生活映射工具。基于 4% 安全提取率，将你的可投资资产换算为月度可支配收入，对应六档真实的生活方式。支持多城市对比、FIRE 计划、参数调整，并可分享自定义配置。</p>
   </section>
 
   <noscript>
@@ -154,9 +154,9 @@
        · <strong>家庭模型</strong>：两位成人 + 一个学龄儿童。<br>
        · <strong>租金 / 学费 / 餐饮等</strong>：2025–26 年市场参考价，实际因房型、年级、谈判、入学批次差异较大。</p>
     <h2>数据来源</h2>
-    <p>真实小区、学校、餐厅名称来自上海一手观察 —— 链家 / 贝壳找房挂牌、各国际学校 2025–26 学费公示、米其林上海榜单及大众点评。结果仅作生活方式参考，<strong>不构成投资或移居建议</strong>。</p>
+    <p>各城市数据来自一手市场观察：房产平台（链家、贝壳找房）挂牌价、国际学校学费公示、餐饮榜单及本地评价。目前覆盖上海、北京。结果仅作生活方式参考，<strong>不构成投资或移居建议</strong>。</p>
     <div class="meta">
-      <span>© 2026 上海生活计算器</span>
+      <span>© 2026 多城市生活成本计算器</span>
       <span>数据快照：2025–26</span>
     </div>
   </footer>
