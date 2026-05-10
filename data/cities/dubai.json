@@ -1,0 +1,110 @@
+{
+  "id": "dubai",
+  "name": "迪拜",
+  "currency": "CNY",
+  "schemaVersion": 1,
+  "tiers": [
+    {
+      "id": "t1",
+      "name": "拮据生活",
+      "incomeRange": { "min": 0, "max": 12000, "unit": "CNY/month" },
+      "badge": { "bg": "#E6F1FB", "fg": "#0C447C" },
+      "description": "月支出 < ¥1.2万。住迪拜南部或朱美拉村租住，孩子上邦德或泛阿拉伯公立学校，以印度小餐馆和馄饨摊为主，靠公交出行。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["Al Karama 公寓（印度人社区）", "Naif 老城区", "Deira 公交枢纽附近", "Al Baraha 廉价公寓"] },
+        "education": { "label": "子女教育", "examples": ["阿拉伯公立学校（免费）", "泛阿拉伯国际学校", "Al Khaleej 国家学校", "Dubai Public School"] },
+        "food": { "label": "餐饮美食", "examples": ["Al Reef Bakery（中东面包）", "Ali Baba（印度餐厅）", "街角沙威玛摊", "Spice Island（经济档）"] },
+        "transport": { "label": "交通出行", "examples": ["迪拜地铁红线/绿线", "长途汽车（去阿联酋其他城市）", "的士（拼车）", "步行为主"] },
+        "medical": { "label": "医疗健康", "examples": ["政府医疗中心", "Al Zahra 医院普通号", "基本医疗保险", "社区卫生诊所"] },
+        "travel": { "label": "旅行娱乐", "examples": ["沙漠冲沙（廉价版）", "迪拜河散步", "黄金市集逛街", "免费海滩"] },
+        "shopping": { "label": "日用购物", "examples": ["Carrefour 超市", "Lulu 大卖场", "迪拜市集（Souk）", "华人副食"] }
+      },
+      "pct": [42, 7, 27, 6, 4, 3, 11]
+    },
+    {
+      "id": "t2",
+      "name": "基本小康",
+      "incomeRange": { "min": 12000, "max": 25000, "unit": "CNY/month" },
+      "badge": { "bg": "#EAF3DE", "fg": "#27500A" },
+      "description": "月支出 ¥1.2万–2.5万。住Arabian Ranches 或 Dubai Hills Estate 入门社区，孩子读英制国际学校初级班，有二手日本车，能度假阿布扎比。迪拜中产入门。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["Arabian Ranches 联排别墅（租赁）", "Dubai Hills Estate 公寓", "Jumeirah Village Circle JVC", "Sports City 公寓"] },
+        "education": { "label": "子女教育", "examples": ["英伦国际学校（British）初级部", "迪拜学院（Dubai College）", "印度学校国际部", "美国学校迪拜（ADIS）初级"] },
+        "food": { "label": "餐饮美食", "examples": ["Ravi 印度餐厅", "Pakistani Grill", "Lebanese Flowers", "The Cheesecake Factory"] },
+        "transport": { "label": "交通出行", "examples": ["二手丰田卡罗拉", "本田雅阁二手车", "迪拜地铁+滴滴", "周末自驾"] },
+        "medical": { "label": "医疗健康", "examples": ["Medicana 国际医院", "American Hospital Dubai", "ENAYA 保险计划", "综合体检"] },
+        "travel": { "label": "旅行娱乐", "examples": ["阿布扎比 Sheikh Zayed 清真寺", "Al Ain 绿洲自驾游", "Oman 马斯喀特周末", "迪拜沙漠冲沙+BBQ"] },
+        "shopping": { "label": "日用购物", "examples": ["The Dubai Mall 基础品牌", "Ibn Battuta Mall", "Dune Village 村镇商业", "Alhambra 折扣店"] }
+      },
+      "pct": [37, 13, 21, 8, 5, 9, 7]
+    },
+    {
+      "id": "t3",
+      "name": "舒适生活",
+      "incomeRange": { "min": 25000, "max": 55000, "unit": "CNY/month" },
+      "badge": { "bg": "#FAEEDA", "fg": "#633806" },
+      "description": "月支出 ¥2.5万–5.5万。住Jumeirah 或 Emirates Hills 高档社区，孩子读英美国际学校，有私家车，能去马尔代夫度假。迪拜上层中产。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["Jumeirah Island 别墅", "Emirates Hills 豪宅", "Downtown Dubai 公寓高层", "Caesars Palace 社区"] },
+        "education": { "label": "子女教育", "examples": ["英伦国际学校（IBIS）高等部", "迪拜学院（Dubai College）", "美国学校迪拜（ADIS）中等", "加拿大国际学校"] },
+        "food": { "label": "餐饮美食", "examples": ["Al Mallah（黎巴嫩烤肉）", "Nusr-Et Steakhouse", "Nobu by Nobu Matsuhisa", "Zuma Dubai（日餐）"] },
+        "transport": { "label": "交通出行", "examples": ["大众途观 / 丰田RAV4", "本田CR-V", "油费停车约¥2,200/月", "Uber 高级"] },
+        "medical": { "label": "医疗健康", "examples": ["American Hospital Dubai VIP", "Cleveland Clinic 迪拜", "Bupa 中等国际保险", "年度体检"] },
+        "travel": { "label": "旅行娱乐", "examples": ["马尔代夫 Soneva Jani", "斯里兰卡探亲", "土耳其伊斯坦布尔周末", "约旦佩特拉古迹"] },
+        "shopping": { "label": "日用购物", "examples": ["The Dubai Mall 奢侈品", "Gold Souk VIP", "Bloomingdale's", "Saks Fifth Avenue"] }
+      },
+      "pct": [31, 19, 15, 11, 6, 11, 7]
+    },
+    {
+      "id": "t4",
+      "name": "品质生活",
+      "incomeRange": { "min": 55000, "max": 120000, "unit": "CNY/month" },
+      "badge": { "bg": "#FBEAF0", "fg": "#4B1528" },
+      "description": "月支出 ¥5.5万–12万。住Palm Jumeirah 或 Downtown Dubai 豪宅，孩子读顶级国际学校，开宝马奔驰，每年欧洲度假。迪拜精英商人。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["Palm Jumeirah 水景别墅", "Downtown Dubai One Central顶层", "Armani Residences", "DAMAC Maison"] },
+        "education": { "label": "子女教育", "examples": ["英伦国际学校（伦敦课程）", "加拿大国际学校（IB课程）", "瑞士国际学校迪拜分校", "美国驻迪拜商务学校"] },
+        "food": { "label": "餐饮美食", "examples": ["Zuma Omakase", "Cote（韩牛餐厅）", "Bacchanal（土耳其烤肉）", "Amado（西班牙美食）"] },
+        "transport": { "label": "交通出行", "examples": ["宝马X5 / 奔驰GLE", "保时捷Cayenne", "油费停车约¥3,200/月", "偶尔专车"] },
+        "medical": { "label": "医疗健康", "examples": ["American Hospital Dubai VIP Suite", "Cleveland Clinic 私人医疗", "AXA 顶级国际保险", "年度全身体检"] },
+        "travel": { "label": "旅行娱乐", "examples": ["瑞士洛桑私人度假", "法国蔚蓝海岸", "意大利米兰时装周", "摩洛哥撒哈拉自驾"] },
+        "shopping": { "label": "日用购物", "examples": ["Hermès 迪拜精品店", "Gold Souk 黄金饰品", "Bloomingdale's VIP", "Cartier 表店"] }
+      },
+      "pct": [29, 24, 11, 11, 6, 12, 7]
+    },
+    {
+      "id": "t5",
+      "name": "豪华生活",
+      "incomeRange": { "min": 120000, "max": 280000, "unit": "CNY/month" },
+      "badge": { "bg": "#EEEDFE", "fg": "#26215C" },
+      "description": "月支出 ¥12万–28万。Palm Jumeirah 顶级别墅，孩子读全球顶校，专属司机，头等舱环球旅行。迪拜高净值人群。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["Palm Jumeirah 独栋豪宅（可达¥18万/月）", "Burj Khalifa 顶层", "DAMAC Cavalli 豪宅", "Emirates Hills 最高地段别墅"] },
+        "education": { "label": "子女教育", "examples": ["英伦国际学校（伦敦寄宿预科）", "美国康涅狄格州菲利普斯埃克塞特", "瑞士罗森博格国际学校", "奥地利维也纳美国学校"] },
+        "food": { "label": "餐饮美食", "examples": ["Nobu私人套房宴会", "Cote 主厨驻家", "米其林主厨晚宴包厢", "Michelin-starred餐厅会员"] },
+        "transport": { "label": "交通出行", "examples": ["保时捷911 Turbo S", "玛莎拉蒂MC20", "全职专属司机（¥1.3万/月）"] },
+        "medical": { "label": "医疗健康", "examples": ["Mayo Clinic International 远程咨询", "国际顶级医疗协会会员", "Cigna 无上限保险", "24/7 医疗协助"] },
+        "travel": { "label": "旅行娱乐", "examples": ["马尔代夫私人岛屿包租", "瑞士圣莫里茨滑雪", "非洲肯尼亚safari", "北极极光远征"] },
+        "shopping": { "label": "日用购物", "examples": ["VIP 私人购物助理", "Hermès 定制工坊", "拍卖行艺术品", "私人古董收藏"] }
+      },
+      "pct": [32, 20, 9, 12, 5, 14, 8]
+    },
+    {
+      "id": "t6",
+      "name": "顶奢生活",
+      "incomeRange": { "min": 280000, "max": null, "unit": "CNY/month" },
+      "badge": { "bg": "#FAECE7", "fg": "#4A1B0C" },
+      "description": "月支出 > ¥28万。Burj Khalifa 或 Palm Jumeirah 顶级豪宅，私人管家军团，包机出行，游艇地中海。迪拜财富顶端。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["Burj Khalifa 顶层（可达¥30万+/月）", "Palm Jumeirah 独栋豪宅最高级", "DAMAC Cavalli 皇家套房", "One Central 超级豪宅"] },
+        "education": { "label": "子女教育", "examples": ["英国伊顿公学预科", "美国康州预科联盟", "瑞士Aiglon学院", "私人管家式教学"] },
+        "food": { "label": "餐饮美食", "examples": ["Michelin-starred主厨驻家", "私人厨师团队24/7", "跨国美食家特邀宴会", "餐饮协会VIP会员"] },
+        "transport": { "label": "交通出行", "examples": ["劳斯莱斯Phantom / Cullinan", "法拉利LaFerrari", "专属司机团队（3人）", "私人商务机"] },
+        "medical": { "label": "医疗健康", "examples": ["世界顶级医疗集团会员", "美国Johns Hopkins 远程医学团队", "全球无上限保险", "私人医疗顾问"] },
+        "travel": { "label": "旅行娱乐", "examples": ["私人游艇地中海巡游（€50,000+/周）", "南极探险邮轮包舱", "四季酒店全球VIP", "北极冰屋私人预订"] },
+        "shopping": { "label": "日用购物", "examples": ["Hermès Birkin定制（特殊皮料）", "Patek Philippe 限量表", "苏富比艺术品竞拍家", "私人画廊顾问"] }
+      },
+      "pct": [36, 17, 7, 13, 4, 15, 8]
+    }
+  ]
+}
