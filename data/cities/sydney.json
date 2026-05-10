@@ -7,104 +7,841 @@
     {
       "id": "t1",
       "name": "拮据生活",
-      "incomeRange": { "min": 0, "max": 12000, "unit": "CNY/month" },
-      "badge": { "bg": "#E6F1FB", "fg": "#0C447C" },
+      "badge": {
+        "bg": "#E6F1FB",
+        "fg": "#0C447C"
+      },
       "description": "月支出 < ¥1.2万。住西悉尼郊区或Newcastle，孩子上公立学校，以Woolworths、Aldi为主，靠公交和自行车出行。澳洲最低生存。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["Penrith 郊区两房公寓", "Parramatta 老区老房", "Western Sydney 边缘地带", "Newcastle 海滨小镇"] },
-        "education": { "label": "子女教育", "examples": ["公立小学（免费）", "Western Sydney 公立中学", "州属技术学校", "免费辅导中心"] },
-        "food": { "label": "餐饮美食", "examples": ["Aldi 超市廉价品", "Woolworths 便当", "Fish & Chips 街边摊", "亚洲食品超市"] },
-        "transport": { "label": "交通出行", "examples": ["公交卡月票", "自行车通勤", "Opal 卡跨区", "步行为主"] },
-        "medical": { "label": "医疗健康", "examples": ["Medicare（澳洲医保）", "公立医院挂号", "社区卫生诊所", "基本药物补贴"] },
-        "travel": { "label": "旅行娱乐", "examples": ["Taronga Zoo 免费日", "Manly Beach 免费泳滩", "本地公园步道", "Blue Mountains 自驾"] },
-        "shopping": { "label": "日用购物", "examples": ["Kmart 折扣店", "Target Australia", "Cotton On 基础款", "Op Shop 二手店"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "Penrith 郊区两房公寓",
+            "Parramatta 老区老房",
+            "Western Sydney 边缘地带",
+            "Newcastle 海滨小镇"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "公立小学（免费）",
+            "Western Sydney 公立中学",
+            "州属技术学校",
+            "免费辅导中心"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "Aldi 超市廉价品",
+            "Woolworths 便当",
+            "Fish & Chips 街边摊",
+            "亚洲食品超市"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "公交卡月票",
+            "自行车通勤",
+            "Opal 卡跨区",
+            "步行为主"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "Medicare（澳洲医保）",
+            "公立医院挂号",
+            "社区卫生诊所",
+            "基本药物补贴"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "Taronga Zoo 免费日",
+            "Manly Beach 免费泳滩",
+            "本地公园步道",
+            "Blue Mountains 自驾"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "Kmart 折扣店",
+            "Target Australia",
+            "Cotton On 基础款",
+            "Op Shop 二手店"
+          ]
+        }
       },
-      "pct": [38, 9, 26, 8, 5, 6, 8]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 0,
+            "max": 6000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            99,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 0,
+            "max": 9600,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            99,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 0,
+            "max": 12000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            91,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 0,
+            "max": 14400,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            83,
+            16,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      }
     },
     {
       "id": "t2",
       "name": "基本小康",
-      "incomeRange": { "min": 12000, "max": 25000, "unit": "CNY/month" },
-      "badge": { "bg": "#EAF3DE", "fg": "#27500A" },
+      "badge": {
+        "bg": "#EAF3DE",
+        "fg": "#27500A"
+      },
       "description": "月支出 ¥1.2万–2.5万。住Parramatta 或 Inner West 中档区，孩子读私立学校初级班或好的公立学校，有二手日本车，能去New Zealand 自驾。澳洲工薪族。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["Parramatta 新建公寓3房", "Strathfield 老式房产翻新", "Hurstville 华人区公寓", "Marrickville 艺术家区"] },
-        "education": { "label": "子女教育", "examples": ["Loreto Kirrawee 女校初级部", "Knox Grammar 男校", "Penrith Anglican College 混校", "高级公立学校（Selective School）"] },
-        "food": { "label": "餐饮美食", "examples": ["麻辣火锅城", "越南河粉摊", "Thai Express 泰餐", "Coffee Culture 咖啡厅"] },
-        "transport": { "label": "交通出行", "examples": ["二手丰田卡罗拉", "本田Civic 二手", "Opal卡+周末自驾", "Uber 日常"] },
-        "medical": { "label": "医疗健康", "examples": ["Private Health Insurance 基础档", "中文医学诊所", "牙医定期检查", "体检补贴"] },
-        "travel": { "label": "旅行娱乐", "examples": ["新西兰南岛自驾周", "Great Ocean Road 墨尔本周末", "Hunter Valley 葡萄酒区", "Gold Coast 家庭度假"] },
-        "shopping": { "label": "日用购物", "examples": ["Westfield Shopping Centre", "Eastgardens 购物中心", "Harris Farm 蔬菜市场", "Nespresso 咖啡机"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "Parramatta 新建公寓3房",
+            "Strathfield 老式房产翻新",
+            "Hurstville 华人区公寓",
+            "Marrickville 艺术家区"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "Loreto Kirrawee 女校初级部",
+            "Knox Grammar 男校",
+            "Penrith Anglican College 混校",
+            "高级公立学校（Selective School）"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "麻辣火锅城",
+            "越南河粉摊",
+            "Thai Express 泰餐",
+            "Coffee Culture 咖啡厅"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "二手丰田卡罗拉",
+            "本田Civic 二手",
+            "Opal卡+周末自驾",
+            "Uber 日常"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "Private Health Insurance 基础档",
+            "中文医学诊所",
+            "牙医定期检查",
+            "体检补贴"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "新西兰南岛自驾周",
+            "Great Ocean Road 墨尔本周末",
+            "Hunter Valley 葡萄酒区",
+            "Gold Coast 家庭度假"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "Westfield Shopping Centre",
+            "Eastgardens 购物中心",
+            "Harris Farm 蔬菜市场",
+            "Nespresso 咖啡机"
+          ]
+        }
       },
-      "pct": [33, 15, 20, 9, 5, 11, 7]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 6000,
+            "max": 12500,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            99,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 9600,
+            "max": 20000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            99,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 12000,
+            "max": 25000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            91,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 14400,
+            "max": 30000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            83,
+            16,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      }
     },
     {
       "id": "t3",
       "name": "舒适生活",
-      "incomeRange": { "min": 25000, "max": 55000, "unit": "CNY/month" },
-      "badge": { "bg": "#FAEEDA", "fg": "#633806" },
+      "badge": {
+        "bg": "#FAEEDA",
+        "fg": "#633806"
+      },
       "description": "月支出 ¥2.5万–5.5万。住Neutral Bay 或 Crows Nest 港景区，孩子读名私立学校，有自己的新车，能去東京/新加坡度假。澳洲中产典范。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["Neutral Bay 港景公寓3房", "Crows Nest 新式小区", "Cabarita 北悉尼郊区", "Cremorne 上层住宅区"] },
-        "education": { "label": "子女教育", "examples": ["MLC School 女校", "Shore School 男校", "Ravenswood School 混校", "Kincoppal-Rose Bay 一线私校"] },
-        "food": { "label": "餐饮美食", "examples": ["Quay（米其林二星）", "Rockpool（澳洲美食）", "Noma at Sydney Opera House", "Golden Century 海鮮酒樓"] },
-        "transport": { "label": "交通出行", "examples": ["大众Polo / 丰田Corolla 新车", "本田Accord", "油费停车约¥1,800/月", "Uber 高级"] },
-        "medical": { "label": "医疗健康", "examples": ["Private Health Insurance 中档", "Medibank Private 全家计划", "私人牙科诊所", "年度体检"] },
-        "travel": { "label": "旅行娱乐", "examples": ["东京 Park Hyatt 樱花季", "新加坡 Marina Bay Sands", "巴厘岛 Conrad Bali", "斐济度假村"] },
-        "shopping": { "label": "日用购物", "examples": ["Westfield Bondi Junction", "Strand Arcade 精品店", "Paddington Markets 周末市集", "Mecca Cosmetica"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "Neutral Bay 港景公寓3房",
+            "Crows Nest 新式小区",
+            "Cabarita 北悉尼郊区",
+            "Cremorne 上层住宅区"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "MLC School 女校",
+            "Shore School 男校",
+            "Ravenswood School 混校",
+            "Kincoppal-Rose Bay 一线私校"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "Quay（米其林二星）",
+            "Rockpool（澳洲美食）",
+            "Noma at Sydney Opera House",
+            "Golden Century 海鮮酒樓"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "大众Polo / 丰田Corolla 新车",
+            "本田Accord",
+            "油费停车约¥1,800/月",
+            "Uber 高级"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "Private Health Insurance 中档",
+            "Medibank Private 全家计划",
+            "私人牙科诊所",
+            "年度体检"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "东京 Park Hyatt 樱花季",
+            "新加坡 Marina Bay Sands",
+            "巴厘岛 Conrad Bali",
+            "斐济度假村"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "Westfield Bondi Junction",
+            "Strand Arcade 精品店",
+            "Paddington Markets 周末市集",
+            "Mecca Cosmetica"
+          ]
+        }
       },
-      "pct": [30, 19, 14, 11, 6, 12, 8]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 12500,
+            "max": 27500,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            99,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 20000,
+            "max": 44000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            99,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 25000,
+            "max": 55000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            91,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 30000,
+            "max": 66000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            83,
+            16,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      }
     },
     {
       "id": "t4",
       "name": "品质生活",
-      "incomeRange": { "min": 55000, "max": 120000, "unit": "CNY/month" },
-      "badge": { "bg": "#FBEAF0", "fg": "#4B1528" },
+      "badge": {
+        "bg": "#FBEAF0",
+        "fg": "#4B1528"
+      },
       "description": "月支出 ¥5.5万–12万。住Vaucluse 或 Darling Point 港边豪宅，孩子读全澳洲顶级私校，开宝马或奔驰，每年欧美度假。悉尼上层中产。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["Vaucluse 海景独栋别墅", "Darling Point 双层洋房", "Toorak（墨尔本）豪宅", "Bellevue Hill 高档社区"] },
-        "education": { "label": "子女教育", "examples": ["Tara Anglican Girls School（女校）", "Newington College（男校）", "Pymble Ladies College（精英女校）", "Abbotsleigh（一线女校）"] },
-        "food": { "label": "餐饮美食", "examples": ["Aria（悉尼歌剧院米其林二星）", "Ester（意大利米其林一星）", "Sepia（米其林一星+绿星）", "Devon（澳洲当代美食）"] },
-        "transport": { "label": "交通出行", "examples": ["宝马3系 / 奔驰C级", "保时捷Macan", "油费停车约¥2,500/月", "偶尔专车"] },
-        "medical": { "label": "医疗健康", "examples": ["Medibank Private VIP Suite", "私人医疗诊所会员", "Bupa 顶级保险计划", "年度体检+基因检测"] },
-        "travel": { "label": "旅行娱乐", "examples": ["伦敦 Claridge's 酒店", "巴黎 Crillon 五星", "意大利威尼斯度假", "瑞士圣莫里茨"] },
-        "shopping": { "label": "日用购物", "examples": ["Gucci Sydney Flagship", "Louis Vuitton Pitt Street", "Saks Fifth Avenue", "Private shopping at Harrods"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "Vaucluse 海景独栋别墅",
+            "Darling Point 双层洋房",
+            "Toorak（墨尔本）豪宅",
+            "Bellevue Hill 高档社区"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "Tara Anglican Girls School（女校）",
+            "Newington College（男校）",
+            "Pymble Ladies College（精英女校）",
+            "Abbotsleigh（一线女校）"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "Aria（悉尼歌剧院米其林二星）",
+            "Ester（意大利米其林一星）",
+            "Sepia（米其林一星+绿星）",
+            "Devon（澳洲当代美食）"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "宝马3系 / 奔驰C级",
+            "保时捷Macan",
+            "油费停车约¥2,500/月",
+            "偶尔专车"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "Medibank Private VIP Suite",
+            "私人医疗诊所会员",
+            "Bupa 顶级保险计划",
+            "年度体检+基因检测"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "伦敦 Claridge's 酒店",
+            "巴黎 Crillon 五星",
+            "意大利威尼斯度假",
+            "瑞士圣莫里茨"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "Gucci Sydney Flagship",
+            "Louis Vuitton Pitt Street",
+            "Saks Fifth Avenue",
+            "Private shopping at Harrods"
+          ]
+        }
       },
-      "pct": [28, 24, 12, 11, 6, 12, 7]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 27500,
+            "max": 60000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            99,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 44000,
+            "max": 96000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            99,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 55000,
+            "max": 120000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            91,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 66000,
+            "max": 144000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            83,
+            16,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      }
     },
     {
       "id": "t5",
       "name": "豪华生活",
-      "incomeRange": { "min": 120000, "max": 280000, "unit": "CNY/month" },
-      "badge": { "bg": "#EEEDFE", "fg": "#26215C" },
+      "badge": {
+        "bg": "#EEEDFE",
+        "fg": "#26215C"
+      },
       "description": "月支出 ¥12万–28万。Point Piper 或 Rose Bay 顶级水景别墅，孩子读顶校+国际交流，专属司机，头等舱环球旅行。澳洲高净值人群。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["Point Piper 顶级海景别墅（可达¥15万/月）", "Rose Bay 双面水景豪宅", "Elizabeth Bay 百年老房翻新豪宅", "Bellevue Hill 最顶级别墅"] },
-        "education": { "label": "子女教育", "examples": ["Scots School Boarding（寄宿学校）", "Geelong Grammar（维州精英寄宿）", "Harrow International School（英式国际）", "国际交流计划+私人家教"] },
-        "food": { "label": "餐饮美食", "examples": ["Tetsuya's（米其林两星+私人包厢）", "Quay Chef's Table 私人预订", "Ortegia（西班牙米其林）", "Bel & Brio（意大利米其林一星）"] },
-        "transport": { "label": "交通出行", "examples": ["宝马M系 / 奔驰AMG", "保时捷911 Turbo", "全职专属司机（¥1.4万/月）"] },
-        "medical": { "label": "医疗健康", "examples": ["Medibank Private VIP Elite", "国际私人医疗协会", "美国Mayo Clinic远程咨询", "Cigna 无上限保险"] },
-        "travel": { "label": "旅行娱乐", "examples": ["法国蔚蓝海岸私人度假别墅", "阿尔卑斯山滑雪", "埃及尼罗河游轮", "日本京都私人温泉"] },
-        "shopping": { "label": "日用购物", "examples": ["VIP 私人购物助理", "Hermès 定制工坊（巴黎）", "Cartier高级定制", "画廊顾问收购艺术品"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "Point Piper 顶级海景别墅（可达¥15万/月）",
+            "Rose Bay 双面水景豪宅",
+            "Elizabeth Bay 百年老房翻新豪宅",
+            "Bellevue Hill 最顶级别墅"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "Scots School Boarding（寄宿学校）",
+            "Geelong Grammar（维州精英寄宿）",
+            "Harrow International School（英式国际）",
+            "国际交流计划+私人家教"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "Tetsuya's（米其林两星+私人包厢）",
+            "Quay Chef's Table 私人预订",
+            "Ortegia（西班牙米其林）",
+            "Bel & Brio（意大利米其林一星）"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "宝马M系 / 奔驰AMG",
+            "保时捷911 Turbo",
+            "全职专属司机（¥1.4万/月）"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "Medibank Private VIP Elite",
+            "国际私人医疗协会",
+            "美国Mayo Clinic远程咨询",
+            "Cigna 无上限保险"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "法国蔚蓝海岸私人度假别墅",
+            "阿尔卑斯山滑雪",
+            "埃及尼罗河游轮",
+            "日本京都私人温泉"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "VIP 私人购物助理",
+            "Hermès 定制工坊（巴黎）",
+            "Cartier高级定制",
+            "画廊顾问收购艺术品"
+          ]
+        }
       },
-      "pct": [31, 21, 10, 11, 5, 14, 8]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 60000,
+            "max": 140000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            99,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 96000,
+            "max": 224000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            99,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 120000,
+            "max": 280000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            91,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 144000,
+            "max": 336000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            83,
+            16,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      }
     },
     {
       "id": "t6",
       "name": "顶奢生活",
-      "incomeRange": { "min": 280000, "max": null, "unit": "CNY/month" },
-      "badge": { "bg": "#FAECE7", "fg": "#4A1B0C" },
+      "badge": {
+        "bg": "#FAECE7",
+        "fg": "#4A1B0C"
+      },
       "description": "月支出 > ¥28万。Point Piper 独栋豪宅或悉尼港湖畔庄园，私人管家军团，商务机随时待命，游艇度假。澳洲财富顶端。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["Point Piper 独栋豪宅（可达¥25万+/月）", "Rose Bay 私人湖畔庄园", "Vaucluse 历史豪宅经典翻建", "港湾岛屿私人别墅综合体"] },
-        "education": { "label": "子女教育", "examples": ["伊顿公学寄宿（英国）", "哈佛预科Summer Program", "瑞士罗森博格国际学校", "私人管家式全球教学"] },
-        "food": { "label": "餐饮美食", "examples": ["Michelin星级主厨驻家晚宴", "私人厨师团队24/7", "跨国美食家特邀策展", "餐饮协会顶级会员"] },
-        "transport": { "label": "交通出行", "examples": ["劳斯莱斯Ghost / Phantom", "法拉利F8 Tributo", "专属司机团队（2-3人）", "私人商务机 on-call"] },
-        "medical": { "label": "医疗健康", "examples": ["美国Johns Hopkins Medical顾问", "世界顶级医学专家网络", "全球无上限私人保险", "私人医疗总监"] },
-        "travel": { "label": "旅行娱乐", "examples": ["私人游艇克罗地亚巡游（€60,000+/周）", "南极探险邮轮包舱", "四季酒店全球VIP计划", "北极冰屋私人探险"] },
-        "shopping": { "label": "日用购物", "examples": ["Hermès Birkin定制（特殊皮料）", "Patek Philippe Limited Edition 表", "苏富比拍卖会常客", "私人艺术顾问团队"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "Point Piper 独栋豪宅（可达¥25万+/月）",
+            "Rose Bay 私人湖畔庄园",
+            "Vaucluse 历史豪宅经典翻建",
+            "港湾岛屿私人别墅综合体"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "伊顿公学寄宿（英国）",
+            "哈佛预科Summer Program",
+            "瑞士罗森博格国际学校",
+            "私人管家式全球教学"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "Michelin星级主厨驻家晚宴",
+            "私人厨师团队24/7",
+            "跨国美食家特邀策展",
+            "餐饮协会顶级会员"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "劳斯莱斯Ghost / Phantom",
+            "法拉利F8 Tributo",
+            "专属司机团队（2-3人）",
+            "私人商务机 on-call"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "美国Johns Hopkins Medical顾问",
+            "世界顶级医学专家网络",
+            "全球无上限私人保险",
+            "私人医疗总监"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "私人游艇克罗地亚巡游（€60,000+/周）",
+            "南极探险邮轮包舱",
+            "四季酒店全球VIP计划",
+            "北极冰屋私人探险"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "Hermès Birkin定制（特殊皮料）",
+            "Patek Philippe Limited Edition 表",
+            "苏富比拍卖会常客",
+            "私人艺术顾问团队"
+          ]
+        }
       },
-      "pct": [35, 19, 8, 12, 4, 14, 8]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 140000,
+            "max": null,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            99,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 224000,
+            "max": null,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            99,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 280000,
+            "max": null,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            91,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 336000,
+            "max": null,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            83,
+            16,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      }
     }
   ]
 }

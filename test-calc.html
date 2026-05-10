@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>计算逻辑测试</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h1 {
+      margin-bottom: 10px;
+      color: #222;
+    }
+    .subtitle {
+      color: #666;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+    .controls {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #1d4ed8;
+    }
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    .console {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      padding: 15px;
+      border-radius: 6px;
+      font-family: 'Monaco', 'Courier New', monospace;
+      font-size: 12px;
+      max-height: 700px;
+      overflow-y: auto;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .console-line {
+      margin: 2px 0;
+    }
+    .pass { color: #4ec9b0; }
+    .fail { color: #f48771; }
+    .info { color: #569cd6; }
+    .warn { color: #dcdcaa; }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .stat {
+      padding: 15px;
+      border-radius: 6px;
+      text-align: center;
+    }
+    .stat-passed {
+      background: #f0fdf4;
+      border-left: 4px solid #22c55e;
+    }
+    .stat-failed {
+      background: #fef2f2;
+      border-left: 4px solid #ef4444;
+    }
+    .stat-value {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: #666;
+    }
+    .stat-passed .stat-value { color: #22c55e; }
+    .stat-failed .stat-value { color: #ef4444; }
+    .test-details {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f9f9f9;
+      border-radius: 6px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .test-item {
+      padding: 10px;
+      margin: 5px 0;
+      background: white;
+      border-left: 3px solid #ddd;
+      border-radius: 3px;
+    }
+    .test-item.passed {
+      border-left-color: #22c55e;
+    }
+    .test-item.failed {
+      border-left-color: #ef4444;
+    }
+    .test-name {
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+    .test-details-line {
+      font-size: 12px;
+      color: #666;
+      margin: 3px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🧮 计算逻辑测试</h1>
+    <p class="subtitle">验证所有数学计算函数的正确性</p>
+
+    <div class="controls">
+      <button id="runBtn" onclick="runTests()">运行计算测试</button>
+      <button id="clearBtn" onclick="clearConsole()">清除日志</button>
+      <button id="dataBtn" onclick="runDataTests()">同时运行数据验证</button>
+    </div>
+
+    <div id="console" class="console"></div>
+
+    <div id="summary" class="summary"></div>
+
+    <div id="testDetails" class="test-details" style="display: none;">
+      <strong>测试详情：</strong>
+      <div id="testList"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { loadAllData } from './assets/js/data-loader.js';
+    import { runCalculationTests, printCalculationTestResults } from './assets/js/test/calculation-tests.js';
+    import { validateAllData } from './assets/js/test/data-validator.js';
+
+    const consoleEl = document.getElementById('console');
+    const logs = [];
+
+    function customLog(...args) {
+      const message = args
+        .map(arg => (typeof arg === 'string' ? arg : JSON.stringify(arg, null, 2)))
+        .join(' ');
+
+      logs.push(message);
+      console.log(message);
+
+      const lines = message.split('\n');
+      lines.forEach(line => {
+        if (line.trim()) {
+          const logEl = document.createElement('div');
+          logEl.className = 'console-line';
+
+          if (line.includes('✅')) {
+            logEl.innerHTML = `<span class="pass">${escapeHtml(line)}</span>`;
+          } else if (line.includes('❌')) {
+            logEl.innerHTML = `<span class="fail">${escapeHtml(line)}</span>`;
+          } else if (line.includes('⚠️') || line.includes('⚠')) {
+            logEl.innerHTML = `<span class="warn">${escapeHtml(line)}</span>`;
+          } else if (line.match(/^[📋🧪📊]/)) {
+            logEl.innerHTML = `<span class="info">${escapeHtml(line)}</span>`;
+          } else {
+            logEl.textContent = line;
+          }
+
+          consoleEl.appendChild(logEl);
+        }
+      });
+
+      consoleEl.scrollTop = consoleEl.scrollHeight;
+    }
+
+    const originalLog = console.log;
+    console.log = customLog;
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    window.runTests = async function() {
+      document.getElementById('runBtn').disabled = true;
+      document.getElementById('clearBtn').disabled = false;
+      clearConsole();
+
+      try {
+        console.log('🚀 加载应用数据...\n');
+        const data = await loadAllData();
+        console.log('✅ 数据加载完成\n');
+
+        console.log('=' + '='.repeat(59));
+        const results = await runCalculationTests(data);
+        const allPassed = printCalculationTestResults(results);
+
+        showSummary(results);
+        showTestDetails(results);
+
+        if (allPassed) {
+          console.log('✅ 所有计算测试通过！');
+        } else {
+          console.log('⚠️ 有测试失败，请查看详情');
+        }
+      } catch (error) {
+        console.log(`❌ 测试失败: ${error.message}`);
+        console.error(error);
+      } finally {
+        document.getElementById('runBtn').disabled = false;
+      }
+    };
+
+    window.runDataTests = async function() {
+      document.getElementById('runBtn').disabled = true;
+      document.getElementById('dataBtn').disabled = true;
+      clearConsole();
+
+      try {
+        const data = await loadAllData();
+
+        // Run data validation
+        console.log('=' + '='.repeat(59));
+        console.log('📊 数据验证测试');
+        console.log('=' + '='.repeat(59) + '\n');
+        const dataResults = await validateAllData(data);
+
+        // Run calculation tests
+        console.log('\n' + '=' + '='.repeat(59));
+        console.log('🧮 计算逻辑测试');
+        console.log('=' + '='.repeat(59) + '\n');
+        const calcResults = await runCalculationTests(data);
+        printCalculationTestResults(calcResults);
+
+        const totalPassed = dataResults.passed + calcResults.passed;
+        const totalFailed = dataResults.failed + calcResults.failed;
+
+        showCombinedSummary(dataResults, calcResults);
+
+        console.log(`\n✅ 数据验证: ${dataResults.passed} 通过, ${dataResults.failed} 失败`);
+        console.log(`✅ 计算测试: ${calcResults.passed} 通过, ${calcResults.failed} 失败`);
+        console.log(`\n总体: ${totalPassed} 通过, ${totalFailed} 失败`);
+      } catch (error) {
+        console.log(`❌ 测试失败: ${error.message}`);
+        console.error(error);
+      } finally {
+        document.getElementById('runBtn').disabled = false;
+        document.getElementById('dataBtn').disabled = false;
+      }
+    };
+
+    window.clearConsole = function() {
+      consoleEl.innerHTML = '';
+      document.getElementById('summary').innerHTML = '';
+      document.getElementById('testDetails').style.display = 'none';
+      logs.length = 0;
+    };
+
+    function showSummary(results) {
+      const summaryEl = document.getElementById('summary');
+      summaryEl.innerHTML = `
+        <div class="stat stat-passed">
+          <div class="stat-value">${results.passed}</div>
+          <div class="stat-label">✅ 通过</div>
+        </div>
+        <div class="stat stat-failed">
+          <div class="stat-value">${results.failed}</div>
+          <div class="stat-label">❌ 失败</div>
+        </div>
+      `;
+    }
+
+    function showCombinedSummary(dataResults, calcResults) {
+      const summaryEl = document.getElementById('summary');
+      const totalPassed = dataResults.passed + calcResults.passed;
+      const totalFailed = dataResults.failed + calcResults.failed;
+
+      summaryEl.innerHTML = `
+        <div class="stat stat-passed">
+          <div class="stat-value">${dataResults.passed}</div>
+          <div class="stat-label">✅ 数据验证通过</div>
+        </div>
+        <div class="stat stat-passed">
+          <div class="stat-value">${calcResults.passed}</div>
+          <div class="stat-label">✅ 计算测试通过</div>
+        </div>
+        <div class="stat stat-failed">
+          <div class="stat-value">${totalFailed}</div>
+          <div class="stat-label">❌ 总失败数</div>
+        </div>
+      `;
+    }
+
+    function showTestDetails(results) {
+      const detailsEl = document.getElementById('testDetails');
+      const listEl = document.getElementById('testList');
+
+      if (results.tests.length === 0) {
+        detailsEl.style.display = 'none';
+        return;
+      }
+
+      listEl.innerHTML = '';
+      results.tests.forEach(test => {
+        const item = document.createElement('div');
+        item.className = `test-item ${test.passed ? 'passed' : 'failed'}`;
+        item.innerHTML = `
+          <div class="test-name">${test.passed ? '✅' : '❌'} ${test.name}</div>
+          <div class="test-details-line"><strong>期望:</strong> ${test.expected}</div>
+          <div class="test-details-line"><strong>实际:</strong> ${test.actual}</div>
+        `;
+        listEl.appendChild(item);
+      });
+
+      detailsEl.style.display = 'block';
+    }
+
+    console.log('📋 计算逻辑测试页面已就绪');
+    console.log('点击"运行计算测试"开始验证所有数学函数\n');
+  </script>
+</body>
+</html>

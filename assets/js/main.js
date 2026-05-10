@@ -13,6 +13,13 @@ import { decodeState, syncToUrl } from './url.js';
 
 async function bootstrap() {
   try {
+    // Diagnostic: show bootstrap is running
+    const householdLoadingEl = document.getElementById('householdLoading');
+    if (householdLoadingEl) {
+      householdLoadingEl.textContent = '【JS运行中...】';
+    }
+    console.log('[Bootstrap] Starting...');
+
     // Load all data first
     const data = await loadAllData();
 
@@ -35,9 +42,14 @@ async function bootstrap() {
     const fireDefaults = data.defaults.params;
 
     // Debug: Check if householdModels loaded
-    console.log('Data loaded successfully');
-    console.log('householdModels:', data.householdModels);
-    console.log('householdModels length:', data.householdModels ? data.householdModels.length : 'undefined');
+    console.log('[Data] Data loaded successfully');
+    console.log('[Data] householdModels:', data.householdModels);
+    console.log('[Data] householdModels length:', data.householdModels ? data.householdModels.length : 'undefined');
+
+    // Update diagnostic
+    if (householdLoadingEl) {
+      householdLoadingEl.textContent = '【数据已加载】';
+    }
 
     setState({
       cityId: selectedCity.id,
@@ -135,7 +147,19 @@ async function bootstrap() {
     // Render tier panel
     function renderTierPanel() {
       const state = getState();
+
+      // Safety checks
+      if (!state.cityTiers || !Array.isArray(state.cityTiers) || state.cityTiers.length === 0) {
+        console.warn('[renderTierPanel] No city tiers loaded yet');
+        return;
+      }
+
       const tier = state.cityTiers[state.activeTierIndex];
+      if (!tier) {
+        console.warn('[renderTierPanel] No tier at index', state.activeTierIndex);
+        return;
+      }
+
       const variant = tier.variants ? tier.variants[state.householdModel] : null;
 
       if (!variant) {
@@ -188,39 +212,130 @@ async function bootstrap() {
         .join('');
     }
 
+    // Define household model selector renderer BEFORE subscribe
+    let renderHouseholdModelSelector = () => {
+      console.log('[renderHouseholdModelSelector] Called');
+      try {
+        const state = getState();
+        const el = document.getElementById('householdSelector');
+
+        if (!el) {
+          console.error('[Household] ✗ Element #householdSelector not found');
+          return;
+        }
+
+        console.log('[Household] ✓ Element found, state.householdModels:', state.householdModels);
+
+        if (!state.householdModels || state.householdModels.length === 0) {
+          console.error('[Household] ✗ No household models in state');
+          el.innerHTML = '<span style="color: #f00;">❌ 家庭模型加载失败</span>';
+          return;
+        }
+
+        console.log('[Household] ✓ Found', state.householdModels.length, 'household models');
+
+        try {
+          let html = '<span style="font-size: 12px; color: var(--color-text-secondary); white-space: nowrap; margin-right: 6px;">家庭结构：</span>';
+
+          state.householdModels.forEach(model => {
+            const isActive = state.householdModel === model.id;
+            html += `
+              <button class="household-btn" data-model="${model.id}"
+                      title="${model.description}"
+                      style="padding: 6px 14px; border-radius: var(--border-radius-md);
+                             background: ${isActive ? 'var(--color-accent)' : 'var(--color-bg-secondary)'};
+                             color: ${isActive ? 'var(--color-bg)' : 'var(--color-text-primary)'};
+                             border: 0.5px solid ${isActive ? 'var(--color-accent)' : 'var(--color-border-tertiary)'};
+                             font-size: 12px; font-weight: 500; cursor: pointer;
+                             transition: all 0.15s ease;">
+                ${model.label}
+              </button>
+            `;
+          });
+
+          el.innerHTML = html;
+          console.log('[Household] Rendered household selector with', state.householdModels.length, 'models');
+
+          // Add event listeners
+          el.querySelectorAll('.household-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+              e.preventDefault();
+              const modelId = e.target.dataset.model;
+              if (modelId) {
+                setState({ householdModel: modelId });
+                updateCalculations();
+                scheduleUrlSync();
+              }
+            });
+          });
+        } catch (renderError) {
+          console.error('[Household] Error rendering:', renderError);
+          el.innerHTML = '<span style="color: #f00;">渲染失败: ' + renderError.message + '</span>';
+        }
+      } catch (error) {
+        console.error('[Household] Initialization error:', error);
+      }
+    };
+
     // Subscribe to state changes
     let lastHouseholdModel = null;
     subscribe((state) => {
-      renderMetrics();
-      renderTierStrip();
-      renderTierPanel();
+      try {
+        renderMetrics();
+      } catch (e) {
+        console.error('[Subscribe] Error in renderMetrics:', e);
+      }
+
+      try {
+        renderTierStrip();
+      } catch (e) {
+        console.error('[Subscribe] Error in renderTierStrip:', e);
+      }
+
+      try {
+        renderTierPanel();
+      } catch (e) {
+        console.error('[Subscribe] Error in renderTierPanel:', e);
+      }
 
       // Re-render household selector if it exists and is available
-      if (renderHouseholdModelSelector && state.householdModels) {
-        renderHouseholdModelSelector();
+      try {
+        if (renderHouseholdModelSelector && state.householdModels) {
+          renderHouseholdModelSelector();
+        }
+      } catch (e) {
+        console.error('[Subscribe] Error in renderHouseholdModelSelector:', e);
       }
 
       // Update comparison grid when monthly CNY changes
-      if (state.compareMode && state.monthlyCNY) {
-        renderCompareCitiesGrid(
-          compareCitiesContainerEl,
-          state.selectedCities.map(id => data.cityData[id]),
-          state.monthlyCNY,
-          formatNumber
-        );
+      try {
+        if (state.compareMode && state.monthlyCNY) {
+          renderCompareCitiesGrid(
+            compareCitiesContainerEl,
+            state.selectedCities.map(id => data.cityData[id]),
+            state.monthlyCNY,
+            formatNumber
+          );
+        }
+      } catch (e) {
+        console.error('[Subscribe] Error in renderCompareCitiesGrid:', e);
       }
 
       // Update FIRE outputs when monthly CNY changes
-      if (state.fire && state.monthlyCNY) {
-        const annualExpenseCNY = state.monthlyCNY * 12;
-        const fn = computeFireNumber(annualExpenseCNY, state.params.withdrawalRate);
-        const updatedFire = { ...state.fire, fireNumber: fn };
-        updateFireOutputs(fireSectionEl, {
-          fireNumber: fn,
-          yearsToFire: state.fire.yearsToFire,
-          coastFireAmount: state.fire.coastFireAmount,
-          tier: state.fire.tier
-        }, formatNumber);
+      try {
+        if (state.fire && state.monthlyCNY) {
+          const annualExpenseCNY = state.monthlyCNY * 12;
+          const fn = computeFireNumber(annualExpenseCNY, state.params.withdrawalRate);
+          const updatedFire = { ...state.fire, fireNumber: fn };
+          updateFireOutputs(fireSectionEl, {
+            fireNumber: fn,
+            yearsToFire: state.fire.yearsToFire,
+            coastFireAmount: state.fire.coastFireAmount,
+            tier: state.fire.tier
+          }, formatNumber);
+        }
+      } catch (e) {
+        console.error('[Subscribe] Error in updateFireOutputs:', e);
       }
     });
 
@@ -517,74 +632,19 @@ async function bootstrap() {
     // Initialize city selector
     renderCitySelector();
 
-    // Render household model selector
-    let renderHouseholdModelSelector; // Declare in outer scope
-    try {
-      const householdSelectorEl = document.getElementById('householdSelector');
-
-      renderHouseholdModelSelector = () => {
-        const state = getState();
-        const el = document.getElementById('householdSelector');
-
-        if (!el) {
-          console.warn('[Household] Element #householdSelector not found');
-          return;
-        }
-
-        if (!state.householdModels || state.householdModels.length === 0) {
-          console.warn('[Household] No household models in state', state.householdModels);
-          el.innerHTML = '<span style="color: #f00;">家庭模型加载失败</span>';
-          return;
-        }
-
-        try {
-          let html = '<span style="font-size: 12px; color: var(--color-text-secondary); white-space: nowrap; margin-right: 6px;">家庭结构：</span>';
-
-          state.householdModels.forEach(model => {
-            const isActive = state.householdModel === model.id;
-            html += `
-              <button class="household-btn" data-model="${model.id}"
-                      title="${model.description}"
-                      style="padding: 6px 14px; border-radius: var(--border-radius-md);
-                             background: ${isActive ? 'var(--color-accent)' : 'var(--color-bg-secondary)'};
-                             color: ${isActive ? 'var(--color-bg)' : 'var(--color-text-primary)'};
-                             border: 0.5px solid ${isActive ? 'var(--color-accent)' : 'var(--color-border-tertiary)'};
-                             font-size: 12px; font-weight: 500; cursor: pointer;
-                             transition: all 0.15s ease;">
-                ${model.label}
-              </button>
-            `;
-          });
-
-          el.innerHTML = html;
-          console.log('[Household] Rendered household selector with', state.householdModels.length, 'models');
-
-          // Add event listeners
-          el.querySelectorAll('.household-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-              e.preventDefault();
-              const modelId = e.target.dataset.model;
-              if (modelId) {
-                setState({ householdModel: modelId });
-                updateCalculations();
-                scheduleUrlSync();
-              }
-            });
-          });
-        } catch (renderError) {
-          console.error('[Household] Error rendering:', renderError);
-          el.innerHTML = '<span style="color: #f00;">渲染失败: ' + renderError.message + '</span>';
-        }
-      };
-
-      if (householdSelectorEl) {
-        renderHouseholdModelSelector();
-        console.log('[Household] Initial render completed');
-      } else {
-        console.warn('[Household] householdSelector element not found at initialization');
-      }
-    } catch (error) {
-      console.error('[Household] Initialization error:', error);
+    // Initialize household model selector (function defined earlier before subscribe)
+    console.log('[Init] About to initialize household selector');
+    const householdSelectorEl = document.getElementById('householdSelector');
+    console.log('[Init] householdSelectorEl:', householdSelectorEl);
+    if (householdSelectorEl) {
+      console.log('[Init] Calling renderHouseholdModelSelector()');
+      const currentState = getState();
+      console.log('[Init] Current state.householdModels:', currentState.householdModels);
+      console.log('[Init] Current state.householdModel:', currentState.householdModel);
+      renderHouseholdModelSelector();
+      console.log('[Household] Initial render completed');
+    } else {
+      console.warn('[Household] householdSelector element not found at initialization');
     }
 
     // Render parameter panel
@@ -617,6 +677,18 @@ async function bootstrap() {
       renderLegend();
     }
     updateCalculations();
+
+    // Final safety: ensure household selector is rendered
+    console.log('[Bootstrap] Final initialization: calling renderHouseholdModelSelector one more time');
+    const finalState = getState();
+    console.log('[Bootstrap] Final state - householdModels:', finalState.householdModels ? finalState.householdModels.length + ' models' : 'undefined');
+    console.log('[Bootstrap] Final state - householdModel:', finalState.householdModel);
+    if (typeof renderHouseholdModelSelector === 'function') {
+      console.log('[Bootstrap] Calling renderHouseholdModelSelector...');
+      renderHouseholdModelSelector();
+    } else {
+      console.error('[Bootstrap] renderHouseholdModelSelector is not a function!');
+    }
 
   } catch (error) {
     console.error('Failed to bootstrap application:', error);
