@@ -435,32 +435,34 @@ async function bootstrap() {
         return (aIndex === -1 ? 999 : aIndex) - (bIndex === -1 ? 999 : bIndex);
       });
 
-      citySelectorEl.innerHTML = sortedCountries
-        .map(country => {
-          const cities = groupedCities[country];
-          return `
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <div style="font-size: 11px; color: var(--color-text-tertiary); letter-spacing: 0.05em; text-transform: uppercase; margin: 0 0 4px 4px;">${country}</div>
-              <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-                ${cities.map(city => {
-                  const isActive = state.cityId === city.id;
-                  return `
-                    <button class="city-btn" data-city="${city.id}"
-                            style="padding: 6px 14px; border-radius: var(--border-radius-md);
-                                   background: ${isActive ? 'var(--color-accent)' : 'var(--color-bg-secondary)'};
-                                   color: ${isActive ? 'var(--color-bg)' : 'var(--color-text-primary)'};
-                                   border: 0.5px solid ${isActive ? 'var(--color-accent)' : 'var(--color-border-tertiary)'};
-                                   font-size: 13px; font-weight: 500; cursor: pointer;
-                                   transition: all 0.15s ease;">
-                      ${city.name}
-                    </button>
-                  `;
-                }).join('')}
-              </div>
-            </div>
+      let html = '<div style="display: flex; gap: 6px; flex-wrap: wrap; align-items: center;">';
+
+      sortedCountries.forEach((country, countryIdx) => {
+        const cities = groupedCities[country];
+
+        if (countryIdx > 0) {
+          html += '<div style="width: 1px; height: 24px; background: var(--color-border-tertiary); margin: 0 2px;"></div>';
+        }
+
+        cities.forEach(city => {
+          const isActive = state.cityId === city.id;
+          html += `
+            <button class="city-btn" data-city="${city.id}"
+                    title="${country}"
+                    style="padding: 6px 14px; border-radius: var(--border-radius-md);
+                           background: ${isActive ? 'var(--color-accent)' : 'var(--color-bg-secondary)'};
+                           color: ${isActive ? 'var(--color-bg)' : 'var(--color-text-primary)'};
+                           border: 0.5px solid ${isActive ? 'var(--color-accent)' : 'var(--color-border-tertiary)'};
+                           font-size: 13px; font-weight: 500; cursor: pointer;
+                           transition: all 0.15s ease;">
+              ${city.name}
+            </button>
           `;
-        })
-        .join('');
+        });
+      });
+
+      html += '</div>';
+      citySelectorEl.innerHTML = html;
 
       citySelectorEl.querySelectorAll('.city-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
