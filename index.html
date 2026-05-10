@@ -48,7 +48,13 @@
     <div class="no-js">本页计算器需要 JavaScript。请启用脚本后刷新。</div>
   </noscript>
 
-  <main class="calc" aria-labelledby="calc-title">
+  <section id="controls" style="margin: var(--space-6) 0; display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap;">
+    <button id="compareModeToggle" type="button" style="padding: 8px 16px; border-radius: var(--border-radius-md); background: var(--color-bg-secondary); color: var(--color-text-primary); border: 0.5px solid var(--color-border-tertiary); font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.15s ease;">
+      城市对比
+    </button>
+  </section>
+
+  <main class="calc" id="singleCityCalc" aria-labelledby="calc-title">
     <h2 id="calc-title" class="sr-only">资产到生活方式计算器</h2>
 
     <p class="section-label">可投资资产总额（美元）</p>
@@ -129,6 +135,14 @@
       <div id="compareGrid" class="compare-grid"></div>
     </div>
   </details>
+
+  <section id="compareCitiesSection" class="calc" style="display: none;">
+    <h2 style="font-size: 18px; font-weight: 600; margin: 0 0 var(--space-5); color: var(--color-text-primary);">城市对比</h2>
+    <p style="font-size: 13px; color: var(--color-text-secondary); margin: 0 0 var(--space-4);">
+      在同一资产水平下，对比不同城市的生活成本与生活方式。
+    </p>
+    <div id="compareCitiesContainer"></div>
+  </section>
 
   <section id="fireSection" class="calc" style="display: none;"></section>
 

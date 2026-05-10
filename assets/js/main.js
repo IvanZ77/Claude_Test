@@ -9,6 +9,7 @@ import { initBudgetChart, updateBudgetChart, updateChartBorderColor } from './re
 import { renderParamPanel, updateParamBadge } from './render/param-panel.js';
 import { renderFirePanel, updateFireOutputs } from './render/fire-panel.js';
 import { initFireChart, updateFireChart } from './render/chart-fire.js';
+import { renderCityComparison, renderCompareCitiesGrid } from './render/compare-cities.js';
 import { decodeState, syncToUrl } from './url.js';
 
 async function bootstrap() {
@@ -36,6 +37,8 @@ async function bootstrap() {
       params: { ...urlState.params },
       monthlyCNY: 0,
       activeTierIndex: 0,
+      compareMode: false,
+      selectedCities: ['shanghai'],
       fire: {
         pv: 1000000,
         pmt: 20000,
@@ -65,6 +68,10 @@ async function bootstrap() {
     const compareGridEl = document.getElementById('compareGrid');
     const paramPanelEl = document.getElementById('paramPanel');
     const fireSectionEl = document.getElementById('fireSection');
+    const compareModeToggleBtn = document.getElementById('compareModeToggle');
+    const compareCitiesSectionEl = document.getElementById('compareCitiesSection');
+    const compareCitiesContainerEl = document.getElementById('compareCitiesContainer');
+    const singleCityCalcEl = document.getElementById('singleCityCalc');
     const tsBars = document.querySelectorAll('.tier-strip-bars .ts');
     const tsLabels = document.querySelectorAll('.tier-strip-labels > div');
     const copyBtn = document.getElementById('copyBtn');
@@ -155,6 +162,16 @@ async function bootstrap() {
       renderTierStrip();
       renderTierPanel();
 
+      // Update comparison grid when monthly CNY changes
+      if (state.compareMode && state.monthlyCNY) {
+        renderCompareCitiesGrid(
+          compareCitiesContainerEl,
+          state.selectedCities.map(id => data.cityData[id]),
+          state.monthlyCNY,
+          formatNumber
+        );
+      }
+
       // Update FIRE outputs when monthly CNY changes
       if (state.fire && state.monthlyCNY) {
         const annualExpenseCNY = state.monthlyCNY * 12;
@@ -192,6 +209,81 @@ async function bootstrap() {
       updateCalculations();
       scheduleUrlSync();
       updateParamBadge(paramPanelEl, data.defaults, newParams);
+    };
+
+    // Comparison mode handlers
+    const handleCitySelect = (cityId) => {
+      const state = getState();
+      const newCities = [...state.selectedCities, cityId];
+      setState({ selectedCities: newCities });
+      renderCityComparison(
+        compareCitiesContainerEl,
+        data.availableCities,
+        newCities,
+        handleCitySelect,
+        handleCityDeselect
+      );
+      renderCompareCitiesGrid(
+        compareCitiesContainerEl,
+        newCities.map(id => data.cityData[id]),
+        state.monthlyCNY,
+        formatNumber
+      );
+    };
+
+    const handleCityDeselect = (cityId) => {
+      const state = getState();
+      const newCities = state.selectedCities.filter(id => id !== cityId);
+      setState({ selectedCities: newCities });
+      renderCityComparison(
+        compareCitiesContainerEl,
+        data.availableCities,
+        newCities,
+        handleCitySelect,
+        handleCityDeselect
+      );
+      if (newCities.length > 0) {
+        renderCompareCitiesGrid(
+          compareCitiesContainerEl,
+          newCities.map(id => data.cityData[id]),
+          state.monthlyCNY,
+          formatNumber
+        );
+      }
+    };
+
+    const toggleCompareMode = () => {
+      const state = getState();
+      const newCompareMode = !state.compareMode;
+      setState({ compareMode: newCompareMode });
+
+      if (newCompareMode) {
+        singleCityCalcEl.style.display = 'none';
+        compareCitiesSectionEl.style.display = 'block';
+        compareModeToggleBtn.style.background = 'var(--color-accent)';
+        compareModeToggleBtn.style.color = 'var(--color-bg)';
+        compareModeToggleBtn.style.borderColor = 'var(--color-accent)';
+
+        renderCityComparison(
+          compareCitiesContainerEl,
+          data.availableCities,
+          state.selectedCities,
+          handleCitySelect,
+          handleCityDeselect
+        );
+        renderCompareCitiesGrid(
+          compareCitiesContainerEl,
+          state.selectedCities.map(id => data.cityData[id]),
+          state.monthlyCNY,
+          formatNumber
+        );
+      } else {
+        singleCityCalcEl.style.display = 'block';
+        compareCitiesSectionEl.style.display = 'none';
+        compareModeToggleBtn.style.background = 'var(--color-bg-secondary)';
+        compareModeToggleBtn.style.color = 'var(--color-text-primary)';
+        compareModeToggleBtn.style.borderColor = 'var(--color-border-tertiary)';
+      }
     };
 
     // FIRE parameter change handler
@@ -242,6 +334,9 @@ async function bootstrap() {
       }, formatNumber);
       updateFireChart(projection, fn);
     };
+
+    // Comparison mode toggle
+    compareModeToggleBtn.addEventListener('click', toggleCompareMode);
 
     // Copy button
     copyBtn.addEventListener('click', async () => {

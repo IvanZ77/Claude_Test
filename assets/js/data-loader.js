@@ -18,20 +18,27 @@ export async function loadJSON(path) {
 
 export async function loadAllData() {
   try {
-    const [citiesIdx, categories, fireTiers, defaults, shanghaiData] = await Promise.all([
+    const [citiesIdx, categories, fireTiers, defaults, shanghaiData, beijingData] = await Promise.all([
       loadJSON('./data/cities.json'),
       loadJSON('./data/categories.json'),
       loadJSON('./data/fire-tiers.json'),
       loadJSON('./data/defaults.json'),
-      loadJSON('./data/cities/shanghai.json')
+      loadJSON('./data/cities/shanghai.json'),
+      loadJSON('./data/cities/beijing.json')
     ]);
+
+    const cityData = { shanghai: shanghaiData, beijing: beijingData };
+
+    // Load only available cities
+    const availableCities = citiesIdx.cities.filter(c => c.available);
 
     return {
       citiesIndex: citiesIdx,
+      availableCities: availableCities,
       categories: categories.categories,
       fireTiers: fireTiers.tiers,
       defaults: defaults,
-      cityData: { shanghai: shanghaiData }
+      cityData
     };
   } catch (error) {
     console.error('Failed to load application data:', error);
