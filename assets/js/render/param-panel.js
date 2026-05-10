@@ -86,7 +86,9 @@ export function renderParamPanel(containerEl, defaults, params, onParamChange) {
 
       // Clamp to valid range
       const rangeConfig = ranges[paramKey];
-      numValue = Math.max(rangeConfig.min, Math.min(rangeConfig.max, numValue));
+      if (rangeConfig) {
+        numValue = Math.max(rangeConfig.min, Math.min(rangeConfig.max, numValue));
+      }
 
       if (range) range.value = numValue;
       if (number) {
