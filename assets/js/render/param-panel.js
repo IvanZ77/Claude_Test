@@ -3,31 +3,36 @@ export function renderParamPanel(containerEl, defaults, params, onParamChange) {
   const ranges = defaults.ranges;
 
   containerEl.innerHTML = `
-    <div id="paramBadge" style="display: none; font-size: 11px; background: #4F46E5; color: white; padding: 4px 10px; border-radius: var(--border-radius-sm); margin-bottom: var(--space-3); text-align: center; font-weight: 500;">
-      ⚡ 已自定义参数
+    <div style="padding-top: var(--space-4); border-top: 1px solid var(--color-border-tertiary);">
+      <div style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
+        <h3 style="margin: 0; font-size: 14px; font-weight: 600; color: var(--color-text-primary);">⚙️ 参数调整</h3>
+        <div id="paramBadge" style="display: none; font-size: 11px; background: #4F46E5; color: white; padding: 4px 10px; border-radius: var(--border-radius-sm); font-weight: 500;">
+          ⚡ 已自定义
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-4);">
+        ${renderParamRow('withdrawalRate', '4% 规则提取率', params.withdrawalRate, ranges.withdrawalRate, defaults.params.withdrawalRate, onParamChange)}
+        ${renderParamRow('taxRate', '美国投资税率', params.taxRate, ranges.taxRate, defaults.params.taxRate, onParamChange)}
+        ${renderParamRow('fxUsdCny', '美元兑人民币汇率', params.fxUsdCny, ranges.fxUsdCny, defaults.params.fxUsdCny, onParamChange)}
+        ${renderParamRow('annualReturnRate', '年化投资收益率', params.annualReturnRate, ranges.annualReturnRate, defaults.params.annualReturnRate, onParamChange)}
+        ${renderParamRow('inflationRate', '年化通胀率', params.inflationRate, ranges.inflationRate, defaults.params.inflationRate, onParamChange)}
+      </div>
+      <button id="paramReset" type="button" style="
+        width: 100%;
+        margin-top: var(--space-4);
+        padding: 10px 16px;
+        border-radius: var(--border-radius-md);
+        background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+        color: var(--color-text-primary);
+        border: 1px solid var(--color-border-tertiary);
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.15s ease;
+      ">
+        ↺ 重置为默认值
+      </button>
     </div>
-    <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-4);">
-      ${renderParamRow('withdrawalRate', '4% 规则提取率', params.withdrawalRate, ranges.withdrawalRate, defaults.params.withdrawalRate, onParamChange)}
-      ${renderParamRow('taxRate', '美国投资税率', params.taxRate, ranges.taxRate, defaults.params.taxRate, onParamChange)}
-      ${renderParamRow('fxUsdCny', '美元兑人民币汇率', params.fxUsdCny, ranges.fxUsdCny, defaults.params.fxUsdCny, onParamChange)}
-      ${renderParamRow('annualReturnRate', '年化投资收益率', params.annualReturnRate, ranges.annualReturnRate, defaults.params.annualReturnRate, onParamChange)}
-      ${renderParamRow('inflationRate', '年化通胀率', params.inflationRate, ranges.inflationRate, defaults.params.inflationRate, onParamChange)}
-    </div>
-    <button id="paramReset" type="button" style="
-      width: 100%;
-      margin-top: var(--space-4);
-      padding: 10px 16px;
-      border-radius: var(--border-radius-md);
-      background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
-      color: var(--color-text-primary);
-      border: 1px solid var(--color-border-tertiary);
-      font-size: 12px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.15s ease;
-    ">
-      ↺ 重置为默认值
-    </button>
   `;
 
   // Set up event listeners
