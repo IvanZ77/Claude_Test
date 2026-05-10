@@ -14,9 +14,9 @@ import { decodeState, syncToUrl } from './url.js';
 async function bootstrap() {
   try {
     // Diagnostic: show bootstrap is running
-    const householdDiag = document.getElementById('householdSelector');
-    if (householdDiag) {
-      householdDiag.innerHTML = '<span style="font-size:11px;color:#0066cc;">【JS运行中】</span>';
+    const householdLoadingEl = document.getElementById('householdLoading');
+    if (householdLoadingEl) {
+      householdLoadingEl.textContent = '【JS运行中...】';
     }
     console.log('[Bootstrap] Starting...');
 
@@ -47,8 +47,8 @@ async function bootstrap() {
     console.log('[Data] householdModels length:', data.householdModels ? data.householdModels.length : 'undefined');
 
     // Update diagnostic
-    if (householdDiag) {
-      householdDiag.innerHTML = '<span style="font-size:11px;color:#00aa00;">【数据已加载】</span>';
+    if (householdLoadingEl) {
+      householdLoadingEl.textContent = '【数据已加载】';
     }
 
     setState({
