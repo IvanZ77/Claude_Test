@@ -314,7 +314,8 @@ async function bootstrap() {
             compareCitiesContainerEl,
             state.selectedCities.map(id => data.cityData[id]),
             state.monthlyCNY,
-            formatNumber
+            formatNumber,
+            state.householdModel
           );
         }
       } catch (e) {
@@ -383,7 +384,8 @@ async function bootstrap() {
           compareCitiesContainerEl,
           newCities.map(id => data.cityData[id]),
           state.monthlyCNY,
-          formatNumber
+          formatNumber,
+          state.householdModel
         );
       }
     };
@@ -404,7 +406,8 @@ async function bootstrap() {
           compareCitiesContainerEl,
           newCities.map(id => data.cityData[id]),
           state.monthlyCNY,
-          formatNumber
+          formatNumber,
+          state.householdModel
         );
       }
     };
