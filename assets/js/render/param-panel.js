@@ -17,12 +17,12 @@ export function renderParamPanel(containerEl, defaults, params, onParamChange) {
         ${renderParamRow('annualReturnRate', '年化投资收益率', params.annualReturnRate, ranges.annualReturnRate, defaults.params.annualReturnRate, onParamChange)}
         ${renderParamRow('inflationRate', '年化通胀率', params.inflationRate, ranges.inflationRate, defaults.params.inflationRate, onParamChange)}
       </div>
-      <button id="paramReset" type="button" style="
+      <button id="paramReset" class="param-reset-btn" type="button" style="
         width: 100%;
         margin-top: var(--space-4);
         padding: 10px 16px;
         border-radius: var(--border-radius-md);
-        background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+        background: var(--color-bg-secondary);
         color: var(--color-text-primary);
         border: 1px solid var(--color-border-tertiary);
         font-size: 12px;
