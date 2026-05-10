@@ -134,6 +134,13 @@ async function bootstrap() {
       badgeEl.style.background = tier.badge.bg;
       badgeEl.style.color = tier.badge.fg;
       badgeEl.textContent = tier.name;
+
+      // Update income range display
+      const incomeRangeEl = document.getElementById('incomeRange');
+      const minStr = '¥' + formatNumber(tier.incomeRange.min);
+      const maxStr = tier.incomeRange.max ? '¥' + formatNumber(tier.incomeRange.max) : '¥' + formatNumber(tier.incomeRange.min) + '+';
+      incomeRangeEl.textContent = minStr + '–' + maxStr + '/月';
+
       descEl.textContent = tier.description;
 
       itemsEl.innerHTML = Object.entries(tier.items)

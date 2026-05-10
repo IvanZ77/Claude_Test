@@ -103,6 +103,9 @@ function renderCityComparisonCard(city, monthlyCNY, formatNumber) {
         <p style="font-size: 16px; font-weight: 600; margin: 0;">
           ${matchedTier.name}
         </p>
+        <p style="font-size: 12px; margin: var(--space-2) 0 0; opacity: 0.9;">
+          月支出：¥${formatNumber(matchedTier.incomeRange.min)}–${matchedTier.incomeRange.max ? '¥' + formatNumber(matchedTier.incomeRange.max) : '¥' + formatNumber(matchedTier.incomeRange.min) + '+'}
+        </p>
       </div>
 
       <p style="font-size: 12px; line-height: 1.6; color: var(--color-text-secondary); margin: 0 0 var(--space-4);">
@@ -114,7 +117,6 @@ function renderCityComparisonCard(city, monthlyCNY, formatNumber) {
       </h4>
       <div style="display: flex; flex-direction: column; gap: var(--space-2);">
         ${Object.entries(matchedTier.items)
-          .slice(0, 3)
           .map(
             ([catId, catData]) => `
           <div style="font-size: 11px;">
