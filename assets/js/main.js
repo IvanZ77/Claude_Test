@@ -33,6 +33,12 @@ async function bootstrap() {
 
     // Initialize state
     const fireDefaults = data.defaults.params;
+
+    // Debug: Check if householdModels loaded
+    console.log('Data loaded successfully');
+    console.log('householdModels:', data.householdModels);
+    console.log('householdModels length:', data.householdModels ? data.householdModels.length : 'undefined');
+
     setState({
       cityId: selectedCity.id,
       cityData: cityData,
@@ -507,9 +513,23 @@ async function bootstrap() {
 
     // Render household model selector
     const householdSelectorEl = document.getElementById('householdSelector');
+    console.log('householdSelectorEl found:', !!householdSelectorEl);
+
     const renderHouseholdModelSelector = () => {
       const state = getState();
-      if (!householdSelectorEl) return;
+      console.log('renderHouseholdModelSelector called');
+      console.log('householdSelectorEl exists:', !!householdSelectorEl);
+      console.log('state.householdModels:', state.householdModels);
+
+      if (!householdSelectorEl) {
+        console.error('householdSelector element not found in DOM');
+        return;
+      }
+
+      if (!state.householdModels || state.householdModels.length === 0) {
+        console.error('householdModels not available in state:', state.householdModels);
+        return;
+      }
 
       let html = '<div style="display: flex; gap: 6px; flex-wrap: wrap; align-items: center;">';
       html += '<span style="font-size: 12px; color: var(--color-text-secondary); white-space: nowrap;">家庭结构：</span>';
@@ -545,7 +565,18 @@ async function bootstrap() {
     };
 
     if (householdSelectorEl) {
+      console.log('About to call renderHouseholdModelSelector');
       renderHouseholdModelSelector();
+      console.log('renderHouseholdModelSelector completed');
+      console.log('householdSelector innerHTML:', householdSelectorEl.innerHTML.substring(0, 100));
+    } else {
+      console.error('householdSelectorEl is null!');
+      // Try to add test content anyway
+      const testEl = document.getElementById('householdSelector');
+      if (testEl) {
+        console.log('Found householdSelector on second attempt');
+        testEl.innerHTML = '<span style="color: red;">家庭结构选择器测试</span>';
+      }
     }
 
     // Render parameter panel
