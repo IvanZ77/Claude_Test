@@ -266,10 +266,35 @@ async function bootstrap() {
 
       if (newCompareMode) {
         singleCityCalcEl.style.display = 'none';
+        citySelectorEl.style.display = 'none';
         compareCitiesSectionEl.style.display = 'block';
         compareModeToggleBtn.style.background = 'var(--color-accent)';
         compareModeToggleBtn.style.color = 'var(--color-bg)';
         compareModeToggleBtn.style.borderColor = 'var(--color-accent)';
+
+        // Add slider to compare section
+        const compareSection = compareCitiesSectionEl;
+        const sliderHtml = `
+          <div style="margin-bottom: var(--space-5);">
+            <p class="section-label">可投资资产总额（美元）</p>
+            <div class="slider-row" id="compareSlider">
+              <input type="range" id="compareSliderInput" min="0" max="100" value="${state.sliderValue}" step="1" aria-label="可投资资产" style="flex: 1;">
+              <span id="compareAssetDisp" class="asset-display" style="margin-left: var(--space-3);">$1.00M</span>
+            </div>
+          </div>
+        `;
+        compareSection.insertAdjacentHTML('afterbegin', sliderHtml);
+
+        const compareSliderInput = compareSection.querySelector('#compareSliderInput');
+        const compareAssetDisp = compareSection.querySelector('#compareAssetDisp');
+
+        compareSliderInput.addEventListener('input', (e) => {
+          const newValue = parseInt(e.target.value);
+          setState({ sliderValue: newValue });
+          updateCalculations();
+          compareAssetDisp.textContent = formatUSD(sliderToAssets(newValue));
+          scheduleUrlSync();
+        });
 
         renderCityComparison(
           compareCitiesContainerEl,
@@ -286,10 +311,15 @@ async function bootstrap() {
         );
       } else {
         singleCityCalcEl.style.display = 'block';
+        citySelectorEl.style.display = 'flex';
         compareCitiesSectionEl.style.display = 'none';
         compareModeToggleBtn.style.background = 'var(--color-bg-secondary)';
         compareModeToggleBtn.style.color = 'var(--color-text-primary)';
         compareModeToggleBtn.style.borderColor = 'var(--color-border-tertiary)';
+
+        // Remove slider from compare section
+        const compareSlider = compareCitiesSectionEl.querySelector('#compareSlider');
+        if (compareSlider) compareSlider.remove();
       }
     };
 

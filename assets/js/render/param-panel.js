@@ -30,7 +30,14 @@ export function renderParamPanel(containerEl, defaults, params, onParamChange) {
     paramInputs.forEach(input => {
       const paramKey = input.dataset.param;
       const newValue = defaults.params[paramKey];
-      input.value = newValue;
+      const isPercentage = ['withdrawalRate', 'taxRate', 'annualReturnRate', 'inflationRate'].includes(paramKey);
+
+      if (input.type === 'range') {
+        input.value = newValue;
+      } else {
+        const displayValue = isPercentage ? (newValue * 100).toFixed(1) : newValue.toFixed(paramKey === 'fxUsdCny' ? 2 : 3);
+        input.value = displayValue;
+      }
     });
     onParamChange(newParams);
     updateParamBadge(containerEl, defaults, newParams);
@@ -52,11 +59,19 @@ export function renderParamPanel(containerEl, defaults, params, onParamChange) {
 
   // Set up listeners for range and number inputs
   Object.entries(paramGroups).forEach(([paramKey, { range, number }]) => {
-    const syncValue = (newValue) => {
-      const numValue = parseFloat(newValue);
+    const isPercentage = ['withdrawalRate', 'taxRate', 'annualReturnRate', 'inflationRate'].includes(paramKey);
+
+    const syncValue = (newValue, fromPercentage = false) => {
+      let numValue = parseFloat(newValue);
+      // Convert from percentage if needed
+      if (fromPercentage && isPercentage) {
+        numValue = numValue / 100;
+      }
+
       if (range) range.value = numValue;
       if (number) {
-        number.value = numValue.toFixed(paramKey === 'fxUsdCny' ? 2 : 3);
+        const displayValue = isPercentage ? (numValue * 100).toFixed(1) : numValue.toFixed(paramKey === 'fxUsdCny' ? 2 : 3);
+        number.value = displayValue;
       }
       const newParams = { ...params, [paramKey]: numValue };
       onParamChange(newParams);
@@ -64,10 +79,10 @@ export function renderParamPanel(containerEl, defaults, params, onParamChange) {
     };
 
     if (range) {
-      range.addEventListener('input', (e) => syncValue(e.target.value));
+      range.addEventListener('input', (e) => syncValue(e.target.value, false));
     }
     if (number) {
-      number.addEventListener('change', (e) => syncValue(e.target.value));
+      number.addEventListener('change', (e) => syncValue(e.target.value, true));
     }
   });
 
@@ -75,7 +90,10 @@ export function renderParamPanel(containerEl, defaults, params, onParamChange) {
 }
 
 function renderParamRow(paramKey, label, value, range, defaultValue, onParamChange) {
-  const currentValue = value.toFixed(paramKey === 'fxUsdCny' ? 2 : 3);
+  // Determine display format
+  const isPercentage = ['withdrawalRate', 'taxRate', 'annualReturnRate', 'inflationRate'].includes(paramKey);
+  const displayValue = isPercentage ? (value * 100).toFixed(1) : value.toFixed(paramKey === 'fxUsdCny' ? 2 : 3);
+  const displaySuffix = isPercentage ? '%' : (paramKey === 'fxUsdCny' ? '' : '');
   const isCustom = Math.abs(value - defaultValue) > 0.0001;
 
   return `
@@ -99,10 +117,10 @@ function renderParamRow(paramKey, label, value, range, defaultValue, onParamChan
         min="${range.min}"
         max="${range.max}"
         step="${range.step}"
-        value="${currentValue}"
+        value="${displayValue}"
         style="padding: 6px; border-radius: var(--border-radius-sm); border: 0.5px solid var(--color-border); font-size: 12px; font-family: monospace;"
       >
-      <span style="font-size: 12px; color: var(--color-text-secondary); font-weight: 500; text-align: right;">${currentValue}</span>
+      <span style="font-size: 12px; color: var(--color-text-secondary); font-weight: 500; text-align: right;">${displayValue}${displaySuffix}</span>
     </div>
   `;
 }

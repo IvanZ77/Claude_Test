@@ -34,7 +34,7 @@ export function renderCityComparison(containerEl, cities, selectedCityIds, onCit
         ${pickerHtml}
       </div>
     </div>
-    <div id="compareCitiesGrid" style="overflow-x: auto; -webkit-overflow-scrolling: touch;"></div>
+    <div id="compareCitiesGrid" style="overflow-x: auto; -webkit-overflow-scrolling: touch; width: 100%; max-width: 100%;"></div>
   `;
 
   // Set up city selection listeners
@@ -62,9 +62,9 @@ export function renderCompareCitiesGrid(containerEl, selectedCities, monthlyCNY,
   gridEl.innerHTML = `
     <div style="
       display: grid;
-      grid-template-columns: ${`repeat(${selectedCities.length}, minmax(280px, 1fr))`};
+      grid-template-columns: ${`repeat(${selectedCities.length}, 1fr)`};
       gap: var(--space-4);
-      min-width: ${selectedCities.length > 1 ? 'min(100%, ' + selectedCities.length * 300 + 'px)' : '100%'};
+      width: 100%;
     ">
       ${selectedCities
         .map(city => renderCityComparisonCard(city, monthlyCNY, formatNumber))
