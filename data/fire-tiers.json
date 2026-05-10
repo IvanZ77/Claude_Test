@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "rule": {
+    "withdrawalRate": 0.04,
+    "multiplier": 25
+  },
+  "tiers": [
+    {
+      "id": "lean",
+      "name": "Lean FIRE",
+      "annualExpenseMaxCNY": 150000,
+      "color": "#42c2a8",
+      "description": "极简生活下的提早退休：月支出 ≤ 12,500 元。"
+    },
+    {
+      "id": "regular",
+      "name": "Regular FIRE",
+      "annualExpenseMaxCNY": 360000,
+      "color": "#3aa0ff",
+      "description": "标准中产生活：月支出 12,500–30,000 元。"
+    },
+    {
+      "id": "fat",
+      "name": "Fat FIRE",
+      "annualExpenseMaxCNY": null,
+      "color": "#7c5cff",
+      "description": "宽裕生活：月支出 > 30,000 元。"
+    },
+    {
+      "id": "coast",
+      "name": "Coast FIRE",
+      "computed": true,
+      "color": "#f6c85f",
+      "description": "已积累的本金，仅靠复利即可在退休前达成 FIRE。"
+    }
+  ]
+}
