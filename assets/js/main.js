@@ -3,9 +3,12 @@ import { loadAllData } from './data-loader.js';
 import { sliderToAssets, formatUSD, formatNumber } from './calc/assets.js';
 import { computeMonthlyIncome } from './calc/income.js';
 import { matchTier } from './calc/tier.js';
+import { fireNumber as computeFireNumber, yearsToFire, projectAssets, coastFireAmount, classifyFireTier } from './calc/fire.js';
 import { renderCompareTiers } from './render/compare-tiers.js';
 import { initBudgetChart, updateBudgetChart, updateChartBorderColor } from './render/chart-budget.js';
 import { renderParamPanel, updateParamBadge } from './render/param-panel.js';
+import { renderFirePanel, updateFireOutputs } from './render/fire-panel.js';
+import { initFireChart, updateFireChart } from './render/chart-fire.js';
 import { decodeState, syncToUrl } from './url.js';
 
 async function bootstrap() {
@@ -23,6 +26,7 @@ async function bootstrap() {
     const urlState = decodeState(location.search, data.defaults);
 
     // Initialize state
+    const fireDefaults = data.defaults.params;
     setState({
       cityId: 'shanghai',
       cityData: data.cityData.shanghai,
@@ -31,7 +35,20 @@ async function bootstrap() {
       sliderValue: urlState.sliderValue,
       params: { ...urlState.params },
       monthlyCNY: 0,
-      activeTierIndex: 0
+      activeTierIndex: 0,
+      fire: {
+        pv: 1000000,
+        pmt: 20000,
+        r: fireDefaults.annualReturnRate,
+        inflation: fireDefaults.inflationRate,
+        currentAge: fireDefaults.currentAge,
+        retireAge: fireDefaults.fireTargetAge,
+        fireNumber: 0,
+        yearsToFire: 0,
+        coastFireAmount: 0,
+        tier: null,
+        projection: []
+      }
     });
 
     // Get DOM elements
@@ -47,6 +64,7 @@ async function bootstrap() {
     const chartCanvasEl = document.getElementById('bc');
     const compareGridEl = document.getElementById('compareGrid');
     const paramPanelEl = document.getElementById('paramPanel');
+    const fireSectionEl = document.getElementById('fireSection');
     const tsBars = document.querySelectorAll('.tier-strip-bars .ts');
     const tsLabels = document.querySelectorAll('.tier-strip-labels > div');
     const copyBtn = document.getElementById('copyBtn');
@@ -132,10 +150,23 @@ async function bootstrap() {
     }
 
     // Subscribe to state changes
-    subscribe(() => {
+    subscribe((state) => {
       renderMetrics();
       renderTierStrip();
       renderTierPanel();
+
+      // Update FIRE outputs when monthly CNY changes
+      if (state.fire && state.monthlyCNY) {
+        const annualExpenseCNY = state.monthlyCNY * 12;
+        const fn = computeFireNumber(annualExpenseCNY, state.params.withdrawalRate);
+        const updatedFire = { ...state.fire, fireNumber: fn };
+        updateFireOutputs(fireSectionEl, {
+          fireNumber: fn,
+          yearsToFire: state.fire.yearsToFire,
+          coastFireAmount: state.fire.coastFireAmount,
+          tier: state.fire.tier
+        }, formatNumber);
+      }
     });
 
     // Debounced URL sync
@@ -161,6 +192,55 @@ async function bootstrap() {
       updateCalculations();
       scheduleUrlSync();
       updateParamBadge(paramPanelEl, data.defaults, newParams);
+    };
+
+    // FIRE parameter change handler
+    const handleFireParamChange = (fireParams) => {
+      const state = getState();
+      const annualExpenseCNY = state.monthlyCNY * 12;
+
+      const fn = computeFireNumber(annualExpenseCNY, state.params.withdrawalRate);
+      const years = yearsToFire(
+        fireParams.pv,
+        fireParams.pmt * 12,
+        fireParams.r,
+        fn,
+        fireParams.inflation
+      );
+      const projection = projectAssets(
+        fireParams.pv,
+        fireParams.pmt * 12,
+        fireParams.r,
+        years,
+        fireParams.inflation
+      );
+      const coast = coastFireAmount(
+        fn,
+        fireParams.r,
+        fireParams.retireAge - fireParams.currentAge,
+        fireParams.inflation
+      );
+      const tier = classifyFireTier(annualExpenseCNY, data.fireTiers);
+
+      setState({
+        fire: {
+          ...fireParams,
+          fireNumber: fn,
+          yearsToFire: years,
+          projection,
+          coastFireAmount: coast,
+          tier
+        }
+      });
+
+      scheduleUrlSync();
+      updateFireOutputs(fireSectionEl, {
+        fireNumber: fn,
+        yearsToFire: years,
+        coastFireAmount: coast,
+        tier
+      }, formatNumber);
+      updateFireChart(projection, fn);
     };
 
     // Copy button
@@ -197,6 +277,14 @@ async function bootstrap() {
 
     // Initialize parameter panel
     renderParamPanel(paramPanelEl, data.defaults, getState().params, handleParamChange);
+
+    // Initialize FIRE section
+    const state = getState();
+    renderFirePanel(fireSectionEl, state.fire, handleFireParamChange);
+    const fireChartCanvasEl = fireSectionEl.querySelector('#fireChart');
+    if (fireChartCanvasEl) {
+      initFireChart(fireChartCanvasEl, state.fire.projection, state.fire.fireNumber);
+    }
 
     // Initialize chart
     initBudgetChart(chartCanvasEl, data.categories, shanghaiTiers[1].pct);
