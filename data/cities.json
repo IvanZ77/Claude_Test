@@ -190,6 +190,33 @@
       "currency": "CNY",
       "fxToCNY": 1.0,
       "available": true
+    },
+    {
+      "id": "singapore",
+      "name": "新加坡",
+      "country": "新加坡",
+      "file": "cities/singapore.json",
+      "currency": "CNY",
+      "fxToCNY": 1.0,
+      "available": true
+    },
+    {
+      "id": "dubai",
+      "name": "迪拜",
+      "country": "阿联酋",
+      "file": "cities/dubai.json",
+      "currency": "CNY",
+      "fxToCNY": 1.0,
+      "available": true
+    },
+    {
+      "id": "sydney",
+      "name": "悉尼",
+      "country": "澳大利亚",
+      "file": "cities/sydney.json",
+      "currency": "CNY",
+      "fxToCNY": 1.0,
+      "available": true
     }
   ]
 }
