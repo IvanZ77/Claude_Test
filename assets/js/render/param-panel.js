@@ -77,10 +77,16 @@ export function renderParamPanel(containerEl, defaults, params, onParamChange) {
 
     const syncValue = (newValue, fromPercentage = false) => {
       let numValue = parseFloat(newValue);
+      if (isNaN(numValue)) return;
+
       // Convert from percentage if needed
       if (fromPercentage && isPercentage) {
         numValue = numValue / 100;
       }
+
+      // Clamp to valid range
+      const rangeConfig = ranges[paramKey];
+      numValue = Math.max(rangeConfig.min, Math.min(rangeConfig.max, numValue));
 
       if (range) range.value = numValue;
       if (number) {
