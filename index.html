@@ -6,544 +6,26 @@
 <meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0F0F0E" media="(prefers-color-scheme: dark)">
 
-<title>上海生活计算器 — 你的资产能在上海过什么样的生活？</title>
-<meta name="description" content="面向海外华人的资产-生活映射工具：基于美国 4% 安全提取率，将你的可投资资产换算为上海月度可支配收入，对应六档生活方式（含真实小区、学校、餐厅参考）。">
-<meta name="keywords" content="上海生活成本,海外华人,FIRE,4%规则,投资资产,移居上海,国际学校,上海租房">
-<meta name="author" content="Shanghai Lifestyle Calculator">
+<title>多城市生活成本计算器 — 你的资产在不同城市能过什么样的生活？</title>
+<meta name="description" content="面向海外华人的资产-生活映射工具：基于美国 4% 安全提取率，将你的可投资资产换算为月度可支配收入，并对比多个城市的生活成本与生活方式（含真实小区、学校、餐厅参考）。支持上海、北京等城市。">
+<meta name="keywords" content="生活成本计算,海外华人,FIRE,4%规则,投资资产,多城市对比,国际学校,城市选择">
+<meta name="author" content="Multi-City Lifestyle Calculator">
 
-<link rel="canonical" href="https://shanghai-lifestyle.example.com/">
+<link rel="canonical" href="https://IvanZ77.github.io/shanghai_life_calculator/">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="上海生活计算器">
-<meta property="og:description" content="你在美国攒下的钱，在上海能过什么样的日子？拖动滑块查看资产对应的月度可支配收入与生活方式画像。">
+<meta property="og:title" content="多城市生活成本计算器">
+<meta property="og:description" content="你在美国攒下的钱，在不同城市能过什么样的日子？拖动滑块查看资产对应的月度可支配收入与生活方式画像。">
 <meta property="og:locale" content="zh_CN">
 
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="上海生活计算器">
-<meta name="twitter:description" content="你在美国攒下的钱，在上海能过什么样的日子？">
+<meta name="twitter:title" content="多城市生活成本计算器">
+<meta name="twitter:description" content="对比你在不同城市的生活成本与生活方式，基于 4% 安全提取率。">
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2318181B'/%3E%3Ctext x='32' y='44' font-family='-apple-system,PingFang SC,sans-serif' font-size='38' font-weight='600' text-anchor='middle' fill='%23FAFAF7'%3E沪%3C/text%3E%3C/svg%3E">
-<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2318181B'/%3E%3Ctext x='32' y='44' font-family='-apple-system,PingFang SC,sans-serif' font-size='38' font-weight='600' text-anchor='middle' fill='%23FAFAF7'%3E沪%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2318181B'/%3E%3Ctext x='32' y='44' font-family='-apple-system,PingFang SC,sans-serif' font-size='36' font-weight='600' text-anchor='middle' fill='%23FAFAF7'%3E💰%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2318181B'/%3E%3Ctext x='32' y='44' font-family='-apple-system,PingFang SC,sans-serif' font-size='36' font-weight='600' text-anchor='middle' fill='%23FAFAF7'%3E💰%3C/text%3E%3C/svg%3E">
 
-<style>
-:root {
-  --color-bg: #FAFAF7;
-  --color-bg-secondary: #F2F2EE;
-  --color-bg-tertiary: #FFFFFF;
-  --color-bg-elevated: #FFFFFF;
-  --color-text-primary: #18181B;
-  --color-text-secondary: #52525B;
-  --color-text-tertiary: #A1A1AA;
-  --color-border: #E4E4E7;
-  --color-border-tertiary: #E7E5E0;
-  --color-accent: #18181B;
-  --color-accent-soft: #F4F4F0;
-
-  --border-radius-sm: 6px;
-  --border-radius-md: 10px;
-  --border-radius-lg: 16px;
-  --border-radius-xl: 22px;
-
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-5: 24px;
-  --space-6: 32px;
-  --space-7: 48px;
-
-  --font-sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans SC", "Noto Sans CJK SC", "Segoe UI", Roboto, sans-serif;
-
-  --shadow-sm: 0 1px 2px rgba(24,24,27,.04), 0 0 0 0.5px rgba(24,24,27,.06);
-  --shadow-md: 0 4px 24px -8px rgba(24,24,27,.08), 0 0 0 0.5px rgba(24,24,27,.06);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #0F0F0E;
-    --color-bg-secondary: #1C1C1A;
-    --color-bg-tertiary: #18181B;
-    --color-bg-elevated: #1F1F1D;
-    --color-text-primary: #F4F4F5;
-    --color-text-secondary: #A1A1AA;
-    --color-text-tertiary: #71717A;
-    --color-border: #2E2E2D;
-    --color-border-tertiary: #2A2A28;
-    --color-accent: #FAFAF7;
-    --color-accent-soft: #2A2A28;
-    --shadow-sm: 0 1px 2px rgba(0,0,0,.4), 0 0 0 0.5px rgba(255,255,255,.06);
-    --shadow-md: 0 4px 24px -8px rgba(0,0,0,.5), 0 0 0 0.5px rgba(255,255,255,.06);
-  }
-}
-
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
-body {
-  background: var(--color-bg);
-  color: var(--color-text-primary);
-  font-family: var(--font-sans);
-  font-size: 15px;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-variant-numeric: tabular-nums;
-}
-
-.sr-only {
-  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
-  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
-}
-
-.wrap {
-  max-width: 920px;
-  margin: 0 auto;
-  padding: 0 var(--space-5);
-}
-
-/* Header */
-.site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--space-5) 0;
-  border-bottom: 0.5px solid var(--color-border-tertiary);
-}
-.brand {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  font-size: 15px;
-  color: var(--color-text-primary);
-  text-decoration: none;
-}
-.brand-mark {
-  width: 26px; height: 26px;
-  border-radius: 7px;
-  background: var(--color-accent);
-  color: var(--color-bg);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 15px;
-  font-weight: 600;
-}
-.data-tag {
-  font-size: 11px;
-  color: var(--color-text-tertiary);
-  letter-spacing: 0.02em;
-}
-
-/* Hero */
-.hero {
-  padding: var(--space-7) 0 var(--space-6);
-  border-bottom: 0.5px solid var(--color-border-tertiary);
-}
-.hero h1 {
-  font-size: clamp(28px, 4vw + 8px, 42px);
-  line-height: 1.18;
-  letter-spacing: -0.02em;
-  font-weight: 600;
-  margin: 0 0 var(--space-4);
-  color: var(--color-text-primary);
-}
-.hero p.lead {
-  font-size: 17px;
-  line-height: 1.65;
-  color: var(--color-text-secondary);
-  max-width: 56ch;
-  margin: 0;
-}
-
-/* Calculator card */
-.calc {
-  margin: var(--space-6) 0;
-  background: var(--color-bg-tertiary);
-  border-radius: var(--border-radius-xl);
-  padding: var(--space-6);
-  box-shadow: var(--shadow-md);
-}
-@media (max-width: 640px) {
-  .calc { padding: var(--space-5) var(--space-4); border-radius: var(--border-radius-lg); }
-}
-
-.section-label {
-  font-size: 12px;
-  color: var(--color-text-secondary);
-  margin: 0 0 var(--space-2);
-  letter-spacing: 0.01em;
-}
-.section-label-tiny {
-  font-size: 11px;
-  color: var(--color-text-tertiary);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  margin: 0 0 var(--space-2);
-}
-
-/* Slider row */
-.slider-row {
-  display: flex;
-  align-items: center;
-  gap: var(--space-4);
-  margin-bottom: var(--space-1);
-}
-.slider-row input[type="range"] {
-  flex: 1;
-  -webkit-appearance: none;
-  appearance: none;
-  height: 30px;
-  background: transparent;
-  cursor: pointer;
-  margin: 0;
-}
-.slider-row input[type="range"]::-webkit-slider-runnable-track {
-  height: 4px;
-  border-radius: 2px;
-  background: var(--color-border);
-}
-.slider-row input[type="range"]::-moz-range-track {
-  height: 4px;
-  border-radius: 2px;
-  background: var(--color-border);
-}
-.slider-row input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 22px; height: 22px;
-  border-radius: 50%;
-  background: var(--color-accent);
-  border: 3px solid var(--color-bg-tertiary);
-  box-shadow: 0 2px 8px rgba(24,24,27,.18), 0 0 0 0.5px rgba(24,24,27,.12);
-  margin-top: -9px;
-  transition: transform 0.15s ease;
-}
-.slider-row input[type="range"]::-moz-range-thumb {
-  width: 22px; height: 22px;
-  border-radius: 50%;
-  background: var(--color-accent);
-  border: 3px solid var(--color-bg-tertiary);
-  box-shadow: 0 2px 8px rgba(24,24,27,.18), 0 0 0 0.5px rgba(24,24,27,.12);
-  cursor: grab;
-}
-.slider-row input[type="range"]:active::-webkit-slider-thumb { transform: scale(1.1); }
-.slider-row input[type="range"]:focus { outline: none; }
-.slider-row input[type="range"]:focus-visible::-webkit-slider-thumb {
-  box-shadow: 0 0 0 4px rgba(24,24,27,.18);
-}
-
-.asset-display {
-  font-size: 26px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  min-width: 130px;
-  text-align: right;
-  color: var(--color-text-primary);
-}
-
-.slider-scale {
-  display: flex;
-  justify-content: space-between;
-  font-size: 11px;
-  color: var(--color-text-tertiary);
-  margin: var(--space-1) 2px var(--space-6);
-}
-
-/* Metric grid */
-.metrics {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-3);
-  margin-bottom: var(--space-6);
-}
-.metric {
-  background: var(--color-bg-secondary);
-  border-radius: var(--border-radius-md);
-  padding: 14px 16px;
-}
-.metric-label {
-  font-size: 12px;
-  color: var(--color-text-secondary);
-  margin: 0 0 var(--space-1);
-}
-.metric-value {
-  font-size: 18px;
-  font-weight: 600;
-  margin: 0;
-  color: var(--color-text-primary);
-  letter-spacing: -0.01em;
-}
-@media (max-width: 480px) {
-  .metrics { grid-template-columns: 1fr; gap: var(--space-2); }
-  .metric { display: flex; align-items: baseline; justify-content: space-between; padding: 10px 14px; }
-  .metric-label { margin: 0; }
-  .metric-value { font-size: 16px; }
-}
-
-/* Tier strip */
-.tier-strip { margin-bottom: var(--space-5); }
-.tier-strip-bars {
-  display: flex;
-  gap: 5px;
-  align-items: center;
-}
-.tier-strip-bars .ts {
-  flex: 1;
-  height: 6px;
-  border-radius: 3px;
-  transition: opacity 0.25s ease, height 0.25s ease;
-}
-.tier-strip-labels {
-  display: flex;
-  gap: 5px;
-  margin-top: 6px;
-}
-.tier-strip-labels > div {
-  flex: 1;
-  font-size: 10.5px;
-  color: var(--color-text-tertiary);
-  text-align: center;
-  transition: color 0.25s ease;
-}
-.tier-strip-labels > div.is-active {
-  color: var(--color-text-primary);
-  font-weight: 500;
-}
-@media (max-width: 380px) {
-  .tier-strip-labels { display: none; }
-}
-
-/* Tier panel */
-.tier-panel {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-6);
-  align-items: start;
-}
-@media (max-width: 720px) {
-  .tier-panel { grid-template-columns: 1fr; gap: var(--space-5); }
-}
-
-.tier-info { min-width: 0; }
-.badge {
-  display: inline-block;
-  padding: 4px 14px;
-  border-radius: var(--border-radius-md);
-  font-size: 13px;
-  font-weight: 600;
-  margin-bottom: var(--space-3);
-  transition: background 0.3s ease, color 0.3s ease;
-}
-.tier-desc {
-  font-size: 14px;
-  color: var(--color-text-secondary);
-  line-height: 1.7;
-  margin: 0 0 var(--space-3);
-}
-.tier-items { }
-.tier-item {
-  padding: 9px 0;
-  border-bottom: 0.5px solid var(--color-border-tertiary);
-}
-.tier-item:last-child { border-bottom: none; }
-.tier-item-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-.tier-item-cat {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--color-text-primary);
-}
-.tier-item-amt {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--color-text-primary);
-  white-space: nowrap;
-  margin-left: var(--space-2);
-  font-variant-numeric: tabular-nums;
-}
-.tier-item-ex {
-  font-size: 11.5px;
-  color: var(--color-text-tertiary);
-  margin-top: 4px;
-  line-height: 1.65;
-}
-
-.chart-side { min-width: 0; }
-.chart-wrap {
-  position: relative;
-  width: 100%;
-  max-width: 280px;
-  margin: 0 auto;
-  aspect-ratio: 1 / 1;
-}
-.chart-wrap canvas { display: block; }
-.legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 14px;
-  margin-top: var(--space-4);
-  font-size: 12px;
-  color: var(--color-text-secondary);
-  justify-content: center;
-}
-.legend-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-.legend-dot {
-  width: 8px; height: 8px;
-  border-radius: 2px;
-  flex-shrink: 0;
-}
-
-/* Share row */
-.share-row {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  margin-top: var(--space-5);
-  padding-top: var(--space-4);
-  border-top: 0.5px solid var(--color-border-tertiary);
-  font-size: 12px;
-  color: var(--color-text-tertiary);
-}
-.share-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  border-radius: var(--border-radius-md);
-  background: var(--color-bg-secondary);
-  color: var(--color-text-primary);
-  border: 0.5px solid var(--color-border-tertiary);
-  font: inherit;
-  font-size: 12px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.15s ease, transform 0.1s ease;
-}
-.share-btn:hover { background: var(--color-accent-soft); }
-.share-btn:active { transform: scale(0.97); }
-.share-btn.is-copied { background: var(--color-accent); color: var(--color-bg); border-color: var(--color-accent); }
-
-/* Comparison */
-.compare {
-  margin: var(--space-6) 0;
-  background: var(--color-bg-tertiary);
-  border-radius: var(--border-radius-xl);
-  box-shadow: var(--shadow-sm);
-}
-.compare-summary {
-  list-style: none;
-  padding: var(--space-5);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-weight: 500;
-  font-size: 15px;
-  color: var(--color-text-primary);
-}
-.compare-summary::-webkit-details-marker { display: none; }
-.compare-summary::after {
-  content: "↓";
-  color: var(--color-text-tertiary);
-  font-size: 13px;
-  transition: transform 0.2s ease;
-}
-.compare[open] > .compare-summary::after { transform: rotate(180deg); }
-.compare-body {
-  padding: 0 var(--space-5) var(--space-5);
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-.compare-grid {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(180px, 1fr));
-  gap: var(--space-3);
-  min-width: 1080px;
-}
-@media (min-width: 980px) {
-  .compare-grid { min-width: 0; }
-}
-.compare-card {
-  background: var(--color-bg-secondary);
-  border-radius: var(--border-radius-md);
-  padding: var(--space-4);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-}
-.compare-name {
-  font-size: 13px;
-  font-weight: 600;
-  display: inline-block;
-  padding: 3px 10px;
-  border-radius: var(--border-radius-sm);
-  align-self: flex-start;
-}
-.compare-range {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--color-text-primary);
-  font-variant-numeric: tabular-nums;
-}
-.compare-row { font-size: 11.5px; line-height: 1.55; }
-.compare-row dt { color: var(--color-text-tertiary); margin-bottom: 1px; }
-.compare-row dd { margin: 0; color: var(--color-text-secondary); }
-
-/* Footer */
-.site-footer {
-  padding: var(--space-6) 0 var(--space-7);
-  margin-top: var(--space-6);
-  border-top: 0.5px solid var(--color-border-tertiary);
-  font-size: 12px;
-  line-height: 1.7;
-  color: var(--color-text-tertiary);
-}
-.site-footer h2 {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--color-text-secondary);
-  margin: 0 0 var(--space-2);
-  letter-spacing: 0.02em;
-}
-.site-footer p { margin: 0 0 var(--space-3); }
-.site-footer .meta {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: var(--space-3);
-  margin-top: var(--space-4);
-  padding-top: var(--space-4);
-  border-top: 0.5px solid var(--color-border-tertiary);
-}
-
-/* No-JS notice */
-.no-js {
-  background: var(--color-accent-soft);
-  border: 0.5px solid var(--color-border);
-  border-radius: var(--border-radius-md);
-  padding: var(--space-4);
-  margin: var(--space-5) 0;
-  font-size: 14px;
-  color: var(--color-text-secondary);
-}
-.js .no-js { display: none; }
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-</style>
+<link rel="stylesheet" href="./assets/css/main.css">
 </head>
 
 <body class="js-pending">
@@ -551,22 +33,29 @@ body {
 <div class="wrap">
   <header class="site-header">
     <a href="/" class="brand">
-      <span class="brand-mark">沪</span>
-      <span>上海生活计算器</span>
+      <span class="brand-mark">💰</span>
+      <span>多城市生活成本计算器</span>
     </a>
     <span class="data-tag">数据更新 2025–26</span>
   </header>
 
   <section class="hero">
-    <h1>你在美国攒下的钱，<br>能在上海过什么样的生活？</h1>
-    <p class="lead">面向海外华人的资产-生活映射工具。基于 4% 安全提取率，将你的可投资资产换算为上海月度可支配收入，对应六档真实的生活方式 —— 从郊区老小区到汤臣一品，含真实小区、学校、餐厅参考。</p>
+    <h1>你在美国攒下的钱，<br>在不同城市能过什么样的生活？</h1>
+    <p class="lead">面向海外华人的资产-生活映射工具。基于 4% 安全提取率，将你的可投资资产换算为月度可支配收入，对应六档真实的生活方式。支持多城市对比、FIRE 计划、参数调整，并可分享自定义配置。</p>
   </section>
 
   <noscript>
     <div class="no-js">本页计算器需要 JavaScript。请启用脚本后刷新。</div>
   </noscript>
 
-  <main class="calc" aria-labelledby="calc-title">
+  <section id="controls" style="margin: var(--space-6) 0; display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap;">
+    <div id="citySelector" style="display: flex; gap: var(--space-3);"></div>
+    <button id="compareModeToggle" type="button" style="padding: 8px 16px; border-radius: var(--border-radius-md); background: var(--color-bg-secondary); color: var(--color-text-primary); border: 0.5px solid var(--color-border-tertiary); font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.15s ease;">
+      城市对比
+    </button>
+  </section>
+
+  <main class="calc" id="singleCityCalc" aria-labelledby="calc-title">
     <h2 id="calc-title" class="sr-only">资产到生活方式计算器</h2>
 
     <p class="section-label">可投资资产总额（美元）</p>
@@ -634,6 +123,8 @@ body {
       </button>
       <span>把当前结果分享给朋友</span>
     </div>
+
+    <details id="paramPanel" style="margin-top: var(--space-6); padding: var(--space-5); background: var(--color-bg-tertiary); border-radius: var(--border-radius-xl); box-shadow: var(--shadow-sm);"></details>
   </main>
 
   <details class="compare">
@@ -646,6 +137,16 @@ body {
     </div>
   </details>
 
+  <section id="compareCitiesSection" class="calc" style="display: none;">
+    <h2 style="font-size: 18px; font-weight: 600; margin: 0 0 var(--space-5); color: var(--color-text-primary);">城市对比</h2>
+    <p style="font-size: 13px; color: var(--color-text-secondary); margin: 0 0 var(--space-4);">
+      在同一资产水平下，对比不同城市的生活成本与生活方式。
+    </p>
+    <div id="compareCitiesContainer"></div>
+  </section>
+
+  <section id="fireSection" class="calc" style="display: none;"></section>
+
   <footer class="site-footer">
     <h2>计算假设</h2>
     <p>· <strong>4% 安全提取率</strong>：基于 Trinity Study 经典结论，30 年退休期含通胀调整。<br>
@@ -654,321 +155,15 @@ body {
        · <strong>家庭模型</strong>：两位成人 + 一个学龄儿童。<br>
        · <strong>租金 / 学费 / 餐饮等</strong>：2025–26 年市场参考价，实际因房型、年级、谈判、入学批次差异较大。</p>
     <h2>数据来源</h2>
-    <p>真实小区、学校、餐厅名称来自上海一手观察 —— 链家 / 贝壳找房挂牌、各国际学校 2025–26 学费公示、米其林上海榜单及大众点评。结果仅作生活方式参考，<strong>不构成投资或移居建议</strong>。</p>
+    <p>各城市数据来自一手市场观察：房产平台（链家、贝壳找房）挂牌价、国际学校学费公示、餐饮榜单及本地评价。目前覆盖上海、北京。结果仅作生活方式参考，<strong>不构成投资或移居建议</strong>。</p>
     <div class="meta">
-      <span>© 2026 上海生活计算器</span>
+      <span>© 2026 多城市生活成本计算器</span>
       <span>数据快照：2025–26</span>
     </div>
   </footer>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
-<script>
-document.body.classList.remove('js-pending');
-document.body.classList.add('js');
-
-const T = [
-  {
-    name:'拮据生活', minCNY:0, maxCNY:12000,
-    bb:'#E6F1FB', bt:'#0C447C',
-    desc:'月支出 < ¥1.2万。只能住外环甚至郊区，孩子上公立学校，日常以自己做饭为主，出行靠地铁公交，几乎无储蓄和娱乐余地。',
-    items:[
-      {cat:'住房/租金', amt:'¥3,500', ex:['宝山顾村板块老小区','浦东康桥/周浦镇','闵行浦江镇旧房','青浦赵巷二手房']},
-      {cat:'子女教育', amt:'¥800', ex:['就近划片公立小学（免费）','偶尔报班：昂立/学而思','初中：对口公办中学']},
-      {cat:'餐饮美食', amt:'¥2,500', ex:['沙县小吃','兰州拉面','菜市场自己做','盒马鲜生经济款']},
-      {cat:'交通出行', amt:'¥700', ex:['地铁通勤+公交','共享单车','偶尔滴滴快车']},
-      {cat:'医疗健康', amt:'¥500', ex:['社区卫生服务中心','华山/瑞金普通门诊','基本医保报销']},
-      {cat:'旅行娱乐', amt:'¥500', ex:['共青森林公园','世纪公园','周边区县一日游']},
-      {cat:'日用购物', amt:'¥1,000', ex:['拼多多','菜场','大润发超市']},
-    ],
-    pct:[37,8,26,7,5,5,12]
-  },
-  {
-    name:'基本小康', minCNY:12000, maxCNY:25000,
-    bb:'#EAF3DE', bt:'#27500A',
-    desc:'月支出 ¥1.2万–2.5万。住中外环次新小区，孩子读普通民办或对口公办，偶尔外食，能安排国内短途旅行，生活稳定但余量有限。',
-    items:[
-      {cat:'住房/租金', amt:'¥7,000', ex:['万科城市花园（闵行）','保利叶上海（宝山）','绿地海珀（奉贤）','中海国际社区（嘉定）']},
-      {cat:'子女教育', amt:'¥3,000', ex:['平和双语学校 双语部 ¥3万/年','协和双语 民办部 ¥10万/年','市北附属实验学校','新纪元双语学校']},
-      {cat:'餐饮美食', amt:'¥4,000', ex:['外婆家','绿茶餐厅','西贝莜面村','避风塘','呷哺呷哺']},
-      {cat:'交通出行', amt:'¥1,500', ex:['地铁+滴滴快车','二手大众朗逸/日产轩逸','共享单车']},
-      {cat:'医疗健康', amt:'¥1,000', ex:['仁济医院','上海儿童医学中心普通号','平安e生保（基础百万医疗）']},
-      {cat:'旅行娱乐', amt:'¥2,500', ex:['杭州/苏州周末游','乌镇/西塘','三亚（经济舱）','迪士尼乐园（年卡）']},
-      {cat:'日用购物', amt:'¥2,000', ex:['宜家','无印良品入门款','京东自营','网易严选']},
-    ],
-    pct:[33,14,19,7,5,12,10]
-  },
-  {
-    name:'舒适生活', minCNY:25000, maxCNY:55000,
-    bb:'#FAEEDA', bt:'#633806',
-    desc:'月支出 ¥2.5万–5.5万。内中环居住，孩子可读国际学校入门档或一线民办，有私家车，能去日本/东南亚度假，是上海双职工中产的理想状态。',
-    items:[
-      {cat:'住房/租金', amt:'¥15,000', ex:['仁恒河滨城（浦东）','新江湾城板块（杨浦）','古北国际花园（长宁）','嘉里中心附近（静安）']},
-      {cat:'子女教育', amt:'¥10,000', ex:['平和双语学校 国际部 ¥15万/年','SCIS 北美协会学校 ¥15–20万/年','协和国际外籍人员子女学校 低龄段 ¥20万/年','德威幼儿园（Dulwich Pre-School）']},
-      {cat:'餐饮美食', amt:'¥7,000', ex:['新荣记（普通店）','鹿港小镇','富春小笼','Element Fresh','Shake Shack']},
-      {cat:'交通出行', amt:'¥5,000', ex:['大众途观L / 丰田RAV4 / 本田CR-V','油费+停车约¥1,500/月','偶尔高德专车']},
-      {cat:'医疗健康', amt:'¥3,000', ex:['嘉会国际医疗（普通门诊）','上海和睦家（急诊）','友邦/平安商业险中档']},
-      {cat:'旅行娱乐', amt:'¥6,000', ex:['日本东京/大阪（经济舱）','新加坡','普吉岛','巴厘岛 Alila 酒店']},
-      {cat:'日用购物', amt:'¥4,000', ex:['COS','Theory','小米生态链','Ole 超市']},
-    ],
-    pct:[30,20,14,10,6,12,8]
-  },
-  {
-    name:'品质生活', minCNY:55000, maxCNY:120000,
-    bb:'#FBEAF0', bt:'#4B1528',
-    desc:'月支出 ¥5.5万–12万。内环高档小区，孩子就读知名国际学校，开宝马奔驰，每年欧美度假，享受上海真正意义上的高品质中产生活。',
-    items:[
-      {cat:'住房/租金', amt:'¥28,000', ex:['翠湖天地御苑（黄浦/卢湾）','华润外滩九里（浦东陆家嘴旁）','华府天地（黄浦）','中粮海景壹号（虹口）']},
-      {cat:'子女教育', amt:'¥25,000', ex:['德威上海（Dulwich Shanghai）¥30–39万/年','BISS 浦西（Nord Anglia 集团）¥27–32万/年','上海日本人学校（日籍专属）','惠灵顿国际学校 ¥27–37万/年']},
-      {cat:'餐饮美食', amt:'¥12,000', ex:['Le Comptoir de Pierre Gagnaire（外滩）','The Cannery（上生新所）','新荣记（静安店）','Da Vittorio（江浙沪开创首店）']},
-      {cat:'交通出行', amt:'¥10,000', ex:['宝马5系/奔驰E级','保时捷Macan','油费停车车险约¥3,000/月']},
-      {cat:'医疗健康', amt:'¥6,000', ex:['上海和睦家医院（VIP会员）','嘉会国际（家庭计划）','Cigna 国际医疗保险（中档）']},
-      {cat:'旅行娱乐', amt:'¥12,000', ex:['法国/意大利（商务舱）','马尔代夫 W / Four Seasons','东京 Park Hyatt','斯里兰卡 Amanwella']},
-      {cat:'日用购物', amt:'¥8,000', ex:['Gucci/Prada 入门','连卡佛百货','恒隆广场','进口超市 City\'shop']},
-    ],
-    pct:[28,25,12,10,6,12,7]
-  },
-  {
-    name:'豪华生活', minCNY:120000, maxCNY:280000,
-    bb:'#EEEDFE', bt:'#26215C',
-    desc:'月支出 ¥12万–28万。顶级公寓或联排别墅，孩子读 SAS / 哈罗，专属司机，头等舱全球出行，上海顶层精英的日常。',
-    items:[
-      {cat:'住房/租金', amt:'¥60,000', ex:['仁恒滨江园（浦东）','绿地外滩中心公寓','嘉里不夜城（静安）','汤臣高尔夫别墅（浦东金桥）']},
-      {cat:'子女教育', amt:'¥35,000', ex:['上海美国学校 SAS（浦东/虹桥）¥25–30万/年','哈罗上海（Harrow）¥38–45万/年','SCIS 北美协会学校 ¥15–32万/年','上海耀中外籍人员子女学校 YCIS ¥21–32万/年']},
-      {cat:'餐饮美食', amt:'¥20,000', ex:['8½ Otto e Mezzo Bombana（外滩二星）','T\'ang Court 唐阁（米其林三星）','Jean-Georges Shanghai（外滩三号）','Maison Lameloise 莱美露滋（米其林二星）']},
-      {cat:'交通出行', amt:'¥20,000', ex:['保时捷Cayenne/宾利Continental','玛莎拉蒂Levante','全职专属司机（¥1.2万/月）']},
-      {cat:'医疗健康', amt:'¥10,000', ex:['和睦家全家旗舰套餐','Bupa/AXA 顶级国际医疗保险','私人家庭医生上门服务']},
-      {cat:'旅行娱乐', amt:'¥25,000', ex:['马尔代夫 Four Seasons Voavah 水上屋（头等舱）','Aman 系列酒店','非洲马赛马拉 safari','北极/冰岛远征']},
-      {cat:'日用购物', amt:'¥20,000', ex:['爱马仕 Kelly/Birkin 候补','香奈儿季度新款','恒隆 VIP 专属服务','拍卖行艺术品入门']},
-    ],
-    pct:[32,18,11,11,5,13,10]
-  },
-  {
-    name:'顶奢生活', minCNY:280000, maxCNY:Infinity,
-    bb:'#FAECE7', bt:'#4A1B0C',
-    desc:'月支出 > ¥28万。汤臣一品或独栋别墅，孩子读顶尖国际学校，私人管家，随时包机，游艇度假，上海极少数人才能触碰的生活方式。',
-    items:[
-      {cat:'住房/租金', amt:'¥120,000+', ex:['汤臣一品（浦东滨江，顶层租金可达¥20万+/月）','绿城玫瑰园别墅（浦东康桥）','万科兰乔圣菲独栋别墅（闵行华漕）','外滩源历史保护建筑改造公寓']},
-      {cat:'子女教育', amt:'¥50,000+', ex:['SAS+一对一私人家教','暑期哈佛/MIT 预科营','瑞士罗森博格国际学校','海外寄宿学校储备（伊顿/安多弗）']},
-      {cat:'餐饮美食', amt:'¥30,000+', ex:['Taian Table（米其林三星 + 绿星）','新荣记（米其林三星，全球首家）','Da Vittorio（外滩米其林三星）','私人厨师驻家+外滩27号顶层私宴']},
-      {cat:'交通出行', amt:'¥40,000+', ex:['劳斯莱斯Ghost/宾利Mulsanne','专属司机团队（两辆备用车）','商务机包机（上海→三亚约¥15万次）']},
-      {cat:'医疗健康', amt:'¥15,000+', ex:['Cigna/Bupa 无上限国际保险','美国 Mayo Clinic 年度体检','私人全科医生 24 小时随访']},
-      {cat:'旅行娱乐', amt:'¥50,000+', ex:['地中海私人游艇包船（€20,000+/周）','四季马尔代夫 Voavah 私人岛','南极/北极 Silversea 远征邮轮','Aman Tokyo+京都双连住']},
-      {cat:'日用购物', amt:'¥30,000+', ex:['爱马仕定制（特殊订单）','私人购物助理驻守恒隆','苏富比/佳士得艺术品','Patek Philippe 限量腕表']},
-    ],
-    pct:[36,15,9,12,4,15,9]
-  }
-];
-
-const CATS = ['住房/租金','子女教育','餐饮美食','交通出行','医疗健康','旅行娱乐','日用购物'];
-const CC = ['#378ADD','#D4537E','#EF9F27','#1D9E75','#639922','#7F77DD','#D85A30'];
-
-function fmt(n){return Math.round(n).toLocaleString('en-US');}
-
-function getA(v){
-  const mn=Math.log10(200000), mx=Math.log10(20000000);
-  return Math.pow(10, mn+(v/100)*(mx-mn));
-}
-
-function getTier(cny){
-  for(let i=0;i<T.length;i++) if(cny>=T[i].minCNY && cny<T[i].maxCNY) return i;
-  return T.length-1;
-}
-
-function fmtUSD(a){
-  if(a>=10000000) return '$'+(a/1000000).toFixed(1)+'M';
-  if(a>=1000000)  return '$'+(a/1000000).toFixed(2)+'M';
-  return '$'+fmt(Math.round(a/1000))+'K';
-}
-
-let ch=null;
-let lastTier=-1;
-
-const slEl = document.getElementById('sl');
-const aDispEl = document.getElementById('aDisp');
-const aUSDEl = document.getElementById('aUSD');
-const mUSDEl = document.getElementById('mUSD');
-const mCNYEl = document.getElementById('mCNY');
-const badgeEl = document.getElementById('badge');
-const tdescEl = document.getElementById('tdesc');
-const titemsEl = document.getElementById('titems');
-const legEl = document.getElementById('leg');
-const tsBars = document.querySelectorAll('.tier-strip-bars .ts');
-const tsLabels = document.querySelectorAll('.tier-strip-labels > div');
-
-function upd(){
-  const v=parseInt(slEl.value);
-  const a=getA(v);
-  aDispEl.textContent = fmtUSD(a);
-
-  const ann=a*0.04;
-  const mU=ann*0.80/12;
-  const mC=mU*6.8;
-
-  aUSDEl.textContent='$'+fmt(ann);
-  mUSDEl.textContent='$'+fmt(mU);
-  mCNYEl.textContent='¥'+fmt(mC);
-
-  const ti=getTier(mC);
-  const t=T[ti];
-
-  tsBars.forEach((el,i)=>{
-    el.style.opacity = i===ti ? '1' : '0.2';
-    el.style.height  = i===ti ? '9px' : '5px';
-  });
-  tsLabels.forEach((el,i)=>{
-    el.classList.toggle('is-active', i===ti);
-  });
-
-  if(ti !== lastTier){
-    badgeEl.style.background = t.bb;
-    badgeEl.style.color = t.bt;
-    badgeEl.textContent = t.name;
-    tdescEl.textContent = t.desc;
-    titemsEl.innerHTML = t.items.map(item=>`
-      <div class="tier-item">
-        <div class="tier-item-row">
-          <span class="tier-item-cat">${item.cat}</span>
-          <span class="tier-item-amt">${item.amt}</span>
-        </div>
-        <div class="tier-item-ex">${item.ex.join(' &nbsp;·&nbsp; ')}</div>
-      </div>
-    `).join('');
-    lastTier = ti;
-  }
-
-  if(ch){ ch.data.datasets[0].data = t.pct; ch.update('none'); }
-
-  // URL state
-  try {
-    const u = new URL(location.href);
-    u.searchParams.set('v', v);
-    history.replaceState(null, '', u);
-  } catch(_) {}
-}
-
-// Build legend
-legEl.innerHTML = CATS.map((c,i)=>
-  `<span class="legend-item"><span class="legend-dot" style="background:${CC[i]}"></span>${c}</span>`
-).join('');
-
-// Build comparison grid
-function buildCompare(){
-  const grid = document.getElementById('compareGrid');
-  grid.innerHTML = T.map((t,idx)=>{
-    const housing = t.items.find(x=>x.cat==='住房/租金');
-    const edu = t.items.find(x=>x.cat==='子女教育');
-    const dining = t.items.find(x=>x.cat==='餐饮美食');
-    const range = t.maxCNY === Infinity
-      ? `> ¥${(t.minCNY/10000).toFixed(0)}万/月`
-      : `¥${(t.minCNY/10000).toFixed(t.minCNY<10000?1:0)}万–${(t.maxCNY/10000).toFixed(0)}万/月`;
-    return `
-      <div class="compare-card">
-        <span class="compare-name" style="background:${t.bb};color:${t.bt}">${t.name}</span>
-        <div class="compare-range">${range}</div>
-        <dl class="compare-row">
-          <dt>住房</dt>
-          <dd>${housing.amt} · ${housing.ex[0]}</dd>
-        </dl>
-        <dl class="compare-row">
-          <dt>教育</dt>
-          <dd>${edu.amt} · ${edu.ex[0]}</dd>
-        </dl>
-        <dl class="compare-row">
-          <dt>餐饮</dt>
-          <dd>${dining.amt} · ${dining.ex[0]}</dd>
-        </dl>
-      </div>
-    `;
-  }).join('');
-}
-buildCompare();
-
-// Init Chart
-function initChart(){
-  if(typeof Chart === 'undefined') return;
-  const ctx = document.getElementById('bc').getContext('2d');
-  ch = new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-      labels: CATS,
-      datasets: [{
-        data: T[1].pct,
-        backgroundColor: CC,
-        borderWidth: 3,
-        borderColor: getComputedStyle(document.documentElement).getPropertyValue('--color-bg-tertiary').trim() || '#fff',
-        hoverOffset: 6
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: true,
-      cutout: '64%',
-      animation: { duration: 400 },
-      plugins: {
-        legend: { display: false },
-        tooltip: {
-          callbacks: { label: c=>` ${c.label}: ${c.parsed}%` }
-        }
-      }
-    }
-  });
-}
-
-// Read initial state from URL
-function initState(){
-  const params = new URLSearchParams(location.search);
-  const vRaw = params.get('v');
-  if(vRaw !== null){
-    const vNum = parseInt(vRaw, 10);
-    if(!isNaN(vNum) && vNum >= 0 && vNum <= 100){
-      slEl.value = vNum;
-    }
-  }
-}
-
-// Copy link button
-const copyBtn = document.getElementById('copyBtn');
-const copyTxt = document.getElementById('copyTxt');
-copyBtn.addEventListener('click', async ()=>{
-  try {
-    await navigator.clipboard.writeText(location.href);
-    copyTxt.textContent = '已复制';
-    copyBtn.classList.add('is-copied');
-    setTimeout(()=>{
-      copyTxt.textContent = '复制链接';
-      copyBtn.classList.remove('is-copied');
-    }, 1500);
-  } catch(_) {
-    // Fallback: select-and-copy via temp input
-    const i = document.createElement('input');
-    i.value = location.href;
-    document.body.appendChild(i);
-    i.select();
-    try { document.execCommand('copy'); copyTxt.textContent = '已复制'; copyBtn.classList.add('is-copied'); } catch(_){}
-    document.body.removeChild(i);
-    setTimeout(()=>{
-      copyTxt.textContent = '复制链接';
-      copyBtn.classList.remove('is-copied');
-    }, 1500);
-  }
-});
-
-// Listen
-slEl.addEventListener('input', upd);
-
-initState();
-initChart();
-upd();
-
-// Re-render chart border on color-scheme change
-if (window.matchMedia) {
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', ()=>{
-    if (!ch) return;
-    ch.data.datasets[0].borderColor = getComputedStyle(document.documentElement).getPropertyValue('--color-bg-tertiary').trim() || '#fff';
-    ch.update('none');
-  });
-}
-</script>
+<script type="module" src="./assets/js/main.js"></script>
 </body>
 </html>

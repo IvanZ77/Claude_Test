@@ -1,0 +1,49 @@
+:root {
+  --color-bg: #FAFAF7;
+  --color-bg-secondary: #F2F2EE;
+  --color-bg-tertiary: #FFFFFF;
+  --color-bg-elevated: #FFFFFF;
+  --color-text-primary: #18181B;
+  --color-text-secondary: #52525B;
+  --color-text-tertiary: #A1A1AA;
+  --color-border: #E4E4E7;
+  --color-border-tertiary: #E7E5E0;
+  --color-accent: #18181B;
+  --color-accent-soft: #F4F4F0;
+
+  --border-radius-sm: 6px;
+  --border-radius-md: 10px;
+  --border-radius-lg: 16px;
+  --border-radius-xl: 22px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans SC", "Noto Sans CJK SC", "Segoe UI", Roboto, sans-serif;
+
+  --shadow-sm: 0 1px 2px rgba(24,24,27,.04), 0 0 0 0.5px rgba(24,24,27,.06);
+  --shadow-md: 0 4px 24px -8px rgba(24,24,27,.08), 0 0 0 0.5px rgba(24,24,27,.06);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0F0F0E;
+    --color-bg-secondary: #1C1C1A;
+    --color-bg-tertiary: #18181B;
+    --color-bg-elevated: #1F1F1D;
+    --color-text-primary: #F4F4F5;
+    --color-text-secondary: #A1A1AA;
+    --color-text-tertiary: #71717A;
+    --color-border: #2E2E2D;
+    --color-border-tertiary: #2A2A28;
+    --color-accent: #FAFAF7;
+    --color-accent-soft: #2A2A28;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,.4), 0 0 0 0.5px rgba(255,255,255,.06);
+    --shadow-md: 0 4px 24px -8px rgba(0,0,0,.5), 0 0 0 0.5px rgba(255,255,255,.06);
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "categories": [
+    {
+      "id": "housing",
+      "label": "住房/租金",
+      "color": "#378ADD"
+    },
+    {
+      "id": "education",
+      "label": "子女教育",
+      "color": "#D4537E"
+    },
+    {
+      "id": "food",
+      "label": "餐饮美食",
+      "color": "#EF9F27"
+    },
+    {
+      "id": "transport",
+      "label": "交通出行",
+      "color": "#1D9E75"
+    },
+    {
+      "id": "medical",
+      "label": "医疗健康",
+      "color": "#639922"
+    },
+    {
+      "id": "travel",
+      "label": "旅行娱乐",
+      "color": "#7F77DD"
+    },
+    {
+      "id": "shopping",
+      "label": "日用购物",
+      "color": "#D85A30"
+    }
+  ]
+}
