@@ -1,0 +1,110 @@
+{
+  "id": "fukuoka",
+  "name": "福冈",
+  "currency": "CNY",
+  "schemaVersion": 1,
+  "tiers": [
+    {
+      "id": "t1",
+      "name": "拮据生活",
+      "incomeRange": { "min": 0, "max": 9000, "unit": "CNY/month" },
+      "badge": { "bg": "#E6F1FB", "fg": "#0C447C" },
+      "description": "月支出 < ¥9000。郊区公寓或小房间，公立学校，以自炊为主，电车/巴士，生活紧张。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["中洲郊外公寓", "九州大学附近民宿", "博多老城住宅"] },
+        "education": { "label": "子女教育", "examples": ["公立小学", "日文班"] },
+        "food": { "label": "餐饮美食", "examples": ["吉野家", "松屋", "便利店", "自炊"] },
+        "transport": { "label": "交通出行", "examples": ["福冈电车", "巴士", "骑自行车"] },
+        "medical": { "label": "医疗健康", "examples": ["公立医院", "国民健康保险"] },
+        "travel": { "label": "旅行娱乐", "examples": ["福冈城公园", "免费景点"] },
+        "shopping": { "label": "日用购物", "examples": ["UNIQLO", "100日元店", "便利店"] }
+      },
+      "pct": [45, 6, 26, 8, 4, 3, 8]
+    },
+    {
+      "id": "t2",
+      "name": "基本小康",
+      "incomeRange": { "min": 9000, "max": 18000, "unit": "CNY/month" },
+      "badge": { "bg": "#EAF3DE", "fg": "#27500A" },
+      "description": "月支出 ¥9000–¥1.8万。公寓住宅，孩子读公立或日本民办学校，偶尔外食，有休闲活动。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["天神新公寓", "大名小区民居", "荷园美术馆周边"] },
+        "education": { "label": "子女教育", "examples": ["福冈私立小学", "日语补习班", "书法教室"] },
+        "food": { "label": "餐饮美食", "examples": ["拉面店", "定食屋", "回转寿司", "家族餐厅"] },
+        "transport": { "label": "交通出行", "examples": ["电车月票", "公交", "自行车"] },
+        "medical": { "label": "医疗健康", "examples": ["诊所门诊", "入院保险"] },
+        "travel": { "label": "旅行娱乐", "examples": ["福冈周末游", "佐贺温泉"] },
+        "shopping": { "label": "日用购物", "examples": ["超市特价", "GU", "互联网商店"] }
+      },
+      "pct": [38, 11, 23, 8, 5, 8, 7]
+    },
+    {
+      "id": "t3",
+      "name": "舒适生活",
+      "incomeRange": { "min": 18000, "max": 36000, "unit": "CNY/month" },
+      "badge": { "bg": "#FAEEDA", "fg": "#633806" },
+      "description": "月支出 ¥1.8万–¥3.6万。高档公寓，孩子读国际学校或优质民办校，有车，能定期度假。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["南区高档公寓", "早良区豪宅", "城南洋风建筑"] },
+        "education": { "label": "子女教育", "examples": ["福冈国际学校初中", "明治学園", "英会话教室"] },
+        "food": { "label": "餐饮美食", "examples": ["和牛烤肉", "法式咖啡馆", "意大利餐厅"] },
+        "transport": { "label": "交通出行", "examples": ["本田Fit/丰田Vitz", "停车费¥600/月"] },
+        "medical": { "label": "医疗健康", "examples": ["牙科诊所定期检查", "医疗保险"] },
+        "travel": { "label": "旅行娱乐", "examples": ["京都/大阪周末游", "温泉旅行"] },
+        "shopping": { "label": "日用购物", "examples": ["PARCO百货", "进口超市", "品牌商店"] }
+      },
+      "pct": [32, 14, 20, 10, 6, 12, 6]
+    },
+    {
+      "id": "t4",
+      "name": "品质生活",
+      "incomeRange": { "min": 36000, "max": 72000, "unit": "CNY/month" },
+      "badge": { "bg": "#FBEAF0", "fg": "#4B1528" },
+      "description": "月支出 ¥3.6万–¥7.2万。豪宅或洋房，孩子国际学校高中，进口车，欧洲度假。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["南区别墅", "舞鹤别墅区", "中央区高层豪宅"] },
+        "education": { "label": "子女教育", "examples": ["福冈国际学校高中", "IB课程部", "海外交换计划"] },
+        "food": { "label": "餐饮美食", "examples": ["米其林入门", "高级和牛", "法式烹饪"] },
+        "transport": { "label": "交通出行", "examples": ["BMW3系/奔驰C级", "停车+油费¥1500/月"] },
+        "medical": { "label": "医疗健康", "examples": ["私立医院VIP", "健康体检套餐"] },
+        "travel": { "label": "旅行娱乐", "examples": ["欧洲自驾游", "东京品牌店血拼"] },
+        "shopping": { "label": "日用购物", "examples": ["奢侈品店", "丸井百货VIP"] }
+      },
+      "pct": [28, 18, 16, 11, 6, 12, 9]
+    },
+    {
+      "id": "t5",
+      "name": "豪华生活",
+      "incomeRange": { "min": 72000, "max": 144000, "unit": "CNY/month" },
+      "badge": { "bg": "#EEEDFE", "fg": "#26215C" },
+      "description": "月支出 ¥7.2万–¥14.4万。顶级别墅，孩子精英国际学校，保时捷，全球旅游。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["高级别墅区顶层", "福冈城景观住宅", "独栋豪宅"] },
+        "education": { "label": "子女教育", "examples": ["立命館慶應预备", "海外大学交换", "夏令营英美名校"] },
+        "food": { "label": "餐饮美食", "examples": ["米其林二星试吃", "懐石料理", "私人会所"] },
+        "transport": { "label": "交通出行", "examples": ["保时捷Macan", "路虎揽胜", "司机服务"] },
+        "medical": { "label": "医疗健康", "examples": ["新加坡医疗旅游", "国际保险高端"] },
+        "travel": { "label": "旅行娱乐", "examples": ["欧美长驻", "五星酒店", "私人包机"] },
+        "shopping": { "label": "日用购物", "examples": ["奢侈品定制", "美术品收藏"] }
+      },
+      "pct": [30, 16, 12, 12, 6, 14, 10]
+    },
+    {
+      "id": "t6",
+      "name": "顶奢生活",
+      "incomeRange": { "min": 144000, "max": null, "unit": "CNY/month" },
+      "badge": { "bg": "#FAECE7", "fg": "#4A1B0C" },
+      "description": "月支出 > ¥14.4万。福冈顶级庄园，顶尖大学预备班，豪车与专属司机，头等舱全球。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["福冈城邸顶层", "糸島海景别墅", "名士住宅区"] },
+        "education": { "label": "子女教育", "examples": ["哈佛预科营", "伊顿公学预备", "私人家教团队"] },
+        "food": { "label": "餐饮美食", "examples": ["米其林三星备选", "私人厨师驻家"] },
+        "transport": { "label": "交通出行", "examples": ["劳斯莱斯幽灵", "专属司机保镖"] },
+        "medical": { "label": "医疗健康", "examples": ["美国Mayo医疗包", "24小时医疗顾问"] },
+        "travel": { "label": "旅行娱乐", "examples": ["私人游艇度假", "阿尔卑斯滑雪"] },
+        "shopping": { "label": "日用购物", "examples": ["美术馆拍卖会", "顶级珠宝订制"] }
+      },
+      "pct": [32, 14, 10, 12, 4, 18, 10]
+    }
+  ]
+}

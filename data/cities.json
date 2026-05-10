@@ -118,6 +118,60 @@
       "currency": "CNY",
       "fxToCNY": 1.0,
       "available": true
+    },
+    {
+      "id": "zhoushan",
+      "name": "舟山",
+      "country": "中国",
+      "file": "cities/zhoushan.json",
+      "currency": "CNY",
+      "fxToCNY": 1.0,
+      "available": true
+    },
+    {
+      "id": "wenzhou",
+      "name": "温州",
+      "country": "中国",
+      "file": "cities/wenzhou.json",
+      "currency": "CNY",
+      "fxToCNY": 1.0,
+      "available": true
+    },
+    {
+      "id": "fukuoka",
+      "name": "福冈",
+      "country": "日本",
+      "file": "cities/fukuoka.json",
+      "currency": "CNY",
+      "fxToCNY": 1.0,
+      "available": true
+    },
+    {
+      "id": "danang",
+      "name": "岘港",
+      "country": "越南",
+      "file": "cities/danang.json",
+      "currency": "CNY",
+      "fxToCNY": 1.0,
+      "available": true
+    },
+    {
+      "id": "london",
+      "name": "伦敦",
+      "country": "英国",
+      "file": "cities/london.json",
+      "currency": "CNY",
+      "fxToCNY": 1.0,
+      "available": true
+    },
+    {
+      "id": "paris",
+      "name": "巴黎",
+      "country": "法国",
+      "file": "cities/paris.json",
+      "currency": "CNY",
+      "fxToCNY": 1.0,
+      "available": true
     }
   ]
 }
