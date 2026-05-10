@@ -26,12 +26,18 @@ async function bootstrap() {
     // Decode state from URL
     const urlState = decodeState(location.search, data.defaults);
 
+    // Get city ID from URL or default to shanghai
+    const urlParams = new URLSearchParams(location.search);
+    const cityIdFromUrl = urlParams.get('c') || 'shanghai';
+    const selectedCity = data.availableCities.find(c => c.id === cityIdFromUrl) || data.availableCities[0];
+    const cityData = data.cityData[selectedCity.id];
+
     // Initialize state
     const fireDefaults = data.defaults.params;
     setState({
-      cityId: 'shanghai',
-      cityData: data.cityData.shanghai,
-      cityTiers: shanghaiTiers,
+      cityId: selectedCity.id,
+      cityData: cityData,
+      cityTiers: cityData.tiers,
       categories: data.categories,
       sliderValue: urlState.sliderValue,
       params: { ...urlState.params },
@@ -72,6 +78,7 @@ async function bootstrap() {
     const compareCitiesSectionEl = document.getElementById('compareCitiesSection');
     const compareCitiesContainerEl = document.getElementById('compareCitiesContainer');
     const singleCityCalcEl = document.getElementById('singleCityCalc');
+    const citySelectorEl = document.getElementById('citySelector');
     const tsBars = document.querySelectorAll('.tier-strip-bars .ts');
     const tsLabels = document.querySelectorAll('.tier-strip-labels > div');
     const copyBtn = document.getElementById('copyBtn');
@@ -369,6 +376,47 @@ async function bootstrap() {
 
     // Update slider to match state
     sliderEl.value = getState().sliderValue;
+
+    // Render city selector
+    const renderCitySelector = () => {
+      const state = getState();
+      citySelectorEl.innerHTML = data.availableCities
+        .map(city => {
+          const isActive = state.cityId === city.id;
+          return `
+            <button class="city-btn${isActive ? ' is-active' : ''}" data-city="${city.id}"
+                    style="padding: 6px 14px; border-radius: var(--border-radius-md);
+                           background: ${isActive ? 'var(--color-accent)' : 'var(--color-bg-secondary)'};
+                           color: ${isActive ? 'var(--color-bg)' : 'var(--color-text-primary)'};
+                           border: 0.5px solid ${isActive ? 'var(--color-accent)' : 'var(--color-border-tertiary)'};
+                           font-size: 13px; font-weight: 500; cursor: pointer;
+                           transition: all 0.15s ease;">
+              ${city.name}
+            </button>
+          `;
+        })
+        .join('');
+
+      citySelectorEl.querySelectorAll('.city-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const cityId = e.target.dataset.city;
+          const city = data.cityData[cityId];
+          if (city) {
+            setState({
+              cityId,
+              cityData: city,
+              cityTiers: city.tiers
+            });
+            renderCitySelector();
+            updateCalculations();
+            scheduleUrlSync();
+          }
+        });
+      });
+    };
+
+    // Initialize city selector
+    renderCitySelector();
 
     // Initialize parameter panel
     renderParamPanel(paramPanelEl, data.defaults, getState().params, handleParamChange);

@@ -2,6 +2,11 @@
 export function encodeState(state, defaults) {
   const params = new URLSearchParams();
 
+  // City ID (if not default)
+  if (state.cityId && state.cityId !== 'shanghai') {
+    params.set('c', state.cityId);
+  }
+
   // Slider value (required)
   params.set('a', state.sliderValue);
 
