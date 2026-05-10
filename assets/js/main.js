@@ -33,11 +33,19 @@ async function bootstrap() {
 
     // Initialize state
     const fireDefaults = data.defaults.params;
+
+    // Debug: Check if householdModels loaded
+    console.log('Data loaded successfully');
+    console.log('householdModels:', data.householdModels);
+    console.log('householdModels length:', data.householdModels ? data.householdModels.length : 'undefined');
+
     setState({
       cityId: selectedCity.id,
       cityData: cityData,
       cityTiers: cityData.tiers,
       categories: data.categories,
+      householdModels: data.householdModels,
+      householdModel: urlState.householdModel,
       sliderValue: urlState.sliderValue,
       params: { ...urlState.params },
       monthlyCNY: 0,
@@ -92,7 +100,7 @@ async function bootstrap() {
         state.params.taxRate,
         state.params.fxUsdCny
       );
-      const tierIndex = matchTier(income.monthlyCNY, state.cityTiers);
+      const tierIndex = matchTier(income.monthlyCNY, state.cityTiers, state.householdModel);
 
       setState({
         assets,
@@ -128,6 +136,12 @@ async function bootstrap() {
     function renderTierPanel() {
       const state = getState();
       const tier = state.cityTiers[state.activeTierIndex];
+      const variant = tier.variants ? tier.variants[state.householdModel] : null;
+
+      if (!variant) {
+        console.error(`No variant found for household model ${state.householdModel} in tier ${tier.id}`);
+        return;
+      }
 
       badgeEl.style.background = tier.badge.bg;
       badgeEl.style.color = tier.badge.fg;
@@ -135,8 +149,8 @@ async function bootstrap() {
 
       // Update income range display
       const incomeRangeEl = document.getElementById('incomeRange');
-      const minStr = '¥' + formatNumber(tier.incomeRange.min);
-      const maxStr = tier.incomeRange.max ? '¥' + formatNumber(tier.incomeRange.max) : '¥' + formatNumber(tier.incomeRange.min) + '+';
+      const minStr = '¥' + formatNumber(variant.incomeRange.min);
+      const maxStr = variant.incomeRange.max ? '¥' + formatNumber(variant.incomeRange.max) : '¥' + formatNumber(variant.incomeRange.min) + '+';
       incomeRangeEl.textContent = minStr + '–' + maxStr + '/月';
 
       descEl.textContent = tier.description;
@@ -144,7 +158,8 @@ async function bootstrap() {
       itemsEl.innerHTML = Object.entries(tier.items)
         .map(([catId, catData]) => {
           const catIndex = state.categories.findIndex(c => c.id === catId);
-          const percentage = catIndex >= 0 ? tier.pct[catIndex] : 0;
+          const percentage = catIndex >= 0 ? variant.pct[catIndex] : 0;
+          if (percentage === 0) return ''; // Skip categories with 0% allocation
           const monthlySpending = Math.round(state.monthlyCNY * percentage / 100);
           const displaySpending = roundToReadable(monthlySpending);
           return `
@@ -159,7 +174,7 @@ async function bootstrap() {
         })
         .join('');
 
-      updateBudgetChart(tier.pct);
+      updateBudgetChart(variant.pct);
     }
 
     // Render legend
@@ -174,10 +189,16 @@ async function bootstrap() {
     }
 
     // Subscribe to state changes
+    let lastHouseholdModel = null;
     subscribe((state) => {
       renderMetrics();
       renderTierStrip();
       renderTierPanel();
+
+      // Re-render household selector if it exists and is available
+      if (renderHouseholdModelSelector && state.householdModels) {
+        renderHouseholdModelSelector();
+      }
 
       // Update comparison grid when monthly CNY changes
       if (state.compareMode && state.monthlyCNY) {
@@ -496,6 +517,76 @@ async function bootstrap() {
     // Initialize city selector
     renderCitySelector();
 
+    // Render household model selector
+    let renderHouseholdModelSelector; // Declare in outer scope
+    try {
+      const householdSelectorEl = document.getElementById('householdSelector');
+
+      renderHouseholdModelSelector = () => {
+        const state = getState();
+        const el = document.getElementById('householdSelector');
+
+        if (!el) {
+          console.warn('[Household] Element #householdSelector not found');
+          return;
+        }
+
+        if (!state.householdModels || state.householdModels.length === 0) {
+          console.warn('[Household] No household models in state', state.householdModels);
+          el.innerHTML = '<span style="color: #f00;">家庭模型加载失败</span>';
+          return;
+        }
+
+        try {
+          let html = '<span style="font-size: 12px; color: var(--color-text-secondary); white-space: nowrap; margin-right: 6px;">家庭结构：</span>';
+
+          state.householdModels.forEach(model => {
+            const isActive = state.householdModel === model.id;
+            html += `
+              <button class="household-btn" data-model="${model.id}"
+                      title="${model.description}"
+                      style="padding: 6px 14px; border-radius: var(--border-radius-md);
+                             background: ${isActive ? 'var(--color-accent)' : 'var(--color-bg-secondary)'};
+                             color: ${isActive ? 'var(--color-bg)' : 'var(--color-text-primary)'};
+                             border: 0.5px solid ${isActive ? 'var(--color-accent)' : 'var(--color-border-tertiary)'};
+                             font-size: 12px; font-weight: 500; cursor: pointer;
+                             transition: all 0.15s ease;">
+                ${model.label}
+              </button>
+            `;
+          });
+
+          el.innerHTML = html;
+          console.log('[Household] Rendered household selector with', state.householdModels.length, 'models');
+
+          // Add event listeners
+          el.querySelectorAll('.household-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+              e.preventDefault();
+              const modelId = e.target.dataset.model;
+              if (modelId) {
+                setState({ householdModel: modelId });
+                updateCalculations();
+                scheduleUrlSync();
+              }
+            });
+          });
+        } catch (renderError) {
+          console.error('[Household] Error rendering:', renderError);
+          el.innerHTML = '<span style="color: #f00;">渲染失败: ' + renderError.message + '</span>';
+        }
+      };
+
+      if (householdSelectorEl) {
+        renderHouseholdModelSelector();
+        console.log('[Household] Initial render completed');
+      } else {
+        console.warn('[Household] householdSelector element not found at initialization');
+      }
+    } catch (error) {
+      console.error('[Household] Initialization error:', error);
+    }
+
     // Render parameter panel
     renderParamPanel(paramPanelEl, data.defaults, getState().params, handleParamChange);
 
@@ -509,7 +600,9 @@ async function bootstrap() {
 
     // Initialize chart
     if (chartCanvasEl) {
-      initBudgetChart(chartCanvasEl, data.categories, shanghaiTiers[1].pct);
+      const state = getState();
+      const defaultVariant = shanghaiTiers[1].variants[state.householdModel] || shanghaiTiers[1].variants['2a1c'];
+      initBudgetChart(chartCanvasEl, data.categories, defaultVariant.pct);
     }
 
     // Dark mode listener

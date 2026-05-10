@@ -7,104 +7,800 @@
     {
       "id": "t1",
       "name": "拮据生活",
-      "incomeRange": { "min": 0, "max": 14000, "unit": "CNY/month" },
-      "badge": { "bg": "#E6F1FB", "fg": "#0C447C" },
+      "badge": {
+        "bg": "#E6F1FB",
+        "fg": "#0C447C"
+      },
       "description": "月支出 < ¥1.4万。五环外租住，孩子上公立学校，日常自炊，地铁出行，生活压力大。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["昌平天通苑老旧房", "亦庄经济开发区", "燕郊小区出租"] },
-        "education": { "label": "子女教育", "examples": ["公立小学（免费）", "偶尔补习班", "对口中学"] },
-        "food": { "label": "餐饮美食", "examples": ["沙县小吃", "兰州拉面", "自己做饭"] },
-        "transport": { "label": "交通出行", "examples": ["地铁+公交通勤", "摩拜单车", "偶尔打车"] },
-        "medical": { "label": "医疗健康", "examples": ["社区卫生服务", "北京医保挂号", "基本医保"] },
-        "travel": { "label": "旅行娱乐", "examples": ["颐和园/圆明园", "近郊一日游", "免费景点"] },
-        "shopping": { "label": "日用购物", "examples": ["拼多多", "超市特价", "社区小店"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "昌平天通苑老旧房",
+            "亦庄经济开发区",
+            "燕郊小区出租"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "公立小学（免费）",
+            "偶尔补习班",
+            "对口中学"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "沙县小吃",
+            "兰州拉面",
+            "自己做饭"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "地铁+公交通勤",
+            "摩拜单车",
+            "偶尔打车"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "社区卫生服务",
+            "北京医保挂号",
+            "基本医保"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "颐和园/圆明园",
+            "近郊一日游",
+            "免费景点"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "拼多多",
+            "超市特价",
+            "社区小店"
+          ]
+        }
       },
-      "pct": [40, 7, 25, 8, 4, 6, 10]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 0,
+            "max": 7000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            47,
+            0,
+            25,
+            8,
+            4,
+            6,
+            10
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 0,
+            "max": 11200,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            47,
+            0,
+            25,
+            8,
+            4,
+            6,
+            10
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 0,
+            "max": 14000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            40,
+            7,
+            25,
+            8,
+            4,
+            6,
+            10
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 0,
+            "max": 16800,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            33,
+            14,
+            25,
+            8,
+            4,
+            6,
+            10
+          ]
+        }
+      }
     },
     {
       "id": "t2",
       "name": "基本小康",
-      "incomeRange": { "min": 14000, "max": 30000, "unit": "CNY/month" },
-      "badge": { "bg": "#EAF3DE", "fg": "#27500A" },
+      "badge": {
+        "bg": "#EAF3DE",
+        "fg": "#27500A"
+      },
       "description": "月支出 ¥1.4万–3万。四环外新房或公寓，孩子读普通民办或对口公办，偶尔外食，能安排国内旅行。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["朝阳望京SOHO", "丰台怡春园", "通州运河湾"] },
-        "education": { "label": "子女教育", "examples": ["民办双语学校", "西城八中", "朝阳外国语"] },
-        "food": { "label": "餐饮美食", "examples": ["外婆家", "海底捞", "便宜坊烤鸭"] },
-        "transport": { "label": "交通出行", "examples": ["地铁+滴滴", "二手车", "共享单车"] },
-        "medical": { "label": "医疗健康", "examples": ["友谊医院", "儿童医院号", "平安医保"] },
-        "travel": { "label": "旅行娱乐", "examples": ["南方周末游", "西安兵马俑", "三亚经济舱"] },
-        "shopping": { "label": "日用购物", "examples": ["宜家", "京东自营", "小米店"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "朝阳望京SOHO",
+            "丰台怡春园",
+            "通州运河湾"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "民办双语学校",
+            "西城八中",
+            "朝阳外国语"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "外婆家",
+            "海底捞",
+            "便宜坊烤鸭"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "地铁+滴滴",
+            "二手车",
+            "共享单车"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "友谊医院",
+            "儿童医院号",
+            "平安医保"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "南方周末游",
+            "西安兵马俑",
+            "三亚经济舱"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "宜家",
+            "京东自营",
+            "小米店"
+          ]
+        }
       },
-      "pct": [35, 15, 18, 8, 5, 12, 7]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 7000,
+            "max": 15000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            50,
+            0,
+            18,
+            8,
+            5,
+            12,
+            7
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 11200,
+            "max": 24000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            50,
+            0,
+            18,
+            8,
+            5,
+            12,
+            7
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 14000,
+            "max": 30000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            35,
+            15,
+            18,
+            8,
+            5,
+            12,
+            7
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 16800,
+            "max": 36000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            20,
+            30,
+            18,
+            8,
+            5,
+            12,
+            7
+          ]
+        }
+      }
     },
     {
       "id": "t3",
       "name": "舒适生活",
-      "incomeRange": { "min": 30000, "max": 70000, "unit": "CNY/month" },
-      "badge": { "bg": "#FAEEDA", "fg": "#633806" },
+      "badge": {
+        "bg": "#FAEEDA",
+        "fg": "#633806"
+      },
       "description": "月支出 ¥3万–7万。朝阳/海淀高档小区，孩子读国际学校入门档，有私家车，能去海外旅行，是北京白领理想状态。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["朝阳公园美寓", "海淀清华苑", "东城王府井"] },
-        "education": { "label": "子女教育", "examples": ["鼎石国际学校", "顺义国际学校", "北京德威"] },
-        "food": { "label": "餐饮美食", "examples": ["新荣记（北京）", "高碑店简餐厅", "798艺术区餐厅"] },
-        "transport": { "label": "交通出行", "examples": ["宝马3系/奥迪A4", "油费+停车费¥2000/月", "高德专车"] },
-        "medical": { "label": "医疗健康", "examples": ["协和医院", "和睦家医疗", "商业百万医疗"] },
-        "travel": { "label": "旅行娱乐", "examples": ["日本京都", "泰国普吉", "巴厘岛度假"] },
-        "shopping": { "label": "日用购物", "examples": ["SKP商场", "朝阳大悦城", "苏宁易购"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "朝阳公园美寓",
+            "海淀清华苑",
+            "东城王府井"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "鼎石国际学校",
+            "顺义国际学校",
+            "北京德威"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "新荣记（北京）",
+            "高碑店简餐厅",
+            "798艺术区餐厅"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "宝马3系/奥迪A4",
+            "油费+停车费¥2000/月",
+            "高德专车"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "协和医院",
+            "和睦家医疗",
+            "商业百万医疗"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "日本京都",
+            "泰国普吉",
+            "巴厘岛度假"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "SKP商场",
+            "朝阳大悦城",
+            "苏宁易购"
+          ]
+        }
       },
-      "pct": [32, 22, 15, 10, 6, 10, 5]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 15000,
+            "max": 35000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            54,
+            0,
+            15,
+            10,
+            6,
+            10,
+            5
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 24000,
+            "max": 56000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            54,
+            0,
+            15,
+            10,
+            6,
+            10,
+            5
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 30000,
+            "max": 70000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            32,
+            22,
+            15,
+            10,
+            6,
+            10,
+            5
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 36000,
+            "max": 84000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            14,
+            40,
+            15,
+            10,
+            6,
+            10,
+            5
+          ]
+        }
+      }
     },
     {
       "id": "t4",
       "name": "品质生活",
-      "incomeRange": { "min": 70000, "max": 150000, "unit": "CNY/month" },
-      "badge": { "bg": "#FBEAF0", "fg": "#4B1528" },
+      "badge": {
+        "bg": "#FBEAF0",
+        "fg": "#4B1528"
+      },
       "description": "月支出 ¥7万–15万。朝阳核心区高档公寓，孩子读一线国际学校，开豪车，每年海外出行，享受北京真正的高品质生活。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["朝阳建国路CBTC", "海淀中关村豪宅", "东城王府井公寓"] },
-        "education": { "label": "子女教育", "examples": ["哈罗北京（Harrow）", "德威北京（Dulwich）", "京西国际学校"] },
-        "food": { "label": "餐饮美食", "examples": ["Ultraviolet by Paul Pairet", "Jing Yaa Tang粤菜厅", "法餐Balthazar"] },
-        "transport": { "label": "交通出行", "examples": ["宝马7系/奔驰S级", "油费停车车险¥4000+/月", "网约车"] },
-        "medical": { "label": "医疗健康", "examples": ["协和VIP", "美中宜和", "国际高端医保"] },
-        "travel": { "label": "旅行娱乐", "examples": ["欧洲商务舱游", "马尔代夫五星", "美国东部自驾"] },
-        "shopping": { "label": "日用购物", "examples": ["SKP-S高端百货", "侨福芳草地", "北京SKP"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "朝阳建国路CBTC",
+            "海淀中关村豪宅",
+            "东城王府井公寓"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "哈罗北京（Harrow）",
+            "德威北京（Dulwich）",
+            "京西国际学校"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "Ultraviolet by Paul Pairet",
+            "Jing Yaa Tang粤菜厅",
+            "法餐Balthazar"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "宝马7系/奔驰S级",
+            "油费停车车险¥4000+/月",
+            "网约车"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "协和VIP",
+            "美中宜和",
+            "国际高端医保"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "欧洲商务舱游",
+            "马尔代夫五星",
+            "美国东部自驾"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "SKP-S高端百货",
+            "侨福芳草地",
+            "北京SKP"
+          ]
+        }
       },
-      "pct": [30, 25, 13, 10, 7, 12, 3]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 35000,
+            "max": 75000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            55,
+            0,
+            13,
+            10,
+            7,
+            12,
+            3
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 56000,
+            "max": 120000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            55,
+            0,
+            13,
+            10,
+            7,
+            12,
+            3
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 70000,
+            "max": 150000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            30,
+            25,
+            13,
+            10,
+            7,
+            12,
+            3
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 84000,
+            "max": 180000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            15,
+            40,
+            13,
+            10,
+            7,
+            12,
+            3
+          ]
+        }
+      }
     },
     {
       "id": "t5",
       "name": "豪华生活",
-      "incomeRange": { "min": 150000, "max": 350000, "unit": "CNY/month" },
-      "badge": { "bg": "#EEEDFE", "fg": "#26215C" },
+      "badge": {
+        "bg": "#EEEDFE",
+        "fg": "#26215C"
+      },
       "description": "月支出 ¥15万–35万。朝阳核心顶级别墅或复式，孩子读SAS/哈罗，全职司机，头等舱全球出行，北京顶层精英。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["朝阳区CBTC顶层公寓（¥18万+/月）", "京城别墅群（通州/顺义）", "长安街沿线豪宅"] },
-        "education": { "label": "子女教育", "examples": ["北京美国学校SAS", "哈罗北京（学费45万/年）", "京西学校国际部"] },
-        "food": { "label": "餐饮美食", "examples": ["8½ Otto e Mezzo餐厅", "LACL米其林法餐", "私人厨师服务"] },
-        "transport": { "label": "交通出行", "examples": ["保时捷Cayenne", "宾利Continental", "全职司机（¥1.5万/月）"] },
-        "medical": { "label": "医疗健康", "examples": ["美中宜和高端套餐", "Mayo Clinic年度体检", "私人医生服务"] },
-        "travel": { "label": "旅行娱乐", "examples": ["法国酒庄游（头等舱）", "瑞士冬季度假", "美国高端高尔夫"] },
-        "shopping": { "label": "日用购物", "examples": ["爱马仕定制", "LV高端定制", "苏富比艺术品"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "朝阳区CBTC顶层公寓（¥18万+/月）",
+            "京城别墅群（通州/顺义）",
+            "长安街沿线豪宅"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "北京美国学校SAS",
+            "哈罗北京（学费45万/年）",
+            "京西学校国际部"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "8½ Otto e Mezzo餐厅",
+            "LACL米其林法餐",
+            "私人厨师服务"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "保时捷Cayenne",
+            "宾利Continental",
+            "全职司机（¥1.5万/月）"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "美中宜和高端套餐",
+            "Mayo Clinic年度体检",
+            "私人医生服务"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "法国酒庄游（头等舱）",
+            "瑞士冬季度假",
+            "美国高端高尔夫"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "爱马仕定制",
+            "LV高端定制",
+            "苏富比艺术品"
+          ]
+        }
       },
-      "pct": [35, 20, 10, 10, 6, 12, 7]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 75000,
+            "max": 175000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            55,
+            0,
+            10,
+            10,
+            6,
+            12,
+            7
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 120000,
+            "max": 280000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            55,
+            0,
+            10,
+            10,
+            6,
+            12,
+            7
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 150000,
+            "max": 350000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            35,
+            20,
+            10,
+            10,
+            6,
+            12,
+            7
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 180000,
+            "max": 420000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            15,
+            40,
+            10,
+            10,
+            6,
+            12,
+            7
+          ]
+        }
+      }
     },
     {
       "id": "t6",
       "name": "顶奢生活",
-      "incomeRange": { "min": 350000, "max": null, "unit": "CNY/month" },
-      "badge": { "bg": "#FAECE7", "fg": "#4A1B0C" },
+      "badge": {
+        "bg": "#FAECE7",
+        "fg": "#4A1B0C"
+      },
       "description": "月支出 > ¥35万。国贸/建国路顶级公寓或独栋别墅，孩子读国际顶尖学校，私人管家，包机出行，北京极少数人的生活。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["国贸中心顶层公寓（¥50万+/月）", "顺义高端别墅园区", "长安街一号高级住宅"] },
-        "education": { "label": "子女教育", "examples": ["北京美国学校SAS（VIP班）", "哈罗北京高级班", "海外寄宿学校（伊顿等）"] },
-        "food": { "label": "餐饮美食", "examples": ["Joël Robuchon米其林三星", "Le Bernardin（纽约Michelin）", "私人行政主厨"] },
-        "transport": { "label": "交通出行", "examples": ["劳斯莱斯幽灵", "专属司机团队", "商务机包机（北京→三亚¥20万）"] },
-        "medical": { "label": "医疗健康", "examples": ["Mayo Clinic季度体检", "Bupa高端全覆盖保险", "24小时私人医生"] },
-        "travel": { "label": "旅行娱乐", "examples": ["地中海私人游艇", "南极探险邮轮", "Aman resort组合"] },
-        "shopping": { "label": "日用购物", "examples": ["爱马仕独家定制", "Patek Philippe限量表", "艺术品投资购置"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "国贸中心顶层公寓（¥50万+/月）",
+            "顺义高端别墅园区",
+            "长安街一号高级住宅"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "北京美国学校SAS（VIP班）",
+            "哈罗北京高级班",
+            "海外寄宿学校（伊顿等）"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "Joël Robuchon米其林三星",
+            "Le Bernardin（纽约Michelin）",
+            "私人行政主厨"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "劳斯莱斯幽灵",
+            "专属司机团队",
+            "商务机包机（北京→三亚¥20万）"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "Mayo Clinic季度体检",
+            "Bupa高端全覆盖保险",
+            "24小时私人医生"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "地中海私人游艇",
+            "南极探险邮轮",
+            "Aman resort组合"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "爱马仕独家定制",
+            "Patek Philippe限量表",
+            "艺术品投资购置"
+          ]
+        }
       },
-      "pct": [38, 18, 8, 12, 5, 14, 5]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 175000,
+            "max": 500000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            56,
+            0,
+            8,
+            12,
+            5,
+            14,
+            5
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 280000,
+            "max": 799999,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            56,
+            0,
+            8,
+            12,
+            5,
+            14,
+            5
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 350000,
+            "max": 999999,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            38,
+            18,
+            8,
+            12,
+            5,
+            14,
+            5
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 420000,
+            "max": 1199999,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            20,
+            36,
+            8,
+            12,
+            5,
+            14,
+            5
+          ]
+        }
+      }
     }
   ]
 }

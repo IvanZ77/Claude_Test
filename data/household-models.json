@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "models": [
+    {
+      "id": "1a",
+      "name": "单身",
+      "label": "1个成人",
+      "description": "一位成人，无孩"
+    },
+    {
+      "id": "2a",
+      "name": "一对夫妇",
+      "label": "2个成人",
+      "description": "两位成人，无孩"
+    },
+    {
+      "id": "2a1c",
+      "name": "一家三口",
+      "label": "2个成人+1个孩子",
+      "description": "两位成人 + 一名学龄儿童（推荐）"
+    },
+    {
+      "id": "2a2c",
+      "name": "一家四口",
+      "label": "2个成人+2个孩子",
+      "description": "两位成人 + 两名学龄儿童"
+    }
+  ]
+}

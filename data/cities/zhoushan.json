@@ -7,104 +7,789 @@
     {
       "id": "t1",
       "name": "拮据生活",
-      "incomeRange": { "min": 0, "max": 6000, "unit": "CNY/month" },
-      "badge": { "bg": "#E6F1FB", "fg": "#0C447C" },
+      "badge": {
+        "bg": "#E6F1FB",
+        "fg": "#0C447C"
+      },
       "description": "月支出 < ¥6000。老旧小区或城中村，公立学校，以自己做饭为主，骑电动车/公交，生活拮据。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["定海老城区民居", "普陀小区老房", "朱家尖城中村"] },
-        "education": { "label": "子女教育", "examples": ["公立小学", "偶尔辅导班"] },
-        "food": { "label": "餐饮美食", "examples": ["路边摊", "菜场", "自己做饭"] },
-        "transport": { "label": "交通出行", "examples": ["电动车", "公交", "走路"] },
-        "medical": { "label": "医疗健康", "examples": ["社区卫生所", "医保"] },
-        "travel": { "label": "旅行娱乐", "examples": ["沙滩散步", "公园"] },
-        "shopping": { "label": "日用购物", "examples": ["菜场", "超市", "拼多多"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "定海老城区民居",
+            "普陀小区老房",
+            "朱家尖城中村"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "公立小学",
+            "偶尔辅导班"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "路边摊",
+            "菜场",
+            "自己做饭"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "电动车",
+            "公交",
+            "走路"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "社区卫生所",
+            "医保"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "沙滩散步",
+            "公园"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "菜场",
+            "超市",
+            "拼多多"
+          ]
+        }
       },
-      "pct": [40, 6, 28, 6, 4, 3, 13]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 0,
+            "max": 3000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            46,
+            0,
+            28,
+            6,
+            4,
+            3,
+            13
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 0,
+            "max": 4800,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            46,
+            0,
+            28,
+            6,
+            4,
+            3,
+            13
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 0,
+            "max": 6000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            40,
+            6,
+            28,
+            6,
+            4,
+            3,
+            13
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 0,
+            "max": 7200,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            34,
+            12,
+            28,
+            6,
+            4,
+            3,
+            13
+          ]
+        }
+      }
     },
     {
       "id": "t2",
       "name": "基本小康",
-      "incomeRange": { "min": 6000, "max": 12000, "unit": "CNY/month" },
-      "badge": { "bg": "#EAF3DE", "fg": "#27500A" },
+      "badge": {
+        "bg": "#EAF3DE",
+        "fg": "#27500A"
+      },
       "description": "月支出 ¥6000–¥1.2万。次新小区，孩子公立或普通民办学校，偶尔外食，能定期休闲活动。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["海怡湾畔（东港）", "保利湖畔时代", "中泰禧悦城"] },
-        "education": { "label": "子女教育", "examples": ["东海实验学校", "普通民办学校", "少儿素质班"] },
-        "food": { "label": "餐饮美食", "examples": ["面馆", "烧烤摊", "食堂", "便利店"] },
-        "transport": { "label": "交通出行", "examples": ["二手电动车", "公交+出租", "共享单车"] },
-        "medical": { "label": "医疗健康", "examples": ["舟山医院", "医保门诊"] },
-        "travel": { "label": "旅行娱乐", "examples": ["周末岛屿游", "宁波/杭州短途"] },
-        "shopping": { "label": "日用购物", "examples": ["宜家", "新华都", "网购"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "海怡湾畔（东港）",
+            "保利湖畔时代",
+            "中泰禧悦城"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "东海实验学校",
+            "普通民办学校",
+            "少儿素质班"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "面馆",
+            "烧烤摊",
+            "食堂",
+            "便利店"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "二手电动车",
+            "公交+出租",
+            "共享单车"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "舟山医院",
+            "医保门诊"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "周末岛屿游",
+            "宁波/杭州短途"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "宜家",
+            "新华都",
+            "网购"
+          ]
+        }
       },
-      "pct": [35, 10, 22, 8, 5, 10, 10]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 3000,
+            "max": 6000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            45,
+            0,
+            22,
+            8,
+            5,
+            10,
+            10
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 4800,
+            "max": 9600,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            45,
+            0,
+            22,
+            8,
+            5,
+            10,
+            10
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 6000,
+            "max": 12000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            35,
+            10,
+            22,
+            8,
+            5,
+            10,
+            10
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 7200,
+            "max": 14400,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            25,
+            20,
+            22,
+            8,
+            5,
+            10,
+            10
+          ]
+        }
+      }
     },
     {
       "id": "t3",
       "name": "舒适生活",
-      "incomeRange": { "min": 12000, "max": 25000, "unit": "CNY/month" },
-      "badge": { "bg": "#FAEEDA", "fg": "#633806" },
+      "badge": {
+        "bg": "#FAEEDA",
+        "fg": "#633806"
+      },
       "description": "月支出 ¥1.2万–¥2.5万。高档小区，孩子读民办或国际小学，有车，能国内度假。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["融汇东方城", "龙海国际", "城市绿洲"] },
-        "education": { "label": "子女教育", "examples": ["国际部民办学校", "新加坡国际学校", "兴趣班多选"] },
-        "food": { "label": "餐饮美食", "examples": ["海鲜楼", "日式餐厅", "意大利餐厅", "品茶"] },
-        "transport": { "label": "交通出行", "examples": ["丰田RAV4/本田CRV", "停车费¥500/月", "偶尔滴滴"] },
-        "medical": { "label": "医疗健康", "examples": ["体检中心", "商业医保"] },
-        "travel": { "label": "旅行娱乐", "examples": ["杭州/苏州周末游", "云南自驾"] },
-        "shopping": { "label": "日用购物", "examples": ["进口超市", "购物广场", "品牌服装"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "融汇东方城",
+            "龙海国际",
+            "城市绿洲"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "国际部民办学校",
+            "新加坡国际学校",
+            "兴趣班多选"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "海鲜楼",
+            "日式餐厅",
+            "意大利餐厅",
+            "品茶"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "丰田RAV4/本田CRV",
+            "停车费¥500/月",
+            "偶尔滴滴"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "体检中心",
+            "商业医保"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "杭州/苏州周末游",
+            "云南自驾"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "进口超市",
+            "购物广场",
+            "品牌服装"
+          ]
+        }
       },
-      "pct": [30, 15, 18, 12, 6, 12, 7]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 6000,
+            "max": 12500,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            45,
+            0,
+            18,
+            12,
+            6,
+            12,
+            7
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 9600,
+            "max": 20000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            45,
+            0,
+            18,
+            12,
+            6,
+            12,
+            7
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 12000,
+            "max": 25000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            30,
+            15,
+            18,
+            12,
+            6,
+            12,
+            7
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 14400,
+            "max": 30000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            15,
+            30,
+            18,
+            12,
+            6,
+            12,
+            7
+          ]
+        }
+      }
     },
     {
       "id": "t4",
       "name": "品质生活",
-      "incomeRange": { "min": 25000, "max": 50000, "unit": "CNY/month" },
-      "badge": { "bg": "#FBEAF0", "fg": "#4B1528" },
+      "badge": {
+        "bg": "#FBEAF0",
+        "fg": "#4B1528"
+      },
       "description": "月支出 ¥2.5万–¥5万。高档小区甚至别墅，孩子读知名国际学校，宝马/奔驰，欧洲度假。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["君悦府邸别墅", "金石花园高档公寓", "万象城边豪宅"] },
-        "education": { "label": "子女教育", "examples": ["舟山国际学校高年级", "哈罗预备课程", "夏令营国外"] },
-        "food": { "label": "餐饮美食", "examples": ["米其林入门店", "高档海鲜楼", "私房菜", "国际美食"] },
-        "transport": { "label": "交通出行", "examples": ["宝马5系/奔驰E级", "停车+油费¥2500/月"] },
-        "medical": { "label": "医疗健康", "examples": ["国际诊所", "高端体检"] },
-        "travel": { "label": "旅行娱乐", "examples": ["日本自驾", "欧洲度假", "五星酒店"] },
-        "shopping": { "label": "日用购物", "examples": ["奢侈品", "进口商品", "VIP购物"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "君悦府邸别墅",
+            "金石花园高档公寓",
+            "万象城边豪宅"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "舟山国际学校高年级",
+            "哈罗预备课程",
+            "夏令营国外"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "米其林入门店",
+            "高档海鲜楼",
+            "私房菜",
+            "国际美食"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "宝马5系/奔驰E级",
+            "停车+油费¥2500/月"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "国际诊所",
+            "高端体检"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "日本自驾",
+            "欧洲度假",
+            "五星酒店"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "奢侈品",
+            "进口商品",
+            "VIP购物"
+          ]
+        }
       },
-      "pct": [28, 20, 14, 12, 6, 14, 6]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 12500,
+            "max": 25000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            48,
+            0,
+            14,
+            12,
+            6,
+            14,
+            6
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 20000,
+            "max": 40000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            48,
+            0,
+            14,
+            12,
+            6,
+            14,
+            6
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 25000,
+            "max": 50000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            28,
+            20,
+            14,
+            12,
+            6,
+            14,
+            6
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 30000,
+            "max": 60000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            8,
+            40,
+            14,
+            12,
+            6,
+            14,
+            6
+          ]
+        }
+      }
     },
     {
       "id": "t5",
       "name": "豪华生活",
-      "incomeRange": { "min": 50000, "max": 100000, "unit": "CNY/month" },
-      "badge": { "bg": "#EEEDFE", "fg": "#26215C" },
+      "badge": {
+        "bg": "#EEEDFE",
+        "fg": "#26215C"
+      },
       "description": "月支出 ¥5万–¥10万。湖景/海景别墅，孩子国际学校高中，保时捷，全球旅游。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["滨海豪宅别墅", "湖景顶级公寓", "岛屿私人地产"] },
-        "education": { "label": "子女教育", "examples": ["国际学校全年学费", "海外交换生项目", "留学规划"] },
-        "food": { "label": "餐饮美食", "examples": ["高端会所餐饮", "米其林二星", "私人厨师偶尔"] },
-        "transport": { "label": "交通出行", "examples": ["保时捷Macan", "路虎揽胜", "专业驾手¥1万/月"] },
-        "medical": { "label": "医疗健康", "examples": ["国际医疗保险高端", "香港定期体检"] },
-        "travel": { "label": "旅行娱乐", "examples": ["欧洲长居", "四季酒店", "游艇体验"] },
-        "shopping": { "label": "日用购物", "examples": ["奢侈品定制", "艺术品收藏"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "滨海豪宅别墅",
+            "湖景顶级公寓",
+            "岛屿私人地产"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "国际学校全年学费",
+            "海外交换生项目",
+            "留学规划"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "高端会所餐饮",
+            "米其林二星",
+            "私人厨师偶尔"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "保时捷Macan",
+            "路虎揽胜",
+            "专业驾手¥1万/月"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "国际医疗保险高端",
+            "香港定期体检"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "欧洲长居",
+            "四季酒店",
+            "游艇体验"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "奢侈品定制",
+            "艺术品收藏"
+          ]
+        }
       },
-      "pct": [30, 18, 12, 12, 5, 16, 7]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 25000,
+            "max": 50000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            48,
+            0,
+            12,
+            12,
+            5,
+            16,
+            7
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 40000,
+            "max": 80000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            48,
+            0,
+            12,
+            12,
+            5,
+            16,
+            7
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 50000,
+            "max": 100000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            30,
+            18,
+            12,
+            12,
+            5,
+            16,
+            7
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 60000,
+            "max": 120000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            12,
+            36,
+            12,
+            12,
+            5,
+            16,
+            7
+          ]
+        }
+      }
     },
     {
       "id": "t6",
       "name": "顶奢生活",
-      "incomeRange": { "min": 100000, "max": null, "unit": "CNY/month" },
-      "badge": { "bg": "#FAECE7", "fg": "#4A1B0C" },
+      "badge": {
+        "bg": "#FAECE7",
+        "fg": "#4A1B0C"
+      },
       "description": "月支出 > ¥10万。独栋豪宅或私人岛屿，顶级国际教育，豪车与专属司机，全球一等舱。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["马绍尔群岛私人别墅", "海中央独栋", "岛屿度假村"] },
-        "education": { "label": "子女教育", "examples": ["瑞士寄宿学校", "哈佛预科营", "专属家教团队"] },
-        "food": { "label": "餐饮美食", "examples": ["米其林三星备选", "私人厨师常驻", "法国波尔多名庄"] },
-        "transport": { "label": "交通出行", "examples": ["劳斯莱斯", "私人直升机接驳"] },
-        "medical": { "label": "医疗健康", "examples": ["美国Mayo Clinic年检", "私人医疗团队"] },
-        "travel": { "label": "旅行娱乐", "examples": ["私人游艇全球航行", "北极邮轮", "空中堡垒"] },
-        "shopping": { "label": "日用购物", "examples": ["苏富比拍卖", "顶级珠宝定制"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "马绍尔群岛私人别墅",
+            "海中央独栋",
+            "岛屿度假村"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "瑞士寄宿学校",
+            "哈佛预科营",
+            "专属家教团队"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "米其林三星备选",
+            "私人厨师常驻",
+            "法国波尔多名庄"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "劳斯莱斯",
+            "私人直升机接驳"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "美国Mayo Clinic年检",
+            "私人医疗团队"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "私人游艇全球航行",
+            "北极邮轮",
+            "空中堡垒"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "苏富比拍卖",
+            "顶级珠宝定制"
+          ]
+        }
       },
-      "pct": [32, 16, 10, 14, 4, 16, 8]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 50000,
+            "max": 500000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            48,
+            0,
+            10,
+            14,
+            4,
+            16,
+            8
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 80000,
+            "max": 799999,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            48,
+            0,
+            10,
+            14,
+            4,
+            16,
+            8
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 100000,
+            "max": 999999,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            32,
+            16,
+            10,
+            14,
+            4,
+            16,
+            8
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 120000,
+            "max": 1199999,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            16,
+            32,
+            10,
+            14,
+            4,
+            16,
+            8
+          ]
+        }
+      }
     }
   ]
 }

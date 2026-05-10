@@ -7,104 +7,829 @@
     {
       "id": "t1",
       "name": "拮据生活",
-      "incomeRange": { "min": 0, "max": 12000, "unit": "CNY/month" },
-      "badge": { "bg": "#E6F1FB", "fg": "#0C447C" },
+      "badge": {
+        "bg": "#E6F1FB",
+        "fg": "#0C447C"
+      },
       "description": "月支出 < ¥1.2万。只能住外环甚至郊区，孩子上公立学校，日常以自己做饭为主，出行靠地铁公交，几乎无储蓄和娱乐余地。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["宝山顾村板块老小区", "浦东康桥/周浦镇", "闵行浦江镇旧房", "青浦赵巷二手房"] },
-        "education": { "label": "子女教育", "examples": ["就近划片公立小学（免费）", "偶尔报班：昂立/学而思", "初中：对口公办中学"] },
-        "food": { "label": "餐饮美食", "examples": ["沙县小吃", "兰州拉面", "菜市场自己做", "盒马鲜生经济款"] },
-        "transport": { "label": "交通出行", "examples": ["地铁通勤+公交", "共享单车", "偶尔滴滴快车"] },
-        "medical": { "label": "医疗健康", "examples": ["社区卫生服务中心", "华山/瑞金普通门诊", "基本医保报销"] },
-        "travel": { "label": "旅行娱乐", "examples": ["共青森林公园", "世纪公园", "周边区县一日游"] },
-        "shopping": { "label": "日用购物", "examples": ["拼多多", "菜场", "大润发超市"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "宝山顾村板块老小区",
+            "浦东康桥/周浦镇",
+            "闵行浦江镇旧房",
+            "青浦赵巷二手房"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "就近划片公立小学（免费）",
+            "偶尔报班：昂立/学而思",
+            "初中：对口公办中学"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "沙县小吃",
+            "兰州拉面",
+            "菜市场自己做",
+            "盒马鲜生经济款"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "地铁通勤+公交",
+            "共享单车",
+            "偶尔滴滴快车"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "社区卫生服务中心",
+            "华山/瑞金普通门诊",
+            "基本医保报销"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "共青森林公园",
+            "世纪公园",
+            "周边区县一日游"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "拼多多",
+            "菜场",
+            "大润发超市"
+          ]
+        }
       },
-      "pct": [37, 8, 26, 7, 5, 5, 12]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 0,
+            "max": 6000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            45,
+            0,
+            26,
+            7,
+            5,
+            5,
+            12
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 0,
+            "max": 9600,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            45,
+            0,
+            26,
+            7,
+            5,
+            5,
+            12
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 0,
+            "max": 12000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            37,
+            8,
+            26,
+            7,
+            5,
+            5,
+            12
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 0,
+            "max": 14400,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            29,
+            16,
+            26,
+            7,
+            5,
+            5,
+            12
+          ]
+        }
+      }
     },
     {
       "id": "t2",
       "name": "基本小康",
-      "incomeRange": { "min": 12000, "max": 25000, "unit": "CNY/month" },
-      "badge": { "bg": "#EAF3DE", "fg": "#27500A" },
+      "badge": {
+        "bg": "#EAF3DE",
+        "fg": "#27500A"
+      },
       "description": "月支出 ¥1.2万–2.5万。住中外环次新小区，孩子读普通民办或对口公办，偶尔外食，能安排国内短途旅行，生活稳定但余量有限。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["万科城市花园（闵行）", "保利叶上海（宝山）", "绿地海珀（奉贤）", "中海国际社区（嘉定）"] },
-        "education": { "label": "子女教育", "examples": ["平和双语学校 双语部 ¥3万/年", "协和双语 民办部 ¥10万/年", "市北附属实验学校", "新纪元双语学校"] },
-        "food": { "label": "餐饮美食", "examples": ["外婆家", "绿茶餐厅", "西贝莜面村", "避风塘", "呷哺呷哺"] },
-        "transport": { "label": "交通出行", "examples": ["地铁+滴滴快车", "二手大众朗逸/日产轩逸", "共享单车"] },
-        "medical": { "label": "医疗健康", "examples": ["仁济医院", "上海儿童医学中心普通号", "平安e生保（基础百万医疗）"] },
-        "travel": { "label": "旅行娱乐", "examples": ["杭州/苏州周末游", "乌镇/西塘", "三亚（经济舱）", "迪士尼乐园（年卡）"] },
-        "shopping": { "label": "日用购物", "examples": ["宜家", "无印良品入门款", "京东自营", "网易严选"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "万科城市花园（闵行）",
+            "保利叶上海（宝山）",
+            "绿地海珀（奉贤）",
+            "中海国际社区（嘉定）"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "平和双语学校 双语部 ¥3万/年",
+            "协和双语 民办部 ¥10万/年",
+            "市北附属实验学校",
+            "新纪元双语学校"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "外婆家",
+            "绿茶餐厅",
+            "西贝莜面村",
+            "避风塘",
+            "呷哺呷哺"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "地铁+滴滴快车",
+            "二手大众朗逸/日产轩逸",
+            "共享单车"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "仁济医院",
+            "上海儿童医学中心普通号",
+            "平安e生保（基础百万医疗）"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "杭州/苏州周末游",
+            "乌镇/西塘",
+            "三亚（经济舱）",
+            "迪士尼乐园（年卡）"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "宜家",
+            "无印良品入门款",
+            "京东自营",
+            "网易严选"
+          ]
+        }
       },
-      "pct": [33, 14, 19, 7, 5, 12, 10]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 6000,
+            "max": 12500,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            47,
+            0,
+            19,
+            7,
+            5,
+            12,
+            10
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 9600,
+            "max": 20000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            47,
+            0,
+            19,
+            7,
+            5,
+            12,
+            10
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 12000,
+            "max": 25000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            33,
+            14,
+            19,
+            7,
+            5,
+            12,
+            10
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 14400,
+            "max": 30000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            19,
+            28,
+            19,
+            7,
+            5,
+            12,
+            10
+          ]
+        }
+      }
     },
     {
       "id": "t3",
       "name": "舒适生活",
-      "incomeRange": { "min": 25000, "max": 55000, "unit": "CNY/month" },
-      "badge": { "bg": "#FAEEDA", "fg": "#633806" },
+      "badge": {
+        "bg": "#FAEEDA",
+        "fg": "#633806"
+      },
       "description": "月支出 ¥2.5万–5.5万。内中环居住，孩子可读国际学校入门档或一线民办，有私家车，能去日本/东南亚度假，是上海双职工中产的理想状态。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["仁恒河滨城（浦东）", "新江湾城板块（杨浦）", "古北国际花园（长宁）", "嘉里中心附近（静安）"] },
-        "education": { "label": "子女教育", "examples": ["平和双语学校 国际部 ¥15万/年", "SCIS 北美协会学校 ¥15–20万/年", "协和国际外籍人员子女学校 低龄段 ¥20万/年", "德威幼儿园（Dulwich Pre-School）"] },
-        "food": { "label": "餐饮美食", "examples": ["新荣记（普通店）", "鹿港小镇", "富春小笼", "Element Fresh", "Shake Shack"] },
-        "transport": { "label": "交通出行", "examples": ["大众途观L / 丰田RAV4 / 本田CR-V", "油费+停车约¥1,500/月", "偶尔高德专车"] },
-        "medical": { "label": "医疗健康", "examples": ["嘉会国际医疗（普通门诊）", "上海和睦家（急诊）", "友邦/平安商业险中档"] },
-        "travel": { "label": "旅行娱乐", "examples": ["日本东京/大阪（经济舱）", "新加坡", "普吉岛", "巴厘岛 Alila 酒店"] },
-        "shopping": { "label": "日用购物", "examples": ["COS", "Theory", "小米生态链", "Ole 超市"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "仁恒河滨城（浦东）",
+            "新江湾城板块（杨浦）",
+            "古北国际花园（长宁）",
+            "嘉里中心附近（静安）"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "平和双语学校 国际部 ¥15万/年",
+            "SCIS 北美协会学校 ¥15–20万/年",
+            "协和国际外籍人员子女学校 低龄段 ¥20万/年",
+            "德威幼儿园（Dulwich Pre-School）"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "新荣记（普通店）",
+            "鹿港小镇",
+            "富春小笼",
+            "Element Fresh",
+            "Shake Shack"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "大众途观L / 丰田RAV4 / 本田CR-V",
+            "油费+停车约¥1,500/月",
+            "偶尔高德专车"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "嘉会国际医疗（普通门诊）",
+            "上海和睦家（急诊）",
+            "友邦/平安商业险中档"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "日本东京/大阪（经济舱）",
+            "新加坡",
+            "普吉岛",
+            "巴厘岛 Alila 酒店"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "COS",
+            "Theory",
+            "小米生态链",
+            "Ole 超市"
+          ]
+        }
       },
-      "pct": [30, 20, 14, 10, 6, 12, 8]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 12500,
+            "max": 27500,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            50,
+            0,
+            14,
+            10,
+            6,
+            12,
+            8
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 20000,
+            "max": 44000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            50,
+            0,
+            14,
+            10,
+            6,
+            12,
+            8
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 25000,
+            "max": 55000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            30,
+            20,
+            14,
+            10,
+            6,
+            12,
+            8
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 30000,
+            "max": 66000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            10,
+            40,
+            14,
+            10,
+            6,
+            12,
+            8
+          ]
+        }
+      }
     },
     {
       "id": "t4",
       "name": "品质生活",
-      "incomeRange": { "min": 55000, "max": 120000, "unit": "CNY/month" },
-      "badge": { "bg": "#FBEAF0", "fg": "#4B1528" },
+      "badge": {
+        "bg": "#FBEAF0",
+        "fg": "#4B1528"
+      },
       "description": "月支出 ¥5.5万–12万。内环高档小区，孩子就读知名国际学校，开宝马奔驰，每年欧美度假，享受上海真正意义上的高品质中产生活。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["翠湖天地御苑（黄浦/卢湾）", "华润外滩九里（浦东陆家嘴旁）", "华府天地（黄浦）", "中粮海景壹号（虹口）"] },
-        "education": { "label": "子女教育", "examples": ["德威上海（Dulwich Shanghai）¥30–39万/年", "BISS 浦西（Nord Anglia 集团）¥27–32万/年", "上海日本人学校（日籍专属）", "惠灵顿国际学校 ¥27–37万/年"] },
-        "food": { "label": "餐饮美食", "examples": ["Le Comptoir de Pierre Gagnaire（外滩）", "The Cannery（上生新所）", "新荣记（静安店）", "Da Vittorio（江浙沪开创首店）"] },
-        "transport": { "label": "交通出行", "examples": ["宝马5系/奔驰E级", "保时捷Macan", "油费停车车险约¥3,000/月"] },
-        "medical": { "label": "医疗健康", "examples": ["上海和睦家医院（VIP会员）", "嘉会国际（家庭计划）", "Cigna 国际医疗保险（中档）"] },
-        "travel": { "label": "旅行娱乐", "examples": ["法国/意大利（商务舱）", "马尔代夫 W / Four Seasons", "东京 Park Hyatt", "斯里兰卡 Amanwella"] },
-        "shopping": { "label": "日用购物", "examples": ["Gucci/Prada 入门", "连卡佛百货", "恒隆广场", "进口超市 City'shop"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "翠湖天地御苑（黄浦/卢湾）",
+            "华润外滩九里（浦东陆家嘴旁）",
+            "华府天地（黄浦）",
+            "中粮海景壹号（虹口）"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "德威上海（Dulwich Shanghai）¥30–39万/年",
+            "BISS 浦西（Nord Anglia 集团）¥27–32万/年",
+            "上海日本人学校（日籍专属）",
+            "惠灵顿国际学校 ¥27–37万/年"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "Le Comptoir de Pierre Gagnaire（外滩）",
+            "The Cannery（上生新所）",
+            "新荣记（静安店）",
+            "Da Vittorio（江浙沪开创首店）"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "宝马5系/奔驰E级",
+            "保时捷Macan",
+            "油费停车车险约¥3,000/月"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "上海和睦家医院（VIP会员）",
+            "嘉会国际（家庭计划）",
+            "Cigna 国际医疗保险（中档）"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "法国/意大利（商务舱）",
+            "马尔代夫 W / Four Seasons",
+            "东京 Park Hyatt",
+            "斯里兰卡 Amanwella"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "Gucci/Prada 入门",
+            "连卡佛百货",
+            "恒隆广场",
+            "进口超市 City'shop"
+          ]
+        }
       },
-      "pct": [28, 25, 12, 10, 6, 12, 7]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 27500,
+            "max": 60000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            53,
+            0,
+            12,
+            10,
+            6,
+            12,
+            7
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 44000,
+            "max": 96000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            53,
+            0,
+            12,
+            10,
+            6,
+            12,
+            7
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 55000,
+            "max": 120000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            28,
+            25,
+            12,
+            10,
+            6,
+            12,
+            7
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 66000,
+            "max": 144000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            13,
+            40,
+            12,
+            10,
+            6,
+            12,
+            7
+          ]
+        }
+      }
     },
     {
       "id": "t5",
       "name": "豪华生活",
-      "incomeRange": { "min": 120000, "max": 280000, "unit": "CNY/month" },
-      "badge": { "bg": "#EEEDFE", "fg": "#26215C" },
+      "badge": {
+        "bg": "#EEEDFE",
+        "fg": "#26215C"
+      },
       "description": "月支出 ¥12万–28万。顶级公寓或联排别墅，孩子读 SAS / 哈罗，专属司机，头等舱全球出行，上海顶层精英的日常。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["仁恒滨江园（浦东）", "绿地外滩中心公寓", "嘉里不夜城（静安）", "汤臣高尔夫别墅（浦东金桥）"] },
-        "education": { "label": "子女教育", "examples": ["上海美国学校 SAS（浦东/虹桥）¥25–30万/年", "哈罗上海（Harrow）¥38–45万/年", "SCIS 北美协会学校 ¥15–32万/年", "上海耀中外籍人员子女学校 YCIS ¥21–32万/年"] },
-        "food": { "label": "餐饮美食", "examples": ["8½ Otto e Mezzo Bombana（外滩二星）", "T'ang Court 唐阁（米其林三星）", "Jean-Georges Shanghai（外滩三号）", "Maison Lameloise 莱美露滋（米其林二星）"] },
-        "transport": { "label": "交通出行", "examples": ["保时捷Cayenne/宾利Continental", "玛莎拉蒂Levante", "全职专属司机（¥1.2万/月）"] },
-        "medical": { "label": "医疗健康", "examples": ["和睦家全家旗舰套餐", "Bupa/AXA 顶级国际医疗保险", "私人家庭医生上门服务"] },
-        "travel": { "label": "旅行娱乐", "examples": ["马尔代夫 Four Seasons Voavah 水上屋（头等舱）", "Aman 系列酒店", "非洲马赛马拉 safari", "北极/冰岛远征"] },
-        "shopping": { "label": "日用购物", "examples": ["爱马仕 Kelly/Birkin 候补", "香奈儿季度新款", "恒隆 VIP 专属服务", "拍卖行艺术品入门"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "仁恒滨江园（浦东）",
+            "绿地外滩中心公寓",
+            "嘉里不夜城（静安）",
+            "汤臣高尔夫别墅（浦东金桥）"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "上海美国学校 SAS（浦东/虹桥）¥25–30万/年",
+            "哈罗上海（Harrow）¥38–45万/年",
+            "SCIS 北美协会学校 ¥15–32万/年",
+            "上海耀中外籍人员子女学校 YCIS ¥21–32万/年"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "8½ Otto e Mezzo Bombana（外滩二星）",
+            "T'ang Court 唐阁（米其林三星）",
+            "Jean-Georges Shanghai（外滩三号）",
+            "Maison Lameloise 莱美露滋（米其林二星）"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "保时捷Cayenne/宾利Continental",
+            "玛莎拉蒂Levante",
+            "全职专属司机（¥1.2万/月）"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "和睦家全家旗舰套餐",
+            "Bupa/AXA 顶级国际医疗保险",
+            "私人家庭医生上门服务"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "马尔代夫 Four Seasons Voavah 水上屋（头等舱）",
+            "Aman 系列酒店",
+            "非洲马赛马拉 safari",
+            "北极/冰岛远征"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "爱马仕 Kelly/Birkin 候补",
+            "香奈儿季度新款",
+            "恒隆 VIP 专属服务",
+            "拍卖行艺术品入门"
+          ]
+        }
       },
-      "pct": [32, 18, 11, 11, 5, 13, 10]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 60000,
+            "max": 140000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            50,
+            0,
+            11,
+            11,
+            5,
+            13,
+            10
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 96000,
+            "max": 224000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            50,
+            0,
+            11,
+            11,
+            5,
+            13,
+            10
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 120000,
+            "max": 280000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            32,
+            18,
+            11,
+            11,
+            5,
+            13,
+            10
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 144000,
+            "max": 336000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            14,
+            36,
+            11,
+            11,
+            5,
+            13,
+            10
+          ]
+        }
+      }
     },
     {
       "id": "t6",
       "name": "顶奢生活",
-      "incomeRange": { "min": 280000, "max": null, "unit": "CNY/month" },
-      "badge": { "bg": "#FAECE7", "fg": "#4A1B0C" },
+      "badge": {
+        "bg": "#FAECE7",
+        "fg": "#4A1B0C"
+      },
       "description": "月支出 > ¥28万。汤臣一品或独栋别墅，孩子读顶尖国际学校，私人管家，随时包机，游艇度假，上海极少数人才能触碰的生活方式。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["汤臣一品（浦东滨江，顶层租金可达¥20万+/月）", "绿城玫瑰园别墅（浦东康桥）", "万科兰乔圣菲独栋别墅（闵行华漕）", "外滩源历史保护建筑改造公寓"] },
-        "education": { "label": "子女教育", "examples": ["SAS+一对一私人家教", "暑期哈佛/MIT 预科营", "瑞士罗森博格国际学校", "海外寄宿学校储备（伊顿/安多弗）"] },
-        "food": { "label": "餐饮美食", "examples": ["Taian Table（米其林三星 + 绿星）", "新荣记（米其林三星，全球首家）", "Da Vittorio（外滩米其林三星）", "私人厨师驻家+外滩27号顶层私宴"] },
-        "transport": { "label": "交通出行", "examples": ["劳斯莱斯Ghost/宾利Mulsanne", "专属司机团队（两辆备用车）", "商务机包机（上海→三亚约¥15万次）"] },
-        "medical": { "label": "医疗健康", "examples": ["Cigna/Bupa 无上限国际保险", "美国 Mayo Clinic 年度体检", "私人全科医生 24 小时随访"] },
-        "travel": { "label": "旅行娱乐", "examples": ["地中海私人游艇包船（€20,000+/周）", "四季马尔代夫 Voavah 私人岛", "南极/北极 Silversea 远征邮轮", "Aman Tokyo+京都双连住"] },
-        "shopping": { "label": "日用购物", "examples": ["爱马仕定制（特殊订单）", "私人购物助理驻守恒隆", "苏富比/佳士得艺术品", "Patek Philippe 限量腕表"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "汤臣一品（浦东滨江，顶层租金可达¥20万+/月）",
+            "绿城玫瑰园别墅（浦东康桥）",
+            "万科兰乔圣菲独栋别墅（闵行华漕）",
+            "外滩源历史保护建筑改造公寓"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "SAS+一对一私人家教",
+            "暑期哈佛/MIT 预科营",
+            "瑞士罗森博格国际学校",
+            "海外寄宿学校储备（伊顿/安多弗）"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "Taian Table（米其林三星 + 绿星）",
+            "新荣记（米其林三星，全球首家）",
+            "Da Vittorio（外滩米其林三星）",
+            "私人厨师驻家+外滩27号顶层私宴"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "劳斯莱斯Ghost/宾利Mulsanne",
+            "专属司机团队（两辆备用车）",
+            "商务机包机（上海→三亚约¥15万次）"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "Cigna/Bupa 无上限国际保险",
+            "美国 Mayo Clinic 年度体检",
+            "私人全科医生 24 小时随访"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "地中海私人游艇包船（€20,000+/周）",
+            "四季马尔代夫 Voavah 私人岛",
+            "南极/北极 Silversea 远征邮轮",
+            "Aman Tokyo+京都双连住"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "爱马仕定制（特殊订单）",
+            "私人购物助理驻守恒隆",
+            "苏富比/佳士得艺术品",
+            "Patek Philippe 限量腕表"
+          ]
+        }
       },
-      "pct": [36, 15, 9, 12, 4, 15, 9]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 140000,
+            "max": 500000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            51,
+            0,
+            9,
+            12,
+            4,
+            15,
+            9
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 224000,
+            "max": 799999,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            51,
+            0,
+            9,
+            12,
+            4,
+            15,
+            9
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 280000,
+            "max": 999999,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            36,
+            15,
+            9,
+            12,
+            4,
+            15,
+            9
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 336000,
+            "max": 1199999,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            21,
+            30,
+            9,
+            12,
+            4,
+            15,
+            9
+          ]
+        }
+      }
     }
   ]
 }

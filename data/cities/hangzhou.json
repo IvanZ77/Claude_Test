@@ -7,104 +7,811 @@
     {
       "id": "t1",
       "name": "拮据生活",
-      "incomeRange": { "min": 0, "max": 10000, "unit": "CNY/month" },
-      "badge": { "bg": "#E6F1FB", "fg": "#0C447C" },
+      "badge": {
+        "bg": "#E6F1FB",
+        "fg": "#0C447C"
+      },
       "description": "月支出 < ¥1万。住滨江或城东远郊，孩子上公立学校，自己做饭为主，出行靠地铁，生活清苦但能支撑。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["滨江长河街道老楼", "城东樂4村旧房", "三墩边缘民居", "杭州周边县城小镇"] },
-        "education": { "label": "子女教育", "examples": ["就近划片公立小学（免费）", "网课自学辅助", "小饭桌托管班"] },
-        "food": { "label": "餐饮美食", "examples": ["绍兴菜小馆", "菜市场自炊", "杭州小吃地摊", "盒马便宜套餐"] },
-        "transport": { "label": "交通出行", "examples": ["地铁+公交", "共享单车", "偶尔滴滴快车"] },
-        "medical": { "label": "医疗健康", "examples": ["杭州邵逸夫医院医保门诊", "社区卫生服务中心", "基本医保报销"] },
-        "travel": { "label": "旅行娱乐", "examples": ["西湖散步", "浙江博物馆免费时段", "杭州周边一日游"] },
-        "shopping": { "label": "日用购物", "examples": ["拼多多", "菜市场", "大润发/沃尔玛"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "滨江长河街道老楼",
+            "城东樂4村旧房",
+            "三墩边缘民居",
+            "杭州周边县城小镇"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "就近划片公立小学（免费）",
+            "网课自学辅助",
+            "小饭桌托管班"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "绍兴菜小馆",
+            "菜市场自炊",
+            "杭州小吃地摊",
+            "盒马便宜套餐"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "地铁+公交",
+            "共享单车",
+            "偶尔滴滴快车"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "杭州邵逸夫医院医保门诊",
+            "社区卫生服务中心",
+            "基本医保报销"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "西湖散步",
+            "浙江博物馆免费时段",
+            "杭州周边一日游"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "拼多多",
+            "菜市场",
+            "大润发/沃尔玛"
+          ]
+        }
       },
-      "pct": [35, 8, 28, 8, 5, 8, 8]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 0,
+            "max": 5000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            43,
+            0,
+            28,
+            8,
+            5,
+            8,
+            8
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 0,
+            "max": 8000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            43,
+            0,
+            28,
+            8,
+            5,
+            8,
+            8
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 0,
+            "max": 10000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            35,
+            8,
+            28,
+            8,
+            5,
+            8,
+            8
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 0,
+            "max": 12000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            27,
+            16,
+            28,
+            8,
+            5,
+            8,
+            8
+          ]
+        }
+      }
     },
     {
       "id": "t2",
       "name": "基本小康",
-      "incomeRange": { "min": 10000, "max": 22000, "unit": "CNY/month" },
-      "badge": { "bg": "#EAF3DE", "fg": "#27500A" },
+      "badge": {
+        "bg": "#EAF3DE",
+        "fg": "#27500A"
+      },
       "description": "月支出 ¥1万–2.2万。住城西或滨江新小区，孩子读民办小学或对口公办，偶尔外食，有电动车，杭州工薪族的标准生活。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["城西绿景苑小区", "滨江金都天城", "拱墅区新建公寓", "下沙高教园区"] },
-        "education": { "label": "子女教育", "examples": ["育才中学（民办）¥6万/年", "绿城育华学校（民办）¥8万/年", "杭州公立小学优质班"] },
-        "food": { "label": "餐饮美食", "examples": ["西湖醋鱼小馆", "杭州粉面馆", "绿茶餐厅", "呷哺呷哺"] },
-        "transport": { "label": "交通出行", "examples": ["地铁+电动车", "二手大众朗逸", "公交+滴滴"] },
-        "medical": { "label": "医疗健康", "examples": ["省人民医院医保号", "杭州市医保中心", "平安e生保医疗保险"] },
-        "travel": { "label": "旅行娱乐", "examples": ["千岛湖周末游", "苏州杭州城际", "黄山宏村民宿", "绍兴古镇"] },
-        "shopping": { "label": "日用购物", "examples": ["宜家", "天猫超市", "网易严选"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "城西绿景苑小区",
+            "滨江金都天城",
+            "拱墅区新建公寓",
+            "下沙高教园区"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "育才中学（民办）¥6万/年",
+            "绿城育华学校（民办）¥8万/年",
+            "杭州公立小学优质班"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "西湖醋鱼小馆",
+            "杭州粉面馆",
+            "绿茶餐厅",
+            "呷哺呷哺"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "地铁+电动车",
+            "二手大众朗逸",
+            "公交+滴滴"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "省人民医院医保号",
+            "杭州市医保中心",
+            "平安e生保医疗保险"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "千岛湖周末游",
+            "苏州杭州城际",
+            "黄山宏村民宿",
+            "绍兴古镇"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "宜家",
+            "天猫超市",
+            "网易严选"
+          ]
+        }
       },
-      "pct": [30, 12, 22, 8, 6, 12, 10]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 5000,
+            "max": 11000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            42,
+            0,
+            22,
+            8,
+            6,
+            12,
+            10
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 8000,
+            "max": 17600,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            42,
+            0,
+            22,
+            8,
+            6,
+            12,
+            10
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 10000,
+            "max": 22000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            30,
+            12,
+            22,
+            8,
+            6,
+            12,
+            10
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 12000,
+            "max": 26400,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            18,
+            24,
+            22,
+            8,
+            6,
+            12,
+            10
+          ]
+        }
+      }
     },
     {
       "id": "t3",
       "name": "舒适生活",
-      "incomeRange": { "min": 22000, "max": 48000, "unit": "CNY/month" },
-      "badge": { "bg": "#FAEEDA", "fg": "#633806" },
+      "badge": {
+        "bg": "#FAEEDA",
+        "fg": "#633806"
+      },
       "description": "月支出 ¥2.2万–4.8万。内环高档小区或城西CBD，孩子可读国际学校或杭州名校，有私家车，能去日本/东南亚度假，是杭州中产的舒适生活。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["翠苑一路豪宅", "丁兰街道高档小区", "城西CBD精装公寓", "西溪湿地周边别墅"] },
-        "education": { "label": "子女教育", "examples": ["杭州国际学校 ¥12-15万/年", "北京外国语学校杭州校", "杭州育才中学国际班"] },
-        "food": { "label": "餐饮美食", "examples": ["新荣记（杭州）", "鹿港小镇", "Element Fresh", "高端餐厅晶鑫"] },
-        "transport": { "label": "交通出行", "examples": ["丰田RAV4 / 本田CR-V", "油费+停车约¥1500/月"] },
-        "medical": { "label": "医疗健康", "examples": ["浙江和睦家医疗会员", "杭州美年大健康高端体检"] },
-        "travel": { "label": "旅行娱乐", "examples": ["日本东京周末游", "普吉岛自驾", "巴厘岛度假", "法国普罗旺斯（经济舱）"] },
-        "shopping": { "label": "日用购物", "examples": ["COS杭州店", "万象城", "SKP购物广场"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "翠苑一路豪宅",
+            "丁兰街道高档小区",
+            "城西CBD精装公寓",
+            "西溪湿地周边别墅"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "杭州国际学校 ¥12-15万/年",
+            "北京外国语学校杭州校",
+            "杭州育才中学国际班"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "新荣记（杭州）",
+            "鹿港小镇",
+            "Element Fresh",
+            "高端餐厅晶鑫"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "丰田RAV4 / 本田CR-V",
+            "油费+停车约¥1500/月"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "浙江和睦家医疗会员",
+            "杭州美年大健康高端体检"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "日本东京周末游",
+            "普吉岛自驾",
+            "巴厘岛度假",
+            "法国普罗旺斯（经济舱）"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "COS杭州店",
+            "万象城",
+            "SKP购物广场"
+          ]
+        }
       },
-      "pct": [28, 18, 16, 10, 8, 14, 6]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 11000,
+            "max": 24000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            46,
+            0,
+            16,
+            10,
+            8,
+            14,
+            6
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 17600,
+            "max": 38400,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            46,
+            0,
+            16,
+            10,
+            8,
+            14,
+            6
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 22000,
+            "max": 48000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            28,
+            18,
+            16,
+            10,
+            8,
+            14,
+            6
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 26400,
+            "max": 57600,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            10,
+            36,
+            16,
+            10,
+            8,
+            14,
+            6
+          ]
+        }
+      }
     },
     {
       "id": "t4",
       "name": "品质生活",
-      "incomeRange": { "min": 48000, "max": 105000, "unit": "CNY/month" },
-      "badge": { "bg": "#FBEAF0", "fg": "#4B1528" },
+      "badge": {
+        "bg": "#FBEAF0",
+        "fg": "#4B1528"
+      },
       "description": "月支出 ¥4.8万–10.5万。西湖区或滨江高档居住，孩子就读顶尖国际学校，开宝马奔驰，每年欧美度假，杭州精英中产的生活。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["翠苑豪宅", "西溪湿地高档别墅", "九溪路高档公寓", "西湖景观房"] },
-        "education": { "label": "子女教育", "examples": ["杭州国际学校（全阶段）¥18万/年", "杭州惠立学校 ¥15万/年", "杭州赫德学校 ¥16万/年"] },
-        "food": { "label": "餐饮美食", "examples": ["满陇桂雨、湖畔居", "Da Vittorio 意大利三星", "唐阁米其林粤菜", "新荣记（顶级菜式）"] },
-        "transport": { "label": "交通出行", "examples": ["宝马5系/奔驰E级", "保时捷Macan", "油费停车车险约¥3000/月"] },
-        "medical": { "label": "医疗健康", "examples": ["浙江和睦家VIP会员", "Cigna国际医保中档"] },
-        "travel": { "label": "旅行娱乐", "examples": ["瑞士滑雪度假", "意大利托斯卡纳", "阿联酋度假村", "新西兰自驾"] },
-        "shopping": { "label": "日用购物", "examples": ["Gucci/Prada杭州店", "连卡佛", "SKP高端专柜"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "翠苑豪宅",
+            "西溪湿地高档别墅",
+            "九溪路高档公寓",
+            "西湖景观房"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "杭州国际学校（全阶段）¥18万/年",
+            "杭州惠立学校 ¥15万/年",
+            "杭州赫德学校 ¥16万/年"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "满陇桂雨、湖畔居",
+            "Da Vittorio 意大利三星",
+            "唐阁米其林粤菜",
+            "新荣记（顶级菜式）"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "宝马5系/奔驰E级",
+            "保时捷Macan",
+            "油费停车车险约¥3000/月"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "浙江和睦家VIP会员",
+            "Cigna国际医保中档"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "瑞士滑雪度假",
+            "意大利托斯卡纳",
+            "阿联酋度假村",
+            "新西兰自驾"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "Gucci/Prada杭州店",
+            "连卡佛",
+            "SKP高端专柜"
+          ]
+        }
       },
-      "pct": [26, 22, 14, 10, 7, 14, 7]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 24000,
+            "max": 52500,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            48,
+            0,
+            14,
+            10,
+            7,
+            14,
+            7
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 38400,
+            "max": 84000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            48,
+            0,
+            14,
+            10,
+            7,
+            14,
+            7
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 48000,
+            "max": 105000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            26,
+            22,
+            14,
+            10,
+            7,
+            14,
+            7
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 57600,
+            "max": 126000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            8,
+            40,
+            14,
+            10,
+            7,
+            14,
+            7
+          ]
+        }
+      }
     },
     {
       "id": "t5",
       "name": "豪华生活",
-      "incomeRange": { "min": 105000, "max": 240000, "unit": "CNY/month" },
-      "badge": { "bg": "#EEEDFE", "fg": "#26215C" },
+      "badge": {
+        "bg": "#EEEDFE",
+        "fg": "#26215C"
+      },
       "description": "月支出 ¥10.5万–24万。高档公寓群或别墅区豪宅，孩子读SAS/哈罗等顶尖学校，专属司机，头等舱全球出行，杭州顶层精英的日常。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["滨江豪宅社区", "西湖度假庄园", "南山路顶级公寓", "龙井路山景别墅"] },
-        "education": { "label": "子女教育", "examples": ["SAS杭州校（国际寄宿）¥35万/年", "哈罗杭州国际学校", "SCIS 北美协会学校"] },
-        "food": { "label": "餐饮美食", "examples": ["8½ Otto e Mezzo Bombana二星", "T'ang Court 唐阁米其林三星", "Jean-Georges 法餐三星", "私人厨师团队"] },
-        "transport": { "label": "交通出行", "examples": ["保时捷Cayenne", "宾利Continental", "全职专属司机"] },
-        "medical": { "label": "医疗健康", "examples": ["浙江和睦家旗舰会员", "Bupa顶级国际医保"] },
-        "travel": { "label": "旅行娱乐", "examples": ["法国巴黎艺术展（头等舱）", "瑞士四季酒店", "日本京都五星酒店", "新西兰Aman度假"] },
-        "shopping": { "label": "日用购物", "examples": ["爱马仕VIP", "香奈儿季度新款", "恒隆高端专门店"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "滨江豪宅社区",
+            "西湖度假庄园",
+            "南山路顶级公寓",
+            "龙井路山景别墅"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "SAS杭州校（国际寄宿）¥35万/年",
+            "哈罗杭州国际学校",
+            "SCIS 北美协会学校"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "8½ Otto e Mezzo Bombana二星",
+            "T'ang Court 唐阁米其林三星",
+            "Jean-Georges 法餐三星",
+            "私人厨师团队"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "保时捷Cayenne",
+            "宾利Continental",
+            "全职专属司机"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "浙江和睦家旗舰会员",
+            "Bupa顶级国际医保"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "法国巴黎艺术展（头等舱）",
+            "瑞士四季酒店",
+            "日本京都五星酒店",
+            "新西兰Aman度假"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "爱马仕VIP",
+            "香奈儿季度新款",
+            "恒隆高端专门店"
+          ]
+        }
       },
-      "pct": [30, 18, 12, 12, 6, 14, 8]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 52500,
+            "max": 120000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            48,
+            0,
+            12,
+            12,
+            6,
+            14,
+            8
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 84000,
+            "max": 192000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            48,
+            0,
+            12,
+            12,
+            6,
+            14,
+            8
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 105000,
+            "max": 240000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            30,
+            18,
+            12,
+            12,
+            6,
+            14,
+            8
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 126000,
+            "max": 288000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            12,
+            36,
+            12,
+            12,
+            6,
+            14,
+            8
+          ]
+        }
+      }
     },
     {
       "id": "t6",
       "name": "顶奢生活",
-      "incomeRange": { "min": 240000, "max": null, "unit": "CNY/month" },
-      "badge": { "bg": "#FAECE7", "fg": "#4A1B0C" },
+      "badge": {
+        "bg": "#FAECE7",
+        "fg": "#4A1B0C"
+      },
       "description": "月支出 > ¥24万。高档度假别墅群或私人庄园，孩子就读海外顶尖寄宿学校，私人飞机，环球旅行，杭州极少数人才能触及的生活方式。",
       "items": {
-        "housing": { "label": "住房/租金", "examples": ["西湖私人庄园", "滨江豪华湖景别墅群", "南山路独栋豪宅", "龙井村山地度假大宅"] },
-        "education": { "label": "子女教育", "examples": ["伦敦伊顿公学寄宿", "瑞士勒罗塞国际学校", "美国Groton/Andover", "哈佛/斯坦福大学储备"] },
-        "food": { "label": "餐饮美食", "examples": ["米其林三星私人宴会", "常驻米其林主厨", "世界顶级餐厅会员"], "examples": ["私人美食俱乐部VIP"] },
-        "transport": { "label": "交通出行", "examples": ["保时捷911 Turbo", "法拉利/兰博基尼", "私人飞机杭州基地"] },
-        "medical": { "label": "医疗健康", "examples": ["梅奥诊所董事级VIP", "私人医生24/7待命", "国际医疗撤离保险"] },
-        "travel": { "label": "旅行娱乐", "examples": ["马尔代夫私岛度假", "南极探险船私舱", "巴黎四季酒店包租", "环球游艇度假"] },
-        "shopping": { "label": "日用购物", "examples": ["佳士得/苏富比竞标", "卡地亚VIP定制", "艺术品收藏顾问"] }
+        "housing": {
+          "label": "住房/租金",
+          "examples": [
+            "西湖私人庄园",
+            "滨江豪华湖景别墅群",
+            "南山路独栋豪宅",
+            "龙井村山地度假大宅"
+          ]
+        },
+        "education": {
+          "label": "子女教育",
+          "examples": [
+            "伦敦伊顿公学寄宿",
+            "瑞士勒罗塞国际学校",
+            "美国Groton/Andover",
+            "哈佛/斯坦福大学储备"
+          ]
+        },
+        "food": {
+          "label": "餐饮美食",
+          "examples": [
+            "私人美食俱乐部VIP"
+          ]
+        },
+        "transport": {
+          "label": "交通出行",
+          "examples": [
+            "保时捷911 Turbo",
+            "法拉利/兰博基尼",
+            "私人飞机杭州基地"
+          ]
+        },
+        "medical": {
+          "label": "医疗健康",
+          "examples": [
+            "梅奥诊所董事级VIP",
+            "私人医生24/7待命",
+            "国际医疗撤离保险"
+          ]
+        },
+        "travel": {
+          "label": "旅行娱乐",
+          "examples": [
+            "马尔代夫私岛度假",
+            "南极探险船私舱",
+            "巴黎四季酒店包租",
+            "环球游艇度假"
+          ]
+        },
+        "shopping": {
+          "label": "日用购物",
+          "examples": [
+            "佳士得/苏富比竞标",
+            "卡地亚VIP定制",
+            "艺术品收藏顾问"
+          ]
+        }
       },
-      "pct": [35, 14, 10, 12, 5, 16, 8]
+      "variants": {
+        "1a": {
+          "incomeRange": {
+            "min": 120000,
+            "max": 500000,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            49,
+            0,
+            10,
+            12,
+            5,
+            16,
+            8
+          ]
+        },
+        "2a": {
+          "incomeRange": {
+            "min": 192000,
+            "max": 799999,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            49,
+            0,
+            10,
+            12,
+            5,
+            16,
+            8
+          ]
+        },
+        "2a1c": {
+          "incomeRange": {
+            "min": 240000,
+            "max": 999999,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            35,
+            14,
+            10,
+            12,
+            5,
+            16,
+            8
+          ]
+        },
+        "2a2c": {
+          "incomeRange": {
+            "min": 288000,
+            "max": 1199999,
+            "unit": "CNY/month"
+          },
+          "pct": [
+            21,
+            28,
+            10,
+            12,
+            5,
+            16,
+            8
+          ]
+        }
+      }
     }
   ]
 }

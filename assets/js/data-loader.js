@@ -19,11 +19,12 @@ export async function loadJSON(path) {
 export async function loadAllData() {
   try {
     // Load core data files in parallel
-    const [citiesIdx, categories, fireTiers, defaults] = await Promise.all([
+    const [citiesIdx, categories, fireTiers, defaults, householdModels] = await Promise.all([
       loadJSON('./data/cities.json'),
       loadJSON('./data/categories.json'),
       loadJSON('./data/fire-tiers.json'),
-      loadJSON('./data/defaults.json')
+      loadJSON('./data/defaults.json'),
+      loadJSON('./data/household-models.json')
     ]);
 
     // Load all city data in parallel (don't fail if some are missing)
@@ -51,6 +52,7 @@ export async function loadAllData() {
       categories: categories.categories,
       fireTiers: fireTiers.tiers,
       defaults: defaults,
+      householdModels: householdModels.models,
       cityData
     };
   } catch (error) {

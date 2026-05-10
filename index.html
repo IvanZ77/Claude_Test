@@ -48,11 +48,17 @@
     <div class="no-js">本页计算器需要 JavaScript。请启用脚本后刷新。</div>
   </noscript>
 
-  <section id="controls" style="margin: var(--space-6) 0; display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap;">
+  <section id="controls" style="margin: var(--space-6) 0 var(--space-3) 0; display: flex; gap: var(--space-3); align-items: center; flex-wrap: wrap;">
     <div id="citySelector" style="display: flex; flex-wrap: wrap; gap: 6px; align-items: center;"></div>
     <button id="compareModeToggle" type="button" style="padding: 8px 16px; border-radius: var(--border-radius-md); background: var(--color-bg-secondary); color: var(--color-text-primary); border: 0.5px solid var(--color-border-tertiary); font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.15s ease;">
       城市对比
     </button>
+  </section>
+
+  <section id="householdControls" style="margin: var(--space-2) 0 var(--space-4) 0; display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+    <div id="householdSelector" style="display: flex; flex-wrap: wrap; gap: 6px; align-items: center;">
+      <span style="font-size: 12px; color: var(--color-text-secondary);">加载家庭结构选项中...</span>
+    </div>
   </section>
 
   <main class="calc" id="singleCityCalc" aria-labelledby="calc-title">
