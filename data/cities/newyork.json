@@ -1,0 +1,110 @@
+{
+  "id": "newyork",
+  "name": "纽约",
+  "currency": "CNY",
+  "schemaVersion": 1,
+  "tiers": [
+    {
+      "id": "t1",
+      "name": "拮据生活",
+      "incomeRange": { "min": 0, "max": 25000, "unit": "CNY/month" },
+      "badge": { "bg": "#E6F1FB", "fg": "#0C447C" },
+      "description": "月支出 < ¥2.5万。住皇后区或布朗克斯远郊，租金与室友分摊，孩子上公立学校，出行靠地铁，几乎无储蓄空间。纽约最底层的生活。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["皇后区阿斯托里亚合租房", "布朗克斯合租公寓", "法拉盛地下室", "新鲜草坪两卧公寓分摊"] },
+        "education": { "label": "子女教育", "examples": ["纽约公立小学（免费）", "PS 77 / PS 284", "中文学校周末班"] },
+        "food": { "label": "餐饮美食", "examples": ["中餐外卖", "subway三明治", "法拉盛美食街", "Costco 便宜菜"] },
+        "transport": { "label": "交通出行", "examples": ["地铁公交卡（¥121/周）", "共享单车", "偶尔滴滴"] },
+        "medical": { "label": "医疗健康", "examples": ["社区卫生所", "Medicaid 医保", "急诊室自付"] },
+        "travel": { "label": "旅行娱乐", "examples": ["中央公园散步", "美术馆免费时段", "长岛周末游"] },
+        "shopping": { "label": "日用购物", "examples": ["Costco", "Trader Joe", "Target", "Amazon"] }
+      },
+      "pct": [45, 8, 22, 8, 6, 4, 7]
+    },
+    {
+      "id": "t2",
+      "name": "基本小康",
+      "incomeRange": { "min": 25000, "max": 50000, "unit": "CNY/month" },
+      "badge": { "bg": "#EAF3DE", "fg": "#27500A" },
+      "description": "月支出 ¥2.5万–5万。住皇后区或布朗克斯中档社区，孩子读公立学校或便宜私校，能偶尔外食，周末郊游，纽约工薪族的标准生活。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["皇后区日落公园公寓", "布朗克斯森林公园地带", "长岛市（LIC）新公寓", "阿斯托里亚一卧室"] },
+        "education": { "label": "子女教育", "examples": ["纽约天才班 gifted program", "私立走读学校 $15K/年", "中英文双语周末班"] },
+        "food": { "label": "餐饮美食", "examples": ["法拉盛港式茶楼", "墨西哥玉米卷", "意大利餐厅", "韩国烤肉"] },
+        "transport": { "label": "交通出行", "examples": ["地铁通勤+停车费$300/月", "二手本田思域", "优步偶尔"] },
+        "medical": { "label": "医疗健康", "examples": ["Empire Blue Cross 基础医保", "纽约长老会医院", "年度体检"] },
+        "travel": { "label": "旅行娱乐", "examples": ["新泽西温泉度假村", "尼亚加拉大瀑布周末", "加勒比邮轮（经济舱）", "佛罗里达迪士尼世界"] },
+        "shopping": { "label": "日用购物", "examples": ["百思买", "梅西百货折扣区", "无印良品基础款", "Target"] }
+      },
+      "pct": [40, 12, 18, 10, 6, 10, 4]
+    },
+    {
+      "id": "t3",
+      "name": "舒适生活",
+      "incomeRange": { "min": 50000, "max": 120000, "unit": "CNY/month" },
+      "badge": { "bg": "#FAEEDA", "fg": "#633806" },
+      "description": "月支出 ¥5万–12万。住曼哈顿上西区/上东区或布鲁克林高档社区，孩子读名校私立，有专属停车位，能去加州/欧洲度假，纽约中产的理想生活。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["上西区三卧公寓", "布鲁克林高地联排别墅", "上东区Park Avenue 附近", "曼哈顿新建豪华公寓"] },
+        "education": { "label": "子女教育", "examples": ["Dalton School（纽约顶私）$53K/年", "Collegiate $56K/年", "Trinity School $56K/年", "Chapin School 女校"] },
+        "food": { "label": "餐饮美食", "examples": ["Per Se（米其林三星）", "Eleven Madison Park", "Daniel", "Saul Boltin 牛排馆"] },
+        "transport": { "label": "交通出行", "examples": ["宝马3系/奔驰C级", "特斯拉Model 3", "停车位租金$500/月", "优步黑车偶尔"] },
+        "medical": { "label": "医疗健康", "examples": ["Aetna PPO 高档医保", "纽约长老会VIP医生", "年度全身体检"] },
+        "travel": { "label": "旅行娱乐", "examples": ["西棕榈滩度假", "加州酒乡自驾", "伦敦歌剧院", "瑞士滑雪（经济舱）"] },
+        "shopping": { "label": "日用购物", "examples": ["Saks Fifth Avenue", "Bergdorf Goodman", "Madison Ave 设计师店", "Whole Foods"] }
+      },
+      "pct": [35, 18, 16, 10, 6, 12, 3]
+    },
+    {
+      "id": "t4",
+      "name": "品质生活",
+      "incomeRange": { "min": 120000, "max": 260000, "unit": "CNY/month" },
+      "badge": { "bg": "#FBEAF0", "fg": "#4B1528" },
+      "description": "月支出 ¥12万–26万。Upper East Side 豪华公寓或长岛港湾别墅，孩子就读全纽约顶尖私立学校，宝马奔驰，每年欧洲度假，纽约精英中产的生活。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["Park Avenue 高级公寓", "Central Park West 对面", "长岛港湾高档社区", "曼哈顿无限山景公寓"] },
+        "education": { "label": "子女教育", "examples": ["Dalton $53K + 私人家教$200/小时", "Brearley（女校）$52K", "Trinity $56K", "国际学校 IB 项目"] },
+        "food": { "label": "餐饮美食", "examples": ["Michelin 三星餐厅会员", "私人私人厨师咨询", "四季酒店餐厅", "Balthazar Bouchon"] },
+        "transport": { "label": "交通出行", "examples": ["宝马7系/奔驰S级", "保时捷911", "专属驾驶员半日", "特斯拉Model S"] },
+        "medical": { "label": "医疗健康", "examples": ["综合医疗会员制诊所", "纽约长老会VIP套餐", "美国顶级保险公司Aetna Executive"] },
+        "travel": { "label": "旅行娱乐", "examples": ["法国普罗旺斯庄园", "意大利托斯卡纳", "伦敦四季酒店", "瑞士蒙特勒（商务舱）"] },
+        "shopping": { "label": "日用购物", "examples": ["Hermès Boutique", "Gucci Park Ave", "Christie's 艺术品", "Louis Vuitton VIP"] }
+      },
+      "pct": [30, 22, 14, 10, 6, 13, 5]
+    },
+    {
+      "id": "t5",
+      "name": "豪华生活",
+      "incomeRange": { "min": 260000, "max": 600000, "unit": "CNY/month" },
+      "badge": { "bg": "#EEEDFE", "fg": "#26215C" },
+      "description": "月支出 ¥26万–60万。Central Park South 顶级公寓或Hampton 海边豪宅，孩子读WASP 精英学校，保时捷法拉利，头等舱全球旅行，纽约真正的富人生活。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["Central Park South 百万级公寓", "Five Madison Park 顶层", "Long Island Hampton Oceanfront", "上东区 Limestone Mansion"] },
+        "education": { "label": "子女教育", "examples": ["Dalton + 全球交流项目", "Groton/Andover 寄宿学校", "Deerfield Academy", "哈佛大学预科储备"] },
+        "food": { "label": "餐饮美食", "examples": ["个人米其林三星包间", "私人美食俱乐部会员", "名厨上门服务", "凯悦饭店Alinea 年卡"] },
+        "transport": { "label": "交通出行", "examples": ["保时捷911 Turbo", "法拉利FF", "私人司机全职", "哈瑞包机会员"] },
+        "medical": { "label": "医疗健康", "examples": ["美国顶级私人诊所VIP", "纽约长老会总院长级医生", "国际医疗撤离保险"] },
+        "travel": { "label": "旅行娱乐", "examples": ["巴黎 Ritz Hotel 套房", "威尼斯 Cipriani 酒店", "阿尔卑斯山滑雪", "南太平洋私岛度假"] },
+        "shopping": { "label": "日用购物", "examples": ["纽约时尚周VIP秀", "Sotheby's 拍卖会竞标", "高定裁缝上门", "艺术品收藏顾问"] }
+      },
+      "pct": [35, 18, 12, 12, 5, 14, 4]
+    },
+    {
+      "id": "t6",
+      "name": "顶奢生活",
+      "incomeRange": { "min": 600000, "max": null, "unit": "CNY/month" },
+      "badge": { "bg": "#FAECE7", "fg": "#4A1B0C" },
+      "description": "月支出 > ¥60万。Central Park South 百万豪宅或Hampton私人海滩别墅，孩子就读全球顶尖国际学校，私人飞机，环球头等舱旅行，纽约最顶层的生活方式。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["Central Park South 4000 万美元公寓", "Billionaires Row（57街）", "Hampton Oceanfront Mega Mansion", "曼哈顿双套房 Private Palace"] },
+        "education": { "label": "子女教育", "examples": ["顶级私校+家庭教师团队", "Groton 寄宿+私人辅导", "瑞士国际学校", "牛津/剑桥大学储备"] },
+        "food": { "label": "餐饮美食", "examples": ["常驻米其林三星私人厨师", "名厨上门Omakase服务", "诺玛/艾利尼亚会员资格", "私人美食俱乐部年卡"] },
+        "transport": { "label": "交通出行", "examples": ["劳斯莱斯/宾利集合", "法拉利LaFerrari", "私人飞机年租赁", "游艇停泊费$10K+/月"] },
+        "medical": { "label": "医疗健康", "examples": ["美国顶级医院董事级VIP", "私人医生24/7待命", "瑞士CHUV国际医疗会员", "国际紧急撤离保险"] },
+        "travel": { "label": "旅行娱乐", "examples": ["阿联酋皇室酒店包租", "南极探险船私包舱", "日本温泉顶级旅馆", "私人游艇环球航海"] },
+        "shopping": { "label": "日用购物", "examples": ["纽约时装周T台赞助商", "蕾昂纳多个人收藏品拍卖竞标", "佳士得董事级会员", "私人艺术顾问团队"] }
+      },
+      "pct": [40, 15, 10, 12, 4, 15, 4]
+    }
+  ]
+}

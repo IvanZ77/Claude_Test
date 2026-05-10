@@ -1,0 +1,110 @@
+{
+  "id": "osaka",
+  "name": "大阪",
+  "currency": "CNY",
+  "schemaVersion": 1,
+  "tiers": [
+    {
+      "id": "t1",
+      "name": "拮据生活",
+      "incomeRange": { "min": 0, "max": 15000, "unit": "CNY/month" },
+      "badge": { "bg": "#E6F1FB", "fg": "#0C447C" },
+      "description": "月支出 < ¥1.5万。住淀川/鶴見郊区或合租公寓，日本公立学校，出行靠地铁，生活清苦。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["淀川区老房合租", "鶴見区公寓分摊", "枚方市郊区小房", "高槻市远郊民居"] },
+        "education": { "label": "子女教育", "examples": ["大阪公立小学（免费）", "周末补课班"] },
+        "food": { "label": "餐饮美食", "examples": ["大阪烧大众店", "拉面馆", "便利店便当", "超市廉价菜"] },
+        "transport": { "label": "交通出行", "examples": ["地铁+公交", "自行车", "Icoca 卡通勤"] },
+        "medical": { "label": "医疗健康", "examples": ["日本国民医保", "社区诊所"] },
+        "travel": { "label": "旅行娱乐", "examples": ["大阪公园散步", "免费博物馆日", "神户周末游"] },
+        "shopping": { "label": "日用购物", "examples": ["超市特价品", "百元店", "无印良品基础款"] }
+      },
+      "pct": [40, 8, 28, 10, 5, 5, 4]
+    },
+    {
+      "id": "t2",
+      "name": "基本小康",
+      "incomeRange": { "min": 15000, "max": 32000, "unit": "CNY/month" },
+      "badge": { "bg": "#EAF3DE", "fg": "#27500A" },
+      "description": "月支出 ¥1.5万–3.2万。住北区或中央区普通公寓，孩子读公立学校，有交通工具，是大阪中产的基本生活。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["北区中之島公寓", "中央区城东部普通房", "福岛区新建公寓", "都岛区社区住宅"] },
+        "education": { "label": "子女教育", "examples": ["大阪优质公立中学", "私立预备班¥2000/月"] },
+        "food": { "label": "餐饮美食", "examples": ["高级大阪烧", "串炸小店", "寿司连锁", "意大利馃面"] },
+        "transport": { "label": "交通出行", "examples": ["地铁年卡+电动自行车", "二手国产车（驾照费用）"], "examples": ["Uber Eats 偶尔"] },
+        "medical": { "label": "医疗健康", "examples": ["国民医保+私人医保", "综合医院定期体检"] },
+        "travel": { "label": "旅行娱乐", "examples": ["京都寺庙游", "奈良鹿苑周末", "伊势志摩温泉", "神户港散步"] },
+        "shopping": { "label": "日用购物", "examples": ["アリオ shopping mall", "心斋桥商街折扣", "ZOZOtown 在线"] }
+      },
+      "pct": [36, 12, 22, 10, 6, 10, 4]
+    },
+    {
+      "id": "t3",
+      "name": "舒适生活",
+      "incomeRange": { "min": 32000, "max": 72000, "unit": "CNY/month" },
+      "badge": { "bg": "#FAEEDA", "fg": "#633806" },
+      "description": "月支出 ¥3.2万–7.2万。住御堂筋线沿线高档社区或北区精装公寓，孩子读国际学校或顶级私立，有私家车，能去日本各地温泉度假。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["北区中之島高级公寓", "中央区精装SOHO", "天王寺區豪华住宅", "吹田市新城社区"] },
+        "education": { "label": "子女教育", "examples": ["国际基督教大学预备校", "大阪国际学校¥25万/年", "帝塚山学院女子中学"], "examples": ["関西学院中学部"] },
+        "food": { "label": "餐饮美食", "examples": ["北新地高档怀石料理", "米其林一星餐厅", "神户牛料理", "Petits Plats 法餐"] },
+        "transport": { "label": "交通出行", "examples": ["丰田Mark X / 本田Accord", "停车费¥2500/月"] },
+        "medical": { "label": "医疗健康", "examples": ["自由診療美容医療会员", "大阪大学医学部系列医院"] },
+        "travel": { "label": "旅行娱乐", "examples": ["京都艺术展览周末", "白滨温泉度假", "新西兰自驾（经济舱）", "台北周末游"] },
+        "shopping": { "label": "日用购物", "examples": ["Daimaru 百货高层", "心斋桥PARCO高端店", "伊勢丹美容用品"] }
+      },
+      "pct": [32, 16, 18, 12, 8, 12, 2]
+    },
+    {
+      "id": "t4",
+      "name": "品质生活",
+      "incomeRange": { "min": 72000, "max": 155000, "unit": "CNY/month" },
+      "badge": { "bg": "#FBEAF0", "fg": "#4B1528" },
+      "description": "月支出 ¥7.2万–15.5万。中之島或御堂筋沿线豪华公寓，孩子就读顶尖国际学校，宝马奔驰，每年欧美度假，大阪高级中产。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["中之島パークシティ最高层", "北区豪华タワーマンション", "天王寺區高档别墅", "兵库县宝塚高档社区"] },
+        "education": { "label": "子女教育", "examples": ["SIS（上海国际学校支部）", "大阪国际学校全阶段¥30万/年", "関西学院国际部"] },
+        "food": { "label": "餐饮美食", "examples": ["北新地米其林二星", "フレンチトゥエリー法餐", "高级怀石包间", "Petrus フレンチレストラン"] },
+        "transport": { "label": "交通出行", "examples": ["宝马5系/奔驰E级", "停车费¥4000+/月"] },
+        "medical": { "label": "医疗健康", "examples": ["高級検診センター会员", "京大医学部遠隔診療"] },
+        "travel": { "label": "旅行娱乐", "examples": ["伦敦歌剧院年卡", "瑞士滑雪度假", "巴黎艺术展览（商务舱）", "新西兰自驾"] },
+        "shopping": { "label": "日用购物", "examples": ["Hermès VIP service", "高級デパート「大丸」", "ハイアットセントリック銀座"] }
+      },
+      "pct": [30, 20, 14, 10, 6, 14, 6]
+    },
+    {
+      "id": "t5",
+      "name": "豪华生活",
+      "incomeRange": { "min": 155000, "max": 360000, "unit": "CNY/month" },
+      "badge": { "bg": "#EEEDFE", "fg": "#26215C" },
+      "description": "月支出 ¥15.5万–36万。中之島顶级公寓或京都高档別邸，孩子就读瑞士/英国寄宿学校，保时捷路虎，头等舱全球出行，关西精英生活。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["中之島パークシティ最高豪華層", "京都東山別邸", "兵庫県多田寝屋川別荘", "大阪湾景豪宅"] },
+        "education": { "label": "子女教育", "examples": ["Groton/Andover美国寄宿", "Aiglon 瑞士国际寄宿", "Harrow 哈罗国际学校"] },
+        "food": { "label": "餐饮美食", "examples": ["私人シェフ常驻", "米其林三星会员", "帝国ホテル個室予約", "フランス料理Joël Robuchon"] },
+        "transport": { "label": "交通出行", "examples": ["保时捷911 Turbo", "路虎Range Rover", "专属司机全職"] },
+        "medical": { "label": "医疗健康", "examples": ["京都大学病院VIP会员", "アメリカン・エキスプレス医療保険"] },
+        "travel": { "label": "旅行娱乐", "examples": ["パリ Four Seasons", "ジュネーブ Mandarin Oriental", "南米ウユニ塩湖自驾", "エジプト遺跡ツアー"] },
+        "shopping": { "label": "日用購物", "examples": ["ハイエンドブティック御用達", "サックス・フィフス・アベニュー", "ハイジュエリー専門店"] }
+      },
+      "pct": [34, 16, 12, 12, 5, 14, 7]
+    },
+    {
+      "id": "t6",
+      "name": "顶奢生活",
+      "incomeRange": { "min": 360000, "max": null, "unit": "CNY/month" },
+      "badge": { "bg": "#FAECE7", "fg": "#4A1B0C" },
+      "description": "月支出 > ¥36万。中之島豪华顶层公寓群+京都传统別邸，孩子瑞士伊顿国际寄宿，私人飞机，环球头等舱旅行，日本关西極少数人的生活。",
+      "items": {
+        "housing": { "label": "住房/租金", "examples": ["中之島最高級豪華層群", "京都伝統別邸（複数所有）", "兵庫県淡路島別邸", "東京赤坂宅邸ダブル保有"] },
+        "education": { "label": "子女教育", "examples": ["伊顿公学 Eton College", "ハロウスクール Harrow", "スイス Aiglon完全教育"] },
+        "food": { "label": "餐饮美食", "examples": ["ミシュラン三ツ星常連", "個人専属シェフ団队", "世界の美食俱楽部會長"], "examples": ["高级料亭年間予約"] },
+        "transport": { "label": "交通出行", "examples": ["フェラーリ/ランボルギーニ", "プライベートジェット関西空港拠点"] },
+        "medical": { "label": "医疗健康", "examples": ["Mayo Clinic国际会员", "スイス国際医療保険最高級"] },
+        "travel": { "label": "旅行娱乐", "examples": ["マルディーブ私島リゾート", "南極探検船私人包租", "パリ2ヶ月別邸滞在"] },
+        "shopping": { "label": "日用購物", "examples": ["佳士得/サザビーズ競売会", "パリコレVIP観覧", "私人艺术顾問"] }
+      },
+      "pct": [38, 14, 10, 14, 4, 15, 5]
+    }
+  ]
+}
