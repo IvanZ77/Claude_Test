@@ -1,9 +1,14 @@
+/* Controls section */
+#controls {
+  margin: var(--space-2) 0 var(--space-3) 0 !important;
+}
+
 /* Calculator card */
 .calc {
-  margin: var(--space-6) 0;
+  margin: var(--space-3) 0;
   background: var(--color-bg-tertiary);
   border-radius: var(--border-radius-xl);
-  padding: var(--space-6);
+  padding: var(--space-4);
   box-shadow: var(--shadow-md);
 }
 
@@ -97,23 +102,23 @@
 .slider-scale {
   display: flex;
   justify-content: space-between;
-  font-size: 11px;
+  font-size: 10px;
   color: var(--color-text-tertiary);
-  margin: var(--space-1) 2px var(--space-6);
+  margin: var(--space-1) 2px var(--space-3);
 }
 
 /* Metric grid */
 .metrics {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-3);
-  margin-bottom: var(--space-6);
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
 }
 
 .metric {
   background: var(--color-bg-secondary);
   border-radius: var(--border-radius-md);
-  padding: 14px 16px;
+  padding: 10px 12px;
 }
 
 .metric-label {
@@ -123,7 +128,7 @@
 }
 
 .metric-value {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   margin: 0;
   color: var(--color-text-primary);
@@ -138,7 +143,7 @@
 }
 
 /* Tier strip */
-.tier-strip { margin-bottom: var(--space-5); }
+.tier-strip { margin-bottom: var(--space-3); }
 
 .tier-strip-bars {
   display: flex;
@@ -180,7 +185,7 @@
 .tier-panel {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-6);
+  gap: var(--space-4);
   align-items: start;
 }
 
@@ -188,7 +193,12 @@
   .tier-panel { grid-template-columns: 1fr; gap: var(--space-5); }
 }
 
-.tier-info { min-width: 0; }
+.tier-info {
+  min-width: 0;
+  max-height: 350px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
 
 .badge {
   display: inline-block;
@@ -201,16 +211,16 @@
 }
 
 .tier-desc {
-  font-size: 14px;
+  font-size: 12px;
   color: var(--color-text-secondary);
-  line-height: 1.7;
-  margin: 0 0 var(--space-3);
+  line-height: 1.5;
+  margin: 0 0 var(--space-2);
 }
 
 .tier-items { }
 
 .tier-item {
-  padding: 9px 0;
+  padding: 6px 0;
   border-bottom: 0.5px solid var(--color-border-tertiary);
 }
 
@@ -223,7 +233,7 @@
 }
 
 .tier-item-cat {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
   color: var(--color-text-primary);
 }
@@ -238,7 +248,7 @@
 }
 
 .tier-item-spending {
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 500;
   color: var(--color-text-secondary);
   white-space: nowrap;
@@ -247,10 +257,10 @@
 }
 
 .tier-item-ex {
-  font-size: 11.5px;
+  font-size: 10px;
   color: var(--color-text-tertiary);
-  margin-top: 4px;
-  line-height: 1.65;
+  margin-top: 2px;
+  line-height: 1.4;
 }
 
 .chart-side { min-width: 0; }
