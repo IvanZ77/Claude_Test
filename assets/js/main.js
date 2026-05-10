@@ -72,7 +72,10 @@ async function bootstrap() {
     const legendEl = document.getElementById('leg');
     const chartCanvasEl = document.getElementById('bc');
     const compareGridEl = document.getElementById('compareGrid');
-    const paramPanelEl = document.getElementById('paramPanel');
+    const paramPanelContentEl = document.getElementById('paramPanelContent');
+    const paramFloatingPanel = document.getElementById('paramFloatingPanel');
+    const paramPanelToggle = document.getElementById('paramPanelToggle');
+    const paramPanelClose = document.getElementById('paramPanelClose');
     const fireSectionEl = document.getElementById('fireSection');
     const compareModeToggleBtn = document.getElementById('compareModeToggle');
     const compareCitiesSectionEl = document.getElementById('compareCitiesSection');
@@ -455,8 +458,29 @@ async function bootstrap() {
     // Initialize city selector
     renderCitySelector();
 
-    // Initialize parameter panel
-    renderParamPanel(paramPanelEl, data.defaults, getState().params, handleParamChange);
+    // Initialize parameter panel floating window
+    const toggleParamPanel = () => {
+      const isVisible = paramFloatingPanel.style.display !== 'none';
+      paramFloatingPanel.style.display = isVisible ? 'none' : 'block';
+      paramPanelToggle.style.display = isVisible ? 'flex' : 'none';
+      if (!isVisible) {
+        // Render panel when opening
+        renderParamPanel(paramPanelContentEl, data.defaults, getState().params, handleParamChange);
+      }
+    };
+
+    paramPanelToggle.addEventListener('click', toggleParamPanel);
+    paramPanelClose.addEventListener('click', toggleParamPanel);
+
+    // Hover effect for toggle button
+    paramPanelToggle.addEventListener('mouseenter', (e) => {
+      e.target.style.transform = 'scale(1.1)';
+    });
+    paramPanelToggle.addEventListener('mouseleave', (e) => {
+      e.target.style.transform = 'scale(1)';
+    });
+
+    renderParamPanel(paramPanelContentEl, data.defaults, getState().params, handleParamChange);
 
     // Initialize FIRE section
     const state = getState();

@@ -166,6 +166,82 @@
   </footer>
 </div>
 
+<!-- 参数调整浮窗 -->
+<div id="paramFloatingPanel" style="
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  display: none;
+">
+  <div style="
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border-secondary);
+    border-radius: var(--border-radius-xl);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    width: 320px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  ">
+    <!-- 浮窗头部 -->
+    <div style="
+      padding: var(--space-4);
+      border-bottom: 1px solid var(--color-border-tertiary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(135deg, var(--color-accent) 0%, #5b6bf0 100%);
+      color: white;
+    ">
+      <h3 style="margin: 0; font-size: 15px; font-weight: 600;">⚙️ 参数调整</h3>
+      <button id="paramPanelClose" style="
+        background: rgba(255,255,255,0.2);
+        border: none;
+        color: white;
+        width: 28px;
+        height: 28px;
+        border-radius: var(--border-radius-md);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        transition: background 0.15s;
+      ">✕</button>
+    </div>
+
+    <!-- 浮窗内容 -->
+    <div id="paramPanelContent" style="
+      flex: 1;
+      overflow-y: auto;
+      padding: var(--space-4);
+    "></div>
+  </div>
+</div>
+
+<!-- 打开参数面板的按钮 -->
+<button id="paramPanelToggle" style="
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-accent) 0%, #5b6bf0 100%);
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+" title="打开参数调整">⚙️</button>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script type="module" src="./assets/js/main.js"></script>
 </body>
