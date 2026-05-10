@@ -4,7 +4,6 @@ import { sliderToAssets, formatUSD, formatNumber } from './calc/assets.js';
 import { computeMonthlyIncome } from './calc/income.js';
 import { matchTier } from './calc/tier.js';
 import { fireNumber as computeFireNumber, yearsToFire, projectAssets, coastFireAmount, classifyFireTier } from './calc/fire.js';
-import { renderCompareTiers } from './render/compare-tiers.js';
 import { initBudgetChart, updateBudgetChart, updateChartBorderColor } from './render/chart-budget.js';
 import { renderParamPanel, updateParamBadge } from './render/param-panel.js';
 import { renderFirePanel, updateFireOutputs } from './render/fire-panel.js';
@@ -71,7 +70,6 @@ async function bootstrap() {
     const itemsEl = document.getElementById('titems');
     const legendEl = document.getElementById('leg');
     const chartCanvasEl = document.getElementById('bc');
-    const compareGridEl = document.getElementById('compareGrid');
     const paramPanelContentEl = document.getElementById('paramPanelContent');
     const paramFloatingPanel = document.getElementById('paramFloatingPanel');
     const paramPanelToggle = document.getElementById('paramPanelToggle');
@@ -492,9 +490,6 @@ async function bootstrap() {
 
     // Initialize chart
     initBudgetChart(chartCanvasEl, data.categories, shanghaiTiers[1].pct);
-
-    // Render comparison grid
-    renderCompareTiers(compareGridEl, shanghaiTiers);
 
     // Dark mode listener
     if (window.matchMedia) {
