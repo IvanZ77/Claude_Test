@@ -3,6 +3,17 @@
   margin: var(--space-2) 0 var(--space-3) 0 !important;
 }
 
+/* Household model controls */
+#householdControls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: var(--space-2) 0;
+  border-top: 0.5px solid var(--color-border-tertiary);
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+
 /* Calculator card */
 .calc {
   margin: var(--space-3) 0;
@@ -195,8 +206,8 @@
 
 .tier-info {
   min-width: 0;
-  max-height: 350px;
-  overflow-y: auto;
+  max-height: 100%;
+  overflow-y: visible;
   padding-right: 6px;
 }
 
