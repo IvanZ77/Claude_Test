@@ -55,7 +55,7 @@ export function renderCityComparison(containerEl, cities, selectedCityIds, onCit
   });
 }
 
-export function renderCompareCitiesGrid(containerEl, selectedCities, monthlyCNY, formatNumber) {
+export function renderCompareCitiesGrid(containerEl, selectedCities, monthlyCNY, formatNumber, householdModel = '2a1c') {
   const gridEl = containerEl.querySelector('#compareCitiesGrid');
   if (!gridEl) return;
 
@@ -67,22 +67,31 @@ export function renderCompareCitiesGrid(containerEl, selectedCities, monthlyCNY,
       width: 100%;
     ">
       ${selectedCities
-        .map(city => renderCityComparisonCard(city, monthlyCNY, formatNumber))
+        .map(city => renderCityComparisonCard(city, monthlyCNY, formatNumber, householdModel))
         .join('')}
     </div>
   `;
 }
 
-function renderCityComparisonCard(city, monthlyCNY, formatNumber) {
+function renderCityComparisonCard(city, monthlyCNY, formatNumber, householdModel = '2a1c') {
   const tiers = city.tiers;
 
   // Find matching tier for current monthly CNY
   let matchedTier = tiers[tiers.length - 1];
+  let matchedVariant = matchedTier.variants ? matchedTier.variants[householdModel] : null;
+
   for (let i = 0; i < tiers.length; i++) {
-    if (monthlyCNY >= tiers[i].incomeRange.min && monthlyCNY < tiers[i].incomeRange.max) {
+    const variant = tiers[i].variants ? tiers[i].variants[householdModel] : null;
+    if (variant && monthlyCNY >= variant.incomeRange.min && monthlyCNY < variant.incomeRange.max) {
       matchedTier = tiers[i];
+      matchedVariant = variant;
       break;
     }
+  }
+
+  // Fallback if variant not found
+  if (!matchedVariant && matchedTier.variants) {
+    matchedVariant = matchedTier.variants[householdModel] || Object.values(matchedTier.variants)[0];
   }
 
   return `
@@ -104,7 +113,7 @@ function renderCityComparisonCard(city, monthlyCNY, formatNumber) {
           ${matchedTier.name}
         </p>
         <p style="font-size: 12px; margin: var(--space-2) 0 0; opacity: 0.9;">
-          月支出：¥${formatNumber(matchedTier.incomeRange.min)}–${matchedTier.incomeRange.max ? '¥' + formatNumber(matchedTier.incomeRange.max) : '¥' + formatNumber(matchedTier.incomeRange.min) + '+'}
+          月支出：¥${formatNumber(matchedVariant.incomeRange.min)}–${matchedVariant.incomeRange.max ? '¥' + formatNumber(matchedVariant.incomeRange.max) : '¥' + formatNumber(matchedVariant.incomeRange.min) + '+'}
         </p>
       </div>
 

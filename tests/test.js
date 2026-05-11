@@ -17,7 +17,7 @@ class DataValidator {
   }
 
   loadAllData() {
-    const dataDir = './data';
+    const dataDir = path.join(__dirname, '../data');
 
     const householdModels = JSON.parse(
       fs.readFileSync(path.join(dataDir, 'household-models.json'))
