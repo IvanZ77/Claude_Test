@@ -11,7 +11,7 @@
         "bg": "#E6F1FB",
         "fg": "#0C447C"
       },
-      "description": "月支出 < ¥1.2万。外伦敦郊区出租屋，公立学校，以自炊为主，公交/地铁，生活紧张。",
+      "description": "月支出 < ¥1.8万。外伦敦郊区出租屋，公立学校，以自炊为主，公交/地铁，生活紧张。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -71,7 +71,7 @@
         "1a": {
           "incomeRange": {
             "min": 0,
-            "max": 6000,
+            "max": 9000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -87,7 +87,7 @@
         "2a": {
           "incomeRange": {
             "min": 0,
-            "max": 9600,
+            "max": 14400,
             "unit": "CNY/month"
           },
           "pct": [
@@ -103,7 +103,7 @@
         "2a1c": {
           "incomeRange": {
             "min": 0,
-            "max": 12000,
+            "max": 18000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -119,7 +119,7 @@
         "2a2c": {
           "incomeRange": {
             "min": 0,
-            "max": 14400,
+            "max": 21600,
             "unit": "CNY/month"
           },
           "pct": [
@@ -141,7 +141,7 @@
         "bg": "#EAF3DE",
         "fg": "#27500A"
       },
-      "description": "月支出 ¥1.2万–¥2.4万。南伦敦或郊区小公寓，孩子读公立或优质小学，偶尔外食。",
+      "description": "月支出 ¥1.8万–3.6万。南伦敦或郊区小公寓，孩子读公立或优质小学，偶尔外食。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -201,8 +201,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 6000,
-            "max": 12000,
+            "min": 9000,
+            "max": 18000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -217,8 +217,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 9600,
-            "max": 19200,
+            "min": 14400,
+            "max": 28800,
             "unit": "CNY/month"
           },
           "pct": [
@@ -233,8 +233,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 12000,
-            "max": 24000,
+            "min": 18000,
+            "max": 36000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -249,8 +249,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 14400,
-            "max": 28800,
+            "min": 21600,
+            "max": 43200,
             "unit": "CNY/month"
           },
           "pct": [
@@ -272,7 +272,7 @@
         "bg": "#FAEEDA",
         "fg": "#633806"
       },
-      "description": "月支出 ¥2.4万–¥4.8万。西伦敦高档公寓，孩子读私立或国际学校初中，有车，能国际短途。",
+      "description": "月支出 ¥3.6万–8.5万。西伦敦高档公寓，孩子读私立或国际学校初中，有车，能国际短途。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -332,8 +332,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 12000,
-            "max": 24000,
+            "min": 18000,
+            "max": 42500,
             "unit": "CNY/month"
           },
           "pct": [
@@ -348,8 +348,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 19200,
-            "max": 38400,
+            "min": 28800,
+            "max": 68000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -364,8 +364,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 24000,
-            "max": 48000,
+            "min": 36000,
+            "max": 85000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -380,8 +380,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 28800,
-            "max": 57600,
+            "min": 43200,
+            "max": 102000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -403,7 +403,7 @@
         "bg": "#FBEAF0",
         "fg": "#4B1528"
       },
-      "description": "月支出 ¥4.8万–¥9.6万。伦敦精英区豪宅，孩子读顶级私立学校，宝马/奔驰，欧洲旅游。",
+      "description": "月支出 ¥8.5万–19万。伦敦精英区豪宅，孩子读顶级私立学校，宝马/奔驰，欧洲旅游。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -461,8 +461,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 24000,
-            "max": 48000,
+            "min": 42500,
+            "max": 95000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -477,8 +477,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 38400,
-            "max": 76800,
+            "min": 68000,
+            "max": 152000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -493,8 +493,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 48000,
-            "max": 96000,
+            "min": 85000,
+            "max": 190000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -509,8 +509,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 57600,
-            "max": 115200,
+            "min": 102000,
+            "max": 228000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -532,7 +532,7 @@
         "bg": "#EEEDFE",
         "fg": "#26215C"
       },
-      "description": "月支出 ¥9.6万–¥19.2万。伦敦最高档社区豪宅，孩子顶级私校，保时捷，全球商务旅游。",
+      "description": "月支出 ¥19万–43万。伦敦最高档社区豪宅，孩子顶级私校，保时捷，全球商务旅游。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -590,8 +590,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 48000,
-            "max": 96000,
+            "min": 95000,
+            "max": 215000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -606,8 +606,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 76800,
-            "max": 153600,
+            "min": 152000,
+            "max": 344000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -622,8 +622,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 96000,
-            "max": 192000,
+            "min": 190000,
+            "max": 430000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -638,8 +638,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 115200,
-            "max": 230400,
+            "min": 228000,
+            "max": 516000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -661,7 +661,7 @@
         "bg": "#FAECE7",
         "fg": "#4A1B0C"
       },
-      "description": "月支出 > ¥19.2万。伦敦王宫区顶层豪宅，顶尖教育，全职保镖与司机团队，全球头等舱。",
+      "description": "月支出 > ¥43万。伦敦王宫区顶层豪宅，顶尖教育，全职保镖与司机团队，全球头等舱。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -720,7 +720,7 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 96000,
+            "min": 215000,
             "max": 500000,
             "unit": "CNY/month"
           },
@@ -736,7 +736,7 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 153600,
+            "min": 344000,
             "max": 799999,
             "unit": "CNY/month"
           },
@@ -752,7 +752,7 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 192000,
+            "min": 430000,
             "max": 999999,
             "unit": "CNY/month"
           },
@@ -768,7 +768,7 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 230400,
+            "min": 516000,
             "max": 1199999,
             "unit": "CNY/month"
           },

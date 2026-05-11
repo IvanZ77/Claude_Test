@@ -11,7 +11,7 @@
         "bg": "#E6F1FB",
         "fg": "#0C447C"
       },
-      "description": "月支出 < ¥6000。城中村或郊区民居，公立学校，以自炊为主，地铁/公交，生活拮据。",
+      "description": "月支出 < ¥9500。城中村或郊区民居，公立学校，以自炊为主，地铁/公交，生活拮据。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -73,7 +73,7 @@
         "1a": {
           "incomeRange": {
             "min": 0,
-            "max": 3000,
+            "max": 4800,
             "unit": "CNY/month"
           },
           "pct": [
@@ -89,7 +89,7 @@
         "2a": {
           "incomeRange": {
             "min": 0,
-            "max": 4800,
+            "max": 7600,
             "unit": "CNY/month"
           },
           "pct": [
@@ -105,7 +105,7 @@
         "2a1c": {
           "incomeRange": {
             "min": 0,
-            "max": 6000,
+            "max": 9500,
             "unit": "CNY/month"
           },
           "pct": [
@@ -121,7 +121,7 @@
         "2a2c": {
           "incomeRange": {
             "min": 0,
-            "max": 7200,
+            "max": 11400,
             "unit": "CNY/month"
           },
           "pct": [
@@ -143,7 +143,7 @@
         "bg": "#EAF3DE",
         "fg": "#27500A"
       },
-      "description": "月支出 ¥6000–¥1.2万。中档小区，孩子读公立或普通民办学校，偶尔外食，有休闲活动。",
+      "description": "月支出 ¥9500–2万。中档小区，孩子读公立或普通民办学校，偶尔外食，有休闲活动。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -204,8 +204,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 3000,
-            "max": 6000,
+            "min": 4800,
+            "max": 10000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -220,8 +220,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 4800,
-            "max": 9600,
+            "min": 7600,
+            "max": 16000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -236,8 +236,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 6000,
-            "max": 12000,
+            "min": 9500,
+            "max": 20000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -252,8 +252,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 7200,
-            "max": 14400,
+            "min": 11400,
+            "max": 24000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -275,7 +275,7 @@
         "bg": "#FAEEDA",
         "fg": "#633806"
       },
-      "description": "月支出 ¥1.2万–¥2.4万。新房小区，孩子读民办学校或国际班，有车，能定期度假。",
+      "description": "月支出 ¥2万–4.3万。新房小区，孩子读民办学校或国际班，有车，能定期度假。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -335,8 +335,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 6000,
-            "max": 12000,
+            "min": 10000,
+            "max": 21500,
             "unit": "CNY/month"
           },
           "pct": [
@@ -351,8 +351,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 9600,
-            "max": 19200,
+            "min": 16000,
+            "max": 34400,
             "unit": "CNY/month"
           },
           "pct": [
@@ -367,8 +367,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 12000,
-            "max": 24000,
+            "min": 20000,
+            "max": 43000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -383,8 +383,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 14400,
-            "max": 28800,
+            "min": 24000,
+            "max": 51600,
             "unit": "CNY/month"
           },
           "pct": [
@@ -406,7 +406,7 @@
         "bg": "#FBEAF0",
         "fg": "#4B1528"
       },
-      "description": "月支出 ¥2.4万–¥4.8万。高档小区甚至别墅，孩子读国际学校，宝马/奔驰，欧洲旅游。",
+      "description": "月支出 ¥4.3万–9.5万。高档小区甚至别墅，孩子读国际学校，宝马/奔驰，欧洲旅游。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -464,8 +464,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 12000,
-            "max": 24000,
+            "min": 21500,
+            "max": 47500,
             "unit": "CNY/month"
           },
           "pct": [
@@ -480,8 +480,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 19200,
-            "max": 38400,
+            "min": 34400,
+            "max": 76000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -496,8 +496,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 24000,
-            "max": 48000,
+            "min": 43000,
+            "max": 95000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -512,8 +512,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 28800,
-            "max": 57600,
+            "min": 51600,
+            "max": 114000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -535,7 +535,7 @@
         "bg": "#EEEDFE",
         "fg": "#26215C"
       },
-      "description": "月支出 ¥4.8万–¥9.6万。顶级小区别墅，孩子精英国际学校，保时捷，全球旅游。",
+      "description": "月支出 ¥9.5万–21万。顶级小区别墅，孩子精英国际学校，保时捷，全球旅游。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -594,8 +594,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 24000,
-            "max": 48000,
+            "min": 47500,
+            "max": 105000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -610,8 +610,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 38400,
-            "max": 76800,
+            "min": 76000,
+            "max": 168000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -626,8 +626,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 48000,
-            "max": 96000,
+            "min": 95000,
+            "max": 210000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -642,8 +642,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 57600,
-            "max": 115200,
+            "min": 114000,
+            "max": 252000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -665,7 +665,7 @@
         "bg": "#FAECE7",
         "fg": "#4A1B0C"
       },
-      "description": "月支出 > ¥9.6万。私人庄园或地标顶层，顶级教育，全职司机团队，头等舱全球。",
+      "description": "月支出 > ¥21万。私人庄园或地标顶层，顶级教育，全职司机团队，头等舱全球。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -722,7 +722,7 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 48000,
+            "min": 105000,
             "max": 500000,
             "unit": "CNY/month"
           },
@@ -738,7 +738,7 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 76800,
+            "min": 168000,
             "max": 799999,
             "unit": "CNY/month"
           },
@@ -754,7 +754,7 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 96000,
+            "min": 210000,
             "max": 999999,
             "unit": "CNY/month"
           },
@@ -770,7 +770,7 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 115200,
+            "min": 252000,
             "max": 1199999,
             "unit": "CNY/month"
           },

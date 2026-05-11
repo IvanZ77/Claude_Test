@@ -11,7 +11,7 @@
         "bg": "#E6F1FB",
         "fg": "#0C447C"
       },
-      "description": "月支出 < ¥1万。住滨江或城东远郊，孩子上公立学校，自己做饭为主，出行靠地铁，生活清苦但能支撑。",
+      "description": "月支出 < ¥9000。住滨江或城东远郊，孩子上公立学校，自己做饭为主，出行靠地铁，生活清苦但能支撑。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -76,7 +76,7 @@
         "1a": {
           "incomeRange": {
             "min": 0,
-            "max": 5000,
+            "max": 4500,
             "unit": "CNY/month"
           },
           "pct": [
@@ -92,7 +92,7 @@
         "2a": {
           "incomeRange": {
             "min": 0,
-            "max": 8000,
+            "max": 7200,
             "unit": "CNY/month"
           },
           "pct": [
@@ -108,7 +108,7 @@
         "2a1c": {
           "incomeRange": {
             "min": 0,
-            "max": 10000,
+            "max": 9000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -124,7 +124,7 @@
         "2a2c": {
           "incomeRange": {
             "min": 0,
-            "max": 12000,
+            "max": 10800,
             "unit": "CNY/month"
           },
           "pct": [
@@ -146,7 +146,7 @@
         "bg": "#EAF3DE",
         "fg": "#27500A"
       },
-      "description": "月支出 ¥1万–2.2万。住城西或滨江新小区，孩子读民办小学或对口公办，偶尔外食，有电动车，杭州工薪族的标准生活。",
+      "description": "月支出 ¥9000–1.9万。住城西或滨江新小区，孩子读民办小学或对口公办，偶尔外食，有电动车，杭州工薪族的标准生活。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -211,8 +211,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 5000,
-            "max": 11000,
+            "min": 4500,
+            "max": 9500,
             "unit": "CNY/month"
           },
           "pct": [
@@ -227,8 +227,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 8000,
-            "max": 17600,
+            "min": 7200,
+            "max": 15200,
             "unit": "CNY/month"
           },
           "pct": [
@@ -243,8 +243,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 10000,
-            "max": 22000,
+            "min": 9000,
+            "max": 19000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -259,8 +259,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 12000,
-            "max": 26400,
+            "min": 10800,
+            "max": 22800,
             "unit": "CNY/month"
           },
           "pct": [
@@ -282,7 +282,7 @@
         "bg": "#FAEEDA",
         "fg": "#633806"
       },
-      "description": "月支出 ¥2.2万–4.8万。内环高档小区或城西CBD，孩子可读国际学校或杭州名校，有私家车，能去日本/东南亚度假，是杭州中产的舒适生活。",
+      "description": "月支出 ¥1.9万–4.2万。内环高档小区或城西CBD，孩子可读国际学校或杭州名校，有私家车，能去日本/东南亚度假，是杭州中产的舒适生活。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -345,8 +345,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 11000,
-            "max": 24000,
+            "min": 9500,
+            "max": 21000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -361,8 +361,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 17600,
-            "max": 38400,
+            "min": 15200,
+            "max": 33600,
             "unit": "CNY/month"
           },
           "pct": [
@@ -377,8 +377,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 22000,
-            "max": 48000,
+            "min": 19000,
+            "max": 42000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -393,8 +393,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 26400,
-            "max": 57600,
+            "min": 22800,
+            "max": 50400,
             "unit": "CNY/month"
           },
           "pct": [
@@ -416,7 +416,7 @@
         "bg": "#FBEAF0",
         "fg": "#4B1528"
       },
-      "description": "月支出 ¥4.8万–10.5万。西湖区或滨江高档居住，孩子就读顶尖国际学校，开宝马奔驰，每年欧美度假，杭州精英中产的生活。",
+      "description": "月支出 ¥4.2万–9万。西湖区或滨江高档居住，孩子就读顶尖国际学校，开宝马奔驰，每年欧美度假，杭州精英中产的生活。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -480,8 +480,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 24000,
-            "max": 52500,
+            "min": 21000,
+            "max": 45000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -496,8 +496,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 38400,
-            "max": 84000,
+            "min": 33600,
+            "max": 72000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -512,8 +512,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 48000,
-            "max": 105000,
+            "min": 42000,
+            "max": 90000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -528,8 +528,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 57600,
-            "max": 126000,
+            "min": 50400,
+            "max": 108000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -551,7 +551,7 @@
         "bg": "#EEEDFE",
         "fg": "#26215C"
       },
-      "description": "月支出 ¥10.5万–24万。高档公寓群或别墅区豪宅，孩子读SAS/哈罗等顶尖学校，专属司机，头等舱全球出行，杭州顶层精英的日常。",
+      "description": "月支出 ¥9万–20万。高档公寓群或别墅区豪宅，孩子读SAS/哈罗等顶尖学校，专属司机，头等舱全球出行，杭州顶层精英的日常。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -615,8 +615,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 52500,
-            "max": 120000,
+            "min": 45000,
+            "max": 100000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -631,8 +631,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 84000,
-            "max": 192000,
+            "min": 72000,
+            "max": 160000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -647,8 +647,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 105000,
-            "max": 240000,
+            "min": 90000,
+            "max": 200000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -663,8 +663,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 126000,
-            "max": 288000,
+            "min": 108000,
+            "max": 240000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -686,7 +686,7 @@
         "bg": "#FAECE7",
         "fg": "#4A1B0C"
       },
-      "description": "月支出 > ¥24万。高档度假别墅群或私人庄园，孩子就读海外顶尖寄宿学校，私人飞机，环球旅行，杭州极少数人才能触及的生活方式。",
+      "description": "月支出 > ¥20万。高档度假别墅群或私人庄园，孩子就读海外顶尖寄宿学校，私人飞机，环球旅行，杭州极少数人才能触及的生活方式。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -749,7 +749,7 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 120000,
+            "min": 100000,
             "max": 500000,
             "unit": "CNY/month"
           },
@@ -765,7 +765,7 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 192000,
+            "min": 160000,
             "max": 799999,
             "unit": "CNY/month"
           },
@@ -781,7 +781,7 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 240000,
+            "min": 200000,
             "max": 999999,
             "unit": "CNY/month"
           },
@@ -797,7 +797,7 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 288000,
+            "min": 240000,
             "max": 1199999,
             "unit": "CNY/month"
           },

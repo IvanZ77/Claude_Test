@@ -11,7 +11,7 @@
         "bg": "#E6F1FB",
         "fg": "#0C447C"
       },
-      "description": "月支出 < ¥4000。住清迈老城边缘或本地居民区公寓，本地食堂为主，骑摩托车，生活简朴。",
+      "description": "月支出 < ¥6000。住清迈老城边缘或本地居民区公寓，本地食堂为主，骑摩托车，生活简朴。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -74,7 +74,7 @@
         "1a": {
           "incomeRange": {
             "min": 0,
-            "max": 2000,
+            "max": 3000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -90,7 +90,7 @@
         "2a": {
           "incomeRange": {
             "min": 0,
-            "max": 3200,
+            "max": 4800,
             "unit": "CNY/month"
           },
           "pct": [
@@ -106,7 +106,7 @@
         "2a1c": {
           "incomeRange": {
             "min": 0,
-            "max": 4000,
+            "max": 6000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -122,7 +122,7 @@
         "2a2c": {
           "incomeRange": {
             "min": 0,
-            "max": 4800,
+            "max": 7200,
             "unit": "CNY/month"
           },
           "pct": [
@@ -144,7 +144,7 @@
         "bg": "#EAF3DE",
         "fg": "#27500A"
       },
-      "description": "月支出 ¥4000–1万。住清迈古城或尼曼路中档公寓，有交通工具，能偶尔外食高档馆子，是清迈外籍养老人士的基本生活。",
+      "description": "月支出 ¥6000–1.2万。住清迈古城或尼曼路中档公寓，有交通工具，能偶尔外食高档馆子，是清迈外籍养老人士的基本生活。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -207,8 +207,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 2000,
-            "max": 5000,
+            "min": 3000,
+            "max": 6000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -223,8 +223,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 3200,
-            "max": 8000,
+            "min": 4800,
+            "max": 9600,
             "unit": "CNY/month"
           },
           "pct": [
@@ -239,8 +239,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 4000,
-            "max": 10000,
+            "min": 6000,
+            "max": 12000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -255,8 +255,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 4800,
-            "max": 12000,
+            "min": 7200,
+            "max": 14400,
             "unit": "CNY/month"
           },
           "pct": [
@@ -278,7 +278,7 @@
         "bg": "#FAEEDA",
         "fg": "#633806"
       },
-      "description": "月支出 ¥1万–2.4万。住尼曼路或古城精装公寓，孩子读国际学校，有私家车，能去曼谷/普吉岛度假，是清迈中产的舒适生活。",
+      "description": "月支出 ¥1.2万–2.8万。住尼曼路或古城精装公寓，孩子读国际学校，有私家车，能去曼谷/普吉岛度假，是清迈中产的舒适生活。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -340,8 +340,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 5000,
-            "max": 12000,
+            "min": 6000,
+            "max": 14000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -356,8 +356,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 8000,
-            "max": 19200,
+            "min": 9600,
+            "max": 22400,
             "unit": "CNY/month"
           },
           "pct": [
@@ -372,8 +372,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 10000,
-            "max": 24000,
+            "min": 12000,
+            "max": 28000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -388,8 +388,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 12000,
-            "max": 28800,
+            "min": 14400,
+            "max": 33600,
             "unit": "CNY/month"
           },
           "pct": [
@@ -411,7 +411,7 @@
         "bg": "#FBEAF0",
         "fg": "#4B1528"
       },
-      "description": "月支出 ¥2.4万–5.5万。古城豪华别墅或尼曼路顶层公寓，孩子读顶尖国际学校，宝马奔驰，每月曼谷高档消费，清迈精英的生活。",
+      "description": "月支出 ¥2.8万–6万。古城豪华别墅或尼曼路顶层公寓，孩子读顶尖国际学校，宝马奔驰，每月曼谷高档消费，清迈精英的生活。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -475,8 +475,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 12000,
-            "max": 27500,
+            "min": 14000,
+            "max": 30000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -491,8 +491,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 19200,
-            "max": 44000,
+            "min": 22400,
+            "max": 48000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -507,8 +507,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 24000,
-            "max": 55000,
+            "min": 28000,
+            "max": 60000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -523,8 +523,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 28800,
-            "max": 66000,
+            "min": 33600,
+            "max": 72000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -546,7 +546,7 @@
         "bg": "#EEEDFE",
         "fg": "#26215C"
       },
-      "description": "月支出 ¥5.5万–13万。古城大宅+山区度假别墅组合，孩子国际寄宿学校，专属司机，频繁国际旅行，清迈顶层人士的生活。",
+      "description": "月支出 ¥6万–13万。古城大宅+山区度假别墅组合，孩子国际寄宿学校，专属司机，频繁国际旅行，清迈顶层人士的生活。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -610,7 +610,7 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 27500,
+            "min": 30000,
             "max": 65000,
             "unit": "CNY/month"
           },
@@ -626,7 +626,7 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 44000,
+            "min": 48000,
             "max": 104000,
             "unit": "CNY/month"
           },
@@ -642,7 +642,7 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 55000,
+            "min": 60000,
             "max": 130000,
             "unit": "CNY/month"
           },
@@ -658,7 +658,7 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 66000,
+            "min": 72000,
             "max": 156000,
             "unit": "CNY/month"
           },
