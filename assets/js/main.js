@@ -3,6 +3,7 @@ import { loadAllData } from './data-loader.js';
 import { sliderToAssets, formatUSD, formatNumber, roundToReadable } from './calc/assets.js';
 import { computeMonthlyIncome } from './calc/income.js';
 import { matchTier } from './calc/tier.js';
+import { calculateBudgetAllocation } from './calc/budget.js';
 import { fireNumber as computeFireNumber, yearsToFire, projectAssets, coastFireAmount, classifyFireTier } from './calc/fire.js';
 import { initBudgetChart, updateBudgetChart, updateChartBorderColor } from './render/chart-budget.js';
 import { renderParamPanel, updateParamBadge } from './render/param-panel.js';
@@ -178,14 +179,19 @@ async function bootstrap() {
       incomeRangeEl.textContent = minStr + '–' + maxStr + '/月';
 
       descEl.textContent = tier.description;
+      const allocation = calculateBudgetAllocation({
+        monthlyCNY: state.monthlyCNY,
+        tiers: state.cityTiers,
+        tierIndex: state.activeTierIndex,
+        householdModel: state.householdModel,
+        categories: state.categories
+      });
 
       itemsEl.innerHTML = Object.entries(tier.items)
         .map(([catId, catData]) => {
-          const catIndex = state.categories.findIndex(c => c.id === catId);
-          const percentage = catIndex >= 0 ? variant.pct[catIndex] : 0;
-          if (percentage === 0) return ''; // Skip categories with 0% allocation
-          const monthlySpending = Math.round(state.monthlyCNY * percentage / 100);
-          const displaySpending = roundToReadable(monthlySpending);
+          const budgetItem = allocation.itemsByCategory[catId];
+          if (!budgetItem || budgetItem.amount <= 0) return '';
+          const displaySpending = roundToReadable(budgetItem.amount);
           return `
             <div class="tier-item">
               <div class="tier-item-row">
@@ -198,7 +204,7 @@ async function bootstrap() {
         })
         .join('');
 
-      updateBudgetChart(variant.pct);
+      updateBudgetChart(allocation.percentages);
     }
 
     // Render legend
@@ -460,7 +466,8 @@ async function bootstrap() {
           compareCitiesContainerEl,
           state.selectedCities.map(id => data.cityData[id]),
           state.monthlyCNY,
-          formatNumber
+          formatNumber,
+          state.householdModel
         );
       } else {
         singleCityCalcEl.style.display = 'block';
