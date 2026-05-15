@@ -58,6 +58,30 @@ export async function validateAllData(data) {
   results.warnings += defaultsTest.warnings;
   results.errors.push(...defaultsTest.errors);
 
+  // Test 6: FX rate placeholders
+  console.log('\n📋 Test 6: Validating FX rates (fxToCNY placeholders)...');
+  const fxTest = validateFxRates(data.availableCities);
+  results.passed += fxTest.passed;
+  results.failed += fxTest.failed;
+  results.warnings += fxTest.warnings;
+  results.errors.push(...fxTest.errors);
+
+  // Test 7: Data freshness (lastUpdated fields)
+  console.log('\n📋 Test 7: Validating data freshness...');
+  const freshnessTest = validateFreshness(data.availableCities, data.cityData, data.defaults);
+  results.passed += freshnessTest.passed;
+  results.failed += freshnessTest.failed;
+  results.warnings += freshnessTest.warnings;
+  results.errors.push(...freshnessTest.errors);
+
+  // Test 8: City completeness flags
+  console.log('\n📋 Test 8: Validating city completeness metadata...');
+  const completenessTest = validateCityCompleteness(data.availableCities, data.cityData);
+  results.passed += completenessTest.passed;
+  results.failed += completenessTest.failed;
+  results.warnings += completenessTest.warnings;
+  results.errors.push(...completenessTest.errors);
+
   // Summary
   console.log('\n' + '='.repeat(60));
   console.log('📊 Test Summary');
@@ -233,16 +257,25 @@ function validateCityData(cityId, cityName, cityData, categories, householdModel
     });
   });
 
-  // Check range continuity
+  // Check range continuity — gaps are ERRORs, overlaps are WARNINGs
   for (let i = 0; i < cityData.tiers.length - 1; i++) {
     householdModels.forEach(model => {
       const currentMax = cityData.tiers[i].variants[model.id].incomeRange.max;
       const nextMin = cityData.tiers[i + 1].variants[model.id].incomeRange.min;
       if (currentMax !== nextMin) {
-        results.warnings++;
-        console.log(
-          `  ⚠️  ${cityName} (${model.id}): Tier ${i} max (${currentMax}) ≠ Tier ${i + 1} min (${nextMin})`
-        );
+        if (currentMax < nextMin) {
+          // Gap: income falls into no tier
+          results.failed++;
+          results.errors.push(
+            `${cityName} (${model.id}): GAP between Tier ${i} max (${currentMax}) and Tier ${i + 1} min (${nextMin}) — income in this range matches no tier`
+          );
+        } else {
+          // Overlap: income could match either tier (ambiguous)
+          results.warnings++;
+          console.log(
+            `  ⚠️  ${cityName} (${model.id}): OVERLAP — Tier ${i} max (${currentMax}) > Tier ${i + 1} min (${nextMin})`
+          );
+        }
       }
     });
   }
@@ -322,6 +355,91 @@ function validateDefaults(defaults) {
       results.errors.push(`Missing range definition: ${range}`);
     }
   });
+
+  return results;
+}
+
+function validateFxRates(availableCities) {
+  const results = { passed: 0, failed: 0, warnings: 0, errors: [] };
+
+  for (const city of availableCities) {
+    const isNonCNY = city.nativeCurrency && city.nativeCurrency !== 'CNY';
+    if (isNonCNY && city.fxToCNY === 1.0) {
+      results.failed++;
+      results.errors.push(
+        `${city.name} (${city.id}): fxToCNY is placeholder 1.0 but nativeCurrency is ${city.nativeCurrency} — update with real rate from PBOC/XE before merging`
+      );
+    } else if (!city.nativeCurrency) {
+      results.warnings++;
+      console.log(`  ⚠️  ${city.name}: missing nativeCurrency field — cannot validate fxToCNY`);
+    } else {
+      results.passed++;
+      console.log(`  ✅ ${city.name}: fxToCNY=${city.fxToCNY} (${city.nativeCurrency})`);
+    }
+  }
+
+  return results;
+}
+
+function validateFreshness(availableCities, cityData, defaults) {
+  const results = { passed: 0, failed: 0, warnings: 0, errors: [] };
+  const STALE_DAYS = 90;
+  const now = Date.now();
+
+  const checkDate = (label, dateStr) => {
+    if (!dateStr || dateStr.startsWith('TODO')) {
+      results.warnings++;
+      console.log(`  ⚠️  ${label}: missing lastUpdated — add date when data was verified`);
+      return;
+    }
+    const ts = new Date(dateStr).getTime();
+    if (isNaN(ts)) {
+      results.warnings++;
+      console.log(`  ⚠️  ${label}: lastUpdated "${dateStr}" is not a valid date`);
+      return;
+    }
+    const daysOld = (now - ts) / (1000 * 60 * 60 * 24);
+    if (daysOld > STALE_DAYS) {
+      results.warnings++;
+      console.log(`  ⚠️  ${label}: data is ${Math.round(daysOld)} days old (>${STALE_DAYS} day threshold)`);
+    } else {
+      results.passed++;
+    }
+  };
+
+  checkDate('defaults.json', defaults && defaults.lastUpdated);
+
+  for (const city of availableCities) {
+    const cd = cityData[city.id];
+    checkDate(`cities/${city.id}.json`, cd && cd.lastUpdated);
+    if (cd && !cd.sources) {
+      results.warnings++;
+      console.log(`  ⚠️  ${city.name}: missing sources[] array — add at least one data source reference`);
+    }
+  }
+
+  return results;
+}
+
+function validateCityCompleteness(availableCities, cityData) {
+  const results = { passed: 0, failed: 0, warnings: 0, errors: [] };
+  let incompleteCount = 0;
+
+  for (const city of availableCities) {
+    const cd = cityData[city.id];
+    if (!cd) continue;
+
+    if (cd.incomplete === true) {
+      incompleteCount++;
+      console.log(`  ℹ️  ${city.name}: marked incomplete — data awaiting verification`);
+    } else {
+      results.passed++;
+    }
+  }
+
+  if (incompleteCount > 0) {
+    console.log(`  ℹ️  ${incompleteCount} cities marked incomplete (this is informational, not blocking)`);
+  }
 
   return results;
 }

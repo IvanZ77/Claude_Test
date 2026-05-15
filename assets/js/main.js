@@ -1,4 +1,4 @@
-import { getState, setState, subscribe } from './state.js';
+import { getState, setState, subscribe, subscribeKeys } from './state.js';
 import { loadAllData } from './data-loader.js';
 import { sliderToAssets, formatUSD, formatNumber, roundToReadable } from './calc/assets.js';
 import { computeMonthlyIncome } from './calc/income.js';
@@ -283,37 +283,34 @@ async function bootstrap() {
       }
     };
 
-    // Subscribe to state changes
-    let lastHouseholdModel = null;
-    subscribe((state) => {
-      try {
-        renderMetrics();
-      } catch (e) {
-        console.error('[Subscribe] Error in renderMetrics:', e);
-      }
+    // Subscribe to state changes — split by dirty keys to avoid full re-render on every setState
 
-      try {
-        renderTierStrip();
-      } catch (e) {
-        console.error('[Subscribe] Error in renderTierStrip:', e);
-      }
+    // Metrics: only when income/asset values change
+    subscribeKeys(['assets', 'annualUSD', 'monthlyUSD', 'monthlyCNY'], () => {
+      try { renderMetrics(); } catch (e) { console.error('[Subscribe] renderMetrics:', e); }
+    });
 
-      try {
-        renderTierPanel();
-      } catch (e) {
-        console.error('[Subscribe] Error in renderTierPanel:', e);
-      }
+    // Tier strip: only when active tier changes
+    subscribeKeys(['activeTierIndex'], () => {
+      try { renderTierStrip(); } catch (e) { console.error('[Subscribe] renderTierStrip:', e); }
+    });
 
-      // Re-render household selector if it exists and is available
+    // Tier panel: when tier, household model, city, or income changes
+    subscribeKeys(['activeTierIndex', 'householdModel', 'cityTiers', 'monthlyCNY', 'cityId'], () => {
+      try { renderTierPanel(); } catch (e) { console.error('[Subscribe] renderTierPanel:', e); }
+    });
+
+    // Household selector: only when household model or available models change
+    subscribeKeys(['householdModel', 'householdModels'], (state) => {
       try {
         if (renderHouseholdModelSelector && state.householdModels) {
           renderHouseholdModelSelector();
         }
-      } catch (e) {
-        console.error('[Subscribe] Error in renderHouseholdModelSelector:', e);
-      }
+      } catch (e) { console.error('[Subscribe] renderHouseholdModelSelector:', e); }
+    });
 
-      // Update comparison grid when monthly CNY changes
+    // Comparison grid: when compare mode, city selection, or income changes
+    subscribeKeys(['compareMode', 'selectedCities', 'monthlyCNY', 'householdModel'], (state) => {
       try {
         if (state.compareMode && state.monthlyCNY) {
           renderCompareCitiesGrid(
@@ -324,16 +321,15 @@ async function bootstrap() {
             state.householdModel
           );
         }
-      } catch (e) {
-        console.error('[Subscribe] Error in renderCompareCitiesGrid:', e);
-      }
+      } catch (e) { console.error('[Subscribe] renderCompareCitiesGrid:', e); }
+    });
 
-      // Update FIRE outputs when monthly CNY changes
+    // FIRE outputs: when income or FIRE state changes
+    subscribeKeys(['monthlyCNY', 'params', 'fire'], (state) => {
       try {
         if (state.fire && state.monthlyCNY) {
           const annualExpenseCNY = state.monthlyCNY * 12;
           const fn = computeFireNumber(annualExpenseCNY, state.params.withdrawalRate);
-          const updatedFire = { ...state.fire, fireNumber: fn };
           updateFireOutputs(fireSectionEl, {
             fireNumber: fn,
             yearsToFire: state.fire.yearsToFire,
@@ -341,9 +337,7 @@ async function bootstrap() {
             tier: state.fire.tier
           }, formatNumber);
         }
-      } catch (e) {
-        console.error('[Subscribe] Error in updateFireOutputs:', e);
-      }
+      } catch (e) { console.error('[Subscribe] updateFireOutputs:', e); }
     });
 
     // Debounced URL sync
@@ -355,13 +349,18 @@ async function bootstrap() {
       }, 150);
     };
 
-    // Slider event
+    // Slider event — rAF-throttled to avoid redundant frames
+    let sliderRafId = null;
     if (sliderEl) {
       sliderEl.addEventListener('input', (e) => {
         const newValue = parseInt(e.target.value);
-        setState({ sliderValue: newValue });
-        updateCalculations();
-        scheduleUrlSync();
+        if (sliderRafId) cancelAnimationFrame(sliderRafId);
+        sliderRafId = requestAnimationFrame(() => {
+          sliderRafId = null;
+          setState({ sliderValue: newValue });
+          updateCalculations();
+          scheduleUrlSync();
+        });
       });
     }
 
@@ -447,12 +446,17 @@ async function bootstrap() {
         const compareSliderInput = compareSection.querySelector('#compareSliderInput');
         const compareAssetDisp = compareSection.querySelector('#compareAssetDisp');
 
+        let compareRafId = null;
         compareSliderInput.addEventListener('input', (e) => {
           const newValue = parseInt(e.target.value);
-          setState({ sliderValue: newValue });
-          updateCalculations();
-          compareAssetDisp.textContent = formatUSD(sliderToAssets(newValue));
-          scheduleUrlSync();
+          if (compareRafId) cancelAnimationFrame(compareRafId);
+          compareRafId = requestAnimationFrame(() => {
+            compareRafId = null;
+            setState({ sliderValue: newValue });
+            updateCalculations();
+            compareAssetDisp.textContent = formatUSD(sliderToAssets(newValue));
+            scheduleUrlSync();
+          });
         });
 
         renderCityComparison(
@@ -603,6 +607,7 @@ async function bootstrap() {
 
         cities.forEach(city => {
           const isActive = state.cityId === city.id;
+          const incompleteMark = city.incomplete ? ' <span class="data-incomplete-badge" title="数据待核对，仅供参考">待核</span>' : '';
           html += `
             <button class="city-btn" data-city="${city.id}"
                     title="${country}"
@@ -612,7 +617,7 @@ async function bootstrap() {
                            border: 0.5px solid ${isActive ? 'var(--color-accent)' : 'var(--color-border-tertiary)'};
                            font-size: 13px; font-weight: 500; cursor: pointer;
                            transition: all 0.15s ease;">
-              ${city.name}
+              ${city.name}${incompleteMark}
             </button>
           `;
         });
@@ -703,6 +708,11 @@ async function bootstrap() {
   } catch (error) {
     console.error('Failed to bootstrap application:', error);
     document.body.classList.add('js-error');
+    const banner = document.getElementById('errBanner');
+    if (banner) {
+      banner.textContent = '⚠️ 数据加载失败，请刷新页面重试。';
+      banner.classList.add('is-visible');
+    }
   }
 }
 

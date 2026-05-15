@@ -3,6 +3,9 @@
   "name": "广州",
   "currency": "CNY",
   "schemaVersion": 1,
+  "lastUpdated": null,
+  "incomplete": true,
+  "sources": [],
   "tiers": [
     {
       "id": "t1",
