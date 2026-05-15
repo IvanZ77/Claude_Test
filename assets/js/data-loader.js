@@ -43,8 +43,10 @@ export async function loadAllData() {
       if (data) cityData[id] = data;
     });
 
-    // Load only available cities
-    const availableCities = citiesIdx.cities.filter(c => c.available && cityData[c.id]);
+    // Load only available cities, merging incomplete status from city json
+    const availableCities = citiesIdx.cities
+      .filter(c => c.available && cityData[c.id])
+      .map(c => ({ ...c, incomplete: cityData[c.id]?.incomplete ?? false }));
 
     return {
       citiesIndex: citiesIdx,

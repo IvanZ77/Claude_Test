@@ -3,6 +3,9 @@
   "name": "北京",
   "currency": "CNY",
   "schemaVersion": 1,
+  "lastUpdated": null,
+  "incomplete": true,
+  "sources": [],
   "tiers": [
     {
       "id": "t1",
@@ -11,7 +14,7 @@
         "bg": "#E6F1FB",
         "fg": "#0C447C"
       },
-      "description": "月支出 < ¥1.4万。五环外租住，孩子上公立学校，日常自炊，地铁出行，生活压力大。",
+      "description": "月支出 < ¥1.15万。五环外租住，孩子上公立学校，日常自炊，地铁出行，生活压力大。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -74,7 +77,7 @@
         "1a": {
           "incomeRange": {
             "min": 0,
-            "max": 7000,
+            "max": 5800,
             "unit": "CNY/month"
           },
           "pct": [
@@ -90,7 +93,7 @@
         "2a": {
           "incomeRange": {
             "min": 0,
-            "max": 11200,
+            "max": 9200,
             "unit": "CNY/month"
           },
           "pct": [
@@ -106,7 +109,7 @@
         "2a1c": {
           "incomeRange": {
             "min": 0,
-            "max": 14000,
+            "max": 11500,
             "unit": "CNY/month"
           },
           "pct": [
@@ -122,7 +125,7 @@
         "2a2c": {
           "incomeRange": {
             "min": 0,
-            "max": 16800,
+            "max": 13800,
             "unit": "CNY/month"
           },
           "pct": [
@@ -144,7 +147,7 @@
         "bg": "#EAF3DE",
         "fg": "#27500A"
       },
-      "description": "月支出 ¥1.4万–3万。四环外新房或公寓，孩子读普通民办或对口公办，偶尔外食，能安排国内旅行。",
+      "description": "月支出 ¥1.15万–2.4万。四环外新房或公寓，孩子读普通民办或对口公办，偶尔外食，能安排国内旅行。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -206,8 +209,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 7000,
-            "max": 15000,
+            "min": 5800,
+            "max": 12000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -222,8 +225,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 11200,
-            "max": 24000,
+            "min": 9200,
+            "max": 19200,
             "unit": "CNY/month"
           },
           "pct": [
@@ -238,8 +241,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 14000,
-            "max": 30000,
+            "min": 11500,
+            "max": 24000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -254,8 +257,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 16800,
-            "max": 36000,
+            "min": 13800,
+            "max": 28800,
             "unit": "CNY/month"
           },
           "pct": [
@@ -277,7 +280,7 @@
         "bg": "#FAEEDA",
         "fg": "#633806"
       },
-      "description": "月支出 ¥3万–7万。朝阳/海淀高档小区，孩子读国际学校入门档，有私家车，能去海外旅行，是北京白领理想状态。",
+      "description": "月支出 ¥2.4万–5.2万。朝阳/海淀高档小区，孩子读国际学校入门档，有私家车，能去海外旅行，是北京白领理想状态。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -339,8 +342,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 15000,
-            "max": 35000,
+            "min": 12000,
+            "max": 26000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -355,8 +358,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 24000,
-            "max": 56000,
+            "min": 19200,
+            "max": 41600,
             "unit": "CNY/month"
           },
           "pct": [
@@ -371,8 +374,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 30000,
-            "max": 70000,
+            "min": 24000,
+            "max": 52000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -387,8 +390,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 36000,
-            "max": 84000,
+            "min": 28800,
+            "max": 62400,
             "unit": "CNY/month"
           },
           "pct": [
@@ -410,7 +413,7 @@
         "bg": "#FBEAF0",
         "fg": "#4B1528"
       },
-      "description": "月支出 ¥7万–15万。朝阳核心区高档公寓，孩子读一线国际学校，开豪车，每年海外出行，享受北京真正的高品质生活。",
+      "description": "月支出 ¥5.2万–11.5万。朝阳核心区高档公寓，孩子读一线国际学校，开豪车，每年海外出行，享受北京真正的高品质生活。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -472,8 +475,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 35000,
-            "max": 75000,
+            "min": 26000,
+            "max": 57500,
             "unit": "CNY/month"
           },
           "pct": [
@@ -488,8 +491,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 56000,
-            "max": 120000,
+            "min": 41600,
+            "max": 92000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -504,8 +507,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 70000,
-            "max": 150000,
+            "min": 52000,
+            "max": 115000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -520,8 +523,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 84000,
-            "max": 180000,
+            "min": 62400,
+            "max": 138000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -543,7 +546,7 @@
         "bg": "#EEEDFE",
         "fg": "#26215C"
       },
-      "description": "月支出 ¥15万–35万。朝阳核心顶级别墅或复式，孩子读SAS/哈罗，全职司机，头等舱全球出行，北京顶层精英。",
+      "description": "月支出 ¥11.5万–26万。朝阳核心顶级别墅或复式，孩子读SAS/哈罗，全职司机，头等舱全球出行，北京顶层精英。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -605,8 +608,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 75000,
-            "max": 175000,
+            "min": 57500,
+            "max": 130000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -621,8 +624,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 120000,
-            "max": 280000,
+            "min": 92000,
+            "max": 208000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -637,8 +640,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 150000,
-            "max": 350000,
+            "min": 115000,
+            "max": 260000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -653,8 +656,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 180000,
-            "max": 420000,
+            "min": 138000,
+            "max": 312000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -676,7 +679,7 @@
         "bg": "#FAECE7",
         "fg": "#4A1B0C"
       },
-      "description": "月支出 > ¥35万。国贸/建国路顶级公寓或独栋别墅，孩子读国际顶尖学校，私人管家，包机出行，北京极少数人的生活。",
+      "description": "月支出 > ¥26万。国贸/建国路顶级公寓或独栋别墅，孩子读国际顶尖学校，私人管家，包机出行，北京极少数人的生活。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -738,7 +741,7 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 175000,
+            "min": 130000,
             "max": 500000,
             "unit": "CNY/month"
           },
@@ -754,7 +757,7 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 280000,
+            "min": 208000,
             "max": 799999,
             "unit": "CNY/month"
           },
@@ -770,7 +773,7 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 350000,
+            "min": 260000,
             "max": 999999,
             "unit": "CNY/month"
           },
@@ -786,7 +789,7 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 420000,
+            "min": 312000,
             "max": 1199999,
             "unit": "CNY/month"
           },

@@ -3,6 +3,9 @@
   "name": "深圳",
   "currency": "CNY",
   "schemaVersion": 1,
+  "lastUpdated": null,
+  "incomplete": true,
+  "sources": [],
   "tiers": [
     {
       "id": "t1",
@@ -11,7 +14,7 @@
         "bg": "#E6F1FB",
         "fg": "#0C447C"
       },
-      "description": "月支出 < ¥1.2万。住龙华/光明郊区或城中村，孩子上公立学校，主要自己做饭，出行靠地铁公交，积蓄有限。",
+      "description": "月支出 < ¥1.1万。住龙华/光明郊区或城中村，孩子上公立学校，主要自己做饭，出行靠地铁公交，积蓄有限。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -72,7 +75,7 @@
         "1a": {
           "incomeRange": {
             "min": 0,
-            "max": 6000,
+            "max": 5500,
             "unit": "CNY/month"
           },
           "pct": [
@@ -88,7 +91,7 @@
         "2a": {
           "incomeRange": {
             "min": 0,
-            "max": 9600,
+            "max": 8800,
             "unit": "CNY/month"
           },
           "pct": [
@@ -104,7 +107,7 @@
         "2a1c": {
           "incomeRange": {
             "min": 0,
-            "max": 12000,
+            "max": 11000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -120,7 +123,7 @@
         "2a2c": {
           "incomeRange": {
             "min": 0,
-            "max": 14400,
+            "max": 13200,
             "unit": "CNY/month"
           },
           "pct": [
@@ -142,7 +145,7 @@
         "bg": "#EAF3DE",
         "fg": "#27500A"
       },
-      "description": "月支出 ¥1.2–2.6万。住福田/南山二线地段或坪山新房，孩子读普通民办学校，能偶尔外食，能安排珠三角旅行。",
+      "description": "月支出 ¥1.1万–2.3万。住福田/南山二线地段或坪山新房，孩子读普通民办学校，能偶尔外食，能安排珠三角旅行。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -205,8 +208,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 6000,
-            "max": 13000,
+            "min": 5500,
+            "max": 11500,
             "unit": "CNY/month"
           },
           "pct": [
@@ -221,8 +224,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 9600,
-            "max": 20800,
+            "min": 8800,
+            "max": 18400,
             "unit": "CNY/month"
           },
           "pct": [
@@ -237,8 +240,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 12000,
-            "max": 26000,
+            "min": 11000,
+            "max": 23000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -253,8 +256,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 14400,
-            "max": 31200,
+            "min": 13200,
+            "max": 27600,
             "unit": "CNY/month"
           },
           "pct": [
@@ -276,7 +279,7 @@
         "bg": "#FAEEDA",
         "fg": "#633806"
       },
-      "description": "月支出 ¥2.6–5.8万。住福田/南山一线或龙华核心商圈，孩子可读国际学校或一流民办，有私家车，能去海外度假，深圳中产理想状态。",
+      "description": "月支出 ¥2.3万–5万。住福田/南山一线或龙华核心商圈，孩子可读国际学校或一流民办，有私家车，能去海外度假，深圳中产理想状态。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -342,8 +345,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 13000,
-            "max": 29000,
+            "min": 11500,
+            "max": 25000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -358,8 +361,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 20800,
-            "max": 46400,
+            "min": 18400,
+            "max": 40000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -374,8 +377,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 26000,
-            "max": 58000,
+            "min": 23000,
+            "max": 50000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -390,8 +393,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 31200,
-            "max": 69600,
+            "min": 27600,
+            "max": 60000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -413,7 +416,7 @@
         "bg": "#FBEAF0",
         "fg": "#4B1528"
       },
-      "description": "月支出 ¥5.8–12.8万。福田/南山核心豪宅，孩子就读知名国际学校，开宝马奔驰，每年欧洲度假，深圳中高层生活方式。",
+      "description": "月支出 ¥5万–11万。福田/南山核心豪宅，孩子就读知名国际学校，开宝马奔驰，每年欧洲度假，深圳中高层生活方式。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -479,8 +482,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 29000,
-            "max": 64000,
+            "min": 25000,
+            "max": 55000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -495,8 +498,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 46400,
-            "max": 102400,
+            "min": 40000,
+            "max": 88000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -511,8 +514,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 58000,
-            "max": 128000,
+            "min": 50000,
+            "max": 110000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -527,8 +530,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 69600,
-            "max": 153600,
+            "min": 60000,
+            "max": 132000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -550,7 +553,7 @@
         "bg": "#EEEDFE",
         "fg": "#26215C"
       },
-      "description": "月支出 ¥12.8–29万。南山/福田顶级豪宅或蛇口别墅，孩子读顶尖国际学校，保时捷/路虎揽胜，全球商务舱旅行，深圳精英生活。",
+      "description": "月支出 ¥11万–25万。南山/福田顶级豪宅或蛇口别墅，孩子读顶尖国际学校，保时捷/路虎揽胜，全球商务舱旅行，深圳精英生活。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -614,8 +617,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 64000,
-            "max": 145000,
+            "min": 55000,
+            "max": 125000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -630,8 +633,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 102400,
-            "max": 232000,
+            "min": 88000,
+            "max": 200000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -646,8 +649,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 128000,
-            "max": 290000,
+            "min": 110000,
+            "max": 250000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -662,8 +665,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 153600,
-            "max": 348000,
+            "min": 132000,
+            "max": 300000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -685,7 +688,7 @@
         "bg": "#FAECE7",
         "fg": "#4A1B0C"
       },
-      "description": "月支出 > ¥29万。福田/南山古树豪宅或蛇口度假别墅，孩子读海外顶级寄宿学校，私人飞机/游艇，环球一流酒店，深圳极少数人才能触碰的生活。",
+      "description": "月支出 > ¥25万。福田/南山古树豪宅或蛇口度假别墅，孩子读海外顶级寄宿学校，私人飞机/游艇，环球一流酒店，深圳极少数人才能触碰的生活。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -742,7 +745,7 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 145000,
+            "min": 125000,
             "max": 500000,
             "unit": "CNY/month"
           },
@@ -758,7 +761,7 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 232000,
+            "min": 200000,
             "max": 799999,
             "unit": "CNY/month"
           },
@@ -774,7 +777,7 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 290000,
+            "min": 250000,
             "max": 999999,
             "unit": "CNY/month"
           },
@@ -790,7 +793,7 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 348000,
+            "min": 300000,
             "max": 1199999,
             "unit": "CNY/month"
           },

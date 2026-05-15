@@ -3,6 +3,9 @@
   "name": "福冈",
   "currency": "CNY",
   "schemaVersion": 1,
+  "lastUpdated": null,
+  "incomplete": true,
+  "sources": [],
   "tiers": [
     {
       "id": "t1",
@@ -142,7 +145,7 @@
         "bg": "#EAF3DE",
         "fg": "#27500A"
       },
-      "description": "月支出 ¥9000–¥1.8万。公寓住宅，孩子读公立或日本民办学校，偶尔外食，有休闲活动。",
+      "description": "月支出 ¥9000–1.8万。公寓住宅，孩子读公立或日本民办学校，偶尔外食，有休闲活动。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -274,7 +277,7 @@
         "bg": "#FAEEDA",
         "fg": "#633806"
       },
-      "description": "月支出 ¥1.8万–¥3.6万。高档公寓，孩子读国际学校或优质民办校，有车，能定期度假。",
+      "description": "月支出 ¥1.8万–4万。高档公寓，孩子读国际学校或优质民办校，有车，能定期度假。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -334,7 +337,7 @@
         "1a": {
           "incomeRange": {
             "min": 9000,
-            "max": 18000,
+            "max": 20000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -350,7 +353,7 @@
         "2a": {
           "incomeRange": {
             "min": 14400,
-            "max": 28800,
+            "max": 32000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -366,7 +369,7 @@
         "2a1c": {
           "incomeRange": {
             "min": 18000,
-            "max": 36000,
+            "max": 40000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -382,7 +385,7 @@
         "2a2c": {
           "incomeRange": {
             "min": 21600,
-            "max": 43200,
+            "max": 48000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -404,7 +407,7 @@
         "bg": "#FBEAF0",
         "fg": "#4B1528"
       },
-      "description": "月支出 ¥3.6万–¥7.2万。豪宅或洋房，孩子国际学校高中，进口车，欧洲度假。",
+      "description": "月支出 ¥4万–8.5万。豪宅或洋房，孩子国际学校高中，进口车，欧洲度假。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -462,8 +465,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 18000,
-            "max": 36000,
+            "min": 20000,
+            "max": 42500,
             "unit": "CNY/month"
           },
           "pct": [
@@ -478,8 +481,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 28800,
-            "max": 57600,
+            "min": 32000,
+            "max": 68000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -494,8 +497,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 36000,
-            "max": 72000,
+            "min": 40000,
+            "max": 85000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -510,8 +513,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 43200,
-            "max": 86400,
+            "min": 48000,
+            "max": 102000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -533,7 +536,7 @@
         "bg": "#EEEDFE",
         "fg": "#26215C"
       },
-      "description": "月支出 ¥7.2万–¥14.4万。顶级别墅，孩子精英国际学校，保时捷，全球旅游。",
+      "description": "月支出 ¥8.5万–19万。顶级别墅，孩子精英国际学校，保时捷，全球旅游。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -593,8 +596,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 36000,
-            "max": 72000,
+            "min": 42500,
+            "max": 95000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -609,8 +612,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 57600,
-            "max": 115200,
+            "min": 68000,
+            "max": 152000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -625,8 +628,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 72000,
-            "max": 144000,
+            "min": 85000,
+            "max": 190000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -641,8 +644,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 86400,
-            "max": 172800,
+            "min": 102000,
+            "max": 228000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -664,7 +667,7 @@
         "bg": "#FAECE7",
         "fg": "#4A1B0C"
       },
-      "description": "月支出 > ¥14.4万。福冈顶级庄园，顶尖大学预备班，豪车与专属司机，头等舱全球。",
+      "description": "月支出 > ¥19万。福冈顶级庄园，顶尖大学预备班，豪车与专属司机，头等舱全球。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -721,7 +724,7 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 72000,
+            "min": 95000,
             "max": 500000,
             "unit": "CNY/month"
           },
@@ -737,7 +740,7 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 115200,
+            "min": 152000,
             "max": 799999,
             "unit": "CNY/month"
           },
@@ -753,7 +756,7 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 144000,
+            "min": 190000,
             "max": 999999,
             "unit": "CNY/month"
           },
@@ -769,7 +772,7 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 172800,
+            "min": 228000,
             "max": 1199999,
             "unit": "CNY/month"
           },

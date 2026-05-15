@@ -3,6 +3,9 @@
   "name": "大理",
   "currency": "CNY",
   "schemaVersion": 1,
+  "lastUpdated": null,
+  "incomplete": true,
+  "sources": [],
   "tiers": [
     {
       "id": "t1",
@@ -11,7 +14,7 @@
         "bg": "#E6F1FB",
         "fg": "#0C447C"
       },
-      "description": "月支出 < ¥5000。住大理镇边缘或白族村落民居，自己做饭为主，出行靠电动车，生活清苦但充满田园气息。",
+      "description": "月支出 < ¥5500。住大理镇边缘或白族村落民居，自己做饭为主，出行靠电动车，生活清苦但充满田园气息。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -73,7 +76,7 @@
         "1a": {
           "incomeRange": {
             "min": 0,
-            "max": 2500,
+            "max": 2800,
             "unit": "CNY/month"
           },
           "pct": [
@@ -89,7 +92,7 @@
         "2a": {
           "incomeRange": {
             "min": 0,
-            "max": 4000,
+            "max": 4400,
             "unit": "CNY/month"
           },
           "pct": [
@@ -105,7 +108,7 @@
         "2a1c": {
           "incomeRange": {
             "min": 0,
-            "max": 5000,
+            "max": 5500,
             "unit": "CNY/month"
           },
           "pct": [
@@ -121,7 +124,7 @@
         "2a2c": {
           "incomeRange": {
             "min": 0,
-            "max": 6000,
+            "max": 6600,
             "unit": "CNY/month"
           },
           "pct": [
@@ -143,7 +146,7 @@
         "bg": "#EAF3DE",
         "fg": "#27500A"
       },
-      "description": "月支出 ¥5000–1.2万。住大理古城或下关中档民居，自己做饭+偶尔外食，有二手车，是大理小康家庭的典型。",
+      "description": "月支出 ¥5500–1.2万。住大理古城或下关中档民居，自己做饭+偶尔外食，有二手车，是大理小康家庭的典型。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -206,7 +209,7 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 2500,
+            "min": 2800,
             "max": 6000,
             "unit": "CNY/month"
           },
@@ -222,7 +225,7 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 4000,
+            "min": 4400,
             "max": 9600,
             "unit": "CNY/month"
           },
@@ -238,7 +241,7 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 5000,
+            "min": 5500,
             "max": 12000,
             "unit": "CNY/month"
           },
@@ -254,7 +257,7 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 6000,
+            "min": 6600,
             "max": 14400,
             "unit": "CNY/month"
           },
@@ -410,7 +413,7 @@
         "bg": "#FBEAF0",
         "fg": "#4B1528"
       },
-      "description": "月支出 ¥2.8万–6.5万。古城花园洋房或下关高档社区，孩子可去昆明国际学校，常去高档餐厅，年度海外小度假，是大理高层生活。",
+      "description": "月支出 ¥2.8万–6万。古城花园洋房或下关高档社区，孩子可去昆明国际学校，常去高档餐厅，年度海外小度假，是大理高层生活。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -473,7 +476,7 @@
         "1a": {
           "incomeRange": {
             "min": 14000,
-            "max": 32500,
+            "max": 30000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -489,7 +492,7 @@
         "2a": {
           "incomeRange": {
             "min": 22400,
-            "max": 52000,
+            "max": 48000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -505,7 +508,7 @@
         "2a1c": {
           "incomeRange": {
             "min": 28000,
-            "max": 65000,
+            "max": 60000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -521,7 +524,7 @@
         "2a2c": {
           "incomeRange": {
             "min": 33600,
-            "max": 78000,
+            "max": 72000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -543,7 +546,7 @@
         "bg": "#EEEDFE",
         "fg": "#26215C"
       },
-      "description": "月支出 ¥6.5万–15万。古城独栋豪宅或苍山度假大宅，孩子在国内顶尖国际学校，常驻保姆，全球度假，大理精英的生活。",
+      "description": "月支出 ¥6万–13万。古城独栋豪宅或苍山度假大宅，孩子在国内顶尖国际学校，常驻保姆，全球度假，大理精英的生活。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -607,8 +610,8 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 32500,
-            "max": 75000,
+            "min": 30000,
+            "max": 65000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -623,8 +626,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 52000,
-            "max": 120000,
+            "min": 48000,
+            "max": 104000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -639,8 +642,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 65000,
-            "max": 150000,
+            "min": 60000,
+            "max": 130000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -655,8 +658,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 78000,
-            "max": 180000,
+            "min": 72000,
+            "max": 156000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -678,7 +681,7 @@
         "bg": "#FAECE7",
         "fg": "#4A1B0C"
       },
-      "description": "月支出 > ¥15万。古城与山地多套豪宅，孩子就读瑞士/英国国际学校，私人管家团队，环球商务舱旅行，大理极少数顶层人士的生活。",
+      "description": "月支出 > ¥13万。古城与山地多套豪宅，孩子就读瑞士/英国国际学校，私人管家团队，环球商务舱旅行，大理极少数顶层人士的生活。",
       "items": {
         "housing": {
           "label": "住房/租金",
@@ -744,7 +747,7 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 75000,
+            "min": 65000,
             "max": 500000,
             "unit": "CNY/month"
           },
@@ -760,7 +763,7 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 120000,
+            "min": 104000,
             "max": 799999,
             "unit": "CNY/month"
           },
@@ -776,7 +779,7 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 150000,
+            "min": 130000,
             "max": 999999,
             "unit": "CNY/month"
           },
@@ -792,7 +795,7 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 180000,
+            "min": 156000,
             "max": 1199999,
             "unit": "CNY/month"
           },
