@@ -1,5 +1,11 @@
 // Parameter panel renderer
 export function renderParamPanel(containerEl, defaults, params, onParamChange) {
+  if (containerEl.dataset.built === 'true') {
+    updateParamBadge(containerEl, defaults, params);
+    return;
+  }
+  containerEl.dataset.built = 'true';
+
   const ranges = defaults.ranges;
 
   containerEl.innerHTML = `
@@ -125,9 +131,9 @@ function renderParamRow(paramKey, label, value, range, defaultValue, onParamChan
   const isCustom = Math.abs(value - defaultValue) > 0.0001;
 
   return `
-    <div style="display: grid; grid-template-columns: 120px 1fr 100px 80px; gap: var(--space-3); align-items: center;">
-      <label style="font-size: 13px; font-weight: 500; color: var(--color-text-primary);">${label}</label>
-      <div style="position: relative;">
+    <div style="display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-3); align-items: center;">
+      <label style="flex: 1 1 100%; font-size: 13px; font-weight: 500; color: var(--color-text-primary);">${label}</label>
+      <div style="flex: 1 1 60%; min-width: 120px; position: relative;">
         <input
           type="range"
           data-param="${paramKey}"
@@ -146,9 +152,9 @@ function renderParamRow(paramKey, label, value, range, defaultValue, onParamChan
         max="${range.max}"
         step="${range.step}"
         value="${displayValue}"
-        style="padding: 6px; border-radius: var(--border-radius-sm); border: 0.5px solid var(--color-border); font-size: 12px; font-family: monospace;"
+        style="flex: 0 0 90px; padding: 6px; border-radius: var(--border-radius-sm); border: 0.5px solid var(--color-border); font-size: 12px; font-family: monospace;"
       >
-      <span style="font-size: 12px; color: var(--color-text-secondary); font-weight: 500; text-align: right;">${displayValue}${displaySuffix}</span>
+      <span style="flex: 0 0 60px; font-size: 12px; color: var(--color-text-secondary); font-weight: 500; text-align: right;">${displayValue}${displaySuffix}</span>
     </div>
   `;
 }

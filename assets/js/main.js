@@ -15,12 +15,6 @@ import { decodeState, syncToUrl } from './url.js';
 async function bootstrap() {
   try {
     // Diagnostic: show bootstrap is running
-    const householdLoadingEl = document.getElementById('householdLoading');
-    if (householdLoadingEl) {
-      householdLoadingEl.textContent = '【JS运行中...】';
-    }
-    console.log('[Bootstrap] Starting...');
-
     // Load all data first
     const data = await loadAllData();
 
@@ -43,15 +37,6 @@ async function bootstrap() {
     const fireDefaults = data.defaults.params;
 
     // Debug: Check if householdModels loaded
-    console.log('[Data] Data loaded successfully');
-    console.log('[Data] householdModels:', data.householdModels);
-    console.log('[Data] householdModels length:', data.householdModels ? data.householdModels.length : 'undefined');
-
-    // Update diagnostic
-    if (householdLoadingEl) {
-      householdLoadingEl.textContent = '【数据已加载】';
-    }
-
     setState({
       cityId: selectedCity.id,
       cityData: cityData,
@@ -96,6 +81,7 @@ async function bootstrap() {
     const compareModeToggleBtn = document.getElementById('compareModeToggle');
     const compareCitiesSectionEl = document.getElementById('compareCitiesSection');
     const compareCitiesContainerEl = document.getElementById('compareCitiesContainer');
+    const compareEmptyStateEl = document.getElementById('compareEmptyState');
     const singleCityCalcEl = document.getElementById('singleCityCalc');
     const citySelectorEl = document.getElementById('citySelector');
     const tsBars = document.querySelectorAll('.tier-strip-bars .ts');
@@ -146,39 +132,34 @@ async function bootstrap() {
     }
 
     // Render tier panel
+    let lastTierPanelKey = null;
+    const tierItemRefs = new Map(); // catId -> spendingEl
+
     function renderTierPanel() {
       const state = getState();
 
-      // Safety checks
-      if (!state.cityTiers || !Array.isArray(state.cityTiers) || state.cityTiers.length === 0) {
-        console.warn('[renderTierPanel] No city tiers loaded yet');
-        return;
-      }
+      if (!state.cityTiers || !Array.isArray(state.cityTiers) || state.cityTiers.length === 0) return;
 
       const tier = state.cityTiers[state.activeTierIndex];
-      if (!tier) {
-        console.warn('[renderTierPanel] No tier at index', state.activeTierIndex);
-        return;
-      }
+      if (!tier) return;
 
       const variant = tier.variants ? tier.variants[state.householdModel] : null;
+      if (!variant) return;
 
-      if (!variant) {
-        console.error(`No variant found for household model ${state.householdModel} in tier ${tier.id}`);
-        return;
-      }
-
+      // Always update badge, income range, description (cheap DOM writes)
       badgeEl.style.background = tier.badge.bg;
       badgeEl.style.color = tier.badge.fg;
       badgeEl.textContent = tier.name;
 
-      // Update income range display
       const incomeRangeEl = document.getElementById('incomeRange');
       const minStr = '¥' + formatNumber(variant.incomeRange.min);
-      const maxStr = variant.incomeRange.max ? '¥' + formatNumber(variant.incomeRange.max) : '¥' + formatNumber(variant.incomeRange.min) + '+';
+      const maxStr = variant.incomeRange.max
+        ? '¥' + formatNumber(variant.incomeRange.max)
+        : '¥' + formatNumber(variant.incomeRange.min) + '+';
       incomeRangeEl.textContent = minStr + '–' + maxStr + '/月';
 
       descEl.textContent = tier.description;
+
       const allocation = calculateBudgetAllocation({
         monthlyCNY: state.monthlyCNY,
         tiers: state.cityTiers,
@@ -187,22 +168,51 @@ async function bootstrap() {
         categories: state.categories
       });
 
-      itemsEl.innerHTML = Object.entries(tier.items)
-        .map(([catId, catData]) => {
+      // Structural key: only rebuild DOM when city/tier/household actually changes
+      const structKey = `${state.cityId}_${state.activeTierIndex}_${state.householdModel}`;
+      if (structKey !== lastTierPanelKey) {
+        lastTierPanelKey = structKey;
+        tierItemRefs.clear();
+        itemsEl.innerHTML = '';
+
+        Object.entries(tier.items).forEach(([catId, catData]) => {
           const budgetItem = allocation.itemsByCategory[catId];
-          if (!budgetItem || budgetItem.amount <= 0) return '';
-          const displaySpending = roundToReadable(budgetItem.amount);
-          return `
-            <div class="tier-item">
-              <div class="tier-item-row">
-                <span class="tier-item-cat">${catData.label}</span>
-                <span class="tier-item-spending">¥${formatNumber(displaySpending)}/月</span>
-              </div>
-              <div class="tier-item-ex">${catData.examples.join(' &nbsp;·&nbsp; ')}</div>
-            </div>
-          `;
-        })
-        .join('');
+          if (!budgetItem || budgetItem.amount <= 0) return;
+
+          const div = document.createElement('div');
+          div.className = 'tier-item';
+
+          const rowDiv = document.createElement('div');
+          rowDiv.className = 'tier-item-row';
+
+          const catSpan = document.createElement('span');
+          catSpan.className = 'tier-item-cat';
+          catSpan.textContent = catData.label;
+
+          const spendingSpan = document.createElement('span');
+          spendingSpan.className = 'tier-item-spending';
+
+          rowDiv.appendChild(catSpan);
+          rowDiv.appendChild(spendingSpan);
+          div.appendChild(rowDiv);
+
+          const exDiv = document.createElement('div');
+          exDiv.className = 'tier-item-ex';
+          exDiv.innerHTML = catData.examples.join(' &nbsp;·&nbsp; ');
+          div.appendChild(exDiv);
+
+          itemsEl.appendChild(div);
+          tierItemRefs.set(catId, spendingSpan);
+        });
+      }
+
+      // Always update spending amounts (just text, no DOM restructure)
+      tierItemRefs.forEach((spendingEl, catId) => {
+        const budgetItem = allocation.itemsByCategory[catId];
+        if (budgetItem) {
+          spendingEl.textContent = '¥' + formatNumber(roundToReadable(budgetItem.amount)) + '/月';
+        }
+      });
 
       updateBudgetChart(allocation.percentages);
     }
@@ -218,70 +228,57 @@ async function bootstrap() {
         .join('');
     }
 
-    // Define household model selector renderer BEFORE subscribe
-    let renderHouseholdModelSelector = () => {
-      console.log('[renderHouseholdModelSelector] Called');
-      try {
-        const state = getState();
-        const el = document.getElementById('householdSelector');
+    // Household selector — first-render creates nodes once, update only toggles active state
+    const householdSelectorEl = document.getElementById('householdSelector');
+    let householdBtnMap = null; // Map<modelId, btnEl>
 
-        if (!el) {
-          console.error('[Household] ✗ Element #householdSelector not found');
-          return;
-        }
+    function renderHouseholdModelSelector() {
+      const state = getState();
+      if (!householdSelectorEl || !state.householdModels || !state.householdModels.length) return;
 
-        console.log('[Household] ✓ Element found, state.householdModels:', state.householdModels);
+      if (!householdBtnMap) {
+        householdBtnMap = new Map();
+        householdSelectorEl.innerHTML = '';
 
-        if (!state.householdModels || state.householdModels.length === 0) {
-          console.error('[Household] ✗ No household models in state');
-          el.innerHTML = '<span style="color: #f00;">❌ 家庭模型加载失败</span>';
-          return;
-        }
+        const label = document.createElement('span');
+        label.className = 'loading-tag';
+        label.style.cssText = 'white-space:nowrap;margin-right:6px;';
+        label.textContent = '家庭结构：';
+        householdSelectorEl.appendChild(label);
 
-        console.log('[Household] ✓ Found', state.householdModels.length, 'household models');
+        state.householdModels.forEach(model => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.dataset.model = model.id;
+          btn.title = model.description;
+          btn.textContent = model.label;
+          btn.style.cssText = 'padding:6px 14px;border-radius:var(--border-radius-md);font-size:12px;font-weight:500;cursor:pointer;transition:all 0.15s ease;border:0.5px solid;';
+          householdSelectorEl.appendChild(btn);
+          householdBtnMap.set(model.id, btn);
+        });
 
-        try {
-          let html = '<span style="font-size: 12px; color: var(--color-text-secondary); white-space: nowrap; margin-right: 6px;">家庭结构：</span>';
-
-          state.householdModels.forEach(model => {
-            const isActive = state.householdModel === model.id;
-            html += `
-              <button class="household-btn" data-model="${model.id}"
-                      title="${model.description}"
-                      style="padding: 6px 14px; border-radius: var(--border-radius-md);
-                             background: ${isActive ? 'var(--color-accent)' : 'var(--color-bg-secondary)'};
-                             color: ${isActive ? 'var(--color-bg)' : 'var(--color-text-primary)'};
-                             border: 0.5px solid ${isActive ? 'var(--color-accent)' : 'var(--color-border-tertiary)'};
-                             font-size: 12px; font-weight: 500; cursor: pointer;
-                             transition: all 0.15s ease;">
-                ${model.label}
-              </button>
-            `;
-          });
-
-          el.innerHTML = html;
-          console.log('[Household] Rendered household selector with', state.householdModels.length, 'models');
-
-          // Add event listeners
-          el.querySelectorAll('.household-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-              e.preventDefault();
-              const modelId = e.target.dataset.model;
-              if (modelId) {
-                setState({ householdModel: modelId });
-                updateCalculations();
-                scheduleUrlSync();
-              }
-            });
-          });
-        } catch (renderError) {
-          console.error('[Household] Error rendering:', renderError);
-          el.innerHTML = '<span style="color: #f00;">渲染失败: ' + renderError.message + '</span>';
-        }
-      } catch (error) {
-        console.error('[Household] Initialization error:', error);
+        // Single delegated listener on container
+        householdSelectorEl.addEventListener('click', (e) => {
+          const btn = e.target.closest('[data-model]');
+          if (!btn) return;
+          const modelId = btn.dataset.model;
+          if (modelId) {
+            setState({ householdModel: modelId });
+            updateCalculations();
+            scheduleUrlSync();
+          }
+        });
       }
-    };
+
+      // Update: only toggle active/inactive styles — no DOM rebuild
+      const activeModel = state.householdModel;
+      householdBtnMap.forEach((btn, modelId) => {
+        const isActive = modelId === activeModel;
+        btn.style.background = isActive ? 'var(--color-accent)' : 'var(--color-bg-secondary)';
+        btn.style.color = isActive ? 'var(--color-bg)' : 'var(--color-text-primary)';
+        btn.style.borderColor = isActive ? 'var(--color-accent)' : 'var(--color-border-tertiary)';
+      });
+    }
 
     // Subscribe to state changes — split by dirty keys to avoid full re-render on every setState
 
@@ -364,6 +361,24 @@ async function bootstrap() {
       });
     }
 
+    // Compare slider — registered once at bootstrap (static HTML, no inject/remove)
+    const compareSliderInput = document.getElementById('compareSliderInput');
+    const compareAssetDisp = document.getElementById('compareAssetDisp');
+    let compareRafId = null;
+    if (compareSliderInput) {
+      compareSliderInput.addEventListener('input', (e) => {
+        const newValue = parseInt(e.target.value);
+        if (compareRafId) cancelAnimationFrame(compareRafId);
+        compareRafId = requestAnimationFrame(() => {
+          compareRafId = null;
+          setState({ sliderValue: newValue });
+          updateCalculations();
+          if (compareAssetDisp) compareAssetDisp.textContent = formatUSD(sliderToAssets(newValue));
+          scheduleUrlSync();
+        });
+      });
+    }
+
     // Parameter change handler
     const handleParamChange = (newParams) => {
       setState({ params: newParams });
@@ -406,15 +421,13 @@ async function bootstrap() {
         handleCitySelect,
         handleCityDeselect
       );
-      if (newCities.length > 0) {
-        renderCompareCitiesGrid(
-          compareCitiesContainerEl,
-          newCities.map(id => data.cityData[id]),
-          state.monthlyCNY,
-          formatNumber,
-          state.householdModel
-        );
-      }
+      renderCompareCitiesGrid(
+        compareCitiesContainerEl,
+        newCities.map(id => data.cityData[id]),
+        state.monthlyCNY,
+        formatNumber,
+        state.householdModel
+      );
     };
 
     const toggleCompareMode = () => {
@@ -430,34 +443,11 @@ async function bootstrap() {
         compareModeToggleBtn.style.color = 'var(--color-bg)';
         compareModeToggleBtn.style.borderColor = 'var(--color-accent)';
 
-        // Add slider to compare section
-        const compareSection = compareCitiesSectionEl;
-        const sliderHtml = `
-          <div style="margin-bottom: var(--space-5);">
-            <p class="section-label">可投资资产总额（美元）</p>
-            <div class="slider-row" id="compareSlider">
-              <input type="range" id="compareSliderInput" min="0" max="100" value="${state.sliderValue}" step="1" aria-label="可投资资产" style="flex: 1;">
-              <span id="compareAssetDisp" class="asset-display" style="margin-left: var(--space-3);">$1.00M</span>
-            </div>
-          </div>
-        `;
-        compareSection.insertAdjacentHTML('afterbegin', sliderHtml);
-
-        const compareSliderInput = compareSection.querySelector('#compareSliderInput');
-        const compareAssetDisp = compareSection.querySelector('#compareAssetDisp');
-
-        let compareRafId = null;
-        compareSliderInput.addEventListener('input', (e) => {
-          const newValue = parseInt(e.target.value);
-          if (compareRafId) cancelAnimationFrame(compareRafId);
-          compareRafId = requestAnimationFrame(() => {
-            compareRafId = null;
-            setState({ sliderValue: newValue });
-            updateCalculations();
-            compareAssetDisp.textContent = formatUSD(sliderToAssets(newValue));
-            scheduleUrlSync();
-          });
-        });
+        // Show the static compare slider and sync its value to current state
+        const compareSliderEl = document.getElementById('compareSlider');
+        if (compareSliderEl) compareSliderEl.style.display = 'block';
+        if (compareSliderInput) compareSliderInput.value = state.sliderValue;
+        if (compareAssetDisp) compareAssetDisp.textContent = formatUSD(sliderToAssets(state.sliderValue));
 
         renderCityComparison(
           compareCitiesContainerEl,
@@ -481,9 +471,8 @@ async function bootstrap() {
         compareModeToggleBtn.style.color = 'var(--color-text-primary)';
         compareModeToggleBtn.style.borderColor = 'var(--color-border-tertiary)';
 
-        // Remove slider from compare section
-        const compareSlider = compareCitiesSectionEl.querySelector('#compareSlider');
-        if (compareSlider) compareSlider.remove();
+        const compareSliderEl = document.getElementById('compareSlider');
+        if (compareSliderEl) compareSliderEl.style.display = 'none';
       }
     };
 
@@ -577,90 +566,93 @@ async function bootstrap() {
       sliderEl.value = getState().sliderValue;
     }
 
-    // Render city selector
-    const renderCitySelector = () => {
+    // City selector — first-render creates nodes once, update only toggles active state
+    let cityBtnMap = null; // Map<cityId, btnEl>
+
+    function renderCitySelector() {
       const state = getState();
-      const groupedCities = {};
 
-      data.availableCities.forEach(city => {
-        if (!groupedCities[city.country]) {
-          groupedCities[city.country] = [];
-        }
-        groupedCities[city.country].push(city);
-      });
+      if (!cityBtnMap) {
+        cityBtnMap = new Map();
+        citySelectorEl.innerHTML = '';
 
-      const countryOrder = ['中国', '中国香港', '日本', '泰国', '美国', '越南', '英国', '法国'];
-      const sortedCountries = Object.keys(groupedCities).sort((a, b) => {
-        const aIndex = countryOrder.indexOf(a);
-        const bIndex = countryOrder.indexOf(b);
-        return (aIndex === -1 ? 999 : aIndex) - (bIndex === -1 ? 999 : bIndex);
-      });
+        const wrap = document.createElement('div');
+        wrap.style.cssText = 'display:flex;gap:6px;flex-wrap:wrap;align-items:center;';
 
-      let html = '<div style="display: flex; gap: 6px; flex-wrap: wrap; align-items: center;">';
-
-      sortedCountries.forEach((country, countryIdx) => {
-        const cities = groupedCities[country];
-
-        if (countryIdx > 0) {
-          html += '<div style="width: 1px; height: 24px; background: var(--color-border-tertiary); margin: 0 2px;"></div>';
-        }
-
-        cities.forEach(city => {
-          const isActive = state.cityId === city.id;
-          const incompleteMark = city.incomplete ? ' <span class="data-incomplete-badge" title="数据待核对，仅供参考">待核</span>' : '';
-          html += `
-            <button class="city-btn" data-city="${city.id}"
-                    title="${country}"
-                    style="padding: 6px 14px; border-radius: var(--border-radius-md);
-                           background: ${isActive ? 'var(--color-accent)' : 'var(--color-bg-secondary)'};
-                           color: ${isActive ? 'var(--color-bg)' : 'var(--color-text-primary)'};
-                           border: 0.5px solid ${isActive ? 'var(--color-accent)' : 'var(--color-border-tertiary)'};
-                           font-size: 13px; font-weight: 500; cursor: pointer;
-                           transition: all 0.15s ease;">
-              ${city.name}${incompleteMark}
-            </button>
-          `;
+        const groupedCities = {};
+        data.availableCities.forEach(city => {
+          if (!groupedCities[city.country]) groupedCities[city.country] = [];
+          groupedCities[city.country].push(city);
         });
-      });
 
-      html += '</div>';
-      citySelectorEl.innerHTML = html;
+        const countryOrder = ['中国', '中国香港', '日本', '泰国', '美国', '越南', '英国', '法国', '新加坡', '阿联酋', '澳大利亚', '法国'];
+        const sortedCountries = Object.keys(groupedCities).sort((a, b) => {
+          const ai = countryOrder.indexOf(a), bi = countryOrder.indexOf(b);
+          return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
+        });
 
-      citySelectorEl.querySelectorAll('.city-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          const cityId = e.target.dataset.city;
+        sortedCountries.forEach((country, idx) => {
+          if (idx > 0) {
+            const sep = document.createElement('div');
+            sep.style.cssText = 'width:1px;height:24px;background:var(--color-border-tertiary);margin:0 2px;flex-shrink:0;';
+            wrap.appendChild(sep);
+          }
+
+          groupedCities[country].forEach(city => {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.dataset.city = city.id;
+            btn.title = country;
+            btn.style.cssText = 'padding:6px 14px;border-radius:var(--border-radius-md);font-size:13px;font-weight:500;cursor:pointer;transition:all 0.15s ease;border:0.5px solid;';
+
+            btn.appendChild(document.createTextNode(city.name));
+
+            if (city.incomplete) {
+              const badge = document.createElement('span');
+              badge.className = 'data-incomplete-badge';
+              badge.title = '数据待核对，仅供参考';
+              badge.textContent = '待核';
+              btn.appendChild(badge);
+            }
+
+            wrap.appendChild(btn);
+            cityBtnMap.set(city.id, btn);
+          });
+        });
+
+        citySelectorEl.appendChild(wrap);
+
+        // Single delegated listener
+        citySelectorEl.addEventListener('click', (e) => {
+          const btn = e.target.closest('[data-city]');
+          if (!btn) return;
+          const cityId = btn.dataset.city;
           const city = data.cityData[cityId];
           if (city) {
-            setState({
-              cityId,
-              cityData: city,
-              cityTiers: city.tiers
-            });
+            localStorage.setItem('lastCity', cityId);
+            setState({ cityId, cityData: city, cityTiers: city.tiers });
             renderCitySelector();
             updateCalculations();
             scheduleUrlSync();
           }
         });
+      }
+
+      // Update: only toggle active/inactive styles
+      const activeId = state.cityId;
+      cityBtnMap.forEach((btn, cityId) => {
+        const isActive = cityId === activeId;
+        btn.style.background = isActive ? 'var(--color-accent)' : 'var(--color-bg-secondary)';
+        btn.style.color = isActive ? 'var(--color-bg)' : 'var(--color-text-primary)';
+        btn.style.borderColor = isActive ? 'var(--color-accent)' : 'var(--color-border-tertiary)';
       });
-    };
+    }
 
     // Initialize city selector
     renderCitySelector();
 
-    // Initialize household model selector (function defined earlier before subscribe)
-    console.log('[Init] About to initialize household selector');
-    const householdSelectorEl = document.getElementById('householdSelector');
-    console.log('[Init] householdSelectorEl:', householdSelectorEl);
-    if (householdSelectorEl) {
-      console.log('[Init] Calling renderHouseholdModelSelector()');
-      const currentState = getState();
-      console.log('[Init] Current state.householdModels:', currentState.householdModels);
-      console.log('[Init] Current state.householdModel:', currentState.householdModel);
-      renderHouseholdModelSelector();
-      console.log('[Household] Initial render completed');
-    } else {
-      console.warn('[Household] householdSelector element not found at initialization');
-    }
+    // Initialize household model selector
+    renderHouseholdModelSelector();
 
     // Render parameter panel
     renderParamPanel(paramPanelEl, data.defaults, getState().params, handleParamChange);
@@ -693,16 +685,13 @@ async function bootstrap() {
     }
     updateCalculations();
 
-    // Final safety: ensure household selector is rendered
-    console.log('[Bootstrap] Final initialization: calling renderHouseholdModelSelector one more time');
-    const finalState = getState();
-    console.log('[Bootstrap] Final state - householdModels:', finalState.householdModels ? finalState.householdModels.length + ' models' : 'undefined');
-    console.log('[Bootstrap] Final state - householdModel:', finalState.householdModel);
-    if (typeof renderHouseholdModelSelector === 'function') {
-      console.log('[Bootstrap] Calling renderHouseholdModelSelector...');
-      renderHouseholdModelSelector();
-    } else {
-      console.error('[Bootstrap] renderHouseholdModelSelector is not a function!');
+    // Prefetch last-visited city data for faster next switch
+    const lastCity = localStorage.getItem('lastCity');
+    if (lastCity && lastCity !== getState().cityId) {
+      const link = document.createElement('link');
+      link.rel = 'prefetch';
+      link.href = `./data/cities/${lastCity}.json`;
+      document.head.appendChild(link);
     }
 
   } catch (error) {

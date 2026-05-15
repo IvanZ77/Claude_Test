@@ -1,5 +1,8 @@
 // FIRE panel renderer
 export function renderFirePanel(containerEl, fireOutputs, onFireParamChange) {
+  if (containerEl.dataset.built === 'true') return;
+  containerEl.dataset.built = 'true';
+
   containerEl.innerHTML = `
     <h2 style="font-size: 18px; font-weight: 600; margin: 0 0 var(--space-4); color: var(--color-text-primary);">FIRE 计算器</h2>
 

@@ -140,7 +140,18 @@
     <p style="font-size: 13px; color: var(--color-text-secondary); margin: 0 0 var(--space-4);">
       在同一资产水平下，对比不同城市的生活成本与生活方式。
     </p>
-    <div id="compareCitiesContainer"></div>
+
+    <div id="compareSlider" style="display: none; margin-bottom: var(--space-5);">
+      <p class="section-label">可投资资产总额（美元）</p>
+      <div class="slider-row">
+        <input type="range" id="compareSliderInput" min="0" max="100" value="35" step="1" aria-label="可投资资产（对比模式）">
+        <span id="compareAssetDisp" class="asset-display">$1.00M</span>
+      </div>
+    </div>
+
+    <div id="compareCitiesContainer">
+      <p id="compareEmptyState" style="font-size:13px;color:var(--color-text-secondary);display:none;">请选择至少 1 个城市以显示对比。</p>
+    </div>
   </section>
 
   <section id="fireSection" class="calc" style="display: none;"></section>

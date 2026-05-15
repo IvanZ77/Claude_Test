@@ -62,6 +62,11 @@ export function renderCompareCitiesGrid(containerEl, selectedCities, monthlyCNY,
   const gridEl = containerEl.querySelector('#compareCitiesGrid');
   if (!gridEl) return;
 
+  if (!selectedCities || selectedCities.length === 0) {
+    gridEl.innerHTML = '<p style="font-size:13px;color:var(--color-text-secondary);padding:var(--space-3) 0;">请选择至少 1 个城市以显示对比。</p>';
+    return;
+  }
+
   gridEl.innerHTML = `
     <div style="
       display: grid;
