@@ -3,9 +3,10 @@ const MIN_USD = 200000;
 const MAX_USD = 20000000;
 
 export function sliderToAssets(sliderValue) {
+  const clamped = Math.min(100, Math.max(0, Number(sliderValue) || 0));
   const minLog = Math.log10(MIN_USD);
   const maxLog = Math.log10(MAX_USD);
-  return Math.pow(10, minLog + (sliderValue / 100) * (maxLog - minLog));
+  return Math.pow(10, minLog + (clamped / 100) * (maxLog - minLog));
 }
 
 export function formatNumber(n) {

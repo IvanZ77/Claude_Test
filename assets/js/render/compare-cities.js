@@ -5,6 +5,9 @@ export function renderCityComparison(containerEl, cities, selectedCityIds, onCit
     .filter(city => city.available)
     .map(city => {
       const isSelected = selectedCityIds.includes(city.id);
+      const incompleteBadge = city.incomplete
+        ? `<span class="data-incomplete-badge" title="本城市数据为示意值，欢迎参与核对">待核</span>`
+        : '';
       return `
         <button
           class="city-pill ${isSelected ? 'is-selected' : ''}"
@@ -21,7 +24,7 @@ export function renderCityComparison(containerEl, cities, selectedCityIds, onCit
             transition: all 0.15s ease;
           "
         >
-          ${city.name}
+          ${city.name}${incompleteBadge}
         </button>
       `;
     })
@@ -94,11 +97,19 @@ function renderCityComparisonCard(city, monthlyCNY, formatNumber, householdModel
     matchedVariant = matchedTier.variants[householdModel] || Object.values(matchedTier.variants)[0];
   }
 
+  const lastUpdated = city.lastUpdated
+    ? `<span style="font-size:10px;color:var(--color-text-tertiary);margin-left:6px;">数据 ${city.lastUpdated.slice(0,7)}</span>`
+    : '';
+  const incompleteNote = city.incomplete
+    ? `<div style="margin-top:var(--space-2);padding:var(--space-2) var(--space-3);background:var(--color-bg-secondary);border-radius:var(--border-radius-sm);font-size:11px;color:var(--color-text-tertiary);">⚠ 数据待核对，仅供参考</div>`
+    : '';
+
   return `
     <div style="background: var(--color-bg-tertiary); border-radius: var(--border-radius-lg); padding: var(--space-5); box-shadow: var(--shadow-sm);">
-      <h3 style="font-size: 15px; font-weight: 600; margin: 0 0 var(--space-4); color: var(--color-text-primary);">
-        ${city.name}
+      <h3 style="font-size: 15px; font-weight: 600; margin: 0 0 var(--space-4); color: var(--color-text-primary); display:flex; align-items:center; flex-wrap:wrap; gap:4px;">
+        ${city.name}${lastUpdated}
       </h3>
+      ${incompleteNote}
 
       <div style="padding: var(--space-3); background: var(--color-bg-secondary); border-radius: var(--border-radius-md); margin-bottom: var(--space-4);">
         <p style="font-size: 11px; color: var(--color-text-tertiary); margin: 0 0 var(--space-1); text-transform: uppercase;">月度可支配收入</p>

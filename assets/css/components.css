@@ -146,6 +146,10 @@
   letter-spacing: -0.01em;
 }
 
+@media (max-width: 720px) {
+  .metrics { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+}
+
 @media (max-width: 480px) {
   .metrics { grid-template-columns: 1fr; gap: var(--space-2); }
   .metric { display: flex; align-items: baseline; justify-content: space-between; padding: 10px 14px; }
@@ -189,7 +193,7 @@
 }
 
 @media (max-width: 380px) {
-  .tier-strip-labels { display: none; }
+  .tier-strip-labels > div { font-size: 8.5px; }
 }
 
 /* Tier panel */
@@ -381,13 +385,8 @@
 
 .compare-grid {
   display: grid;
-  grid-template-columns: repeat(6, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--space-3);
-  min-width: 1080px;
-}
-
-@media (min-width: 980px) {
-  .compare-grid { min-width: 0; }
 }
 
 .compare-card {
@@ -434,7 +433,139 @@
 
 .js .no-js { display: none; }
 
-/* Reduced motion */
+/* ── Utility: focus-visible ring ───────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Override for elements that define their own border-radius */
+button:focus-visible,
+[role="button"]:focus-visible,
+.city-pill:focus-visible,
+.share-btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--border-radius-md);
+}
+
+/* ── Utility: .btn base ─────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: var(--border-radius-md);
+  border: 0.5px solid var(--color-border-tertiary);
+  background: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn:hover { background: var(--color-accent-soft); }
+.btn:active { transform: scale(0.97); }
+
+.btn--primary {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  border-color: var(--color-accent);
+}
+.btn--primary:hover { opacity: 0.9; }
+
+.btn--ghost {
+  background: transparent;
+  border-color: transparent;
+}
+
+/* ── Utility: .card ─────────────────────────────────────────────────── */
+.card {
+  background: var(--color-bg-secondary);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ── Utility: .skeleton ─────────────────────────────────────────────── */
+.skeleton {
+  background: linear-gradient(90deg,
+    var(--color-bg-secondary) 25%,
+    var(--color-bg-tertiary) 50%,
+    var(--color-bg-secondary) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.4s ease infinite;
+  border-radius: var(--border-radius-sm);
+}
+
+@keyframes skeleton-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Skeleton placeholder during js-pending */
+.js-pending .calc-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.js-pending .calc-skeleton .sk-bar {
+  height: 14px;
+  border-radius: var(--border-radius-sm);
+}
+
+.js-pending .calc-skeleton .sk-bar.sk-wide   { width: 80%; }
+.js-pending .calc-skeleton .sk-bar.sk-medium { width: 55%; }
+.js-pending .calc-skeleton .sk-bar.sk-narrow { width: 35%; }
+
+/* ── Utility: .loading-tag ──────────────────────────────────────────── */
+.loading-tag {
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+}
+
+/* ── Component: .data-incomplete-badge ─────────────────────────────── */
+.data-incomplete-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 1px 6px;
+  border-radius: var(--border-radius-sm);
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-tertiary);
+  font-size: 10px;
+  font-weight: 500;
+  border: 0.5px solid var(--color-border-tertiary);
+  cursor: default;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+/* ── Error banner ───────────────────────────────────────────────────── */
+.err-banner {
+  display: none;
+  position: fixed;
+  top: var(--space-4);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #C23B22;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: var(--border-radius-md);
+  font-size: 13px;
+  font-weight: 500;
+  z-index: 9999;
+  box-shadow: var(--shadow-md);
+}
+
+.err-banner.is-visible { display: block; }
+
+/* ── Reduced motion ─────────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;

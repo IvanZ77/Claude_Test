@@ -57,7 +57,7 @@
 
   <section id="householdControls" style="margin: var(--space-2) 0 var(--space-4) 0; display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
     <div id="householdSelector" style="display: flex; flex-wrap: wrap; gap: 6px; align-items: center;">
-      <span id="householdLoading" style="font-size: 12px; color: #666;">【JavaScript加载中...】</span>
+      <span id="householdLoading" class="loading-tag">【JavaScript加载中...】</span>
     </div>
   </section>
 
@@ -161,6 +161,7 @@
   </footer>
 </div>
 
+<div id="errBanner" class="err-banner" role="alert" aria-live="assertive"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js" async></script>
 <script type="module" src="./assets/js/main.js?v=1.4.2" defer></script>
 </body>
