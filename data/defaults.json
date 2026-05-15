@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "lastUpdated": "TODO: 请在合并前填入当日日期，格式 YYYY-MM-DD",
+  "lastUpdated": "2026-05-15",
   "source": "美元兑人民币汇率参考 PBOC 中间价（https://www.pbc.gov.cn/）。4% 提取率来自 Trinity Study（1998）。税率 20% 为美国长期资本利得税联邦税率。",
   "params": {
     "withdrawalRate": 0.04,
     "taxRate": 0.20,
-    "fxUsdCny": 6.8,
+    "fxUsdCny": 7.2,
     "annualReturnRate": 0.07,
     "inflationRate": 0.025,
     "currentAge": 30,

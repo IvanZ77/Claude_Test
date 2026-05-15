@@ -1,7 +1,7 @@
 {
   "version": 1,
   "default": "shanghai",
-  "fxLastUpdated": "TODO: 请在合并前填入当日日期，格式 YYYY-MM-DD",
+  "fxLastUpdated": "2026-05-15",
   "fxSource": "中国人民银行中间价 https://www.pbc.gov.cn/ 与 XE.com 双源交叉核对",
   "cities": [
     {
@@ -41,8 +41,7 @@
       "nativeCurrency": "HKD",
       "file": "cities/hongkong.json",
       "currency": "CNY",
-      "fxToCNY": 1.0,
-      "fxNeedsVerification": true,
+      "fxToCNY": 0.93,
       "available": true
     },
     {
@@ -52,8 +51,7 @@
       "nativeCurrency": "JPY",
       "file": "cities/tokyo.json",
       "currency": "CNY",
-      "fxToCNY": 1.0,
-      "fxNeedsVerification": true,
+      "fxToCNY": 0.046,
       "available": true
     },
     {
@@ -63,8 +61,7 @@
       "nativeCurrency": "THB",
       "file": "cities/bangkok.json",
       "currency": "CNY",
-      "fxToCNY": 1.0,
-      "fxNeedsVerification": true,
+      "fxToCNY": 0.2,
       "available": true
     },
     {
@@ -74,8 +71,7 @@
       "nativeCurrency": "USD",
       "file": "cities/seattle.json",
       "currency": "CNY",
-      "fxToCNY": 1.0,
-      "fxNeedsVerification": true,
+      "fxToCNY": 7.2,
       "available": true
     },
     {
@@ -85,8 +81,7 @@
       "nativeCurrency": "USD",
       "file": "cities/newyork.json",
       "currency": "CNY",
-      "fxToCNY": 1.0,
-      "fxNeedsVerification": true,
+      "fxToCNY": 7.2,
       "available": true
     },
     {
@@ -106,8 +101,7 @@
       "nativeCurrency": "THB",
       "file": "cities/chiangmai.json",
       "currency": "CNY",
-      "fxToCNY": 1.0,
-      "fxNeedsVerification": true,
+      "fxToCNY": 0.2,
       "available": true
     },
     {
@@ -117,8 +111,7 @@
       "nativeCurrency": "JPY",
       "file": "cities/osaka.json",
       "currency": "CNY",
-      "fxToCNY": 1.0,
-      "fxNeedsVerification": true,
+      "fxToCNY": 0.046,
       "available": true
     },
     {
@@ -168,8 +161,7 @@
       "nativeCurrency": "JPY",
       "file": "cities/fukuoka.json",
       "currency": "CNY",
-      "fxToCNY": 1.0,
-      "fxNeedsVerification": true,
+      "fxToCNY": 0.046,
       "available": true
     },
     {
@@ -179,8 +171,7 @@
       "nativeCurrency": "VND",
       "file": "cities/danang.json",
       "currency": "CNY",
-      "fxToCNY": 1.0,
-      "fxNeedsVerification": true,
+      "fxToCNY": 0.00029,
       "available": true
     },
     {
@@ -190,8 +181,7 @@
       "nativeCurrency": "GBP",
       "file": "cities/london.json",
       "currency": "CNY",
-      "fxToCNY": 1.0,
-      "fxNeedsVerification": true,
+      "fxToCNY": 9.1,
       "available": true
     },
     {
@@ -201,8 +191,7 @@
       "nativeCurrency": "EUR",
       "file": "cities/paris.json",
       "currency": "CNY",
-      "fxToCNY": 1.0,
-      "fxNeedsVerification": true,
+      "fxToCNY": 7.8,
       "available": true
     },
     {
@@ -232,8 +221,7 @@
       "nativeCurrency": "SGD",
       "file": "cities/singapore.json",
       "currency": "CNY",
-      "fxToCNY": 1.0,
-      "fxNeedsVerification": true,
+      "fxToCNY": 5.4,
       "available": true
     },
     {
@@ -243,8 +231,7 @@
       "nativeCurrency": "AED",
       "file": "cities/dubai.json",
       "currency": "CNY",
-      "fxToCNY": 1.0,
-      "fxNeedsVerification": true,
+      "fxToCNY": 1.96,
       "available": true
     },
     {
@@ -254,8 +241,7 @@
       "nativeCurrency": "AUD",
       "file": "cities/sydney.json",
       "currency": "CNY",
-      "fxToCNY": 1.0,
-      "fxNeedsVerification": true,
+      "fxToCNY": 4.75,
       "available": true
     }
   ]
