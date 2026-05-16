@@ -3,9 +3,30 @@
   "name": "悉尼",
   "currency": "CNY",
   "schemaVersion": 1,
-  "lastUpdated": null,
-  "incomplete": true,
-  "sources": [],
+  "lastUpdated": "2026-05-16",
+  "incomplete": false,
+  "sources": [
+    {
+      "label": "Domain Sydney rentals",
+      "url": "https://www.domain.com.au/rent/sydney-region-nsw/",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "Sydney Grammar School fees",
+      "url": "https://sydgram.nsw.edu.au/",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "Yelp Sydney restaurants",
+      "url": "https://www.yelp.com.au/sydney",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "Transport for NSW Opal fares",
+      "url": "https://transportnsw.info/tickets-opal",
+      "asOf": "2026-04"
+    }
+  ],
   "tiers": [
     {
       "id": "t1",
@@ -608,7 +629,8 @@
           "examples": [
             "宝马M系 / 奔驰AMG",
             "保时捷911 Turbo",
-            "全职专属司机（¥1.4万/月）"
+            "全职专属司机（¥1.4万/月）",
+            "BMW X5 / Mercedes GLE + 私人车位"
           ]
         },
         "medical": {

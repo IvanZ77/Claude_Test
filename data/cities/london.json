@@ -3,9 +3,30 @@
   "name": "伦敦",
   "currency": "CNY",
   "schemaVersion": 1,
-  "lastUpdated": null,
-  "incomplete": true,
-  "sources": [],
+  "lastUpdated": "2026-05-16",
+  "incomplete": false,
+  "sources": [
+    {
+      "label": "Rightmove London rentals",
+      "url": "https://www.rightmove.co.uk/property-to-rent/London.html",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "Westminster School fees",
+      "url": "https://www.westminster.org.uk/",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "Tripadvisor London restaurants",
+      "url": "https://www.tripadvisor.com/Restaurants-g186338-London_England.html",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "TfL fares",
+      "url": "https://tfl.gov.uk/fares/",
+      "asOf": "2026-04"
+    }
+  ],
   "tiers": [
     {
       "id": "t1",
@@ -21,14 +42,17 @@
           "examples": [
             "Croydon郊区民居",
             "Clapham地下室房间",
-            "7号线外围house share"
+            "7号线外围house share",
+            "Walthamstow flat share £600/mo"
           ]
         },
         "education": {
           "label": "子女教育",
           "examples": [
             "State Primary School",
-            "Council免费班"
+            "Council免费班",
+            "State Primary School (free)",
+            "Council 课后辅导"
           ]
         },
         "food": {
@@ -36,7 +60,8 @@
           "examples": [
             "Tesco自炊",
             "Greggs三明治",
-            "中餐外卖"
+            "中餐外卖",
+            "Tesco 自炊 £30/wk"
           ]
         },
         "transport": {
@@ -44,21 +69,26 @@
           "examples": [
             "Travelcard全月卡",
             "自行车",
-            "走路"
+            "走路",
+            "Travelcard Z1-3 £180/mo"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "NHS全科医生",
-            "国民医保"
+            "国民医保",
+            "NHS GP（免费）",
+            "Walk-in Centre"
           ]
         },
         "travel": {
           "label": "旅行娱乐",
           "examples": [
             "泰晤士河散步",
-            "免费博物馆"
+            "免费博物馆",
+            "Hyde Park 免费",
+            "大英博物馆免费"
           ]
         },
         "shopping": {
@@ -66,7 +96,8 @@
           "examples": [
             "ALDI超市",
             "Poundland",
-            "网购"
+            "网购",
+            "Primark"
           ]
         }
       },
@@ -151,7 +182,8 @@
           "examples": [
             "Brixton小公寓",
             "Peckham现代楼",
-            "Dulwich镇宅"
+            "Dulwich镇宅",
+            "Clapham Junction 一居 £1,500/mo"
           ]
         },
         "education": {
@@ -159,7 +191,8 @@
           "examples": [
             "Ofsted优秀小学",
             "补习班",
-            "音乐课"
+            "音乐课",
+            "Ofsted Outstanding Primary"
           ]
         },
         "food": {
@@ -175,21 +208,27 @@
           "label": "交通出行",
           "examples": [
             "Travelcard+Uber",
-            "二手自行车"
+            "二手自行车",
+            "Travelcard Z1-3 + Uber 偶尔",
+            "Boris Bike 月卡"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "NHS牙科",
-            "眼科检查"
+            "眼科检查",
+            "NHS GP + 私人 GP £80/次",
+            "BUPA 基础保险"
           ]
         },
         "travel": {
           "label": "旅行娱乐",
           "examples": [
             "英国周末游",
-            "欧洲短途"
+            "欧洲短途",
+            "Brighton 一日游",
+            "Cotswolds 周末"
           ]
         },
         "shopping": {
@@ -197,7 +236,8 @@
           "examples": [
             "M&S Food",
             "Next服装",
-            "Debenhams"
+            "Debenhams",
+            "M&S"
           ]
         }
       },
@@ -282,7 +322,8 @@
           "examples": [
             "Chelsea高档公寓",
             "Notting Hill维多利亚时代豪宅",
-            "Richmond riverside公寓"
+            "Richmond riverside公寓",
+            "Kensington 一居 £3,500/mo"
           ]
         },
         "education": {
@@ -290,7 +331,8 @@
           "examples": [
             "伦敦私立学校中年级",
             "国际学校部分班",
-            "音乐院校预备"
+            "音乐院校预备",
+            "Ravenscourt Park Preparatory £18,000/yr"
           ]
         },
         "food": {
@@ -306,21 +348,27 @@
           "label": "交通出行",
           "examples": [
             "奥迪A4/宝马3系",
-            "停车费+油费¥1500/月"
+            "停车费+油费¥1500/月",
+            "BMW 3 系 二手 £25,000",
+            "Tesla Model 3"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "私人诊所",
-            "医疗保险"
+            "医疗保险",
+            "Harley Street 私人 GP",
+            "BUPA 完整保险"
           ]
         },
         "travel": {
           "label": "旅行娱乐",
           "examples": [
             "巴黎周末游",
-            "瑞士滑雪"
+            "瑞士滑雪",
+            "Paris 周末",
+            "Mallorca 度假"
           ]
         },
         "shopping": {
@@ -328,7 +376,8 @@
           "examples": [
             "Selfridges",
             "Harrods试衣间",
-            "Harrods Food Hall"
+            "Harrods Food Hall",
+            "Liberty London"
           ]
         }
       },
@@ -413,7 +462,8 @@
           "examples": [
             "Kensington豪宅",
             "Belgravia联排别墅",
-            "Hampstead Georgian House"
+            "Hampstead Georgian House",
+            "Mayfair 公寓 £8,000/mo"
           ]
         },
         "education": {
@@ -421,7 +471,8 @@
           "examples": [
             "Eton College预备",
             "Harrow初中部",
-            "伦敦国际学校高中部"
+            "伦敦国际学校高中部",
+            "Westminster School £30,000/yr"
           ]
         },
         "food": {
@@ -429,35 +480,44 @@
           "examples": [
             "Michelin二星",
             "高端和牛馆",
-            "私人会所"
+            "私人会所",
+            "Restaurant Gordon Ramsay 米其林二星"
           ]
         },
         "transport": {
           "label": "交通出行",
           "examples": [
             "宝马X5/奔驰GLE",
-            "停车+油费¥3000/月"
+            "停车+油费¥3000/月",
+            "Range Rover Sport",
+            "BMW X5"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "Harley Street医生",
-            "国际医疗VIP"
+            "国际医疗VIP",
+            "Harley Street VIP",
+            "BUPA 高端套餐"
           ]
         },
         "travel": {
           "label": "旅行娱乐",
           "examples": [
             "法国波尔多自驾",
-            "意大利度假"
+            "意大利度假",
+            "马尔代夫 Soneva",
+            "瑞士阿尔卑斯滑雪"
           ]
         },
         "shopping": {
           "label": "日用购物",
           "examples": [
             "Sloane Street奢侈品",
-            "Bond Street时尚"
+            "Bond Street时尚",
+            "Harrods",
+            "Selfridges Personal Shopping"
           ]
         }
       },
@@ -542,7 +602,8 @@
           "examples": [
             "Mayfair Park Lane mansion",
             "Kensington Palace Gardens",
-            "Belgravia私人广场"
+            "Belgravia私人广场",
+            "Mayfair 顶层 £20,000/mo"
           ]
         },
         "education": {
@@ -550,7 +611,8 @@
           "examples": [
             "伊顿公学全年级",
             "哈罗精英项目",
-            "牛津剑桥预科"
+            "牛津剑桥预科",
+            "Eton + 私人家教 £80,000/yr"
           ]
         },
         "food": {
@@ -558,35 +620,44 @@
           "examples": [
             "Michelin三星",
             "私人厨师备选",
-            "白金汉宫晚宴圈"
+            "白金汉宫晚宴圈",
+            "Restaurant Gordon Ramsay VIP"
           ]
         },
         "transport": {
           "label": "交通出行",
           "examples": [
             "保时捷911/路虎Range Rover",
-            "专业驾手¥1.5万/月"
+            "专业驾手¥1.5万/月",
+            "Bentley Continental",
+            "Rolls-Royce Ghost（二手）"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "The Lister医院VIP",
-            "美国Mayo临床年检"
+            "美国Mayo临床年检",
+            "Harley Street VIP 套餐",
+            "BUPA Global"
           ]
         },
         "travel": {
           "label": "旅行娱乐",
           "examples": [
             "瑞士冬宫居住",
-            "南法夏宫"
+            "南法夏宫",
+            "马尔代夫 St. Regis",
+            "北极极光"
           ]
         },
         "shopping": {
           "label": "日用购物",
           "examples": [
             "Harrods私人购物",
-            "苏富比前排座位"
+            "苏富比前排座位",
+            "Harrods VIP / Hermès",
+            "私人采购"
           ]
         }
       },
@@ -671,7 +742,8 @@
           "examples": [
             "Kensington Palace Gardens顶级地产",
             "Mayfair私人府邸",
-            "伦敦摄政街顶层"
+            "伦敦摄政街顶层",
+            "Mayfair 顶层大宅 £50,000/mo"
           ]
         },
         "education": {
@@ -679,14 +751,17 @@
           "examples": [
             "伊顿+牛津保障",
             "瑞士寄宿学校",
-            "私人哈佛准备"
+            "私人哈佛准备",
+            "Eton + 私人家教 £100,000+/yr"
           ]
         },
         "food": {
           "label": "餐饮美食",
           "examples": [
             "Alain Ducasse三星",
-            "私人米其林厨师常驻"
+            "私人米其林厨师常驻",
+            "Restaurant Gordon Ramsay 私厨",
+            "Core by Clare Smyth VIP"
           ]
         },
         "transport": {
@@ -694,14 +769,17 @@
           "examples": [
             "劳斯莱斯幻影",
             "专属司机保镖团队",
-            "直升机接驳"
+            "直升机接驳",
+            "Rolls-Royce Phantom"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "美国顶级诊所年度包约",
-            "私人医疗顾问24/7"
+            "私人医疗顾问24/7",
+            "Mayo Clinic / Cleveland 远程",
+            "私人医疗团队"
           ]
         },
         "travel": {
@@ -709,14 +787,17 @@
           "examples": [
             "私人游艇地中海",
             "南极远征邮轮",
-            "北极探险"
+            "北极探险",
+            "私人喷气机"
           ]
         },
         "shopping": {
           "label": "日用购物",
           "examples": [
             "苏富比艺术拍卖VIP",
-            "梵克雅宝珠宝定制"
+            "梵克雅宝珠宝定制",
+            "Harrods VIP 私邀",
+            "爱马仕私人定制"
           ]
         }
       },

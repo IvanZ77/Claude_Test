@@ -3,9 +3,30 @@
   "name": "清迈",
   "currency": "CNY",
   "schemaVersion": 1,
-  "lastUpdated": null,
-  "incomplete": true,
-  "sources": [],
+  "lastUpdated": "2026-05-16",
+  "incomplete": false,
+  "sources": [
+    {
+      "label": "Hipflat Chiang Mai rent",
+      "url": "https://www.hipflat.co.th/en/market/chiang-mai_a48",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "Prem Tinsulanonda International School",
+      "url": "https://www.ptis.ac.th/",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "Tripadvisor Chiang Mai restaurants",
+      "url": "https://www.tripadvisor.com/Restaurants-g293917-Chiang_Mai.html",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "Chiang Mai RTC city bus fares",
+      "url": "https://www.rtcchiangmai.com/",
+      "asOf": "2026-04"
+    }
+  ],
   "tiers": [
     {
       "id": "t1",
@@ -29,7 +50,9 @@
           "label": "子女教育",
           "examples": [
             "泰国公立学校",
-            "本地国际学校（便宜）"
+            "本地国际学校（便宜）",
+            "泰国公立小学（免费）",
+            "Thai-Chinese 双语补习班"
           ]
         },
         "food": {
@@ -46,14 +69,17 @@
           "examples": [
             "摩托车/电动车",
             "tuk-tuk 三轮车",
-            "公交小巴"
+            "公交小巴",
+            "Songthaew 红车 ฿30/次"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "泰国国民医保",
-            "清迈医疗诊所"
+            "清迈医疗诊所",
+            "Chiang Mai Ram 普通门诊",
+            "政府医院基本号"
           ]
         },
         "travel": {
@@ -61,7 +87,8 @@
           "examples": [
             "素贴寺爬山",
             "清迈古城散步",
-            "周末农村骑行"
+            "周末农村骑行",
+            "Doi Suthep 徒步"
           ]
         },
         "shopping": {
@@ -69,7 +96,8 @@
           "examples": [
             "瓦洛洛市场",
             "本地小店",
-            "清迈夜市"
+            "清迈夜市",
+            "夜市 Night Bazaar"
           ]
         }
       },
@@ -162,7 +190,9 @@
           "label": "子女教育",
           "examples": [
             "清迈国际学校小班（便宜）",
-            "双语预科班"
+            "双语预科班",
+            "Lanna International School ฿200,000/年",
+            "Christian German School ฿150,000/年"
           ]
         },
         "food": {
@@ -179,14 +209,17 @@
           "examples": [
             "摩托车/电动摩托",
             "小车拼车",
-            "Grab 打车"
+            "Grab 打车",
+            "二手日系车（10 年）"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "兰姆医院（高端民营）",
-            "清迈国际诊所"
+            "清迈国际诊所",
+            "Chiang Mai Ram 私人诊所",
+            "Bangkok Hospital Chiang Mai"
           ]
         },
         "travel": {
@@ -203,7 +236,8 @@
           "examples": [
             "Night Bazaar 夜市",
             "Central Festival 商超",
-            "尼曼路精品店"
+            "尼曼路精品店",
+            "Maya Lifestyle Center"
           ]
         }
       },
@@ -296,7 +330,9 @@
           "label": "子女教育",
           "examples": [
             "清迈国际学校（标准）¥10万/年",
-            "Lanna International School ¥8万/年"
+            "Lanna International School ¥8万/年",
+            "Prem Tinsulanonda International ฿500,000/年",
+            "Lanna International 高年级 ฿400,000/年"
           ]
         },
         "food": {
@@ -312,14 +348,18 @@
           "label": "交通出行",
           "examples": [
             "丰田Fortuner/Honda CR-V",
-            "油费¥1000/月"
+            "油费¥1000/月",
+            "丰田 Camry",
+            "本田 CR-V"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "兰姆医院VIP会员",
-            "泰国国际医疗保险"
+            "泰国国际医疗保险",
+            "Chiang Mai Ram VIP",
+            "Bangkok Hospital Chiang Mai 高级"
           ]
         },
         "travel": {
@@ -336,7 +376,8 @@
           "examples": [
             "Central Festival 百货",
             "尼曼路高档精品店",
-            "Rimping 超市"
+            "Rimping 超市",
+            "Maya VIP / Central VIP"
           ]
         }
       },
@@ -429,7 +470,9 @@
           "label": "子女教育",
           "examples": [
             "清迈国际学校（顶级）¥15万/年",
-            "Chiang Mai International School VIP"
+            "Chiang Mai International School VIP",
+            "Prem International 高年级 ฿600,000/年",
+            "德威 Chiang Mai IB 段 ฿700,000/年"
           ]
         },
         "food": {
@@ -446,7 +489,8 @@
           "examples": [
             "宝马3系/奔驰C级",
             "保时捷Macan",
-            "油费停车¥2000/月"
+            "油费停车¥2000/月",
+            "Mercedes E / BMW 5 系"
           ]
         },
         "medical": {
@@ -454,7 +498,8 @@
           "examples": [
             "兰姆医院豪华会员",
             "泰国顶级国际医保",
-            "曼谷医学中心远程会诊"
+            "曼谷医学中心远程会诊",
+            "Chiang Mai Ram VIP 病房"
           ]
         },
         "travel": {
@@ -471,7 +516,8 @@
           "examples": [
             "尼曼路高定工坊",
             "曼谷Siam Paragon 购物",
-            "进口奢侈品店"
+            "进口奢侈品店",
+            "Maya VIP"
           ]
         }
       },
@@ -565,7 +611,8 @@
           "examples": [
             "曼谷国际学校寄宿 ¥20万+/年",
             "新加坡国际学校",
-            "香港国际学校"
+            "香港国际学校",
+            "Prem International + 私人家教 ฿900,000+/年"
           ]
         },
         "food": {
@@ -582,14 +629,17 @@
           "examples": [
             "保时捷911",
             "路虎揽胜",
-            "全职专属司机"
+            "全职专属司机",
+            "保时捷 Cayenne / Macan"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "曼谷Samitivej医院VIP",
-            "泰国国际医疗最高档"
+            "泰国国际医疗最高档",
+            "Chiang Mai Ram VIP 国际",
+            "Bangkok Hospital VIP 高端"
           ]
         },
         "travel": {
@@ -606,7 +656,8 @@
           "examples": [
             "米兰高定定制",
             "巴黎Hermès VIP",
-            "艺术品收藏咨询"
+            "艺术品收藏咨询",
+            "线上 Hermès VIP"
           ]
         }
       },
@@ -700,7 +751,8 @@
           "examples": [
             "瑞士国际寄宿（Aiglon/Rosemount）",
             "英国伊顿/哈罗",
-            "美国顶级预科"
+            "美国顶级预科",
+            "英国 Eton/Harrow 寄宿"
           ]
         },
         "food": {
@@ -717,13 +769,17 @@
           "examples": [
             "法拉利/兰博基尼",
             "私人飞机曼谷-清迈通勤",
-            "游艇在普吉岛停泊"
+            "游艇在普吉岛停泊",
+            "宾利 / 劳斯莱斯"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
-            "私人医生24小时待命"
+            "私人医生24小时待命",
+            "Mayo Clinic 国际会员",
+            "基因检测",
+            "私人医疗团队"
           ]
         },
         "travel": {
@@ -740,7 +796,8 @@
           "examples": [
             "巴黎时装周参展",
             "佳士得董事级竞标",
-            "私人艺术品收购团队"
+            "私人艺术品收购团队",
+            "Hermès Bangkok VIP 私邀"
           ]
         }
       },

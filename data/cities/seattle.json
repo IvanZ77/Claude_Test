@@ -3,9 +3,30 @@
   "name": "西雅图",
   "currency": "CNY",
   "schemaVersion": 1,
-  "lastUpdated": null,
-  "incomplete": true,
-  "sources": [],
+  "lastUpdated": "2026-05-16",
+  "incomplete": false,
+  "sources": [
+    {
+      "label": "Zillow Seattle rent estimates",
+      "url": "https://www.zillow.com/seattle-wa/",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "Lakeside School tuition",
+      "url": "https://www.lakesideschool.org/",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "Yelp Seattle restaurants",
+      "url": "https://www.yelp.com/seattle",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "Sound Transit fares",
+      "url": "https://www.soundtransit.org/ride-with-us/fares",
+      "asOf": "2026-04"
+    }
+  ],
   "tiers": [
     {
       "id": "t1",
@@ -30,7 +51,8 @@
           "examples": [
             "西雅图公立学校（免费）",
             "海德山学区",
-            "社区大学早期课程"
+            "社区大学早期课程",
+            "免费图书馆课后辅导"
           ]
         },
         "food": {
@@ -45,7 +67,10 @@
         "transport": {
           "label": "交通出行",
           "examples": [
-            "自行车通勤"
+            "自行车通勤",
+            "ORCA 月卡 $100",
+            "骑行通勤",
+            "偶尔 Lyft Line $5–10"
           ]
         },
         "medical": {
@@ -53,7 +78,8 @@
           "examples": [
             "弗吉尼亚梅森诊所",
             "美国医疗补助计划",
-            "社区卫生保险"
+            "社区卫生保险",
+            "Apple Health (Medicaid)"
           ]
         },
         "travel": {
@@ -61,7 +87,8 @@
           "examples": [
             "绿湖免费公园",
             "发现公园远足",
-            "亲友家周末访问"
+            "亲友家周末访问",
+            "Discovery Park 免费"
           ]
         },
         "shopping": {
@@ -69,7 +96,8 @@
           "examples": [
             "沃尔玛超市",
             "塔吉特百货",
-            "好意旧货店"
+            "好意旧货店",
+            "Target / Amazon basics"
           ]
         }
       },
@@ -163,7 +191,8 @@
           "examples": [
             "湖华盛顿学区（顶级公立）",
             "西雅图预备私校$22,000/年",
-            "湖边学校精英校$30,000/年"
+            "湖边学校精英校$30,000/年",
+            "Mercer Island 公立学区（顶级）"
           ]
         },
         "food": {
@@ -181,14 +210,17 @@
           "examples": [
             "2008年本田思域二手车",
             "油费+保险+停车$400/月",
-            "声音运输轻轨"
+            "声音运输轻轨",
+            "Honda Civic 二手 $12,000"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "普瑞默蓝十字保险",
-            "常青卫生系统医院"
+            "常青卫生系统医院",
+            "Group Health 普通诊所",
+            "Swedish Medical 普通门诊"
           ]
         },
         "travel": {
@@ -205,7 +237,8 @@
           "examples": [
             "诺德斯特龙折扣店",
             "大北泽奥特莱斯",
-            "亚马逊新鲜店"
+            "亚马逊新鲜店",
+            "Trader Joe's"
           ]
         }
       },
@@ -318,7 +351,8 @@
           "examples": [
             "2015年丰田RAV4/本田CR-V",
             "油费+停车+保险$700/月",
-            "优步偶尔"
+            "优步偶尔",
+            "Tesla Model 3 二手 $35,000"
           ]
         },
         "medical": {
@@ -326,7 +360,8 @@
           "examples": [
             "埃特纳PPO保险",
             "瑞典医疗中心会员",
-            "华盛顿大学医学"
+            "华盛顿大学医学",
+            "Swedish Medical 家庭医生 $300/次"
           ]
         },
         "travel": {
@@ -343,7 +378,8 @@
           "examples": [
             "太平洋广场",
             "城市购物中心",
-            "REI户外俱乐部"
+            "REI户外俱乐部",
+            "Whole Foods"
           ]
         }
       },
@@ -437,7 +473,8 @@
           "examples": [
             "湖边学校全阶段$36-40,000/年",
             "西雅图艺术与科学学院$35,000/年",
-            "普吉湾大学实验学校全段"
+            "普吉湾大学实验学校全段",
+            "Lakeside School $42,000/年"
           ]
         },
         "food": {
@@ -454,7 +491,8 @@
           "examples": [
             "宝马X5/奔驰GLE",
             "保时捷卡宴",
-            "停车+油费+保险$1,500/月"
+            "停车+油费+保险$1,500/月",
+            "BMW X5 / Tesla Model Y"
           ]
         },
         "medical": {
@@ -462,7 +500,8 @@
           "examples": [
             "普瑞默蓝盾VIP",
             "瑞典医疗VIP会员",
-            "亨利福特健康计划"
+            "亨利福特健康计划",
+            "Virginia Mason 私家病房"
           ]
         },
         "travel": {
@@ -479,7 +518,8 @@
           "examples": [
             "诺德斯特龙高级专柜",
             "贝尔维尤广场设计师店",
-            "西雅图艺术博物馆会员"
+            "西雅图艺术博物馆会员",
+            "Nordstrom 西雅图旗舰"
           ]
         }
       },
@@ -573,7 +613,8 @@
           "examples": [
             "湖边学校全额辅导",
             "查尔斯赖特学院$35,000/年",
-            "美国顶级寄宿学校：安多弗/乔特"
+            "美国顶级寄宿学校：安多弗/乔特",
+            "Lakeside + 海外预备 $60,000+/年"
           ]
         },
         "food": {
@@ -599,7 +640,8 @@
           "examples": [
             "埃特纳行政健康体检",
             "梅奥诊所铂金会员",
-            "国际医疗及时应急"
+            "国际医疗及时应急",
+            "Virginia Mason VIP / Swedish VIP"
           ]
         },
         "travel": {
@@ -756,7 +798,8 @@
           "examples": [
             "佳士得/苏富比拍卖竞标",
             "卡地亚/哈里温斯顿VIP定制",
-            "艺术品收藏顾问"
+            "艺术品收藏顾问",
+            "Hermès Pacific Place VIP 私邀"
           ]
         }
       },

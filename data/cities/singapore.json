@@ -3,9 +3,30 @@
   "name": "新加坡",
   "currency": "CNY",
   "schemaVersion": 1,
-  "lastUpdated": null,
-  "incomplete": true,
-  "sources": [],
+  "lastUpdated": "2026-05-16",
+  "incomplete": false,
+  "sources": [
+    {
+      "label": "PropertyGuru Singapore rent",
+      "url": "https://www.propertyguru.com.sg/property-for-rent",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "ACS International Singapore fees",
+      "url": "https://www.acsindep.moe.edu.sg/",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "HungryGoWhere Singapore",
+      "url": "https://www.hungrygowhere.com/",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "LTA Singapore public transit",
+      "url": "https://www.lta.gov.sg/",
+      "asOf": "2026-04"
+    }
+  ],
   "tiers": [
     {
       "id": "t1",
@@ -608,7 +629,8 @@
           "examples": [
             "保时捷911 Turbo",
             "玛莎拉蒂Levante",
-            "全职专属司机（¥1.5万/月）"
+            "全职专属司机（¥1.5万/月）",
+            "保时捷 Cayenne（COE + 车 S$400,000）"
           ]
         },
         "medical": {

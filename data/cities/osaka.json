@@ -3,9 +3,30 @@
   "name": "大阪",
   "currency": "CNY",
   "schemaVersion": 1,
-  "lastUpdated": null,
-  "incomplete": true,
-  "sources": [],
+  "lastUpdated": "2026-05-16",
+  "incomplete": false,
+  "sources": [
+    {
+      "label": "SUUMO 大阪賃貸相場",
+      "url": "https://suumo.jp/chintai/osaka/",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "Osaka International School 学费",
+      "url": "https://www.senri.ed.jp/",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "食べログ 大阪",
+      "url": "https://tabelog.com/osaka/",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "大阪メトロ運賃",
+      "url": "https://www.osakametro.co.jp/",
+      "asOf": "2026-04"
+    }
+  ],
   "tiers": [
     {
       "id": "t1",
@@ -29,7 +50,9 @@
           "label": "子女教育",
           "examples": [
             "大阪公立小学（免费）",
-            "周末补课班"
+            "周末补课班",
+            "公立小学（免費）",
+            "公立中学（免费）"
           ]
         },
         "food": {
@@ -46,14 +69,17 @@
           "examples": [
             "地铁+公交",
             "自行车",
-            "Icoca 卡通勤"
+            "Icoca 卡通勤",
+            "市営地下鉄月卡 ¥7,500"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "日本国民医保",
-            "社区诊所"
+            "社区诊所",
+            "国民健康保险 30% 自付",
+            "大阪市立大学医学部附属医院普通门诊"
           ]
         },
         "travel": {
@@ -61,7 +87,8 @@
           "examples": [
             "大阪公园散步",
             "免费博物馆日",
-            "神户周末游"
+            "神户周末游",
+            "大阪城公园（免費）"
           ]
         },
         "shopping": {
@@ -69,7 +96,8 @@
           "examples": [
             "超市特价品",
             "百元店",
-            "无印良品基础款"
+            "无印良品基础款",
+            "業務スーパー"
           ]
         }
       },
@@ -162,7 +190,9 @@
           "label": "子女教育",
           "examples": [
             "大阪优质公立中学",
-            "私立预备班¥2000/月"
+            "私立预备班¥2000/月",
+            "大阪市立大学附属高校",
+            "清教学園（私立）"
           ]
         },
         "food": {
@@ -177,14 +207,19 @@
         "transport": {
           "label": "交通出行",
           "examples": [
-            "Uber Eats 偶尔"
+            "Uber Eats 偶尔",
+            "軽自動車 K-car",
+            "地铁 + 电动单车",
+            "二手丰田 Vitz"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "国民医保+私人医保",
-            "综合医院定期体检"
+            "综合医院定期体检",
+            "大阪府立急性期医療センター",
+            "大阪母子医療センター"
           ]
         },
         "travel": {
@@ -201,7 +236,8 @@
           "examples": [
             "アリオ shopping mall",
             "心斋桥商街折扣",
-            "ZOZOtown 在线"
+            "ZOZOtown 在线",
+            "イオン Aeon"
           ]
         }
       },
@@ -293,7 +329,10 @@
         "education": {
           "label": "子女教育",
           "examples": [
-            "関西学院中学部"
+            "関西学院中学部",
+            "Osaka International School ¥260万/年",
+            "Senri International School ¥230万/年",
+            "大阪YMCA国际学校 ¥120万/年"
           ]
         },
         "food": {
@@ -309,14 +348,18 @@
           "label": "交通出行",
           "examples": [
             "丰田Mark X / 本田Accord",
-            "停车费¥2500/月"
+            "停车费¥2500/月",
+            "Lexus IS 二手",
+            "丰田 Camry"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "自由診療美容医療会员",
-            "大阪大学医学部系列医院"
+            "大阪大学医学部系列医院",
+            "大阪赤十字病院 VIP 门诊",
+            "私立诊所家庭医生"
           ]
         },
         "travel": {
@@ -333,7 +376,8 @@
           "examples": [
             "Daimaru 百货高层",
             "心斋桥PARCO高端店",
-            "伊勢丹美容用品"
+            "伊勢丹美容用品",
+            "阪急百货"
           ]
         }
       },
@@ -427,7 +471,8 @@
           "examples": [
             "SIS（上海国际学校支部）",
             "大阪国际学校全阶段¥30万/年",
-            "関西学院国际部"
+            "関西学院国际部",
+            "ISO Osaka International School 高年级 ¥280万/年"
           ]
         },
         "food": {
@@ -443,14 +488,18 @@
           "label": "交通出行",
           "examples": [
             "宝马5系/奔驰E级",
-            "停车费¥4000+/月"
+            "停车费¥4000+/月",
+            "Lexus LS / Mercedes E",
+            "宝马 X3"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "高級検診センター会员",
-            "京大医学部遠隔診療"
+            "京大医学部遠隔診療",
+            "大阪大学医学部附属医院 VIP",
+            "圣路加 大阪"
           ]
         },
         "travel": {
@@ -467,7 +516,8 @@
           "examples": [
             "Hermès VIP service",
             "高級デパート「大丸」",
-            "ハイアットセントリック銀座"
+            "ハイアットセントリック銀座",
+            "阪急百貨 VIP / Hermès"
           ]
         }
       },
@@ -561,7 +611,8 @@
           "examples": [
             "Groton/Andover美国寄宿",
             "Aiglon 瑞士国际寄宿",
-            "Harrow 哈罗国际学校"
+            "Harrow 哈罗国际学校",
+            "Osaka International School + 私人家教 ¥400万+/年"
           ]
         },
         "food": {
@@ -578,14 +629,17 @@
           "examples": [
             "保时捷911 Turbo",
             "路虎Range Rover",
-            "专属司机全職"
+            "专属司机全職",
+            "Lexus LS / Mercedes S"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "京都大学病院VIP会员",
-            "アメリカン・エキスプレス医療保険"
+            "アメリカン・エキスプレス医療保険",
+            "大阪大学医学部 VIP",
+            "圣路加 大阪 VIP"
           ]
         },
         "travel": {
@@ -602,7 +656,8 @@
           "examples": [
             "ハイエンドブティック御用達",
             "サックス・フィフス・アベニュー",
-            "ハイジュエリー専門店"
+            "ハイジュエリー専門店",
+            "Hermès 大阪 VIP"
           ]
         }
       },
@@ -696,27 +751,35 @@
           "examples": [
             "伊顿公学 Eton College",
             "ハロウスクール Harrow",
-            "スイス Aiglon完全教育"
+            "スイス Aiglon完全教育",
+            "英国 Eton/Harrow 寄宿"
           ]
         },
         "food": {
           "label": "餐饮美食",
           "examples": [
-            "高级料亭年間予約"
+            "高级料亭年間予約",
+            "HAJIME 米其林三星 VIP",
+            "私人主厨入驻",
+            "米其林三星城市游"
           ]
         },
         "transport": {
           "label": "交通出行",
           "examples": [
             "フェラーリ/ランボルギーニ",
-            "プライベートジェット関西空港拠点"
+            "プライベートジェット関西空港拠点",
+            "宾利 / 劳斯莱斯",
+            "私人司机 + 全职安保"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "Mayo Clinic国际会员",
-            "スイス国際医療保険最高級"
+            "スイス国際医療保険最高級",
+            "Mayo Clinic 国际会员",
+            "基因检测"
           ]
         },
         "travel": {
@@ -724,7 +787,8 @@
           "examples": [
             "マルディーブ私島リゾート",
             "南極探検船私人包租",
-            "パリ2ヶ月別邸滞在"
+            "パリ2ヶ月別邸滞在",
+            "私人喷气机"
           ]
         },
         "shopping": {
@@ -732,7 +796,8 @@
           "examples": [
             "佳士得/サザビーズ競売会",
             "パリコレVIP観覧",
-            "私人艺术顾問"
+            "私人艺术顾問",
+            "Hermès 大阪 VIP 私邀"
           ]
         }
       },
