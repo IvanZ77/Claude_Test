@@ -3,9 +3,30 @@
   "name": "纽约",
   "currency": "CNY",
   "schemaVersion": 1,
-  "lastUpdated": null,
-  "incomplete": true,
-  "sources": [],
+  "lastUpdated": "2026-05-16",
+  "incomplete": false,
+  "sources": [
+    {
+      "label": "StreetEasy NYC 租金中位数",
+      "url": "https://streeteasy.com/blog/data-dashboard/",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "UNIS United Nations International School 学费",
+      "url": "https://www.unis.org/",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "Yelp NYC restaurants",
+      "url": "https://www.yelp.com/nyc",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "MTA NYC 地铁公交票价",
+      "url": "https://new.mta.info/fares",
+      "asOf": "2026-04"
+    }
+  ],
   "tiers": [
     {
       "id": "t1",
@@ -30,7 +51,8 @@
           "examples": [
             "纽约公立小学（免费）",
             "PS 77 / PS 284",
-            "中文学校周末班"
+            "中文学校周末班",
+            "图书馆免费课后辅导"
           ]
         },
         "food": {
@@ -47,7 +69,8 @@
           "examples": [
             "地铁公交卡（¥121/周）",
             "共享单车",
-            "偶尔滴滴"
+            "偶尔滴滴",
+            "MTA 30-day Unlimited $132"
           ]
         },
         "medical": {
@@ -55,7 +78,8 @@
           "examples": [
             "社区卫生所",
             "Medicaid 医保",
-            "急诊室自付"
+            "急诊室自付",
+            "NYC Health + Hospitals 公立急诊"
           ]
         },
         "travel": {
@@ -63,7 +87,8 @@
           "examples": [
             "中央公园散步",
             "美术馆免费时段",
-            "长岛周末游"
+            "长岛周末游",
+            "中央公园音乐节 / 布鲁克林免费海滩"
           ]
         },
         "shopping": {
@@ -166,7 +191,8 @@
           "examples": [
             "纽约天才班 gifted program",
             "私立走读学校 $15K/年",
-            "中英文双语周末班"
+            "中英文双语周末班",
+            "Stuyvesant / Bronx Science（公立精英中学，免费考入）"
           ]
         },
         "food": {
@@ -183,7 +209,8 @@
           "examples": [
             "地铁通勤+停车费$300/月",
             "二手本田思域",
-            "优步偶尔"
+            "优步偶尔",
+            "二手 Honda Civic / Toyota Corolla"
           ]
         },
         "medical": {
@@ -191,7 +218,8 @@
           "examples": [
             "Empire Blue Cross 基础医保",
             "纽约长老会医院",
-            "年度体检"
+            "年度体检",
+            "Mount Sinai 普通门诊 + Medicaid 补助"
           ]
         },
         "travel": {
@@ -330,7 +358,8 @@
           "examples": [
             "Aetna PPO 高档医保",
             "纽约长老会VIP医生",
-            "年度全身体检"
+            "年度全身体检",
+            "NYU Langone 家庭医生 $300/次"
           ]
         },
         "travel": {
@@ -469,7 +498,8 @@
           "examples": [
             "综合医疗会员制诊所",
             "纽约长老会VIP套餐",
-            "美国顶级保险公司Aetna Executive"
+            "美国顶级保险公司Aetna Executive",
+            "NewYork-Presbyterian 私家病房 $5,000/晚"
           ]
         },
         "travel": {
@@ -608,7 +638,8 @@
           "examples": [
             "美国顶级私人诊所VIP",
             "纽约长老会总院长级医生",
-            "国际医疗撤离保险"
+            "国际医疗撤离保险",
+            "NewYork-Presbyterian / Mount Sinai VIP 病房 $10,000+/晚"
           ]
         },
         "travel": {
