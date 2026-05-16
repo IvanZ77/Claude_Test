@@ -628,9 +628,9 @@
           "label": "交通出行",
           "examples": [
             "保时捷911涡轮",
-            "路虎揽胜运动版",
             "全职司机(¥8,000/月)",
-            "保时捷 Cayenne / Macan"
+            "Bentley Bentayga + Sukhumvit 车位",
+            "Mercedes S-class + Thonglor 私人车位"
           ]
         },
         "medical": {
@@ -648,7 +648,7 @@
             "南非狩猎探险",
             "阿尔卑斯滑雪",
             "巴黎四季酒店",
-            "马尔代夫 St. Regis"
+            "普吉 Amanpuri 包别墅"
           ]
         },
         "shopping": {
@@ -750,9 +750,9 @@
           "label": "子女教育",
           "examples": [
             "哈佛/剑桥预备",
-            "英国 Eton/Harrow 寄宿",
-            "私人家教 + 升学顾问",
-            "艺术大师 + 体育私教"
+            "Bangkok Patana 高中 + 海外名校预备 ฿900,000+/年",
+            "UWC Thailand Phuket 寄宿",
+            "上海哈罗外籍人员子女学校转学"
           ]
         },
         "food": {
@@ -770,7 +770,7 @@
             "法拉利/兰博基尼",
             "私人飞机包机",
             "游艇停泊芭堤雅",
-            "宾利 / 劳斯莱斯"
+            "BMW 7 系 / Mercedes S 级 + 司机"
           ]
         },
         "medical": {
@@ -779,16 +779,16 @@
             "梅奥诊所董事级",
             "私人医生24/7",
             "国际医疗撤离",
-            "Mayo Clinic 国际会员"
+            "Bumrungrad International VVIP"
           ]
         },
         "travel": {
           "label": "旅行娱乐",
           "examples": [
             "马尔代夫索内瓦私岛",
-            "南极探险船",
             "北极皇家游轮",
-            "私人喷气机"
+            "马尔代夫 Soneva Jani",
+            "普吉 Amanpuri 包别墅"
           ]
         },
         "shopping": {

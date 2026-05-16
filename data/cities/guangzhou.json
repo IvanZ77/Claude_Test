@@ -628,9 +628,9 @@
           "label": "交通出行",
           "examples": [
             "保时捷Macan",
-            "路虎揽胜",
             "司机¥1.2万/月",
-            "保时捷 Cayenne / Macan"
+            "BMW 7 系 / Mercedes Maybach S",
+            "蔚来 ET9 + 珠江新城车位"
           ]
         },
         "medical": {
@@ -647,8 +647,8 @@
           "examples": [
             "欧美长居",
             "四季酒店连住",
-            "马尔代夫 St. Regis",
-            "北海道二世谷度假"
+            "日本京都俵屋旅馆",
+            "马尔代夫 Soneva Jani"
           ]
         },
         "shopping": {
@@ -769,8 +769,8 @@
           "examples": [
             "劳斯莱斯幻影",
             "专属司机保镖团队",
-            "宾利 / 劳斯莱斯",
-            "私人司机 + 全职安保"
+            "BMW 7 系 / Mercedes Maybach S",
+            "蔚来 ET9 + 珠江新城私人车位"
           ]
         },
         "medical": {
@@ -778,8 +778,8 @@
           "examples": [
             "美国Mayo年度体检",
             "私人医疗顾问",
-            "Mayo Clinic / Cleveland 远程",
-            "基因检测 + 私人医疗团队"
+            "中山一院 VIP 国际",
+            "广州祈福国际部 VIP"
           ]
         },
         "travel": {
@@ -787,8 +787,8 @@
           "examples": [
             "私人游艇全球航行",
             "北极探险邮轮",
-            "私人喷气机 / 包船环游",
-            "南极探险 / 北极极光"
+            "日本京都俵屋旅馆",
+            "马尔代夫 Soneva Jani"
           ]
         },
         "shopping": {

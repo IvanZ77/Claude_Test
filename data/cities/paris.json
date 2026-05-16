@@ -627,10 +627,10 @@
         "transport": {
           "label": "交通出行",
           "examples": [
-            "保时捷Macan/路虎揽胜",
             "专业驾手¥1.3万/月",
             "Bentley Continental",
-            "Rolls-Royce Ghost（二手）"
+            "Rolls-Royce Ghost（二手）",
+            "Mercedes S-class + 8 区私人车位"
           ]
         },
         "medical": {
@@ -647,8 +647,8 @@
           "examples": [
             "地中海私人游艇",
             "阿尔卑斯滑雪",
-            "马尔代夫 St. Regis",
-            "北极极光"
+            "Cheval Blanc Courchevel 滑雪",
+            "Aman Tokyo"
           ]
         },
         "shopping": {
@@ -657,7 +657,7 @@
             "Hermès定制",
             "苏富比拍卖",
             "Hermès Sèvres VIP",
-            "私人采购"
+            "Le Bon Marché VIP 私人选购"
           ]
         }
       },
@@ -778,17 +778,17 @@
           "examples": [
             "美国Mayo年度包约",
             "私人医疗顾问",
-            "Mayo Clinic / Cleveland 远程",
-            "私人医疗团队"
+            "American Hospital of Paris VIP",
+            "Clinique Hartmann VIP"
           ]
         },
         "travel": {
           "label": "旅行娱乐",
           "examples": [
             "私人游艇全球航行",
-            "南极探险邮轮",
-            "私人喷气机",
-            "南极探险"
+            "Cheval Blanc Courchevel 滑雪",
+            "Aman Tokyo",
+            "Cap-Eden-Roc 私人套房"
           ]
         },
         "shopping": {
@@ -797,7 +797,7 @@
             "名品定制",
             "艺术品拍卖VIP",
             "Hermès Sèvres VIP 私邀",
-            "爱马仕私人定制"
+            "Hermès Sèvres Babylone VIP"
           ]
         }
       },

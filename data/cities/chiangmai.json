@@ -628,9 +628,9 @@
           "label": "交通出行",
           "examples": [
             "保时捷911",
-            "路虎揽胜",
             "全职专属司机",
-            "保时捷 Cayenne / Macan"
+            "Bentley Bentayga + Doi Suthep 私人车位",
+            "Mercedes G-class + Mae Rim 车位"
           ]
         },
         "medical": {
@@ -752,7 +752,7 @@
             "瑞士国际寄宿（Aiglon/Rosemount）",
             "英国伊顿/哈罗",
             "美国顶级预科",
-            "英国 Eton/Harrow 寄宿"
+            "American Pacific International School ฿700,000/年"
           ]
         },
         "food": {
@@ -770,25 +770,25 @@
             "法拉利/兰博基尼",
             "私人飞机曼谷-清迈通勤",
             "游艇在普吉岛停泊",
-            "宾利 / 劳斯莱斯"
+            "Range Rover Velar + 私人司机"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "私人医生24小时待命",
-            "Mayo Clinic 国际会员",
-            "基因检测",
-            "私人医疗团队"
+            "Chiang Mai Ram 高级病房",
+            "Bangkok Hospital Chiang Mai VIP",
+            "飞往曼谷 Bumrungrad VVIP 转诊"
           ]
         },
         "travel": {
           "label": "旅行娱乐",
           "examples": [
             "全球私人游艇包租",
-            "南极探险船私人包舱",
             "马尔代夫私岛度假",
-            "北极豪华探险"
+            "北极豪华探险",
+            "Soneva Jani 马尔代夫"
           ]
         },
         "shopping": {

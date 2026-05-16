@@ -629,8 +629,8 @@
           "examples": [
             "宝马X5/奔驰GLE",
             "司机团队",
-            "保时捷 Cayenne / Macan",
-            "Range Rover Sport"
+            "Range Rover Sport",
+            "Bentley Bentayga + Mỹ Khê 海景车位"
           ]
         },
         "medical": {
@@ -647,8 +647,8 @@
           "examples": [
             "欧洲三个月",
             "四季酒店连住",
-            "马尔代夫 St. Regis",
-            "北极极光"
+            "Soneva Jani 马尔代夫",
+            "Aman Tokyo / Aman Kyoto"
           ]
         },
         "shopping": {
@@ -657,7 +657,7 @@
             "奢侈品定制",
             "艺术品投资",
             "线上 Hermès VIP",
-            "私人采购"
+            "胡志明市奢侈品 VIP 私邀"
           ]
         }
       },
@@ -752,7 +752,7 @@
             "牛津剑桥预科营",
             "瑞士寄宿学校",
             "私人教师",
-            "英国 Eton/Harrow 寄宿"
+            "UWC Thailand Phuket 寄宿"
           ]
         },
         "food": {
@@ -761,7 +761,7 @@
             "米其林三星备选",
             "私人厨师常驻",
             "La Maison 1888 VIP 私厨",
-            "私人主厨入驻"
+            "La Maison 1888（米其林一星）"
           ]
         },
         "transport": {
@@ -769,8 +769,8 @@
           "examples": [
             "兰博基尼/法拉利",
             "专属司机与保镖",
-            "宾利 / 劳斯莱斯",
-            "私人司机 + 全职安保"
+            "Range Rover Velar + 私人司机",
+            "Mercedes E-class + Mỹ Khê 海景车位"
           ]
         },
         "medical": {
@@ -778,8 +778,8 @@
           "examples": [
             "美国Johns Hopkins保约",
             "24小时私人医生",
-            "Mayo Clinic 国际会员",
-            "基因检测"
+            "Vinmec Da Nang VIP 国际",
+            "Hoan My VIP + 飞往河内/胡志明转诊"
           ]
         },
         "travel": {
@@ -787,8 +787,8 @@
           "examples": [
             "私人游艇环球航行",
             "北极探险邮轮",
-            "私人喷气机",
-            "南极探险"
+            "Soneva Jani 马尔代夫",
+            "Aman Tokyo / Aman Kyoto"
           ]
         },
         "shopping": {
@@ -797,7 +797,7 @@
             "苏富比艺术拍卖",
             "珠宝定制行",
             "Hermès Bangkok VIP 私邀",
-            "爱马仕私人定制"
+            "Vincom Plaza 顶级 VIP"
           ]
         }
       },

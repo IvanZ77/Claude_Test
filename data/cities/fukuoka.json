@@ -628,9 +628,9 @@
           "label": "交通出行",
           "examples": [
             "保时捷Macan",
-            "路虎揽胜",
             "司机服务",
-            "Lexus LS / Mercedes S"
+            "Lexus LS / Mercedes S",
+            "Bentley Bentayga + 天神私人车位"
           ]
         },
         "medical": {
@@ -648,7 +648,7 @@
             "欧美长驻",
             "五星酒店",
             "私人包机",
-            "马尔代夫 St. Regis"
+            "星のや 由布院（Hoshinoya Yufuin）"
           ]
         },
         "shopping": {
@@ -657,7 +657,7 @@
             "奢侈品定制",
             "美术品收藏",
             "Hermès 福岡 VIP",
-            "私人采购"
+            "博多大丸 VIP 高定"
           ]
         }
       },
@@ -752,7 +752,7 @@
             "哈佛预科营",
             "伊顿公学预备",
             "私人家教团队",
-            "英国 Eton/Harrow 寄宿"
+            "Fukuoka International School + 海外名校升学"
           ]
         },
         "food": {
@@ -761,7 +761,7 @@
             "米其林三星备选",
             "私人厨师驻家",
             "御料理 まつ山 VIP",
-            "私人主厨入驻"
+            "御料理 まつ山（米其林一星）"
           ]
         },
         "transport": {
@@ -769,8 +769,8 @@
           "examples": [
             "劳斯莱斯幽灵",
             "专属司机保镖",
-            "宾利 / 劳斯莱斯",
-            "私人司机 + 全职安保"
+            "Lexus LS / Mercedes S 级",
+            "Bentley Bentayga + 天神私人车位"
           ]
         },
         "medical": {
@@ -778,8 +778,8 @@
           "examples": [
             "美国Mayo医疗包",
             "24小时医疗顾问",
-            "Mayo Clinic 国际会员",
-            "基因检测"
+            "九州大学病院 VVIP 国际",
+            "福冈大学医院 VIP 病房"
           ]
         },
         "travel": {
@@ -787,8 +787,8 @@
           "examples": [
             "私人游艇度假",
             "阿尔卑斯滑雪",
-            "私人喷气机",
-            "南极探险"
+            "星のや 由布院（Hoshinoya Yufuin）",
+            "京都俵屋旅馆 包栋"
           ]
         },
         "shopping": {
@@ -797,7 +797,7 @@
             "美术馆拍卖会",
             "顶级珠宝订制",
             "Hermès 福冈 VIP 私邀",
-            "爱马仕私人定制"
+            "博多大丸 VIP 高定"
           ]
         }
       },
