@@ -3,9 +3,30 @@
   "name": "清迈",
   "currency": "CNY",
   "schemaVersion": 1,
-  "lastUpdated": null,
-  "incomplete": true,
-  "sources": [],
+  "lastUpdated": "2026-05-16",
+  "incomplete": false,
+  "sources": [
+    {
+      "label": "Hipflat Chiang Mai rent",
+      "url": "https://www.hipflat.co.th/en/market/chiang-mai_a48",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "Prem Tinsulanonda International School",
+      "url": "https://www.ptis.ac.th/",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "Tripadvisor Chiang Mai restaurants",
+      "url": "https://www.tripadvisor.com/Restaurants-g293917-Chiang_Mai.html",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "Chiang Mai RTC city bus fares",
+      "url": "https://www.rtcchiangmai.com/",
+      "asOf": "2026-04"
+    }
+  ],
   "tiers": [
     {
       "id": "t1",
@@ -29,7 +50,9 @@
           "label": "子女教育",
           "examples": [
             "泰国公立学校",
-            "本地国际学校（便宜）"
+            "本地国际学校（便宜）",
+            "泰国公立小学（免费）",
+            "Thai-Chinese 双语补习班"
           ]
         },
         "food": {
@@ -46,14 +69,17 @@
           "examples": [
             "摩托车/电动车",
             "tuk-tuk 三轮车",
-            "公交小巴"
+            "公交小巴",
+            "Songthaew 红车 ฿30/次"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "泰国国民医保",
-            "清迈医疗诊所"
+            "清迈医疗诊所",
+            "Chiang Mai Ram 普通门诊",
+            "政府医院基本号"
           ]
         },
         "travel": {
@@ -61,7 +87,8 @@
           "examples": [
             "素贴寺爬山",
             "清迈古城散步",
-            "周末农村骑行"
+            "周末农村骑行",
+            "Doi Suthep 徒步"
           ]
         },
         "shopping": {
@@ -69,7 +96,8 @@
           "examples": [
             "瓦洛洛市场",
             "本地小店",
-            "清迈夜市"
+            "清迈夜市",
+            "夜市 Night Bazaar"
           ]
         }
       },
@@ -77,7 +105,7 @@
         "1a": {
           "incomeRange": {
             "min": 0,
-            "max": 3000,
+            "max": 3300,
             "unit": "CNY/month"
           },
           "pct": [
@@ -93,7 +121,7 @@
         "2a": {
           "incomeRange": {
             "min": 0,
-            "max": 4800,
+            "max": 5280,
             "unit": "CNY/month"
           },
           "pct": [
@@ -109,7 +137,7 @@
         "2a1c": {
           "incomeRange": {
             "min": 0,
-            "max": 6000,
+            "max": 6600,
             "unit": "CNY/month"
           },
           "pct": [
@@ -125,7 +153,7 @@
         "2a2c": {
           "incomeRange": {
             "min": 0,
-            "max": 7200,
+            "max": 7920,
             "unit": "CNY/month"
           },
           "pct": [
@@ -162,7 +190,9 @@
           "label": "子女教育",
           "examples": [
             "清迈国际学校小班（便宜）",
-            "双语预科班"
+            "双语预科班",
+            "Lanna International School ฿200,000/年",
+            "Christian German School ฿150,000/年"
           ]
         },
         "food": {
@@ -179,14 +209,17 @@
           "examples": [
             "摩托车/电动摩托",
             "小车拼车",
-            "Grab 打车"
+            "Grab 打车",
+            "二手日系车（10 年）"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "兰姆医院（高端民营）",
-            "清迈国际诊所"
+            "清迈国际诊所",
+            "Chiang Mai Ram 私人诊所",
+            "Bangkok Hospital Chiang Mai"
           ]
         },
         "travel": {
@@ -203,15 +236,16 @@
           "examples": [
             "Night Bazaar 夜市",
             "Central Festival 商超",
-            "尼曼路精品店"
+            "尼曼路精品店",
+            "Maya Lifestyle Center"
           ]
         }
       },
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 3000,
-            "max": 6000,
+            "min": 3300,
+            "max": 6800,
             "unit": "CNY/month"
           },
           "pct": [
@@ -226,8 +260,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 4800,
-            "max": 9600,
+            "min": 5280,
+            "max": 10880,
             "unit": "CNY/month"
           },
           "pct": [
@@ -242,8 +276,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 6000,
-            "max": 12000,
+            "min": 6600,
+            "max": 13600,
             "unit": "CNY/month"
           },
           "pct": [
@@ -258,8 +292,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 7200,
-            "max": 14400,
+            "min": 7920,
+            "max": 16320,
             "unit": "CNY/month"
           },
           "pct": [
@@ -296,7 +330,9 @@
           "label": "子女教育",
           "examples": [
             "清迈国际学校（标准）¥10万/年",
-            "Lanna International School ¥8万/年"
+            "Lanna International School ¥8万/年",
+            "Prem Tinsulanonda International ฿500,000/年",
+            "Lanna International 高年级 ฿400,000/年"
           ]
         },
         "food": {
@@ -312,14 +348,18 @@
           "label": "交通出行",
           "examples": [
             "丰田Fortuner/Honda CR-V",
-            "油费¥1000/月"
+            "油费¥1000/月",
+            "丰田 Camry",
+            "本田 CR-V"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "兰姆医院VIP会员",
-            "泰国国际医疗保险"
+            "泰国国际医疗保险",
+            "Chiang Mai Ram VIP",
+            "Bangkok Hospital Chiang Mai 高级"
           ]
         },
         "travel": {
@@ -336,15 +376,16 @@
           "examples": [
             "Central Festival 百货",
             "尼曼路高档精品店",
-            "Rimping 超市"
+            "Rimping 超市",
+            "Maya VIP / Central VIP"
           ]
         }
       },
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 6000,
-            "max": 14000,
+            "min": 6800,
+            "max": 15500,
             "unit": "CNY/month"
           },
           "pct": [
@@ -359,8 +400,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 9600,
-            "max": 22400,
+            "min": 10880,
+            "max": 24800,
             "unit": "CNY/month"
           },
           "pct": [
@@ -375,8 +416,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 12000,
-            "max": 28000,
+            "min": 13600,
+            "max": 31000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -391,8 +432,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 14400,
-            "max": 33600,
+            "min": 16320,
+            "max": 37200,
             "unit": "CNY/month"
           },
           "pct": [
@@ -429,7 +470,9 @@
           "label": "子女教育",
           "examples": [
             "清迈国际学校（顶级）¥15万/年",
-            "Chiang Mai International School VIP"
+            "Chiang Mai International School VIP",
+            "Prem International 高年级 ฿600,000/年",
+            "德威 Chiang Mai IB 段 ฿700,000/年"
           ]
         },
         "food": {
@@ -446,7 +489,8 @@
           "examples": [
             "宝马3系/奔驰C级",
             "保时捷Macan",
-            "油费停车¥2000/月"
+            "油费停车¥2000/月",
+            "Mercedes E / BMW 5 系"
           ]
         },
         "medical": {
@@ -454,7 +498,8 @@
           "examples": [
             "兰姆医院豪华会员",
             "泰国顶级国际医保",
-            "曼谷医学中心远程会诊"
+            "曼谷医学中心远程会诊",
+            "Chiang Mai Ram VIP 病房"
           ]
         },
         "travel": {
@@ -471,15 +516,16 @@
           "examples": [
             "尼曼路高定工坊",
             "曼谷Siam Paragon 购物",
-            "进口奢侈品店"
+            "进口奢侈品店",
+            "Maya VIP"
           ]
         }
       },
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 14000,
-            "max": 30000,
+            "min": 15500,
+            "max": 33000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -494,8 +540,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 22400,
-            "max": 48000,
+            "min": 24800,
+            "max": 52800,
             "unit": "CNY/month"
           },
           "pct": [
@@ -510,8 +556,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 28000,
-            "max": 60000,
+            "min": 31000,
+            "max": 66000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -526,8 +572,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 33600,
-            "max": 72000,
+            "min": 37200,
+            "max": 79200,
             "unit": "CNY/month"
           },
           "pct": [
@@ -565,7 +611,8 @@
           "examples": [
             "曼谷国际学校寄宿 ¥20万+/年",
             "新加坡国际学校",
-            "香港国际学校"
+            "香港国际学校",
+            "Prem International + 私人家教 ฿900,000+/年"
           ]
         },
         "food": {
@@ -581,15 +628,18 @@
           "label": "交通出行",
           "examples": [
             "保时捷911",
-            "路虎揽胜",
-            "全职专属司机"
+            "全职专属司机",
+            "Bentley Bentayga + Doi Suthep 私人车位",
+            "Mercedes G-class + Mae Rim 车位"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "曼谷Samitivej医院VIP",
-            "泰国国际医疗最高档"
+            "泰国国际医疗最高档",
+            "Chiang Mai Ram VIP 国际",
+            "Bangkok Hospital VIP 高端"
           ]
         },
         "travel": {
@@ -606,15 +656,16 @@
           "examples": [
             "米兰高定定制",
             "巴黎Hermès VIP",
-            "艺术品收藏咨询"
+            "艺术品收藏咨询",
+            "线上 Hermès VIP"
           ]
         }
       },
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 30000,
-            "max": 65000,
+            "min": 33000,
+            "max": 70000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -629,8 +680,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 48000,
-            "max": 104000,
+            "min": 52800,
+            "max": 112000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -645,8 +696,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 60000,
-            "max": 130000,
+            "min": 66000,
+            "max": 140000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -661,8 +712,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 72000,
-            "max": 156000,
+            "min": 79200,
+            "max": 168000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -700,7 +751,8 @@
           "examples": [
             "瑞士国际寄宿（Aiglon/Rosemount）",
             "英国伊顿/哈罗",
-            "美国顶级预科"
+            "美国顶级预科",
+            "American Pacific International School ฿700,000/年"
           ]
         },
         "food": {
@@ -717,22 +769,26 @@
           "examples": [
             "法拉利/兰博基尼",
             "私人飞机曼谷-清迈通勤",
-            "游艇在普吉岛停泊"
+            "游艇在普吉岛停泊",
+            "Range Rover Velar + 私人司机"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
-            "私人医生24小时待命"
+            "私人医生24小时待命",
+            "Chiang Mai Ram 高级病房",
+            "Bangkok Hospital Chiang Mai VIP",
+            "飞往曼谷 Bumrungrad VVIP 转诊"
           ]
         },
         "travel": {
           "label": "旅行娱乐",
           "examples": [
             "全球私人游艇包租",
-            "南极探险船私人包舱",
             "马尔代夫私岛度假",
-            "北极豪华探险"
+            "北极豪华探险",
+            "Soneva Jani 马尔代夫"
           ]
         },
         "shopping": {
@@ -740,15 +796,16 @@
           "examples": [
             "巴黎时装周参展",
             "佳士得董事级竞标",
-            "私人艺术品收购团队"
+            "私人艺术品收购团队",
+            "Hermès Bangkok VIP 私邀"
           ]
         }
       },
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 65000,
-            "max": 500000,
+            "min": 70000,
+            "max": 540000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -763,8 +820,8 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 104000,
-            "max": 799999,
+            "min": 112000,
+            "max": 864000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -779,8 +836,8 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 130000,
-            "max": 999999,
+            "min": 140000,
+            "max": 1080000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -795,8 +852,8 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 156000,
-            "max": 1199999,
+            "min": 168000,
+            "max": 1296000,
             "unit": "CNY/month"
           },
           "pct": [

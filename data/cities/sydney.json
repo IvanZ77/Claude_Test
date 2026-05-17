@@ -3,9 +3,30 @@
   "name": "悉尼",
   "currency": "CNY",
   "schemaVersion": 1,
-  "lastUpdated": null,
-  "incomplete": true,
-  "sources": [],
+  "lastUpdated": "2026-05-16",
+  "incomplete": false,
+  "sources": [
+    {
+      "label": "Domain Sydney rentals",
+      "url": "https://www.domain.com.au/rent/sydney-region-nsw/",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "Sydney Grammar School fees",
+      "url": "https://sydgram.nsw.edu.au/",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "Yelp Sydney restaurants",
+      "url": "https://www.yelp.com.au/sydney",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "Transport for NSW Opal fares",
+      "url": "https://transportnsw.info/tickets-opal",
+      "asOf": "2026-04"
+    }
+  ],
   "tiers": [
     {
       "id": "t1",
@@ -84,7 +105,7 @@
         "1a": {
           "incomeRange": {
             "min": 0,
-            "max": 8000,
+            "max": 7700,
             "unit": "CNY/month"
           },
           "pct": [
@@ -100,7 +121,7 @@
         "2a": {
           "incomeRange": {
             "min": 0,
-            "max": 12800,
+            "max": 12320,
             "unit": "CNY/month"
           },
           "pct": [
@@ -116,7 +137,7 @@
         "2a1c": {
           "incomeRange": {
             "min": 0,
-            "max": 16000,
+            "max": 15400,
             "unit": "CNY/month"
           },
           "pct": [
@@ -132,7 +153,7 @@
         "2a2c": {
           "incomeRange": {
             "min": 0,
-            "max": 19200,
+            "max": 18480,
             "unit": "CNY/month"
           },
           "pct": [
@@ -223,7 +244,7 @@
       "variants": {
         "1a": {
           "incomeRange": {
-            "min": 8000,
+            "min": 7700,
             "max": 16000,
             "unit": "CNY/month"
           },
@@ -239,7 +260,7 @@
         },
         "2a": {
           "incomeRange": {
-            "min": 12800,
+            "min": 12320,
             "max": 25600,
             "unit": "CNY/month"
           },
@@ -255,7 +276,7 @@
         },
         "2a1c": {
           "incomeRange": {
-            "min": 16000,
+            "min": 15400,
             "max": 32000,
             "unit": "CNY/month"
           },
@@ -271,7 +292,7 @@
         },
         "2a2c": {
           "incomeRange": {
-            "min": 19200,
+            "min": 18480,
             "max": 38400,
             "unit": "CNY/month"
           },
@@ -608,7 +629,8 @@
           "examples": [
             "宝马M系 / 奔驰AMG",
             "保时捷911 Turbo",
-            "全职专属司机（¥1.4万/月）"
+            "全职专属司机（¥1.4万/月）",
+            "BMW X5 / Mercedes GLE + 私人车位"
           ]
         },
         "medical": {
@@ -764,9 +786,9 @@
           "label": "旅行娱乐",
           "examples": [
             "私人游艇克罗地亚巡游（€60,000+/周）",
-            "南极探险邮轮包舱",
             "四季酒店全球VIP计划",
-            "北极冰屋私人探险"
+            "北极冰屋私人探险",
+            "Aman Tokyo / Aman Kyoto"
           ]
         },
         "shopping": {
@@ -799,7 +821,7 @@
         "2a": {
           "incomeRange": {
             "min": 304000,
-            "max": 799999,
+            "max": 800000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -815,7 +837,7 @@
         "2a1c": {
           "incomeRange": {
             "min": 380000,
-            "max": 999999,
+            "max": 1000000,
             "unit": "CNY/month"
           },
           "pct": [
@@ -831,7 +853,7 @@
         "2a2c": {
           "incomeRange": {
             "min": 456000,
-            "max": 1199999,
+            "max": 1200000,
             "unit": "CNY/month"
           },
           "pct": [

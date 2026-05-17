@@ -3,9 +3,30 @@
   "name": "迪拜",
   "currency": "CNY",
   "schemaVersion": 1,
-  "lastUpdated": null,
-  "incomplete": true,
-  "sources": [],
+  "lastUpdated": "2026-05-16",
+  "incomplete": false,
+  "sources": [
+    {
+      "label": "Bayut Dubai rentals",
+      "url": "https://www.bayut.com/to-rent/property/dubai/",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "GEMS Education Dubai fees",
+      "url": "https://www.gemseducation.com/",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "Zomato Dubai restaurants",
+      "url": "https://www.zomato.com/dubai",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "RTA Dubai fares",
+      "url": "https://www.rta.ae/",
+      "asOf": "2026-04"
+    }
+  ],
   "tiers": [
     {
       "id": "t1",
@@ -608,7 +629,8 @@
           "examples": [
             "保时捷911 Turbo S",
             "玛莎拉蒂MC20",
-            "全职专属司机（¥1.3万/月）"
+            "全职专属司机（¥1.3万/月）",
+            "Range Rover Sport / Porsche Cayenne"
           ]
         },
         "medical": {
@@ -626,7 +648,7 @@
             "马尔代夫私人岛屿包租",
             "瑞士圣莫里茨滑雪",
             "非洲肯尼亚safari",
-            "北极极光远征"
+            "Aman Tokyo / Aman Kyoto"
           ]
         },
         "shopping": {
@@ -764,9 +786,9 @@
           "label": "旅行娱乐",
           "examples": [
             "私人游艇地中海巡游（€50,000+/周）",
-            "南极探险邮轮包舱",
             "四季酒店全球VIP",
-            "北极冰屋私人预订"
+            "北极冰屋私人预订",
+            "Burj Al Arab 套房"
           ]
         },
         "shopping": {

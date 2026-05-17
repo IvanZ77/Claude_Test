@@ -3,9 +3,30 @@
   "name": "岘港",
   "currency": "CNY",
   "schemaVersion": 1,
-  "lastUpdated": null,
-  "incomplete": true,
-  "sources": [],
+  "lastUpdated": "2026-05-16",
+  "incomplete": false,
+  "sources": [
+    {
+      "label": "BatDongSan Đà Nẵng cho thuê",
+      "url": "https://batdongsan.com.vn/cho-thue-nha-dat-da-nang",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "Singapore International School Da Nang",
+      "url": "https://sis.edu.vn/da-nang/",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "Foody.vn Đà Nẵng",
+      "url": "https://www.foody.vn/da-nang",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "Đà Nẵng bus DanaBus 票价",
+      "url": "https://danabus.vn/",
+      "asOf": "2026-04"
+    }
+  ],
   "tiers": [
     {
       "id": "t1",
@@ -21,14 +42,17 @@
           "examples": [
             "中心老城区出租房",
             "龙桥区小民居",
-            "山茂街道房屋"
+            "山茂街道房屋",
+            "Hải Châu 老公寓 1,500,000₫/月"
           ]
         },
         "education": {
           "label": "子女教育",
           "examples": [
             "公立小学",
-            "免费越南班"
+            "免费越南班",
+            "越南公立小学（免费）",
+            "英文家教 1,500,000₫/月"
           ]
         },
         "food": {
@@ -36,7 +60,8 @@
           "examples": [
             "路边越南粉",
             "街边摊",
-            "自己做饭"
+            "自己做饭",
+            "Bún Chả 摊位"
           ]
         },
         "transport": {
@@ -44,21 +69,26 @@
           "examples": [
             "摩托车",
             "公交",
-            "人力车"
+            "人力车",
+            "公交月票 100,000₫"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "社区诊所",
-            "基础医保"
+            "基础医保",
+            "国家医保",
+            "岘港总医院普通门诊"
           ]
         },
         "travel": {
           "label": "旅行娱乐",
           "examples": [
             "海滩散步",
-            "免费景点"
+            "免费景点",
+            "Mỹ Khê 海滩免费",
+            "Bà Nà Hills 半价 day pass"
           ]
         },
         "shopping": {
@@ -66,7 +96,8 @@
           "examples": [
             "菜市场",
             "小店",
-            "地摊"
+            "地摊",
+            "Cồn Market"
           ]
         }
       },
@@ -151,7 +182,8 @@
           "examples": [
             "海滩边租赁公寓",
             "中心商业区小房",
-            "韩邦区民居"
+            "韩邦区民居",
+            "Mỹ Khê 海滩 condo 6,000,000₫/月"
           ]
         },
         "education": {
@@ -159,7 +191,8 @@
           "examples": [
             "岘港国际学校初班",
             "越南公立学校",
-            "英文班"
+            "英文班",
+            "Singapore International Da Nang ฿200,000/年"
           ]
         },
         "food": {
@@ -176,21 +209,26 @@
           "examples": [
             "摩托车",
             "出租车",
-            "公交"
+            "公交",
+            "二手日系车（10 年）"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "医疗诊所",
-            "保险"
+            "保险",
+            "Vinmec Da Nang",
+            "Hoan My 私立医院"
           ]
         },
         "travel": {
           "label": "旅行娱乐",
           "examples": [
             "美溪海滩",
-            "龙桥一日游"
+            "龙桥一日游",
+            "Hội An 多次游",
+            "Huế 故都游"
           ]
         },
         "shopping": {
@@ -198,7 +236,8 @@
           "examples": [
             "购物中心",
             "超市",
-            "网购"
+            "网购",
+            "Vincom Plaza"
           ]
         }
       },
@@ -283,7 +322,8 @@
           "examples": [
             "美溪海滨别墅",
             "索菲特酒店式公寓",
-            "高档社区房"
+            "高档社区房",
+            "Mỹ Khê 一线海景 condo"
           ]
         },
         "education": {
@@ -291,7 +331,8 @@
           "examples": [
             "岘港国际学校全段",
             "新加坡学部",
-            "暑期英语营"
+            "暑期英语营",
+            "Singapore International ฿400,000/年"
           ]
         },
         "food": {
@@ -307,21 +348,27 @@
           "label": "交通出行",
           "examples": [
             "丰田Vios",
-            "停车费¥200/月"
+            "停车费¥200/月",
+            "丰田 Camry",
+            "本田 CR-V"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "私立医院",
-            "国际诊所"
+            "国际诊所",
+            "Vinmec VIP 门诊",
+            "Hoan My 国际部"
           ]
         },
         "travel": {
           "label": "旅行娱乐",
           "examples": [
             "岘港周边度假",
-            "越南北部旅游"
+            "越南北部旅游",
+            "Phú Quốc 度假",
+            "马尔代夫（短途）"
           ]
         },
         "shopping": {
@@ -329,7 +376,8 @@
           "examples": [
             "品牌店",
             "超市进口货",
-            "本地市集"
+            "本地市集",
+            "Vincom VIP"
           ]
         }
       },
@@ -414,7 +462,8 @@
           "examples": [
             "美溪滨海别墅",
             "私人海景地产",
-            "高档社区别墅"
+            "高档社区别墅",
+            "Sơn Trà 一线海景别墅"
           ]
         },
         "education": {
@@ -422,7 +471,8 @@
           "examples": [
             "英国学部完整课程",
             "IB预备班",
-            "海外交换计划"
+            "海外交换计划",
+            "Singapore International 高年级 ฿500,000/年"
           ]
         },
         "food": {
@@ -430,35 +480,44 @@
           "examples": [
             "米其林试吃",
             "五星酒店餐厅",
-            "私房菜"
+            "私房菜",
+            "La Maison 1888 VIP"
           ]
         },
         "transport": {
           "label": "交通出行",
           "examples": [
             "BMW i3/奔驰GLA",
-            "停车+油费¥800/月"
+            "停车+油费¥800/月",
+            "Mercedes E / BMW 5 系",
+            "Range Rover Velar"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "曼谷医疗旅游",
-            "国际保险"
+            "国际保险",
+            "Vinmec VIP 套餐",
+            "Hoan My VIP 国际部"
           ]
         },
         "travel": {
           "label": "旅行娱乐",
           "examples": [
             "泰国度假",
-            "柬埔寨旅游"
+            "柬埔寨旅游",
+            "马尔代夫 Soneva",
+            "北海道二世谷"
           ]
         },
         "shopping": {
           "label": "日用购物",
           "examples": [
             "奢侈品折扣",
-            "进口品牌"
+            "进口品牌",
+            "Vincom VIP",
+            "线上 Hermès"
           ]
         }
       },
@@ -543,7 +602,8 @@
           "examples": [
             "私人岛屿别墅",
             "四季酒店高层公寓",
-            "独家海滨庄园"
+            "独家海滨庄园",
+            "Sơn Trà 半岛独栋大宅"
           ]
         },
         "education": {
@@ -551,7 +611,8 @@
           "examples": [
             "伦敦教育预备",
             "美国名校升学指导",
-            "夏令营世界名校"
+            "夏令营世界名校",
+            "Singapore International + 私人家教 ฿800,000+/年"
           ]
         },
         "food": {
@@ -559,35 +620,44 @@
           "examples": [
             "米其林二星",
             "私人会所",
-            "主厨特餐"
+            "主厨特餐",
+            "La Maison 1888 VIP 包房"
           ]
         },
         "transport": {
           "label": "交通出行",
           "examples": [
             "宝马X5/奔驰GLE",
-            "司机团队"
+            "司机团队",
+            "Range Rover Sport",
+            "Bentley Bentayga + Mỹ Khê 海景车位"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "新加坡医疗包",
-            "国际高端保险"
+            "国际高端保险",
+            "Vinmec VIP 国际",
+            "曼谷 Bumrungrad 转诊"
           ]
         },
         "travel": {
           "label": "旅行娱乐",
           "examples": [
             "欧洲三个月",
-            "四季酒店连住"
+            "四季酒店连住",
+            "Soneva Jani 马尔代夫",
+            "Aman Tokyo / Aman Kyoto"
           ]
         },
         "shopping": {
           "label": "日用购物",
           "examples": [
             "奢侈品定制",
-            "艺术品投资"
+            "艺术品投资",
+            "线上 Hermès VIP",
+            "胡志明市奢侈品 VIP 私邀"
           ]
         }
       },
@@ -672,7 +742,8 @@
           "examples": [
             "私人岛屿度假村",
             "顶级海滨地产",
-            "国际名流区"
+            "国际名流区",
+            "Sơn Trà 半岛顶级豪宅"
           ]
         },
         "education": {
@@ -680,42 +751,53 @@
           "examples": [
             "牛津剑桥预科营",
             "瑞士寄宿学校",
-            "私人教师"
+            "私人教师",
+            "UWC Thailand Phuket 寄宿"
           ]
         },
         "food": {
           "label": "餐饮美食",
           "examples": [
             "米其林三星备选",
-            "私人厨师常驻"
+            "私人厨师常驻",
+            "La Maison 1888 VIP 私厨",
+            "La Maison 1888（米其林一星）"
           ]
         },
         "transport": {
           "label": "交通出行",
           "examples": [
             "兰博基尼/法拉利",
-            "专属司机与保镖"
+            "专属司机与保镖",
+            "Range Rover Velar + 私人司机",
+            "Mercedes E-class + Mỹ Khê 海景车位"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "美国Johns Hopkins保约",
-            "24小时私人医生"
+            "24小时私人医生",
+            "Vinmec Da Nang VIP 国际",
+            "Hoan My VIP + 飞往河内/胡志明转诊"
           ]
         },
         "travel": {
           "label": "旅行娱乐",
           "examples": [
             "私人游艇环球航行",
-            "北极探险邮轮"
+            "北极探险邮轮",
+            "Soneva Jani 马尔代夫",
+            "Aman Tokyo / Aman Kyoto"
           ]
         },
         "shopping": {
           "label": "日用购物",
           "examples": [
             "苏富比艺术拍卖",
-            "珠宝定制行"
+            "珠宝定制行",
+            "Hermès Bangkok VIP 私邀",
+            "Vincom Plaza 顶级 VIP"
           ]
         }
       },

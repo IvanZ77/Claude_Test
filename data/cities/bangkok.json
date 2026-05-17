@@ -3,9 +3,30 @@
   "name": "曼谷",
   "currency": "CNY",
   "schemaVersion": 1,
-  "lastUpdated": null,
-  "incomplete": true,
-  "sources": [],
+  "lastUpdated": "2026-05-16",
+  "incomplete": false,
+  "sources": [
+    {
+      "label": "DDproperty Bangkok rent",
+      "url": "https://www.ddproperty.com/en/bangkok",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "Bangkok Patana School",
+      "url": "https://www.patana.ac.th/",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "Foodpanda Bangkok",
+      "url": "https://www.foodpanda.co.th/city/bangkok",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "BTS Skytrain fares",
+      "url": "https://www.bts.co.th/",
+      "asOf": "2026-04"
+    }
+  ],
   "tiers": [
     {
       "id": "t1",
@@ -30,7 +51,8 @@
           "examples": [
             "泰国公立学校（便宜）",
             "通布里萨里学校公立分校",
-            "小型国际幼儿园 ¥2-3万/年"
+            "小型国际幼儿园 ¥2-3万/年",
+            "泰国公立小学（免费）"
           ]
         },
         "food": {
@@ -47,7 +69,8 @@
           "examples": [
             "BTS天铁月票",
             "摩托三轮车",
-            "自行车"
+            "自行车",
+            "BTS 月卡 ฿1,000"
           ]
         },
         "medical": {
@@ -55,13 +78,17 @@
           "examples": [
             "泰国国立医院",
             "社区卫生诊所",
-            "泰国医保"
+            "泰国医保",
+            "泰国公立医院普通门诊"
           ]
         },
         "travel": {
           "label": "旅行娱乐",
           "examples": [
-            "佛教寺庙免费参观"
+            "佛教寺庙免费参观",
+            "Lumpini 公园（免费）",
+            "大皇宫外围免费段",
+            "Khao San Road 散步"
           ]
         },
         "shopping": {
@@ -164,7 +191,8 @@
           "examples": [
             "三美塔威吉国际学校 ¥15-18万/年",
             "曼谷帕塔那学校 ¥12-15万/年",
-            "泰日幼儿园 ¥3-5万/年"
+            "泰日幼儿园 ¥3-5万/年",
+            "Singapore International ฿200,000/年"
           ]
         },
         "food": {
@@ -181,7 +209,8 @@
           "examples": [
             "二手日本车（10年）",
             "轻轨月票+偶尔打车",
-            "停车位租赁"
+            "停车位租赁",
+            "二手日系车（10 年）+ 油费"
           ]
         },
         "medical": {
@@ -189,7 +218,8 @@
           "examples": [
             "布姆伦格国际医院",
             "三美塔威吉医院",
-            "泰国保险公司保险"
+            "泰国保险公司保险",
+            "Bumrungrad 普通门诊"
           ]
         },
         "travel": {
@@ -206,7 +236,8 @@
           "examples": [
             "艾姆波立姆商场",
             "中心世界购物中心",
-            "暹罗广场"
+            "暹罗广场",
+            "Central World"
           ]
         }
       },
@@ -300,7 +331,8 @@
           "examples": [
             "曼谷预科学校 ¥20-25万/年",
             "鲁姆鲁迪国际学校 ¥18-22万/年",
-            "哈罗国际学校 ¥22-28万/年"
+            "哈罗国际学校 ¥22-28万/年",
+            "ISB International School Bangkok ฿800,000/年"
           ]
         },
         "food": {
@@ -317,7 +349,8 @@
           "examples": [
             "丰田卡罗拉/本田雅阁",
             "油费+停车¥1,500/月",
-            "偶尔高端打车"
+            "偶尔高端打车",
+            "丰田 Camry / Honda CR-V"
           ]
         },
         "medical": {
@@ -325,7 +358,8 @@
           "examples": [
             "布姆伦格VIP会员",
             "三美塔威吉医疗中心",
-            "国际保险中档"
+            "国际保险中档",
+            "Bumrungrad VIP 门诊"
           ]
         },
         "travel": {
@@ -342,7 +376,8 @@
           "examples": [
             "艾姆波立姆奢侈品",
             "盖松村创意园",
-            "中央大使馆"
+            "中央大使馆",
+            "Siam Paragon VIP"
           ]
         }
       },
@@ -436,7 +471,8 @@
           "examples": [
             "哈罗国际学校 ¥28-35万/年",
             "英国国际学校 ¥30-38万/年",
-            "美国学校 ¥25-32万/年"
+            "美国学校 ¥25-32万/年",
+            "ISB Bangkok 高年级 ฿900,000/年"
           ]
         },
         "food": {
@@ -453,7 +489,8 @@
           "examples": [
             "宝马5系/奔驰E级",
             "保时捷卡宴",
-            "停车+油费¥3,000/月"
+            "停车+油费¥3,000/月",
+            "Mercedes E / BMW 5 系"
           ]
         },
         "medical": {
@@ -461,7 +498,8 @@
           "examples": [
             "布姆伦格行政项目",
             "私人医生咨询",
-            "国际保险中档"
+            "国际保险中档",
+            "Bumrungrad VIP 套餐"
           ]
         },
         "travel": {
@@ -478,7 +516,8 @@
           "examples": [
             "盖松村奢侈品",
             "中央世界VIP",
-            "设计师旗舰店"
+            "设计师旗舰店",
+            "EmQuartier VIP"
           ]
         }
       },
@@ -572,7 +611,8 @@
           "examples": [
             "哈罗/英国学校顶级班",
             "私人辅导+海外交换",
-            "伊顿预科暑期营"
+            "伊顿预科暑期营",
+            "ISB + 私人家教 ฿1,200,000+/年"
           ]
         },
         "food": {
@@ -580,15 +620,17 @@
           "examples": [
             "私人厨师上门",
             "蓝象餐厅定期订座",
-            "米其林大厨私宴"
+            "米其林大厨私宴",
+            "Gaggan VIP 包厢"
           ]
         },
         "transport": {
           "label": "交通出行",
           "examples": [
             "保时捷911涡轮",
-            "路虎揽胜运动版",
-            "全职司机(¥8,000/月)"
+            "全职司机(¥8,000/月)",
+            "Bentley Bentayga + Sukhumvit 车位",
+            "Mercedes S-class + Thonglor 私人车位"
           ]
         },
         "medical": {
@@ -596,7 +638,8 @@
           "examples": [
             "布姆伦格总裁套餐",
             "梅奥诊所远程咨询",
-            "VIP健康检查"
+            "VIP健康检查",
+            "Bumrungrad VIP 国际"
           ]
         },
         "travel": {
@@ -604,7 +647,8 @@
           "examples": [
             "南非狩猎探险",
             "阿尔卑斯滑雪",
-            "巴黎四季酒店"
+            "巴黎四季酒店",
+            "普吉 Amanpuri 包别墅"
           ]
         },
         "shopping": {
@@ -612,7 +656,8 @@
           "examples": [
             "品牌高级定制",
             "私人购物顾问",
-            "艺术品投资"
+            "艺术品投资",
+            "Hermès Bangkok VIP"
           ]
         }
       },
@@ -704,7 +749,10 @@
         "education": {
           "label": "子女教育",
           "examples": [
-            "哈佛/剑桥预备"
+            "哈佛/剑桥预备",
+            "Bangkok Patana 高中 + 海外名校预备 ฿900,000+/年",
+            "UWC Thailand Phuket 寄宿",
+            "上海哈罗外籍人员子女学校转学"
           ]
         },
         "food": {
@@ -712,7 +760,8 @@
           "examples": [
             "米其林三星专座",
             "宫廷菜大厨常驻",
-            "世界名厨私宴"
+            "世界名厨私宴",
+            "Gaggan VIP 私厨"
           ]
         },
         "transport": {
@@ -720,7 +769,8 @@
           "examples": [
             "法拉利/兰博基尼",
             "私人飞机包机",
-            "游艇停泊芭堤雅"
+            "游艇停泊芭堤雅",
+            "BMW 7 系 / Mercedes S 级 + 司机"
           ]
         },
         "medical": {
@@ -728,15 +778,17 @@
           "examples": [
             "梅奥诊所董事级",
             "私人医生24/7",
-            "国际医疗撤离"
+            "国际医疗撤离",
+            "Bumrungrad International VVIP"
           ]
         },
         "travel": {
           "label": "旅行娱乐",
           "examples": [
             "马尔代夫索内瓦私岛",
-            "南极探险船",
-            "北极皇家游轮"
+            "北极皇家游轮",
+            "马尔代夫 Soneva Jani",
+            "普吉 Amanpuri 包别墅"
           ]
         },
         "shopping": {
@@ -744,7 +796,8 @@
           "examples": [
             "高级珠宝定制",
             "艺术品竞拍投资",
-            "私人购物大使"
+            "私人购物大使",
+            "Hermès Bangkok VIP 私邀"
           ]
         }
       },

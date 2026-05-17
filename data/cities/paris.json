@@ -3,9 +3,30 @@
   "name": "巴黎",
   "currency": "CNY",
   "schemaVersion": 1,
-  "lastUpdated": null,
-  "incomplete": true,
-  "sources": [],
+  "lastUpdated": "2026-05-16",
+  "incomplete": false,
+  "sources": [
+    {
+      "label": "SeLoger Paris locations",
+      "url": "https://www.seloger.com/immobilier/locations/immo-paris-75/",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "Lycée International de Saint-Germain-en-Laye",
+      "url": "https://www.lycee-international.com/",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "La Fourchette / TheFork Paris",
+      "url": "https://www.thefork.com/restaurants/paris",
+      "asOf": "2026-04"
+    },
+    {
+      "label": "RATP Paris transit fares",
+      "url": "https://www.ratp.fr/en/titres-et-tarifs",
+      "asOf": "2026-04"
+    }
+  ],
   "tiers": [
     {
       "id": "t1",
@@ -21,14 +42,17 @@
           "examples": [
             "Saint-Denis地下室",
             "Montreuil小房间",
-            "Créteil郊区studio"
+            "Créteil郊区studio",
+            "19区合租 chambre €600/mo"
           ]
         },
         "education": {
           "label": "子女教育",
           "examples": [
             "Ecole Publique免费",
-            "市政免费班"
+            "市政免费班",
+            "École publique（免费）",
+            "Collège public"
           ]
         },
         "food": {
@@ -36,7 +60,8 @@
           "examples": [
             "Carrefour自炊",
             "Boulangerie面包",
-            "中餐外卖"
+            "中餐外卖",
+            "Boulangerie sandwich €5"
           ]
         },
         "transport": {
@@ -44,21 +69,26 @@
           "examples": [
             "地铁周卡",
             "自行车",
-            "走路"
+            "走路",
+            "Navigo Z1-5 €86/mo"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "Sécurité Sociale医保",
-            "社区诊所"
+            "社区诊所",
+            "Sécurité Sociale（免费 + 70% 报销）",
+            "Médecin généraliste 普通门诊"
           ]
         },
         "travel": {
           "label": "旅行娱乐",
           "examples": [
             "塞纳河散步",
-            "免费教堂"
+            "免费教堂",
+            "Jardin du Luxembourg 免费",
+            "Musée du Louvre 免费日"
           ]
         },
         "shopping": {
@@ -66,7 +96,8 @@
           "examples": [
             "Monoprix折扣",
             "跳蚤市场",
-            "网购"
+            "网购",
+            "Carrefour"
           ]
         }
       },
@@ -151,7 +182,8 @@
           "examples": [
             "Montparnasse小公寓",
             "Belleville现代楼",
-            "Vincennes公寓"
+            "Vincennes公寓",
+            "11区一居 €1,200/mo"
           ]
         },
         "education": {
@@ -159,7 +191,8 @@
           "examples": [
             "国立优秀小学",
             "私塾班",
-            "音乐课"
+            "音乐课",
+            "École publique top rating"
           ]
         },
         "food": {
@@ -175,21 +208,27 @@
           "label": "交通出行",
           "examples": [
             "地铁月票",
-            "摩拜自行车"
+            "摩拜自行车",
+            "Navigo + Uber 偶尔",
+            "二手 Renault Clio"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "牙科诊所",
-            "眼科检查"
+            "眼科检查",
+            "Sécurité Sociale + Mutuelle",
+            "私立 GP €40/次"
           ]
         },
         "travel": {
           "label": "旅行娱乐",
           "examples": [
             "法国周末游",
-            "比利时短途"
+            "比利时短途",
+            "Provence 周末",
+            "Côte d'Azur 度假"
           ]
         },
         "shopping": {
@@ -197,7 +236,8 @@
           "examples": [
             "Galeries Lafayette",
             "Zara服装",
-            "C&A"
+            "C&A",
+            "Monoprix Gourmet"
           ]
         }
       },
@@ -282,7 +322,8 @@
           "examples": [
             "Le Marais精品公寓",
             "Saint-Germain联排",
-            "Neuilly豪华公寓"
+            "Neuilly豪华公寓",
+            "Le Marais 一居 €2,500/mo"
           ]
         },
         "education": {
@@ -290,7 +331,8 @@
           "examples": [
             "伦敦国际学校巴黎部",
             "法国私立学校",
-            "音乐学院预科"
+            "音乐学院预科",
+            "Lycée International St-Germain €20,000/yr"
           ]
         },
         "food": {
@@ -306,21 +348,27 @@
           "label": "交通出行",
           "examples": [
             "标致308/雪铁龙C5",
-            "停车费+油费¥1200/月"
+            "停车费+油费¥1200/月",
+            "Peugeot 3008 / Renault Captur",
+            "Tesla Model 3"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "私人诊所",
-            "医疗保险"
+            "医疗保险",
+            "American Hospital of Paris",
+            "Clinique Hartmann"
           ]
         },
         "travel": {
           "label": "旅行娱乐",
           "examples": [
             "普罗旺斯周末",
-            "蔚蓝海岸"
+            "蔚蓝海岸",
+            "Italian Riviera 周末",
+            "马尔代夫 fly + flop"
           ]
         },
         "shopping": {
@@ -328,7 +376,8 @@
           "examples": [
             "Printemps百货",
             "Bon Marche",
-            "设计师时尚"
+            "设计师时尚",
+            "Le Bon Marché"
           ]
         }
       },
@@ -413,7 +462,8 @@
           "examples": [
             "Passy豪宅",
             "Champs-Élysées附近",
-            "Île Saint-Louis房产"
+            "Île Saint-Louis房产",
+            "16区Trocadéro公寓 €5,000/mo"
           ]
         },
         "education": {
@@ -421,7 +471,8 @@
           "examples": [
             "Lycée Henri-IV预备",
             "IB课程国际部",
-            "海外交换计划"
+            "海外交换计划",
+            "American School of Paris €30,000/yr"
           ]
         },
         "food": {
@@ -429,35 +480,44 @@
           "examples": [
             "米其林二星",
             "高档法式料理",
-            "私人会所"
+            "私人会所",
+            "Le Cinq 米其林三星"
           ]
         },
         "transport": {
           "label": "交通出行",
           "examples": [
             "宝马X3/梅赛德斯GLA",
-            "停车+油费¥2500/月"
+            "停车+油费¥2500/月",
+            "Mercedes E / BMW 5 系",
+            "Range Rover Velar"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "美国医疗包",
-            "国际医疗保险"
+            "国际医疗保险",
+            "American Hospital VIP",
+            "Clinique des Champs-Élysées"
           ]
         },
         "travel": {
           "label": "旅行娱乐",
           "examples": [
             "瑞士度假",
-            "意大利自驾"
+            "意大利自驾",
+            "马尔代夫 Soneva",
+            "瑞士阿尔卑斯滑雪"
           ]
         },
         "shopping": {
           "label": "日用购物",
           "examples": [
             "Chanel旗舰店",
-            "Louis Vuitton定制"
+            "Louis Vuitton定制",
+            "Le Bon Marché VIP",
+            "Hermès Sèvres Babylone"
           ]
         }
       },
@@ -542,7 +602,8 @@
           "examples": [
             "Élysée Palace周边",
             "Saint-Louis私人府邸",
-            "Bois de Boulogne别墅"
+            "Bois de Boulogne别墅",
+            "8区 Avenue Foch €15,000/mo"
           ]
         },
         "education": {
@@ -550,7 +611,8 @@
           "examples": [
             "国际学校精英课程",
             "瑞士寄宿预备",
-            "牛津剑桥升学"
+            "牛津剑桥升学",
+            "Eton (boarding) + 私人家教 €80,000/yr"
           ]
         },
         "food": {
@@ -558,35 +620,44 @@
           "examples": [
             "米其林三星",
             "私人厨师备选",
-            "高定宴会"
+            "高定宴会",
+            "Le Cinq VIP 包房"
           ]
         },
         "transport": {
           "label": "交通出行",
           "examples": [
-            "保时捷Macan/路虎揽胜",
-            "专业驾手¥1.3万/月"
+            "专业驾手¥1.3万/月",
+            "Bentley Continental",
+            "Rolls-Royce Ghost（二手）",
+            "Mercedes S-class + 8 区私人车位"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "瑞士医疗中心年检",
-            "美国诊所咨询"
+            "美国诊所咨询",
+            "American Hospital VIP 套餐",
+            "Clinique Hartmann VIP"
           ]
         },
         "travel": {
           "label": "旅行娱乐",
           "examples": [
             "地中海私人游艇",
-            "阿尔卑斯滑雪"
+            "阿尔卑斯滑雪",
+            "Cheval Blanc Courchevel 滑雪",
+            "Aman Tokyo"
           ]
         },
         "shopping": {
           "label": "日用购物",
           "examples": [
             "Hermès定制",
-            "苏富比拍卖"
+            "苏富比拍卖",
+            "Hermès Sèvres VIP",
+            "Le Bon Marché VIP 私人选购"
           ]
         }
       },
@@ -671,7 +742,8 @@
           "examples": [
             "Élysée宫殿府邸",
             "Île Saint-Louis古堡",
-            "凡尔赛附近庄园"
+            "凡尔赛附近庄园",
+            "Avenue Foch 大宅 €40,000/mo"
           ]
         },
         "education": {
@@ -679,14 +751,17 @@
           "examples": [
             "伊顿公学+牛津保障",
             "法国私立精英校",
-            "私人教师团队"
+            "私人教师团队",
+            "Eton + 私人家教 €100,000+/yr"
           ]
         },
         "food": {
           "label": "餐饮美食",
           "examples": [
             "Michelin三星备选",
-            "私人米其林厨师"
+            "私人米其林厨师",
+            "Le Cinq 私厨",
+            "L'Ambroisie VIP"
           ]
         },
         "transport": {
@@ -694,28 +769,35 @@
           "examples": [
             "劳斯莱斯幻影",
             "专属司机保镖团队",
-            "直升机接驳"
+            "直升机接驳",
+            "Rolls-Royce Phantom"
           ]
         },
         "medical": {
           "label": "医疗健康",
           "examples": [
             "美国Mayo年度包约",
-            "私人医疗顾问"
+            "私人医疗顾问",
+            "American Hospital of Paris VIP",
+            "Clinique Hartmann VIP"
           ]
         },
         "travel": {
           "label": "旅行娱乐",
           "examples": [
             "私人游艇全球航行",
-            "南极探险邮轮"
+            "Cheval Blanc Courchevel 滑雪",
+            "Aman Tokyo",
+            "Cap-Eden-Roc 私人套房"
           ]
         },
         "shopping": {
           "label": "日用购物",
           "examples": [
             "名品定制",
-            "艺术品拍卖VIP"
+            "艺术品拍卖VIP",
+            "Hermès Sèvres VIP 私邀",
+            "Hermès Sèvres Babylone VIP"
           ]
         }
       },

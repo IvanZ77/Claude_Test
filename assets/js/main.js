@@ -283,11 +283,46 @@ async function bootstrap() {
       }
     };
 
+    // Render city data sources (lastUpdated + sources[])
+    function renderCitySources() {
+      const el = document.getElementById('citySources');
+      if (!el) return;
+      const cd = getState().cityData;
+      const sources = (cd && Array.isArray(cd.sources)) ? cd.sources : [];
+      if (sources.length === 0) {
+        el.hidden = true;
+        el.innerHTML = '';
+        return;
+      }
+      const dateLabel = cd.lastUpdated ? `数据核对：${cd.lastUpdated}` : '';
+      const items = sources.map(s => {
+        const label = (s && s.label) ? s.label : '';
+        const url = (s && s.url) ? s.url : '';
+        const asOf = (s && s.asOf) ? `<span class="src-asof">${s.asOf}</span>` : '';
+        if (!label) return '';
+        return url
+          ? `<li><a href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>${asOf}</li>`
+          : `<li>${label}${asOf}</li>`;
+      }).filter(Boolean).join('');
+      el.innerHTML = `
+        <details>
+          <summary>数据来源 (${sources.length})${dateLabel ? ' · ' + dateLabel : ''}</summary>
+          <ul>${items}</ul>
+        </details>
+      `;
+      el.hidden = false;
+    }
+
     // Subscribe to state changes — split by dirty keys to avoid full re-render on every setState
 
     // Metrics: only when income/asset values change
     subscribeKeys(['assets', 'annualUSD', 'monthlyUSD', 'monthlyCNY'], () => {
       try { renderMetrics(); } catch (e) { console.error('[Subscribe] renderMetrics:', e); }
+    });
+
+    // City sources footer: when city changes
+    subscribeKeys(['cityId', 'cityData'], () => {
+      try { renderCitySources(); } catch (e) { console.error('[Subscribe] renderCitySources:', e); }
     });
 
     // Tier strip: only when active tier changes
